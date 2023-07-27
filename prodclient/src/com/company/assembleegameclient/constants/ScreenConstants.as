@@ -1,0 +1,16 @@
+﻿// Decompiled by AS3 Sorcerer 6.78
+// www.buraks.com/as3sorcerer
+
+//com.company.assembleegameclient.constants.ScreenConstants
+
+package com.company.assembleegameclient.constants
+{
+    public class ScreenConstants 
+    {
+
+        public static const CENTER_BUTTON_Y_POS:uint = 530;
+
+
+    }
+}//package com.company.assembleegameclient.constants
+
