@@ -11,17 +11,14 @@ package kabam.rotmg.messaging.impl.incoming
         public var height_:int;
         public var name_:String;
         public var displayName_:String;
-        public var realmName_:String;
         public var difficulty_:int;
         public var fp_:uint;
         public var background_:int;
         public var allowPlayerTeleport_:Boolean;
         public var showDisplays_:Boolean;
-        public var maxPlayers_:int;
         public var clientXML_:Vector.<String> = new Vector.<String>();
         public var extraXML_:Vector.<String> = new Vector.<String>();
-        public var connectionGuid_:String;
-        public var gameOpenedTime_:int;
+        public var music_:String;
 
         public function MapInfo(_arg_1:uint, _arg_2:Function)
         {
@@ -32,6 +29,7 @@ package kabam.rotmg.messaging.impl.incoming
         {
             this.parseProperties(_arg_1);
             this.parseXML(_arg_1);
+            this.music_ = _arg_1.readUTF();
         }
 
         private function parseProperties(_arg_1:IDataInput):void
@@ -40,15 +38,11 @@ package kabam.rotmg.messaging.impl.incoming
             this.height_ = _arg_1.readInt();
             this.name_ = _arg_1.readUTF();
             this.displayName_ = _arg_1.readUTF();
-            this.realmName_ = _arg_1.readUTF();
             this.fp_ = _arg_1.readUnsignedInt();
             this.background_ = _arg_1.readInt();
             this.difficulty_ = _arg_1.readInt();
             this.allowPlayerTeleport_ = _arg_1.readBoolean();
             this.showDisplays_ = _arg_1.readBoolean();
-            this.maxPlayers_ = _arg_1.readShort();
-            this.connectionGuid_ = _arg_1.readUTF();
-            this.gameOpenedTime_ = _arg_1.readUnsignedInt();
         }
 
         private function parseXML(_arg_1:IDataInput):void

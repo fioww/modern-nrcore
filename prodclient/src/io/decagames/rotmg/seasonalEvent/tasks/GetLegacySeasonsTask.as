@@ -23,10 +23,7 @@ package io.decagames.rotmg.seasonalEvent.tasks
 
         override protected function startTask():void
         {
-            this.logger.info("GetLegacySeasons start");
-            var _local_1:Object = this.account.getCredentials();
-            this.client.complete.addOnce(this.onComplete);
-            this.client.sendRequest("/fame/challengerSeasonList", _local_1);
+            onComplete(false, null);
         }
 
         private function onComplete(_arg_1:Boolean, _arg_2:*):void

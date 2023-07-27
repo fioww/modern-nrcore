@@ -12,7 +12,6 @@ package kabam.rotmg.account.web.commands
     import kabam.lib.tasks.BranchingTask;
     import kabam.lib.tasks.TaskSequence;
     import kabam.lib.tasks.DispatchSignalTask;
-    import kabam.rotmg.account.web.view.WebVerifyEmailDialog;
     import kabam.lib.tasks.Task;
 
     public class WebRegisterAccountCommand 
@@ -45,7 +44,6 @@ package kabam.rotmg.account.web.commands
         {
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.updateAccount));
-            _local_1.add(new DispatchSignalTask(this.openDialog, new WebVerifyEmailDialog()));
             _local_1.add(new DispatchSignalTask(this.enterGame));
             _local_1.add(new DispatchSignalTask(this.pollVerifyEmailSignal));
             return (_local_1);

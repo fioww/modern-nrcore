@@ -163,7 +163,6 @@
     <Compile Include="logic\transitions\TimedRandomTransition.cs" />
     <Compile Include="networking\Client.KeepAlive.cs" />
     <Compile Include="networking\handlers\ChangeGuildRankHandler.cs" />
-    <Compile Include="networking\handlers\MarketCommandHandler.cs" />
     <Compile Include="networking\handlers\CreateGuildHandler.cs" />
     <Compile Include="networking\handlers\EnterArenaHandler.cs" />
     <Compile Include="networking\handlers\GuildInviteHandler.cs" />
@@ -185,7 +184,6 @@
     <Compile Include="networking\packets\incoming\GuildRemove.cs" />
     <Compile Include="networking\packets\incoming\JoinGuild.cs" />
     <Compile Include="networking\packets\incoming\AcceptArenaDeath.cs" />
-    <Compile Include="networking\packets\incoming\MarketCommand.cs" />
     <Compile Include="networking\packets\incoming\QueuePong.cs" />
     <Compile Include="networking\packets\incoming\ActivePetUpdateRequest.cs" />
     <Compile Include="networking\packets\incoming\PetUpgradeRequest.cs" />
@@ -211,7 +209,6 @@
     <Compile Include="networking\packets\outgoing\PlaySound.cs" />
     <Compile Include="networking\packets\outgoing\QuestFetchResponse.cs" />
     <Compile Include="networking\packets\outgoing\QuestRedeemResponse.cs" />
-    <Compile Include="networking\packets\outgoing\MarketResult.cs" />
     <Compile Include="networking\packets\outgoing\QueuePing.cs" />
     <Compile Include="networking\packets\outgoing\ServerFull.cs" />
     <Compile Include="networking\packets\outgoing\SetFocus.cs" />
@@ -324,14 +321,11 @@
     <Compile Include="realm\entities\OneWayContainer.cs" />
     <Compile Include="realm\entities\Pet.cs" />
     <Compile Include="realm\entities\player\Player.AntiCheat.cs" />
-    <Compile Include="realm\entities\player\Player.Market.cs" />
     <Compile Include="realm\entities\vendors\ClosedVaultChest.cs" />
-    <Compile Include="realm\entities\vendors\PlayerMerchant.cs" />
     <Compile Include="realm\entities\vendors\WorldMerchant.cs" />
     <Compile Include="realm\entities\Wall.cs" />
     <Compile Include="realm\FLLogicTicker.cs" />
     <Compile Include="realm\Inventory.cs" />
-    <Compile Include="realm\Market.cs" />
     <Compile Include="realm\ConnectManager.cs" />
     <Compile Include="realm\setpieces\Bedlam.cs" />
     <Compile Include="realm\setpieces\Boshy.cs" />
@@ -434,7 +428,6 @@
     <Compile Include="realm\terrain\JsonMapExporter.cs" />
     <Compile Include="realm\terrain\TerrainTile.cs" />
     <Compile Include="realm\terrain\WorldMapExporter.cs" />
-    <Compile Include="realm\worlds\logic\Marketplace.cs" />
     <Compile Include="realm\worlds\logic\Castle.cs" />
     <Compile Include="realm\worlds\logic\PetYard.cs" />
     <Compile Include="realm\worlds\logic\Realm.cs" />

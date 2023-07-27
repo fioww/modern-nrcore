@@ -17,8 +17,6 @@ package io.decagames.rotmg.pets.data
     public class PetsModel 
     {
 
-        private static var petsDataXML:Class = PetsModel_petsDataXML;
-
         private var petsData:XMLList;
         [Inject]
         public var notifyActivePetUpdated:NotifyActivePetUpdated;
@@ -109,40 +107,6 @@ package io.decagames.rotmg.pets.data
             this._totalPetsSkins = 0;
             this.ownedSkinsIDs = new Vector.<int>();
             this.removeActivePet();
-        }
-
-        public function parsePetsData():void
-        {
-            var _local_1:uint;
-            var _local_2:int;
-            var _local_3:XML;
-            var _local_4:SkinVO;
-            if (this.petsData == null)
-            {
-                this.petsData = XML(new petsDataXML()).Object;
-                _local_1 = this.petsData.length();
-                _local_2 = 0;
-                while (_local_2 < _local_1)
-                {
-                    _local_3 = this.petsData[_local_2];
-                    if (_local_3.hasOwnProperty("PetSkin"))
-                    {
-                        if (_local_3.@type != "0x8090")
-                        {
-                            _local_4 = SkinVO.parseFromXML(_local_3);
-                            _local_4.isOwned = (this.ownedSkinsIDs.indexOf(_local_4.skinType) >= 0);
-                            this.skins[_local_4.skinType] = _local_4;
-                            this._totalPetsSkins++;
-                            if (!this.familySkins[_local_4.family])
-                            {
-                                this.familySkins[_local_4.family] = new Vector.<SkinVO>();
-                            };
-                            this.familySkins[_local_4.family].push(_local_4);
-                        };
-                    };
-                    _local_2++;
-                };
-            };
         }
 
         public function unlockSkin(_arg_1:int):void

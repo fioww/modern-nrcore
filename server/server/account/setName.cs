@@ -11,8 +11,7 @@ namespace server.account
         public override void HandleRequest(RequestContext context, NameValueCollection query)
         {
             string name = query["name"];
-            if (name.Length < 3 || name.Length > 15 || !name.All(char.IsLetter) ||
-                Database.GuestNames.Contains(name, StringComparer.InvariantCultureIgnoreCase))
+            if (name.Length < 3 || name.Length > 10 || !name.All(char.IsLetter))
                 Write(context, "<Error>Invalid name</Error>");
             else
             {

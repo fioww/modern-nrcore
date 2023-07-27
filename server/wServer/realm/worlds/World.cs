@@ -466,9 +466,6 @@ namespace wServer.realm.worlds
 
         public Player GetUniqueNamedPlayer(string name)
         {
-            if (Database.GuestNames.Contains(name))
-                return null;
-
             foreach (var i in Players)
             {
                 if (i.Value.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase))

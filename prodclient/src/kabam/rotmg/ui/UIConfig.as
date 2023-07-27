@@ -172,7 +172,6 @@ package kabam.rotmg.ui
     import kabam.rotmg.account.core.services.LoadAccountTask;
     import kabam.rotmg.account.core.services.GetCharListTask;
     import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
-    import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
     import io.decagames.rotmg.seasonalEvent.tasks.GetSeasonalEventTask;
     import kabam.rotmg.news.services.GetInGameNewsTask;
     import io.decagames.rotmg.supportCampaign.tasks.GetCampaignStatusTask;
@@ -317,11 +316,10 @@ package kabam.rotmg.ui
             this.startup.addTask(LoadAccountTask, 2);
             this.startup.addTask(GetCharListTask, 3);
             this.startup.addTask(FetchPlayerCalendarTask, 4);
-            this.startup.addTask(GetOwnedPetSkinsTask, 5);
-            this.startup.addTask(GetSeasonalEventTask, 6);
-            this.startup.addTask(GetInGameNewsTask, 7);
-            this.startup.addTask(GetCampaignStatusTask, 8);
-            this.startup.addTask(GetLegacySeasonsTask, 9);
+            this.startup.addTask(GetSeasonalEventTask, 5);
+            this.startup.addTask(GetInGameNewsTask, 6);
+            this.startup.addTask(GetCampaignStatusTask, 7);
+            this.startup.addTask(GetLegacySeasonsTask, 8);
             this.startup.addSignal(ShowTitleUISignal, StartupSequence.LAST);
         }
 

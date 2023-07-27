@@ -6,27 +6,6 @@ using wServer.realm;
 
 namespace wServer
 {
-    public struct MarketOffer
-    {
-        public int Price { get; set; }
-        public ObjectSlot Slot { get; set; }
-
-        public static MarketOffer Read(NReader rdr)
-        {
-            return new MarketOffer
-            {
-                Price = rdr.ReadInt32(),
-                Slot = ObjectSlot.Read(rdr)
-            };
-        }
-
-        public void Write(NWriter wtr)
-        {
-            wtr.Write(Price);
-            Slot.Write(wtr);
-        }
-    }
-
     public struct BitmapData
     {
         public int Width { get; set; }

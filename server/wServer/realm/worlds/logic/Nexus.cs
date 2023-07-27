@@ -107,22 +107,6 @@ namespace wServer.realm.worlds.logic
                     monitor.AddPortal(i.Id, portal, pos);
                     continue;
                 }
-
-                if (i is Marketplace && Manager.Config.serverSettings.enableMarket)
-                {
-                    var portal = new Portal(Manager, 0x190, null)
-                    {
-                        Name = "Marketplace (0)",
-                        WorldInstance = i
-                    };
-
-                    var pos = GetRegionPosition(TileRegion.Store_37);
-                    if (pos == null)
-                        continue;
-
-                    monitor.AddPortal(i.Id, portal, pos);
-                    continue;
-                }
             }
         }
     }

@@ -51,12 +51,8 @@ namespace wServer.networking.handlers
             var s1 = client.Manager.Database.Verify(packet.GUID, packet.Password, out acc);
             if (s1 == LoginStatus.AccountNotExists)
             {
-                var s2 = client.Manager.Database.Register(packet.GUID, packet.Password, true, out acc);
-                if (s2 != RegisterStatus.OK)
-                {
-                    client.SendFailure("Bad Login", Failure.MessageWithDisconnect);
-                    return null;
-                }
+                client.SendFailure("Register first before playing", Failure.MessageWithDisconnect);
+                return null;
             }
             else if (s1 == LoginStatus.InvalidCredentials)
             {

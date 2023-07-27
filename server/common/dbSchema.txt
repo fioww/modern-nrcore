@@ -1,6 +1,5 @@
 ﻿nextAccId (int)
 nextGuildId (int)
-marketNextId (int)
 nextPetId (int)
 
 regLock (string) // used as a lock when registering new accounts
@@ -54,7 +53,6 @@ account.(accId)
   passResetToken (string)
   ip (string)
   petList (int[])
-  lastMarketId (uint)
   banLiftTime (int)
   emotes (string)
   lastSeen (int)
@@ -155,10 +153,6 @@ pet.(accId).(petId)
 // notes: pets right now have 3 abilities. So there will be A1, A2, A3 for each Type, Level, Power.
 // The world server is programmed to allow more than 3 abilities so there could be a case where the
 // would be an A4, A5 and such in the future.
-
-market
-  (marketId) => marketId(4)|itemId(2)|price(4)|insertTime(4)|accountId(4) (byte[18])
-// notes: field value is a byte array. first 4 bytes: the market id, next 2 bytes: item id, and so forth
 
 tinkerQuests
   (dbId) => (json object)

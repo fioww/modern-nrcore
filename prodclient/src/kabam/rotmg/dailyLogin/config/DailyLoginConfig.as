@@ -17,7 +17,6 @@ package kabam.rotmg.dailyLogin.config
     import kabam.rotmg.dailyLogin.view.CalendarTabsView;
     import kabam.rotmg.dailyLogin.controller.CalendarTabsViewMediator;
     import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
-    import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
     import kabam.rotmg.dailyLogin.model.DailyLoginModel;
     import kabam.rotmg.dailyLogin.signal.ClaimDailyRewardResponseSignal;
     import kabam.rotmg.dailyLogin.signal.ShowDailyCalendarPopupSignal;
@@ -42,7 +41,6 @@ package kabam.rotmg.dailyLogin.config
             this.mediatorMap.map(CalendarDayBox).toMediator(CalendarDayBoxMediator);
             this.mediatorMap.map(CalendarTabsView).toMediator(CalendarTabsViewMediator);
             this.injector.map(FetchPlayerCalendarTask);
-            this.injector.map(GetOwnedPetSkinsTask);
             this.injector.map(DailyLoginModel).asSingleton();
             this.injector.map(ClaimDailyRewardResponseSignal).asSingleton();
             this.commandMap.map(ShowDailyCalendarPopupSignal).toCommand(ShowDailyCalendarPopupCommand);

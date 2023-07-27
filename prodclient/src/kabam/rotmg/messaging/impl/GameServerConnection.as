@@ -114,6 +114,14 @@ package kabam.rotmg.messaging.impl
         public static const PET_CHANGE_SKIN_MSG:int = 33;
         public static const REALM_HERO_LEFT_MSG:int = 84;
         public static const RESET_DAILY_QUESTS:int = 52;
+
+        // unimplemented
+        public static const SWITCH_MUSIC:int = 29;
+        public static const SET_FOCUS:int = 43;
+        public static const SERVER_FULL:int = 54;
+        public static const QUEUE_PING:int = 32;
+        public static const QUEUE_PONG:int = 71;
+
         public static var instance:GameServerConnection;
 
         public var changeMapSignal:Signal;

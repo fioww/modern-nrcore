@@ -35,12 +35,6 @@ namespace wServer.realm.entities
                 return;
             }
 
-            if (Database.GuestNames.Contains(name))
-            {
-                SendError(name + " needs to choose a unique name first!");
-                return;
-            }
-
             var target = Owner.GetUniqueNamedPlayer(name);
             if (target == null || !target.CanBeSeenBy(this))
             {

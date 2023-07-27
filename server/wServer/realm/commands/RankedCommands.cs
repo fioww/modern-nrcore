@@ -435,11 +435,6 @@ namespace wServer.realm.commands
             }
 
             // get player account
-            if (Database.GuestNames.Contains(playerName, StringComparer.InvariantCultureIgnoreCase))
-            {
-                player.SendError("Cannot rank the unnamed...");
-                return false;
-            }
             var id = player.Manager.Database.ResolveId(playerName);
             var acc = player.Manager.Database.GetAccount(id);
             if (id == 0 || acc == null)
@@ -1053,12 +1048,6 @@ namespace wServer.realm.commands
             var name = args.Substring(0, index);
             var rank = int.Parse(args.Substring(index + 1));
 
-            if (Database.GuestNames.Contains(name, StringComparer.InvariantCultureIgnoreCase))
-            {
-                player.SendError("Cannot rank unnamed accounts.");
-                return false;
-            }
-
             var id = player.Manager.Database.ResolveId(name);
             if (id == player.AccountId)
             {
@@ -1290,11 +1279,6 @@ namespace wServer.realm.commands
             }
 
             // run checks
-            if (Database.GuestNames.Any(n => n.ToLower().Equals(bInfo.Name?.ToLower())))
-            {
-                player.SendError("If you specify a player name to ban, the name needs to be unique.");
-                return false;
-            }
             if (bInfo.accountId == 0)
             {
                 player.SendError("Account not found...");
@@ -1361,11 +1345,6 @@ namespace wServer.realm.commands
             var reason = match.Groups[2].Value;
 
             // run checks
-            if (Database.GuestNames.Any(n => n.ToLower().Equals(idstr.ToLower())))
-            {
-                player.SendError("If you specify a player name to ban, the name needs to be unique.");
-                return false;
-            }
             if (id == 0)
             {
                 player.SendError("Account not found...");
@@ -1761,11 +1740,6 @@ namespace wServer.realm.commands
             }
 
             // get player account
-            if (Database.GuestNames.Contains(playerName, StringComparer.InvariantCultureIgnoreCase))
-            {
-                player.SendError("Cannot gift the unnamed...");
-                return false;
-            }
             var id = manager.Database.ResolveId(playerName);
             var acc = manager.Database.GetAccount(id);
             if (id == 0 || acc == null)
@@ -1964,10 +1938,9 @@ namespace wServer.realm.commands
                 return false;
             }
 
-            if (newPlayerName.Length < 3 || newPlayerName.Length > 15 || !newPlayerName.All(char.IsLetter) ||
-                Database.GuestNames.Contains(newPlayerName, StringComparer.InvariantCultureIgnoreCase))
+            if (newPlayerName.Length < 3 || newPlayerName.Length > 10 || !newPlayerName.All(char.IsLetter))
             {
-                player.SendError("New name is invalid. Must be between 3-15 char long and contain only letters.");
+                player.SendError("New name is invalid. Must be between 3-10 char long and contain only letters.");
                 return false;
             }
 
@@ -1997,61 +1970,6 @@ namespace wServer.realm.commands
                     {
                         while (!db.RenameIGN(acc, newPlayerName, lockToken)) ;
                         player.SendInfo("Rename successful.");
-                    }
-                    else
-                        player.SendError("Account in use.");
-            }
-            finally
-            {
-                if (lockToken != null)
-                    db.ReleaseLock(key, lockToken);
-            }
-
-            return true;
-        }
-    }
-
-    class UnnameCommand : Command
-    {
-        public UnnameCommand() : base("unname", permLevel: 100) { }
-
-        protected override bool Process(Player player, RealmTime time, string args)
-        {
-            if (string.IsNullOrWhiteSpace(args))
-            {
-                player.SendInfo("Usage: /unname <player name>");
-                return false;
-            }
-
-            var playerName = args;
-
-            var id = player.Manager.Database.ResolveId(playerName);
-            if (id == 0)
-            {
-                player.SendError("Player account not found!");
-                return false;
-            }
-
-            string lockToken = null;
-            var key = Database.NAME_LOCK;
-            var db = player.Manager.Database;
-
-            try
-            {
-                while ((lockToken = db.AcquireLock(key)) == null) ;
-
-                var acc = db.GetAccount(id);
-                if (acc == null)
-                {
-                    player.SendError("Account doesn't exist.");
-                    return false;
-                }
-
-                using (var l = db.Lock(acc))
-                    if (db.LockOk(l))
-                    {
-                        while (!db.UnnameIGN(acc, lockToken)) ;
-                        player.SendInfo("Account succesfully unnamed.");
                     }
                     else
                         player.SendError("Account in use.");

@@ -9,7 +9,6 @@ package kabam.rotmg.ui.view
     import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
     import kabam.rotmg.ui.signals.EnterGameSignal;
     import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
-    import kabam.rotmg.account.core.signals.OpenVerifyEmailSignal;
     import kabam.rotmg.dialogs.control.OpenDialogSignal;
     import kabam.rotmg.application.api.ApplicationSetup;
     import kabam.rotmg.core.view.Layers;
@@ -51,8 +50,6 @@ package kabam.rotmg.ui.view
         [Inject]
         public var openAccountInfo:OpenAccountInfoSignal;
         [Inject]
-        public var openVerifyEmailSignal:OpenVerifyEmailSignal;
-        [Inject]
         public var openDialog:OpenDialogSignal;
         [Inject]
         public var setup:ApplicationSetup;
@@ -87,10 +84,6 @@ package kabam.rotmg.ui.view
             if (!Parameters.sessionStarted)
             {
                 Parameters.sessionStarted = true;
-            };
-            if (((this.account.isRegistered()) && (!(this.account.isVerified()))))
-            {
-                this.openVerifyEmailSignal.dispatch(false);
             };
         }
 

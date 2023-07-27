@@ -54,19 +54,6 @@ namespace common
             _redis.Dispose();
         }
 
-        public static readonly string[] GuestNames =
-        {
-            "Darq", "Deyst", "Drac", "Drol",
-            "Eango", "Eashy", "Eati", "Eendi", "Ehoni",
-            "Gharr", "Iatho", "Iawa", "Idrae", "Iri", "Issz", "Itani",
-            "Laen", "Lauk", "Lorz",
-            "Oalei", "Odaru", "Oeti", "Orothi", "Oshyu",
-            "Queq", "Radph", "Rayr", "Ril", "Rilr", "Risrr",
-            "Saylt", "Scheev", "Sek", "Serl", "Seus",
-            "Tal", "Tiar", "Uoro", "Urake", "Utanu",
-            "Vorck", "Vorv", "Yangu", "Yimi", "Zhiar"
-        };
-
         public DbAccount CreateGuestAccount(string uuid)
         {
             var newAccounts = _resources.Settings.Accounts;
@@ -74,7 +61,7 @@ namespace common
             var acnt = new DbAccount(_db, 0)
             {
                 UUID = uuid,
-                Name = GuestNames[(uint) uuid.GetHashCode()%GuestNames.Length],
+                Name = "None",
                 Admin = false,
                 NameChosen = false,
                 Verified = false,
@@ -300,19 +287,6 @@ namespace common
             return true;
         }
 
-        public bool UnnameIGN(DbAccount acc, string lockToken)
-        {
-            var trans = _db.CreateTransaction();
-            trans.AddCondition(Condition.StringEqual(NAME_LOCK, lockToken));
-            trans.HashDeleteAsync("names", acc.Name.ToUpperInvariant());
-            if (!trans.Execute()) return false;
-
-            acc.Name = GuestNames[acc.AccountId % GuestNames.Length];
-            acc.NameChosen = false;
-            acc.FlushAsync();
-            return true;
-        }
-
         private static RandomNumberGenerator gen = RNGCryptoServiceProvider.Create();
 
         public void ChangePassword(string uuid, string password)
@@ -341,20 +315,31 @@ namespace common
             acc.FlushAsync();
         }
 
-        public RegisterStatus Register(string uuid, string password, bool isGuest, out DbAccount acc)
+        public RegisterStatus Register(string uuid, string name, string password, bool isGuest, out DbAccount acc)
         {
             var newAccounts = _resources.Settings.Accounts;
 
             acc = null;
-            if (!_db.HashSet("logins", uuid.ToUpperInvariant(), "{}", When.NotExists))
+            if (_db.HashExists("names", name.ToUpperInvariant()))
                 return RegisterStatus.UsedName;
 
+            if (name.Length < 3 || name.Length > 10 || !name.All(char.IsLetter))
+                return RegisterStatus.InvalidName;
+            
+            if (!_db.HashSet("logins", uuid.ToUpperInvariant(), "{}", When.NotExists))
+                return RegisterStatus.UsedEmail;
+
+            string key = NAME_LOCK;
+            string lockToken;
+            
+            while ((lockToken = AcquireLock(key)) == null) ;
+            
             int newAccId = (int) _db.StringIncrement("nextAccId");
 
             acc = new DbAccount(_db, newAccId)
             {
                 UUID = uuid,
-                Name = GuestNames[(uint) uuid.GetHashCode()%GuestNames.Length],
+                Name = name,
                 Admin = false,
                 NameChosen = false,
                 Verified = false,
@@ -395,6 +380,9 @@ namespace common
             login.Salt = salt;
             login.AccountId = acc.AccountId;
             login.Flush();
+
+            RenameIGN(acc, name, lockToken);
+            ReleaseLock(key, lockToken);
 
             DbClassStats stats = new DbClassStats(acc);
             if (newAccounts.ClassesUnlocked)
@@ -1198,10 +1186,6 @@ namespace common
                 _db.KeyDeleteAsync(key, CommandFlags.FireAndForget);
             _db.KeyDeleteAsync("nextPetId", CommandFlags.FireAndForget);
 
-            // clear market
-            _db.KeyDeleteAsync("market", CommandFlags.FireAndForget);
-            _db.KeyDeleteAsync("marketNextId", CommandFlags.FireAndForget);
-
             // clear tinker
             _db.KeyDeleteAsync("tinkerQuests", CommandFlags.FireAndForget);
 
@@ -1248,7 +1232,6 @@ namespace common
             _db.HashDeleteAsync(acc.Key, "hidden", CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "glow", CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "petList", CommandFlags.FireAndForget);
-            _db.HashDeleteAsync(acc.Key, "lastMarketId", CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "banLiftTime", CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "emotes", CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "privateMessages", CommandFlags.FireAndForget);
@@ -1424,12 +1407,6 @@ namespace common
             t.AddCondition(Condition.HashEqual(acc.Key, "gifts", currentGiftBytes));
             t.HashSetAsync(acc.Key, "gifts", giftBytes);
             return transaction == null && t.Execute();
-        }
-
-        public async Task<PlayerShopItem> CreatePlayerShopItemAsync(ushort item, int price, int time, int accountId)
-        {
-            var id = await _db.StringIncrementAsync("marketNextId");
-            return new PlayerShopItem((uint) id, item, price, time, accountId);
         }
 
         public int LastLegendsUpdateTime()

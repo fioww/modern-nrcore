@@ -15,7 +15,6 @@ package com.company.assembleegameclient.screens
     import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
     import kabam.rotmg.core.signals.CharListLoadedSignal;
     import kabam.rotmg.account.core.services.GetCharListTask;
-    import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
     import kabam.rotmg.news.services.GetInGameNewsTask;
     import io.decagames.rotmg.seasonalEvent.signals.ShowSeasonHasEndedPopupSignal;
     import io.decagames.rotmg.seasonalEvent.popups.SeasonalEventErrorPopup;
@@ -57,8 +56,6 @@ package com.company.assembleegameclient.screens
         public var charListLoadedSignal:CharListLoadedSignal;
         [Inject]
         public var getCharListTask:GetCharListTask;
-        [Inject]
-        public var getOwnedPetSkinsTask:GetOwnedPetSkinsTask;
         [Inject]
         public var getInGameNewsTask:GetInGameNewsTask;
         [Inject]
@@ -136,7 +133,6 @@ package com.company.assembleegameclient.screens
             this.logGameMode();
             this.getCharListTask.start();
             this.petsModel.clearPets();
-            this.getOwnedPetSkinsTask.start();
             this.newsModel.clearNews();
             this.getInGameNewsTask.start();
         }

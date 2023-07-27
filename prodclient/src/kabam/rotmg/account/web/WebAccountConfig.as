@@ -11,8 +11,6 @@ package kabam.rotmg.account.web
     import kabam.rotmg.account.web.model.WebMoneyConfig;
     import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
     import kabam.rotmg.account.web.commands.WebOpenAccountInfoCommand;
-    import kabam.rotmg.account.core.signals.OpenVerifyEmailSignal;
-    import kabam.rotmg.account.web.commands.WebOpenVerifyEmailCommand;
     import kabam.rotmg.account.core.signals.LoginSignal;
     import kabam.rotmg.account.web.commands.WebLoginCommand;
     import kabam.rotmg.account.core.signals.LogoutSignal;
@@ -33,8 +31,6 @@ package kabam.rotmg.account.web
     import kabam.rotmg.account.web.view.WebForgotPasswordMediator;
     import kabam.rotmg.account.web.view.WebAccountDetailDialog;
     import kabam.rotmg.account.web.view.WebAccountDetailMediator;
-    import kabam.rotmg.account.web.view.WebVerifyEmailDialog;
-    import kabam.rotmg.account.web.view.WebVerifyEmailMediator;
     import kabam.rotmg.account.web.view.WebRegisterDialog;
     import kabam.rotmg.account.web.view.WebRegisterMediator;
     import kabam.rotmg.account.web.view.WebLoginDialog;
@@ -88,7 +84,6 @@ package kabam.rotmg.account.web
         protected function mapCommands():void
         {
             this.commandMap.map(OpenAccountInfoSignal).toCommand(WebOpenAccountInfoCommand);
-            this.commandMap.map(OpenVerifyEmailSignal).toCommand(WebOpenVerifyEmailCommand);
             this.commandMap.map(LoginSignal).toCommand(WebLoginCommand);
             this.commandMap.map(LogoutSignal).toCommand(WebLogoutCommand);
             this.commandMap.map(WebChangePasswordSignal).toCommand(WebChangePasswordCommand);
@@ -103,7 +98,6 @@ package kabam.rotmg.account.web
             this.mediatorMap.map(WebChangePasswordDialog).toMediator(WebChangePasswordMediator);
             this.mediatorMap.map(WebForgotPasswordDialog).toMediator(WebForgotPasswordMediator);
             this.mediatorMap.map(WebAccountDetailDialog).toMediator(WebAccountDetailMediator);
-            this.mediatorMap.map(WebVerifyEmailDialog).toMediator(WebVerifyEmailMediator);
             this.mediatorMap.map(WebRegisterDialog).toMediator(WebRegisterMediator);
             this.mediatorMap.map(WebLoginDialog).toMediator(WebLoginMediator);
             this.mediatorMap.map(WebLoginDialogForced).toMediator(WebLoginMediatorForced);

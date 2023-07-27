@@ -9,7 +9,6 @@ package kabam.rotmg.core.commands
     import kabam.rotmg.account.core.services.GetCharListTask;
     import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
     import io.decagames.rotmg.supportCampaign.tasks.GetCampaignStatusTask;
-    import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
     import io.decagames.rotmg.seasonalEvent.tasks.GetSeasonalEventTask;
     import io.decagames.rotmg.seasonalEvent.tasks.GetLegacySeasonsTask;
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
@@ -34,8 +33,6 @@ package kabam.rotmg.core.commands
         public var calendarTask:FetchPlayerCalendarTask;
         [Inject]
         public var campaignStatusTask:GetCampaignStatusTask;
-        [Inject]
-        public var petSkinsTask:GetOwnedPetSkinsTask;
         [Inject]
         public var getSeasonalEventTask:GetSeasonalEventTask;
         [Inject]
@@ -62,7 +59,6 @@ package kabam.rotmg.core.commands
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(this.task);
             _local_1.add(this.calendarTask);
-            _local_1.add(this.petSkinsTask);
             _local_1.add(this.campaignStatusTask);
             if (!this.seasonalEventModel.isChallenger)
             {

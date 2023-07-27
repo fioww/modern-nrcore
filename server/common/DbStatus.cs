@@ -12,7 +12,9 @@ namespace common
     public enum RegisterStatus
     {
         OK,
+        UsedEmail,
         UsedName,
+        InvalidName,
     }
 
     public enum GuildCreateStatus
@@ -61,8 +63,12 @@ namespace common
         {
             switch (status)
             {
+                case RegisterStatus.UsedEmail:
+                    return "Duplicate Email";
                 case RegisterStatus.UsedName:
-                    return "Duplicate Email"; // maybe not wise to give this info out...
+                    return "Duplicate Name";
+                case RegisterStatus.InvalidName:
+                    return "Invalid Name. Names must only contain letters and be 3-10 characters long.";
                 case RegisterStatus.OK:
                     return "OK";
             }

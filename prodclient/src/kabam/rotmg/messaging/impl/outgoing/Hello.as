@@ -16,13 +16,6 @@ package kabam.rotmg.messaging.impl.outgoing
         public var keyTime_:int = 0;
         public var key_:ByteArray = new ByteArray();
         public var mapJSON_:String = new String();
-        public var entrytag_:String = "";
-        public var gameNet:String = "";
-        public var gameNetUserId:String = "";
-        public var playPlatform:String = "";
-        public var platformToken:String = "";
-        public var userToken:String = "";
-        public var previousConnectionGuid:String = "";
 
         public function Hello(_arg_1:uint, _arg_2:Function)
         {
@@ -34,23 +27,13 @@ package kabam.rotmg.messaging.impl.outgoing
             _arg_1.writeUTF(this.buildVersion_);
             _arg_1.writeInt(this.gameId_);
             _arg_1.writeUTF(this.guid_);
-            _arg_1.writeInt(int(Math.floor((Math.random() * 0x3B9ACA00))));
             _arg_1.writeUTF(this.password_);
-            _arg_1.writeInt(int(Math.floor((Math.random() * 0x3B9ACA00))));
             _arg_1.writeUTF(this.secret_);
             _arg_1.writeInt(this.keyTime_);
             _arg_1.writeShort(this.key_.length);
             _arg_1.writeBytes(this.key_);
             _arg_1.writeInt(this.mapJSON_.length);
             _arg_1.writeUTFBytes(this.mapJSON_);
-            _arg_1.writeUTF(this.entrytag_);
-            _arg_1.writeUTF(this.gameNet);
-            _arg_1.writeUTF(this.gameNetUserId);
-            _arg_1.writeUTF(this.playPlatform);
-            _arg_1.writeUTF(this.platformToken);
-            _arg_1.writeUTF(this.userToken);
-            _arg_1.writeUTF("XTeP7hERdchV5jrBZEYNebAqDPU6tKU6");
-            _arg_1.writeUTF(this.previousConnectionGuid);
         }
 
         override public function toString():String

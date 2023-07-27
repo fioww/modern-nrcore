@@ -8,8 +8,9 @@ package kabam.rotmg.account.web.services
     import kabam.rotmg.account.core.Account;
     import kabam.rotmg.core.model.PlayerModel;
     import kabam.rotmg.appengine.api.AppEngineClient;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask 
+public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask
     {
 
         [Inject]
@@ -20,6 +21,8 @@ package kabam.rotmg.account.web.services
         public var model:PlayerModel;
         [Inject]
         public var client:AppEngineClient;
+        [Inject]
+        public var closeDialogs:CloseDialogsSignal;
 
 
         override protected function startTask():void
@@ -65,6 +68,7 @@ package kabam.rotmg.account.web.services
             {
                 this.account.updateUser(this.data.username, this.data.password, "");
             };
+            closeDialogs.dispatch();
         }
 
 

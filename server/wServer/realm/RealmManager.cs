@@ -59,7 +59,6 @@ namespace wServer.realm
         public ChatManager Chat { get; private set; }
         public DbServerManager DbServerController { get; private set; }
         public CommandManager Commands { get; private set; }
-        public Market Market { get; private set; }
         public DbTinker Tinker { get; private set; }
         public PortalMonitor Monitor { get; private set; }
         public DbEvents DbEvents { get; private set; }
@@ -103,8 +102,6 @@ namespace wServer.realm
             // some necessities that shouldn't be (will work this out later)
             MerchantLists.Init(this);
             Tinker = new DbTinker(db.Conn);
-            if (Config.serverSettings.enableMarket)
-                Market = new Market(this);
 
             var serverMode = config.serverSettings.mode;
             switch (serverMode)
@@ -118,11 +115,6 @@ namespace wServer.realm
                     break;
                 case ServerMode.Realm:
                     AddWorld("Realm");
-                    break;
-                case ServerMode.Marketplace:
-                    AddWorld("Marketplace", true);
-                    AddWorld("Vault");
-                    AddWorld("ClothBazaar");
                     break;
             }
             
@@ -237,9 +229,6 @@ namespace wServer.realm
             DynamicWorld.TryGetWorld(proto, null, out world);
             if (world != null)
             {
-                if (world is Marketplace && !Config.serverSettings.enableMarket)
-                    return;
-
                 AddWorld(id, world);
                 return;
             }

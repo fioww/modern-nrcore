@@ -12,6 +12,7 @@ package kabam.rotmg.messaging.impl
     import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
     import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
     import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
+import kabam.rotmg.queue.control.UpdateQueueSignal;
 
 import org.osflash.signals.Signal;
 
@@ -509,6 +510,20 @@ import robotlegs.bender.framework.api.ILogger;
             _local_1.map(KEY_INFO_RESPONSE).toMessage(KeyInfoResponse).toMethod(this.onKeyInfoResponse);
             _local_1.map(LOGIN_REWARD_MSG).toMessage(ClaimDailyRewardResponse).toMethod(this.onLoginRewardResponse);
             _local_1.map(REALM_HERO_LEFT_MSG).toMessage(RealmHeroesResponse).toMethod(this.onRealmHeroesResponse);
+            _local_1.map(SWITCH_MUSIC);
+            _local_1.map(SET_FOCUS);
+            _local_1.map(SERVER_FULL);
+            _local_1.map(QUEUE_PING).toMessage(QueuePing).toMethod(this.HandleQueuePing);
+            _local_1.map(QUEUE_PONG).toMessage(QueuePong);
+        }
+
+        private function HandleQueuePing(_arg1:QueuePing):void
+        {
+            this.injector.getInstance(UpdateQueueSignal).dispatch(_arg1.position_, _arg1.count_);
+            var qp:QueuePong = (this.messages.require(QUEUE_PONG) as QueuePong);
+            qp.serial_ = _arg1.serial_;
+            qp.time_ = getTimer();
+            serverConnection.sendMessage(qp);
         }
 
         private function onHatchPet(_arg_1:HatchPetMessage):void
@@ -628,6 +643,11 @@ import robotlegs.bender.framework.api.ILogger;
             _local_1.unmap(INVITEDTOGUILD);
             _local_1.unmap(PLAYSOUND);
             _local_1.unmap(REALM_HERO_LEFT_MSG);
+            _local_1.unmap(SWITCH_MUSIC);
+            _local_1.unmap(SET_FOCUS);
+            _local_1.unmap(SERVER_FULL);
+            _local_1.unmap(QUEUE_PING);
+            _local_1.unmap(QUEUE_PONG);
         }
 
         private function encryptConnection():void
@@ -1164,13 +1184,6 @@ import robotlegs.bender.framework.api.ILogger;
             _local_2.key_.length = 0;
             ((!(key_ == null)) && (_local_2.key_.writeBytes(key_)));
             _local_2.mapJSON_ = ((mapJSON_ == null) ? "" : mapJSON_);
-            _local_2.entrytag_ = _local_1.getEntryTag();
-            _local_2.gameNet = _local_1.gameNetwork();
-            _local_2.gameNetUserId = _local_1.gameNetworkUserId();
-            _local_2.playPlatform = _local_1.playPlatform();
-            _local_2.platformToken = _local_1.getPlatformToken();
-            _local_2.userToken = _local_1.getToken();
-            _local_2.previousConnectionGuid = connectionGuid;
             serverConnection.sendMessage(_local_2);
         }
 
@@ -2241,7 +2254,6 @@ import robotlegs.bender.framework.api.ILogger;
             {
                 this.load();
             };
-            connectionGuid = _arg_1.connectionGuid_;
         }
 
         private function onPic(_arg_1:Pic):void

@@ -636,7 +636,6 @@ namespace wServer.realm
                 case "FortuneTeller":
                 case "YardUpgrader":
                 case "FortuneGround":
-                case "MarketNPC":
                 case "QuestRewards":
                     return new StaticObject(manager, id, null, true, false, false);
                 case "Pet":

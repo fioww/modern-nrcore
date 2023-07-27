@@ -65,7 +65,6 @@ namespace common
         public int maxPlayersWithPriority { get; set; } = 120;
         public string sendGridApiKey { get; set; } = "";
         public bool enablePets { get; set; } = false;
-        public bool enableMarket { get; set; } = true;
     }
 
     public enum ServerType
@@ -79,7 +78,6 @@ namespace common
         Single,
         Nexus,
         Realm,
-        Marketplace
     }
 
     public class Coordinates

@@ -234,3 +234,5 @@ _Pvt_Extensions
 
 # Telerik Just Trace config files
 *.jtconfig
+
+*.lnk

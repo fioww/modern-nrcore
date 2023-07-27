@@ -361,6 +361,7 @@ namespace server
                     new XElement("MapMinRank", MapMinRank),
                     new XElement("SpriteMinRank", SpriteMinRank),
                     new XElement("BeginnerPackageTimeLeft", BeginnerPackageTimeLeft),
+                    new XElement("VerifiedEmail", ""),
 
                     Vault.ToXml(),
                     // gifts here

@@ -34,7 +34,7 @@ namespace server.account
                     }
                     else
                     {
-                        var s = Database.Register(query["newGUID"], query["newPassword"], false, out acc);
+                        var s = Database.Register(query["newGUID"], query["name"], query["newPassword"], false, out acc);
                         if (s == RegisterStatus.OK)
                             Write(context, "<Success />");
                         else
