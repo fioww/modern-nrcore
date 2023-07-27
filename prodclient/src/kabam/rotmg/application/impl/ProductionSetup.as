@@ -8,7 +8,7 @@ package kabam.rotmg.application.impl
     public class ProductionSetup implements ApplicationSetup 
     {
 
-        private const SERVER:String = "www.realmofthemadgod.com";
+        private const SERVER:String = "127.0.0.1:8080";
         private const UNENCRYPTED:String = ("http://" + SERVER);
         private const ENCRYPTED:String = ("https://" + SERVER);
         private const BUILD_LABEL:String = "RotMG #{VERSION}";
