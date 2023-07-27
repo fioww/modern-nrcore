@@ -4,7 +4,8 @@ package kabam.rotmg.assets
 {
     import mx.core.BitmapAsset;
 
-    public class EmbeddedAssets_d3LofiObjBigEmbed_ extends BitmapAsset 
+    [Embed(source="EmbeddedAssets_d3LofiObjBigEmbed_.png")]
+    public class EmbeddedAssets_d3LofiObjBigEmbed_ extends BitmapAsset
     {
 
 

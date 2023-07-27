@@ -4,7 +4,8 @@ package kabam.rotmg.assets
 {
     import mx.core.BitmapAsset;
 
-    public class EmbeddedAssets_theGoldenArcherMaskEmbed_ extends BitmapAsset 
+    [Embed(source="EmbeddedAssets_theGoldenArcherMaskEmbed_.png")]
+    public class EmbeddedAssets_theGoldenArcherMaskEmbed_ extends BitmapAsset
     {
 
 

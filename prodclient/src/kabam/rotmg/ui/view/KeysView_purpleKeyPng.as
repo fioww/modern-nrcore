@@ -4,7 +4,8 @@ package kabam.rotmg.ui.view
 {
     import mx.core.BitmapAsset;
 
-    public class KeysView_purpleKeyPng extends BitmapAsset 
+    [Embed(source="KeysView_purpleKeyPng.png")]
+    public class KeysView_purpleKeyPng extends BitmapAsset
     {
 
 

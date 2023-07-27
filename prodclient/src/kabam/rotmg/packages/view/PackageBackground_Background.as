@@ -4,7 +4,8 @@ package kabam.rotmg.packages.view
 {
     import mx.core.BitmapAsset;
 
-    public class PackageBackground_Background extends BitmapAsset 
+    [Embed(source="PackageBackground_Background.png")]
+    public class PackageBackground_Background extends BitmapAsset
     {
 
 

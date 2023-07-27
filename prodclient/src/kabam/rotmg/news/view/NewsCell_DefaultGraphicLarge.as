@@ -4,7 +4,8 @@ package kabam.rotmg.news.view
 {
     import mx.core.BitmapAsset;
 
-    public class NewsCell_DefaultGraphicLarge extends BitmapAsset 
+    [Embed(source="NewsCell_DefaultGraphicLarge.jpg")]
+    public class NewsCell_DefaultGraphicLarge extends BitmapAsset
     {
 
 

@@ -4,7 +4,8 @@ package kabam.rotmg.assets
 {
     import mx.core.BitmapAsset;
 
-    public class EmbeddedAssets_StarburstSpinner extends BitmapAsset 
+    [Embed(source="EmbeddedAssets_StarburstSpinner.png")]
+    public class EmbeddedAssets_StarburstSpinner extends BitmapAsset
     {
 
 

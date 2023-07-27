@@ -4,7 +4,8 @@ package kabam.rotmg.mysterybox.components
 {
     import mx.core.BitmapAsset;
 
-    public class MysteryBoxSelectModal_backgroundImageEmbed extends BitmapAsset 
+    [Embed(source="MysteryBoxSelectModal_backgroundImageEmbed.png")]
+    public class MysteryBoxSelectModal_backgroundImageEmbed extends BitmapAsset
     {
 
 

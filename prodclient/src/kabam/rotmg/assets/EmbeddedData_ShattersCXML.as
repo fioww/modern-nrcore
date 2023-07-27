@@ -4,7 +4,8 @@ package kabam.rotmg.assets
 {
     import mx.core.ByteArrayAsset;
 
-    public class EmbeddedData_ShattersCXML extends ByteArrayAsset 
+    [Embed(source="EmbeddedData_ShattersCXML.xml", mimeType="application/octet-stream")]
+    public class EmbeddedData_ShattersCXML extends ByteArrayAsset
     {
 
 

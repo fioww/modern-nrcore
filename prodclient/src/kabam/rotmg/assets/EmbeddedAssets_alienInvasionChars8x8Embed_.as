@@ -4,7 +4,8 @@ package kabam.rotmg.assets
 {
     import mx.core.BitmapAsset;
 
-    public class EmbeddedAssets_alienInvasionChars8x8Embed_ extends BitmapAsset 
+    [Embed(source="EmbeddedAssets_alienInvasionChars8x8Embed_.png")]
+    public class EmbeddedAssets_alienInvasionChars8x8Embed_ extends BitmapAsset
     {
 
 

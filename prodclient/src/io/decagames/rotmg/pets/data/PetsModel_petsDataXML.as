@@ -4,7 +4,8 @@ package io.decagames.rotmg.pets.data
 {
     import mx.core.ByteArrayAsset;
 
-    public class PetsModel_petsDataXML extends ByteArrayAsset 
+    [Embed(source="PetsModel_petsDataXML.dat", mimeType="application/octet-stream")]
+    public class PetsModel_petsDataXML extends ByteArrayAsset
     {
 
 

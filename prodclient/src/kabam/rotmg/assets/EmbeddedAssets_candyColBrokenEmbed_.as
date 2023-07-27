@@ -4,7 +4,8 @@ package kabam.rotmg.assets
 {
     import mx.core.ByteArrayAsset;
 
-    public class EmbeddedAssets_candyColBrokenEmbed_ extends ByteArrayAsset 
+    [Embed(source="EmbeddedAssets_candyColBrokenEmbed_.dat", mimeType="application/octet-stream")]
+    public class EmbeddedAssets_candyColBrokenEmbed_ extends ByteArrayAsset
     {
 
 

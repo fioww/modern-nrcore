@@ -4,7 +4,8 @@ package kabam.rotmg.assets
 {
     import mx.core.BitmapAsset;
 
-    public class EmbeddedAssets_chars16x8rEncountersEmbed_ extends BitmapAsset 
+    [Embed(source="EmbeddedAssets_chars16x8rEncountersEmbed_.png")]
+    public class EmbeddedAssets_chars16x8rEncountersEmbed_ extends BitmapAsset
     {
 
 

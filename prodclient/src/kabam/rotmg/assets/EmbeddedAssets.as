@@ -128,14 +128,11 @@ package kabam.rotmg.assets
         private static var lightShaftEmbed_:Class = EmbeddedAssets_lightShaftEmbed_;
         private static var lightShaftQuadEmbed_:Class = EmbeddedAssets_lightShaftQuadEmbed_;
         private static var fourBlockWallEmbed_:Class = EmbeddedAssets_fourBlockWallEmbed_;
-        public static var d1Chars8x8rEmbed_:Class = EmbeddedAssets_d1Chars8x8rEmbed_;
         public static var d1Chars16x16rEmbed_:Class = EmbeddedAssets_d1Chars16x16rEmbed_;
         public static var d1LofiObjEmbed_:Class = EmbeddedAssets_d1LofiObjEmbed_;
         public static var d1LofiObjBigEmbed_:Class = EmbeddedAssets_d1LofiObjBigEmbed_;
-        public static var d2Chars8x8rEmbed_:Class = EmbeddedAssets_d2Chars8x8rEmbed_;
         public static var d2Chars16x16rEmbed_:Class = EmbeddedAssets_d2Chars16x16rEmbed_;
         public static var d2LofiObjEmbed_:Class = EmbeddedAssets_d2LofiObjEmbed_;
-        public static var d2LofiObjBigEmbed_:Class = EmbeddedAssets_d2LofiObjBigEmbed_;
         public static var d3Chars8x8rEmbed_:Class = EmbeddedAssets_d3Chars8x8rEmbed_;
         public static var d3Chars16x16rEmbed_:Class = EmbeddedAssets_d3Chars16x16rEmbed_;
         public static var d3LofiObjEmbed_:Class = EmbeddedAssets_d3LofiObjEmbed_;
@@ -188,7 +185,6 @@ package kabam.rotmg.assets
         public static var autumnNexusChars16x16Embed_:Class = EmbeddedAssets_autumnNexusChars16x16Embed_;
         public static var xmasNexusObjects8x8Embed_:Class = EmbeddedAssets_xmasNexusObjects8x8Embed_;
         public static var xmasNexusObjects16x16Embed_:Class = EmbeddedAssets_xmasNexusObjects16x16Embed_;
-        public static var xmasNexusChars16x16Embed_:Class = EmbeddedAssets_xmasNexusChars16x16Embed_;
         public static var xmasNexusChars8x8Embed_:Class = EmbeddedAssets_xmasNexusChars8x8Embed_;
         public static var epicHiveChars8x8Embed_:Class = EmbeddedAssets_epicHiveChars8x8Embed_;
         public static var epicHiveChars16x16Embed_:Class = EmbeddedAssets_epicHiveChars16x16Embed_;

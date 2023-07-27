@@ -613,7 +613,7 @@
    <Object type="0x1fe8" id="Sword Bullet">
       <Class>Projectile</Class>
       <Texture>
-         <File>d2LofiObjBigEmbed</File>
+         <File>d2LofiObjEmbed</File>
          <Index>0x00</Index>
       </Texture>
    </Object>

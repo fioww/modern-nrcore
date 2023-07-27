@@ -4,7 +4,8 @@ package kabam.rotmg.fortune.components
 {
     import mx.core.BitmapAsset;
 
-    public class FortuneModal_fortunePlatformEmbed2 extends BitmapAsset 
+    [Embed(source="FortuneModal_fortunePlatformEmbed2.png")]
+    public class FortuneModal_fortunePlatformEmbed2 extends BitmapAsset
     {
 
 
