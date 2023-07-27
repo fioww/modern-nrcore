@@ -1,0 +1,5 @@
+﻿{
+  "TimeLimit": 15, // Minutes per backup
+  "DestFolder": "backups", // Folder with the created backups
+  "RedisFolder": "./" // Redis server directory
+}
