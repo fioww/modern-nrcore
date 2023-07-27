@@ -5,8 +5,6 @@
 
 package com.company.assembleegameclient.tutorial
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
 
     public class Step 
     {

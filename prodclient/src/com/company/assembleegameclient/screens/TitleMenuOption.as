@@ -24,7 +24,7 @@ package com.company.assembleegameclient.screens
         private static const DROP_SHADOW_FILTER:DropShadowFilter = new DropShadowFilter(0, 0, 0, 0.5, 12, 12);
 
         public const clicked:Signal = new Signal();
-        public const textField:TextFieldDisplayConcrete = TitleMenuOption.makeTextFieldDisplayConcrete();
+        public const textField:TextFieldDisplayConcrete = makeTextFieldDisplayConcrete();
         public const changed:Signal = textField.textChanged;
 
         private var colorTransform:ColorTransform;

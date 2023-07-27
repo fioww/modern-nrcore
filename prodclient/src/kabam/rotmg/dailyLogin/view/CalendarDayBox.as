@@ -13,7 +13,6 @@ package kabam.rotmg.dailyLogin.view
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import kabam.rotmg.dailyLogin.model.CalendarDayModel;
@@ -27,7 +26,6 @@ package kabam.rotmg.dailyLogin.view
     import flash.text.TextFieldAutoSize;
     import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
     import flash.display.Shape;
-    import __AS3__.vec.*;
 
     public class CalendarDayBox extends Sprite 
     {

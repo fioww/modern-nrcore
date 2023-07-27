@@ -11,7 +11,6 @@ package com.company.assembleegameclient.ui.tooltip
     import io.decagames.rotmg.ui.labels.UILabel;
     import com.company.assembleegameclient.ui.LineBreakDesign;
     import com.company.assembleegameclient.objects.Player;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import kabam.rotmg.text.model.TextKey;
@@ -30,7 +29,6 @@ package com.company.assembleegameclient.ui.tooltip
     import com.company.assembleegameclient.parameters.Parameters;
     import com.company.util.KeyCodes;
     import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-    import __AS3__.vec.*;
     import kabam.rotmg.constants.*;
 
     public class EquipmentToolTip extends ToolTip 

@@ -7,7 +7,6 @@ package com.company.assembleegameclient.objects.particles
 {
     import com.company.assembleegameclient.objects.GameObject;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.assembleegameclient.map.Camera;
 

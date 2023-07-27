@@ -12,9 +12,9 @@ package io.decagames.rotmg.pets.components.caretaker
     public class CaretakerQueryDialogCaretaker extends Sprite 
     {
 
-        private const speechBubble:CaretakerQuerySpeechBubble = CaretakerQueryDialogCaretaker.makeSpeechBubble();
-        private const detailBubble:CaretakerQueryDetailBubble = CaretakerQueryDialogCaretaker.makeDetailBubble();
-        private const icon:Bitmap = CaretakerQueryDialogCaretaker.makeCaretakerIcon();
+        private const speechBubble:CaretakerQuerySpeechBubble = makeSpeechBubble();
+        private const detailBubble:CaretakerQueryDetailBubble = makeDetailBubble();
+        private const icon:Bitmap = makeCaretakerIcon();
 
 
         private function makeSpeechBubble():CaretakerQuerySpeechBubble

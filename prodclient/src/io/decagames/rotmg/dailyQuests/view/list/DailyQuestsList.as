@@ -9,12 +9,10 @@ package io.decagames.rotmg.dailyQuests.view.list
     import io.decagames.rotmg.ui.tabs.UITabs;
     import io.decagames.rotmg.ui.tabs.TabButton;
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.ui.texture.TextureParser;
     import io.decagames.rotmg.ui.tabs.UITab;
     import io.decagames.rotmg.ui.scroll.UIScrollbar;
     import io.decagames.rotmg.ui.buttons.BaseButton;
-    import __AS3__.vec.*;
     import io.decagames.rotmg.ui.tabs.*;
 
     public class DailyQuestsList extends Sprite 

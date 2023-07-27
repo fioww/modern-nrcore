@@ -5,9 +5,7 @@
 
 package kabam.rotmg.text.view.stringBuilder
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.language.model.StringMap;
-    import __AS3__.vec.*;
 
     public class AppendingLineBuilder implements StringBuilder 
     {

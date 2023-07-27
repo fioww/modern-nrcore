@@ -7,7 +7,6 @@ package kabam.rotmg.classes.view
 {
     import flash.display.Sprite;
     import kabam.rotmg.util.components.VerticalScrollingList;
-    import __AS3__.vec.Vector;
     import flash.display.DisplayObject;
     import kabam.lib.ui.api.Size;
 
@@ -18,7 +17,7 @@ package kabam.rotmg.classes.view
         public static const WIDTH:int = 442;
         public static const HEIGHT:int = 400;
 
-        private const list:VerticalScrollingList = CharacterSkinListView.makeList();
+        private const list:VerticalScrollingList = makeList();
 
         private var items:Vector.<DisplayObject>;
 

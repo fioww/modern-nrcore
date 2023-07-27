@@ -9,11 +9,9 @@ package kabam.rotmg.news.model
     import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
     import kabam.rotmg.account.core.Account;
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.constants.GeneralConstants;
     import com.company.assembleegameclient.parameters.Parameters;
     import kabam.rotmg.news.view.NewsModalPage;
-    import __AS3__.vec.*;
 
     public class NewsModel 
     {

@@ -5,7 +5,6 @@
 
 package kabam.rotmg.stage3D
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.stage3D.proxies.Context3DProxy;
     import kabam.rotmg.stage3D.graphic3D.TextureFactory;
     import org.swiftsuspenders.Injector;
@@ -32,7 +31,6 @@ package kabam.rotmg.stage3D
     import flash.display.GraphicsBitmapFill;
     import flash.display.GraphicsGradientFill;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class Renderer 
     {

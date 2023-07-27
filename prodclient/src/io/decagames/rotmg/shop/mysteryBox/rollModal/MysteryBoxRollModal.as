@@ -8,7 +8,6 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
     import io.decagames.rotmg.ui.popups.modal.ModalPopup;
     import flash.display.Sprite;
     import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import __AS3__.vec.Vector;
     import flash.display.Bitmap;
     import io.decagames.rotmg.ui.gird.UIGrid;
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
@@ -27,7 +26,6 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
     import flash.utils.setTimeout;
     import flash.utils.clearTimeout;
     import flash.utils.Dictionary;
-    import __AS3__.vec.*;
 
     public class MysteryBoxRollModal extends ModalPopup 
     {

@@ -5,13 +5,11 @@
 
 package com.company.assembleegameclient.engine3d
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.stage3D.Object3D.Model3D_stage3d;
     import flash.utils.ByteArray;
     import flash.display3D.Context3D;
     import com.company.util.ConversionUtil;
     import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-    import __AS3__.vec.*;
 
     public class Model3D 
     {

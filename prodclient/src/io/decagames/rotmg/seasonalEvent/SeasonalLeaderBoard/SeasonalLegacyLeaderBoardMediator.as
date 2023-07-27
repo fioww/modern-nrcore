@@ -14,14 +14,12 @@ package io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard
     import io.decagames.rotmg.seasonalEvent.signals.RequestLegacySeasonSignal;
     import kabam.rotmg.legends.control.FameListUpdateSignal;
     import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.seasonalEvent.data.LegacySeasonData;
     import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
     import io.decagames.rotmg.ui.texture.TextureParser;
     import io.decagames.rotmg.ui.popups.header.PopupHeader;
     import flash.events.Event;
     import io.decagames.rotmg.ui.buttons.BaseButton;
-    import __AS3__.vec.*;
 
     public class SeasonalLegacyLeaderBoardMediator extends Mediator 
     {

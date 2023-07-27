@@ -6,7 +6,6 @@
 package com.company.assembleegameclient.ui.options
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.view.stringBuilder.StringBuilder;
     import kabam.rotmg.text.view.TextFieldDisplayConcrete;
     import flash.display.GraphicsSolidFill;
@@ -22,7 +21,6 @@ package com.company.assembleegameclient.ui.options
     import flash.events.MouseEvent;
     import flash.events.Event;
     import flash.display.Graphics;
-    import __AS3__.vec.*;
 
     public class ChoiceBox extends Sprite 
     {

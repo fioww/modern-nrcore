@@ -19,7 +19,6 @@ package io.decagames.rotmg.pets.windows.yard.fuse
     import kabam.rotmg.game.model.GameModel;
     import kabam.rotmg.core.model.PlayerModel;
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.pets.components.petItem.PetItem;
     import io.decagames.rotmg.pets.data.vo.PetVO;
     import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
@@ -35,7 +34,6 @@ package io.decagames.rotmg.pets.windows.yard.fuse
     import flash.events.MouseEvent;
     import io.decagames.rotmg.pets.utils.FeedFuseCostModel;
     import io.decagames.rotmg.pets.utils.FusionCalculator;
-    import __AS3__.vec.*;
 
     public class FuseTabMediator extends Mediator 
     {

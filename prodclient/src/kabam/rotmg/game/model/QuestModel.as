@@ -5,7 +5,6 @@
 
 package kabam.rotmg.game.model
 {
-    import __AS3__.vec.Vector;
 
     public class QuestModel 
     {

@@ -5,7 +5,9 @@
 
 package io.decagames.rotmg.fame
 {
-    import robotlegs.bender.bundles.mvcs.Mediator;
+import com.company.util.DateFormatterReplacement;
+
+import robotlegs.bender.bundles.mvcs.Mediator;
     import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
     import io.decagames.rotmg.ui.buttons.SliceScalingButton;
     import kabam.rotmg.core.signals.ShowTooltipSignal;
@@ -18,9 +20,7 @@ package io.decagames.rotmg.fame
     import kabam.rotmg.tooltips.HoverTooltipDelegate;
     import io.decagames.rotmg.fame.data.TotalFame;
     import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.fame.data.bonus.FameBonus;
-    import mx.formatters.DateFormatter;
     import com.company.assembleegameclient.objects.Player;
     import com.company.assembleegameclient.appengine.SavedCharacter;
     import io.decagames.rotmg.ui.texture.TextureParser;
@@ -34,7 +34,6 @@ package io.decagames.rotmg.fame
     import io.decagames.rotmg.ui.buttons.BaseButton;
     import io.decagames.rotmg.characterMetrics.data.MetricsID;
     import io.decagames.rotmg.fame.data.bonus.FameBonusConfig;
-    import __AS3__.vec.*;
 
     public class FameContentPopupMediator extends Mediator 
     {
@@ -66,7 +65,7 @@ package io.decagames.rotmg.fame
 
         override public function initialize():void
         {
-            var _local_2:DateFormatter;
+            var _local_2:DateFormatterReplacement;
             var _local_3:Player;
             var _local_4:SavedCharacter;
             this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));
@@ -79,7 +78,7 @@ package io.decagames.rotmg.fame
             var _local_1:* = "";
             if (!this.player.getCharacterById(this.characterID))
             {
-                _local_2 = new DateFormatter();
+                _local_2 = new DateFormatterReplacement();
                 _local_2.formatString = "MMMM DD, YYYY";
                 _local_1 = _local_2.format(new Date());
             }

@@ -5,9 +5,7 @@
 
 package com.company.assembleegameclient.game
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.messaging.impl.data.MoveRecord;
-    import __AS3__.vec.*;
 
     public class MoveRecords 
     {

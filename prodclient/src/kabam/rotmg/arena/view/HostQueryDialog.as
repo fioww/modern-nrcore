@@ -30,12 +30,12 @@ package kabam.rotmg.arena.view
         public static const QUERY:String = "ArenaQueryDialog.info";
         public static const BACK:String = "Screens.back";
 
-        private const layoutWaiter:SignalWaiter = HostQueryDialog.makeDeferredLayout();
-        private const container:DisplayObjectContainer = HostQueryDialog.makeContainer();
-        private const background:PopupWindowBackground = HostQueryDialog.makeBackground();
-        private const host:ArenaQueryDialogHost = HostQueryDialog.makeHost();
-        private const title:TextFieldDisplayConcrete = HostQueryDialog.makeTitle();
-        private const backButton:DeprecatedTextButton = HostQueryDialog.makeBackButton();
+        private const layoutWaiter:SignalWaiter = makeDeferredLayout();
+        private const container:DisplayObjectContainer = makeContainer();
+        private const background:PopupWindowBackground = makeBackground();
+        private const host:ArenaQueryDialogHost = makeHost();
+        private const title:TextFieldDisplayConcrete = makeTitle();
+        private const backButton:DeprecatedTextButton = makeBackButton();
         public const backClick:NativeSignal = new NativeSignal(backButton, MouseEvent.CLICK);
 
 

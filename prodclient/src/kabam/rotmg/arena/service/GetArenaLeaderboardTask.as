@@ -10,7 +10,6 @@ package kabam.rotmg.arena.service
     import kabam.rotmg.appengine.api.AppEngineClient;
     import kabam.rotmg.arena.control.ReloadLeaderboard;
     import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
     import com.company.util.MoreObjectUtil;
 

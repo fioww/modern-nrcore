@@ -27,7 +27,6 @@ package com.company.assembleegameclient.ui.panels.mediators
     import kabam.rotmg.constants.ItemConstants;
     import com.company.assembleegameclient.objects.OneWayContainer;
     import com.company.assembleegameclient.objects.Container;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
     import com.company.assembleegameclient.ui.panels.itemgrids.ContainerGrid;

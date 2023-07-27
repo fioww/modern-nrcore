@@ -7,7 +7,6 @@ package com.company.assembleegameclient.account.ui
 {
     import flash.display.Sprite;
     import kabam.rotmg.ui.view.SignalWaiter;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.account.ui.components.SelectionGroup;
     import flash.events.MouseEvent;
     import com.company.assembleegameclient.account.ui.components.Selectable;
@@ -15,7 +14,6 @@ package com.company.assembleegameclient.account.ui
     import flash.display.DisplayObject;
     import kabam.lib.ui.impl.HorizontalLayout;
     import kabam.lib.ui.api.Layout;
-    import __AS3__.vec.*;
 
     public class PaymentMethodRadioButtons extends Sprite 
     {

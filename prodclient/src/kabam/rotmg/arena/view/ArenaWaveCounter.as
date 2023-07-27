@@ -14,7 +14,7 @@ package kabam.rotmg.arena.view
     public class ArenaWaveCounter extends Sprite 
     {
 
-        private const waveText:StaticTextDisplay = ArenaWaveCounter.makeWaveText();
+        private const waveText:StaticTextDisplay = makeWaveText();
         private const waveStringBuilder:LineBuilder = new LineBuilder();
 
 

@@ -5,7 +5,6 @@
 
 package kabam.rotmg.arena.model
 {
-    import __AS3__.vec.Vector;
 
     public class ArenaLeaderboardFilter 
     {

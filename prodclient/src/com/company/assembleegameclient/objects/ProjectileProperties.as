@@ -5,11 +5,9 @@
 
 package com.company.assembleegameclient.objects
 {
-    import __AS3__.vec.Vector;
     import flash.utils.Dictionary;
     import com.company.assembleegameclient.util.ConditionEffect;
     import com.company.assembleegameclient.util.*;
-    import __AS3__.vec.*;
 
     public class ProjectileProperties 
     {

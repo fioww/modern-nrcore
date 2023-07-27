@@ -168,7 +168,6 @@ package kabam.rotmg.messaging.impl
     import com.company.assembleegameclient.objects.SellableObject;
     import com.company.assembleegameclient.util.Currency;
     import kabam.rotmg.account.core.view.PurchaseConfirmationDialog;
-    import __AS3__.vec.Vector;
     import com.hurlant.util.der.PEM;
     import com.hurlant.crypto.rsa.RSAKey;
     import com.hurlant.util.Base64;
@@ -243,7 +242,6 @@ package kabam.rotmg.messaging.impl
     import flash.events.TimerEvent;
     import com.company.assembleegameclient.ui.dialogs.Dialog;
     import flash.events.Event;
-    import __AS3__.vec.*;
     import com.company.assembleegameclient.objects.*;
     import kabam.rotmg.messaging.impl.incoming.*;
     import kabam.rotmg.messaging.impl.data.*;

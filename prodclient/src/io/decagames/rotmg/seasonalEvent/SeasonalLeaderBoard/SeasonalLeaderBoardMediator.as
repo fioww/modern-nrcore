@@ -20,7 +20,6 @@ package io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard
     import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
     import io.decagames.rotmg.ui.texture.TextureParser;
     import io.decagames.rotmg.ui.popups.header.PopupHeader;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.ui.buttons.BaseButton;
 
     public class SeasonalLeaderBoardMediator extends Mediator 

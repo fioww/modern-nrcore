@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import __AS3__.vec.Vector;
     import flash.display.BitmapData;
     import com.company.assembleegameclient.objects.GameObject;
     import com.company.util.MoreColorUtil;
@@ -13,7 +12,6 @@ package com.company.assembleegameclient.objects.particles
     import com.company.util.AssetLibrary;
     import com.company.util.ImageSet;
     import com.company.assembleegameclient.util.TextureRedrawer;
-    import __AS3__.vec.*;
 
     public class ThunderEffect extends ParticleEffect 
     {

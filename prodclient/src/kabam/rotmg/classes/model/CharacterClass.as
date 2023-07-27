@@ -6,8 +6,6 @@
 package kabam.rotmg.classes.model
 {
     import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
 
     public class CharacterClass 
     {

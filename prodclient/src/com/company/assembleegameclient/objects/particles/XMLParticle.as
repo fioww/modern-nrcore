@@ -12,13 +12,11 @@ package com.company.assembleegameclient.objects.particles
     import flash.display.GraphicsBitmapFill;
     import flash.display.GraphicsPath;
     import com.company.util.GraphicsUtil;
-    import __AS3__.vec.Vector;
     import flash.geom.Matrix;
     import com.company.assembleegameclient.map.Square;
     import com.company.assembleegameclient.util.TextureRedrawer;
     import flash.display.IGraphicsData;
     import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
 
     public class XMLParticle extends BasicObject 
     {

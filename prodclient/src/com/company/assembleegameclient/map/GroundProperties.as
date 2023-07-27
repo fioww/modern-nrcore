@@ -6,11 +6,9 @@
 package com.company.assembleegameclient.map
 {
     import com.company.assembleegameclient.objects.TextureData;
-    import __AS3__.vec.Vector;
     import flash.display.BitmapData;
     import com.company.assembleegameclient.objects.TextureDataConcrete;
     import com.company.util.BitmapUtil;
-    import __AS3__.vec.*;
 
     public class GroundProperties 
     {

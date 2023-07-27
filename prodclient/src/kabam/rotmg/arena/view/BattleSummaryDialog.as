@@ -28,8 +28,8 @@ package kabam.rotmg.arena.view
 
         private var BattleSummarySplash:Class = BattleSummaryDialog_BattleSummarySplash;
         public const close:Signal = new Signal();
-        private const background:DialogBackground = BattleSummaryDialog.makeBackground();
-        private const splashArt:* = BattleSummaryDialog.makeSplashArt();
+        private const background:DialogBackground = makeBackground();
+        private const splashArt:* = makeSplashArt();
 
         public function BattleSummaryDialog()
         {

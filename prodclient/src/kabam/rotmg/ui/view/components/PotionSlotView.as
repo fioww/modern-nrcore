@@ -11,7 +11,6 @@ package kabam.rotmg.ui.view.components
     import org.osflash.signals.Signal;
     import flash.display.GraphicsSolidFill;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import kabam.rotmg.text.view.TextFieldDisplayConcrete;
@@ -30,7 +29,6 @@ package kabam.rotmg.ui.view.components
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class PotionSlotView extends Sprite 
     {

@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.util
 {
-    import __AS3__.vec.Vector;
     import flash.geom.ColorTransform;
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import flash.display.Sprite;

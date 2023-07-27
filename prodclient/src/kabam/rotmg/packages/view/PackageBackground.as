@@ -13,7 +13,7 @@ package kabam.rotmg.packages.view
 
         private static const Background:Class = PackageBackground_Background;
 
-        private const asset:DisplayObject = PackageBackground.makeBackground();
+        private const asset:DisplayObject = makeBackground();
 
 
         private function makeBackground():DisplayObject

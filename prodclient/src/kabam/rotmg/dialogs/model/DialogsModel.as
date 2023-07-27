@@ -5,10 +5,8 @@
 
 package kabam.rotmg.dialogs.model
 {
-    import __AS3__.vec.Vector;
     import org.osflash.signals.Signal;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class DialogsModel 
     {

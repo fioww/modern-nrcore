@@ -19,7 +19,6 @@ package kabam.rotmg.friends.view
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import flash.events.Event;
@@ -32,7 +31,6 @@ package kabam.rotmg.friends.view
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
     import com.company.ui.BaseSimpleText;
     import flash.text.TextFormatAlign;
-    import __AS3__.vec.*;
 
     public class FriendListView extends Sprite implements DialogCloser 
     {

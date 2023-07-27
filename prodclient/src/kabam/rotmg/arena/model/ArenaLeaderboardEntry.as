@@ -7,7 +7,6 @@ package kabam.rotmg.arena.model
 {
     import flash.display.BitmapData;
     import io.decagames.rotmg.pets.data.vo.PetVO;
-    import __AS3__.vec.Vector;
 
     public class ArenaLeaderboardEntry 
     {

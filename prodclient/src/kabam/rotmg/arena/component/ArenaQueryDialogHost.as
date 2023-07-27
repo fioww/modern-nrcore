@@ -13,9 +13,9 @@ package kabam.rotmg.arena.component
     public class ArenaQueryDialogHost extends Sprite 
     {
 
-        private const speechBubble:HostQuerySpeechBubble = ArenaQueryDialogHost.makeSpeechBubble();
-        private const detailBubble:HostQueryDetailBubble = ArenaQueryDialogHost.makeDetailBubble();
-        private const icon:Bitmap = ArenaQueryDialogHost.makeHostIcon();
+        private const speechBubble:HostQuerySpeechBubble = makeSpeechBubble();
+        private const detailBubble:HostQueryDetailBubble = makeDetailBubble();
+        private const icon:Bitmap = makeHostIcon();
 
 
         private function makeSpeechBubble():HostQuerySpeechBubble

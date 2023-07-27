@@ -7,7 +7,6 @@ package com.company.assembleegameclient.util
 {
     import flash.geom.Rectangle;
     import flash.geom.Point;
-    import __AS3__.vec.Vector;
     import com.company.util.ImageSet;
     import flash.display.BitmapData;
     import com.company.assembleegameclient.parameters.Parameters;
@@ -18,7 +17,6 @@ package com.company.assembleegameclient.util
     import com.company.util.BitmapUtil;
     import com.company.assembleegameclient.map.GroundProperties;
     import com.company.util.PointUtil;
-    import __AS3__.vec.*;
 
     public class TileRedrawer 
     {

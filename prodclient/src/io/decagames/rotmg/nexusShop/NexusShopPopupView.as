@@ -21,9 +21,7 @@ package io.decagames.rotmg.nexusShop
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
     import flash.text.TextFieldAutoSize;
     import io.decagames.rotmg.ui.texture.TextureParser;
-    import __AS3__.vec.Vector;
     import flash.events.MouseEvent;
-    import __AS3__.vec.*;
     import io.decagames.rotmg.shop.*;
 
     public class NexusShopPopupView extends ModalPopup 

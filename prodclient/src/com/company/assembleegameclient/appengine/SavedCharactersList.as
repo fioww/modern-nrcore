@@ -7,7 +7,6 @@ package com.company.assembleegameclient.appengine
 {
     import flash.events.Event;
     import kabam.rotmg.servers.api.LatLong;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.account.core.Account;
     import kabam.rotmg.core.StaticInjectorContext;
     import org.swiftsuspenders.Injector;
@@ -16,7 +15,6 @@ package com.company.assembleegameclient.appengine
     import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
     import io.decagames.rotmg.tos.popups.ToSPopup;
     import com.company.assembleegameclient.objects.ObjectLibrary;
-    import __AS3__.vec.*;
     import kabam.rotmg.account.core.*;
 
     public class SavedCharactersList extends Event 

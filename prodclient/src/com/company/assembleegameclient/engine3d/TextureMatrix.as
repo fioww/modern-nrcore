@@ -7,7 +7,6 @@ package com.company.assembleegameclient.engine3d
 {
     import flash.display.BitmapData;
     import flash.geom.Matrix;
-    import __AS3__.vec.Vector;
 
     public class TextureMatrix 
     {

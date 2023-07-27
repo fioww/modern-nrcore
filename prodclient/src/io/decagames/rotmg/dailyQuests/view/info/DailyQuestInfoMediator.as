@@ -23,11 +23,9 @@ package io.decagames.rotmg.dailyQuests.view.info
     import kabam.rotmg.messaging.impl.data.SlotObjectData;
     import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
     import io.decagames.rotmg.dailyQuests.view.popup.DailyQuestExpiredPopup;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.game.view.components.BackpackTabContent;
     import kabam.rotmg.game.view.components.InventoryTabContent;
     import io.decagames.rotmg.dailyQuests.model.DailyQuest;
-    import __AS3__.vec.*;
 
     public class DailyQuestInfoMediator extends Mediator 
     {

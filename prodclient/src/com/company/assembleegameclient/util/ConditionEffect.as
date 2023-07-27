@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.util
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.model.TextKey;
     import flash.filters.GlowFilter;
     import flash.filters.BitmapFilterQuality;
@@ -14,7 +13,6 @@ package com.company.assembleegameclient.util
     import com.company.util.AssetLibrary;
     import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
     import com.company.util.PointUtil;
-    import __AS3__.vec.*;
 
     public class ConditionEffect 
     {

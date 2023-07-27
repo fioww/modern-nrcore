@@ -11,7 +11,6 @@ package kabam.rotmg.legends.service
     import kabam.rotmg.legends.model.LegendsModel;
     import kabam.rotmg.legends.model.LegendFactory;
     import kabam.rotmg.legends.model.Timespan;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.legends.model.Legend;
 
     public class GetLegendsListTask extends BaseTask 

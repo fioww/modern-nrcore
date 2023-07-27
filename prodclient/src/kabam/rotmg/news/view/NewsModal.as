@@ -10,7 +10,6 @@ package kabam.rotmg.news.view
     import flash.filters.DropShadowFilter;
     import flash.filters.GlowFilter;
     import flash.text.TextField;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.model.FontModel;
     import flash.display.Sprite;
     import kabam.rotmg.news.model.NewsModel;

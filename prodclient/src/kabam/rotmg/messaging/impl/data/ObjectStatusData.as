@@ -5,11 +5,9 @@
 
 package kabam.rotmg.messaging.impl.data
 {
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.util.FreeList;
     import flash.utils.IDataInput;
     import flash.utils.IDataOutput;
-    import __AS3__.vec.*;
 
     public class ObjectStatusData 
     {

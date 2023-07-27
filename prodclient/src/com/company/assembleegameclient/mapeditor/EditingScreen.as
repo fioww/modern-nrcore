@@ -13,7 +13,6 @@ package com.company.assembleegameclient.mapeditor
     import com.company.assembleegameclient.screens.TitleMenuOption;
     import kabam.lib.json.JsonParser;
     import org.swiftsuspenders.Injector;
-    import __AS3__.vec.Vector;
     import flash.net.FileReference;
     import kabam.rotmg.core.StaticInjectorContext;
     import kabam.rotmg.core.model.PlayerModel;
@@ -36,7 +35,6 @@ package com.company.assembleegameclient.mapeditor
     import com.company.assembleegameclient.map.RegionLibrary;
     import flash.net.FileFilter;
     import flash.events.IOErrorEvent;
-    import __AS3__.vec.*;
 
     public class EditingScreen extends Sprite 
     {

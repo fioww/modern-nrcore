@@ -13,7 +13,6 @@ package kabam.rotmg.game.view
     import kabam.rotmg.tooltips.HoverTooltipDelegate;
     import kabam.rotmg.packages.model.PackageInfo;
     import flash.events.MouseEvent;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.parameters.Parameters;
 
     public class ShopDisplayMediator extends Mediator 

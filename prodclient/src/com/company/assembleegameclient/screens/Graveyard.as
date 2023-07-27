@@ -6,10 +6,8 @@
 package com.company.assembleegameclient.screens
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.appengine.SavedNewsItem;
     import kabam.rotmg.core.model.PlayerModel;
-    import __AS3__.vec.*;
 
     public class Graveyard extends Sprite 
     {

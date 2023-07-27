@@ -5,7 +5,6 @@
 
 package kabam.rotmg.language.model
 {
-    import __AS3__.vec.Vector;
 
     public interface LanguageModel 
     {

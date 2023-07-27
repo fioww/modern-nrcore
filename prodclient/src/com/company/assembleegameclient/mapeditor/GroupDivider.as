@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import __AS3__.vec.Vector;
     import flash.utils.Dictionary;
     import kabam.rotmg.core.StaticInjectorContext;
     import kabam.rotmg.core.model.PlayerModel;
@@ -13,7 +12,6 @@ package com.company.assembleegameclient.mapeditor
     import com.company.assembleegameclient.map.GroundLibrary;
     import com.company.assembleegameclient.map.RegionLibrary;
     import com.company.util.MoreStringUtil;
-    import __AS3__.vec.*;
 
     public class GroupDivider 
     {

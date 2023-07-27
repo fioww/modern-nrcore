@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import __AS3__.vec.Vector;
 
     public class ExplosionEffect extends ParticleEffect 
     {

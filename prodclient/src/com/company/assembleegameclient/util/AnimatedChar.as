@@ -5,14 +5,12 @@
 
 package com.company.assembleegameclient.util
 {
-    import __AS3__.vec.Vector;
     import flash.utils.Dictionary;
     import flash.display.BitmapData;
     import flash.geom.Point;
     import flash.geom.Rectangle;
     import com.company.util.Trig;
     import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
 
     public class AnimatedChar 
     {

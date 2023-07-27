@@ -11,7 +11,6 @@ package com.company.assembleegameclient.objects
     import flash.display.BitmapData;
     import com.company.assembleegameclient.map.Square;
     import flash.geom.Utils3D;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.assembleegameclient.map.Camera;
     import com.company.assembleegameclient.engine3d.Object3D;

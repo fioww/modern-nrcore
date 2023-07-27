@@ -9,7 +9,6 @@ package kabam.rotmg.legends.view
     import org.osflash.signals.Signal;
     import kabam.rotmg.legends.model.Timespan;
     import kabam.rotmg.legends.model.Legend;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.view.TextFieldDisplayConcrete;
     import com.company.assembleegameclient.screens.TitleMenuOption;
     import com.company.assembleegameclient.ui.Scrollbar;
@@ -23,7 +22,6 @@ package kabam.rotmg.legends.view
     import com.company.rotmg.graphics.ScreenGraphic;
     import flash.events.MouseEvent;
     import flash.events.Event;
-    import __AS3__.vec.*;
 
     public class LegendsView extends Sprite 
     {

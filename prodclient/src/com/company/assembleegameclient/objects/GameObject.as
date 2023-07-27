@@ -14,7 +14,6 @@ package com.company.assembleegameclient.objects
     import com.company.assembleegameclient.objects.particles.ShockerEffect;
     import com.company.assembleegameclient.objects.particles.SpritesProjectEffect;
     import com.company.assembleegameclient.util.AnimatedChar;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.engine3d.Object3D;
     import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
     import com.company.assembleegameclient.objects.particles.ParticleEffect;
@@ -59,7 +58,6 @@ package com.company.assembleegameclient.objects
     import flash.geom.ColorTransform;
     import flash.display.GradientType;
     import flash.utils.getQualifiedClassName;
-    import __AS3__.vec.*;
 
     public class GameObject extends BasicObject 
     {

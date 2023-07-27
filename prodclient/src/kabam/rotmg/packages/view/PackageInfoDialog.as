@@ -30,11 +30,11 @@ package kabam.rotmg.packages.view
         private static const MESSAGE_TITLE_Y:int = 164;
         private static const MESSAGE_BODY_Y:int = 210;
 
-        private const background:DisplayObject = PackageInfoDialog.makeBackground();
-        private const title:TextFieldDisplayConcrete = PackageInfoDialog.makeTitle();
-        private const messageTitle:TextFieldDisplayConcrete = PackageInfoDialog.makeMessageTitle();
-        private const messageBody:TextFieldDisplayConcrete = PackageInfoDialog.makeMessageBody();
-        private const close:DeprecatedTextButton = PackageInfoDialog.makeCloseButton();
+        private const background:DisplayObject = makeBackground();
+        private const title:TextFieldDisplayConcrete = makeTitle();
+        private const messageTitle:TextFieldDisplayConcrete = makeMessageTitle();
+        private const messageBody:TextFieldDisplayConcrete = makeMessageBody();
+        private const close:DeprecatedTextButton = makeCloseButton();
         public const closed:Signal = new NativeMappedSignal(close, MouseEvent.CLICK);
 
         public function PackageInfoDialog():void

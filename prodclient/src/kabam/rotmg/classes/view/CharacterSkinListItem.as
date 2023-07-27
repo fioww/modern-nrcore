@@ -40,14 +40,14 @@ package kabam.rotmg.classes.view
         private static const LOCKED_COLOR:uint = 0x282828;
 
         private const grayscaleMatrix:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
-        private const background:Shape = CharacterSkinListItem.makeBackground();
-        private const skinContainer:Sprite = CharacterSkinListItem.makeSkinContainer();
-        private const nameText:TextFieldDisplayConcrete = CharacterSkinListItem.makeNameText();
-        private const selectionButton:RadioButton = CharacterSkinListItem.makeSelectionButton();
-        private const lock:Bitmap = CharacterSkinListItem.makeLock();
-        private const lockText:TextFieldDisplayConcrete = CharacterSkinListItem.makeLockText();
-        private const buyButtonContainer:Sprite = CharacterSkinListItem.makeBuyButtonContainer();
-        private const limitedBanner:CharacterSkinLimitedBanner = CharacterSkinListItem.makeLimitedBanner();
+        private const background:Shape = makeBackground();
+        private const skinContainer:Sprite = makeSkinContainer();
+        private const nameText:TextFieldDisplayConcrete = makeNameText();
+        private const selectionButton:RadioButton = makeSelectionButton();
+        private const lock:Bitmap = makeLock();
+        private const lockText:TextFieldDisplayConcrete = makeLockText();
+        private const buyButtonContainer:Sprite = makeBuyButtonContainer();
+        private const limitedBanner:CharacterSkinLimitedBanner = makeLimitedBanner();
         public const buy:Signal = new NativeMappedSignal(buyButtonContainer, MouseEvent.CLICK);
         public const over:Signal = new Signal();
         public const out:Signal = new Signal();

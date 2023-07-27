@@ -14,7 +14,6 @@ package kabam.rotmg.chat.view
     import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
     import com.company.assembleegameclient.util.StageProxy;
     import kabam.rotmg.chat.model.ChatMessage;
-    import __AS3__.vec.Vector;
     import flash.display.DisplayObject;
     import flash.text.TextFormat;
     import com.company.assembleegameclient.util.FameUtil;
@@ -23,7 +22,6 @@ package kabam.rotmg.chat.view
     import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
     import flash.display.Bitmap;
     import flash.display.StageQuality;
-    import __AS3__.vec.*;
 
     public class ChatListItemFactory 
     {

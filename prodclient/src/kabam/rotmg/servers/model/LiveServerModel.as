@@ -6,14 +6,12 @@
 package kabam.rotmg.servers.model
 {
     import kabam.rotmg.servers.api.ServerModel;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.servers.api.Server;
     import kabam.rotmg.core.model.PlayerModel;
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
     import com.company.assembleegameclient.appengine.SavedCharacter;
     import kabam.rotmg.servers.api.LatLong;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class LiveServerModel implements ServerModel 
     {

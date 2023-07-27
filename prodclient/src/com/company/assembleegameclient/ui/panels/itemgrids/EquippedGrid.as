@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.ui.panels.itemgrids
 {
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.EquipmentTile;
     import com.company.assembleegameclient.objects.GameObject;
     import com.company.assembleegameclient.objects.Player;
@@ -14,7 +13,6 @@ package com.company.assembleegameclient.ui.panels.itemgrids
     import kabam.lib.util.VectorAS3Util;
     import com.company.util.IIterator;
     import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
-    import __AS3__.vec.*;
 
     public class EquippedGrid extends ItemGrid 
     {

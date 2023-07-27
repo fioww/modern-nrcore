@@ -6,11 +6,9 @@
 package kabam.rotmg.ui.view.components.dropdown
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.ui.view.SignalWaiter;
     import flash.events.Event;
     import flash.events.MouseEvent;
-    import __AS3__.vec.*;
 
     public class LocalizedDropDown extends Sprite 
     {

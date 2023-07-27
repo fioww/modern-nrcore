@@ -7,10 +7,8 @@ package kabam.rotmg.chat.view
 {
     import flash.display.Sprite;
     import flash.utils.Timer;
-    import __AS3__.vec.Vector;
     import flash.events.TimerEvent;
     import kabam.rotmg.chat.model.ChatModel;
-    import __AS3__.vec.*;
 
     public class ChatList extends Sprite 
     {

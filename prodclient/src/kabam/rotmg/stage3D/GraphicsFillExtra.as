@@ -6,7 +6,6 @@
 package kabam.rotmg.stage3D
 {
     import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.parameters.Parameters;
     import flash.display.BitmapData;
     import flash.geom.ColorTransform;
@@ -16,7 +15,6 @@ package kabam.rotmg.stage3D
     import flash.display3D.VertexBuffer3D;
     import flash.display3D.Context3DVertexBufferFormat;
     import flash.display.GraphicsSolidFill;
-    import __AS3__.vec.*;
 
     public class GraphicsFillExtra 
     {

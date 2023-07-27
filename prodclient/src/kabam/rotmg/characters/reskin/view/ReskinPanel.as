@@ -23,8 +23,8 @@ package kabam.rotmg.characters.reskin.view
     public class ReskinPanel extends Panel 
     {
 
-        private const title:TextFieldDisplayConcrete = ReskinPanel.makeTitle();
-        private const button:DeprecatedTextButton = ReskinPanel.makeButton();
+        private const title:TextFieldDisplayConcrete = makeTitle();
+        private const button:DeprecatedTextButton = makeButton();
         private const click:Signal = new NativeMappedSignal(button, MouseEvent.CLICK);
         public const reskin:Signal = new Signal();
 

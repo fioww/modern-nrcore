@@ -11,10 +11,8 @@ package io.decagames.rotmg.dailyQuests.view.list
     import kabam.rotmg.ui.signals.UpdateQuestSignal;
     import io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal;
     import kabam.rotmg.constants.GeneralConstants;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.dailyQuests.model.DailyQuest;
     import io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo;
-    import __AS3__.vec.*;
 
     public class DailyQuestsListMediator extends Mediator 
     {

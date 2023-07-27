@@ -6,8 +6,6 @@
 package kabam.lib.console.model
 {
     import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
     import kabam.lib.console.model.*;
 
     internal final class ActionHash 

@@ -16,7 +16,6 @@ package io.decagames.rotmg.pets.components.petSkinsCollection
     import io.decagames.rotmg.ui.scroll.UIScrollbar;
     import io.decagames.rotmg.pets.data.vo.SkinVO;
     import io.decagames.rotmg.pets.components.petSkinSlot.PetSkinSlot;
-    import __AS3__.vec.Vector;
 
     public class PetSkinsCollection extends Sprite 
     {

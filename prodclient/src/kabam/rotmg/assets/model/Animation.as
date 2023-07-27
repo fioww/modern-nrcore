@@ -7,19 +7,17 @@ package kabam.rotmg.assets.model
 {
     import flash.display.Sprite;
     import flash.display.Bitmap;
-    import __AS3__.vec.Vector;
     import flash.display.BitmapData;
     import flash.utils.Timer;
     import flash.events.TimerEvent;
-    import __AS3__.vec.*;
 
     public class Animation extends Sprite 
     {
 
         private const DEFAULT_SPEED:int = 200;
-        private const bitmap:Bitmap = Animation.makeBitmap();
+        private const bitmap:Bitmap = makeBitmap();
         private const frames:Vector.<BitmapData> = new Vector.<BitmapData>(0);
-        private const timer:Timer = Animation.makeTimer();
+        private const timer:Timer = makeTimer();
 
         private var started:Boolean;
         private var index:int;

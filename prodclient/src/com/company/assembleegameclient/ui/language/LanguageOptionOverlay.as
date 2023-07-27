@@ -13,7 +13,6 @@ package com.company.assembleegameclient.ui.language
     import com.company.rotmg.graphics.ScreenGraphic;
     import flash.events.MouseEvent;
     import flash.events.Event;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
     import kabam.rotmg.text.model.TextKey;
     import flash.text.TextFieldAutoSize;

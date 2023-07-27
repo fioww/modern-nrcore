@@ -5,7 +5,6 @@
 
 package io.decagames.rotmg.ui.spinner
 {
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
     public class FixedNumbersSpinner extends NumberSpinner 

@@ -16,8 +16,8 @@ package kabam.rotmg.classes.view
     {
 
         private var LimitedBanner:Class = CharacterSkinLimitedBanner_LimitedBanner;
-        private const limitedText:TextFieldDisplayConcrete = CharacterSkinLimitedBanner.makeText();
-        private const limitedBanner:* = CharacterSkinLimitedBanner.makeLimitedBanner();
+        private const limitedText:TextFieldDisplayConcrete = makeText();
+        private const limitedBanner:* = makeLimitedBanner();
         public const readyForPositioning:Signal = new Signal();
 
 

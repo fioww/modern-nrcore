@@ -5,12 +5,10 @@
 
 package kabam.rotmg.stage3D.Object3D
 {
-    import __AS3__.vec.Vector;
     import flash.display3D.VertexBuffer3D;
     import flash.utils.Dictionary;
     import flash.display3D.Context3D;
     import flash.utils.ByteArray;
-    import __AS3__.vec.*;
 
     public class Model3D_stage3d 
     {

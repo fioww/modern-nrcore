@@ -13,7 +13,6 @@ package io.decagames.rotmg.seasonalEvent.tasks
     import kabam.rotmg.legends.model.LegendFactory;
     import io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard.SeasonalItemDataFactory;
     import io.decagames.rotmg.seasonalEvent.signals.SeasonalLeaderBoardErrorSignal;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard.SeasonalLeaderBoardItemData;
 
     public class GetLegacyChallengerListTask extends BaseTask 

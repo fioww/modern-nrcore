@@ -6,7 +6,6 @@
 package com.company.assembleegameclient.ui.panels
 {
     import flash.display.DisplayObjectContainer;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.ui.PlayerGameObjectListItem;
     import com.company.assembleegameclient.objects.Party;
     import com.company.assembleegameclient.ui.menu.PlayerMenu;
@@ -18,7 +17,6 @@ package com.company.assembleegameclient.ui.panels
     import flash.geom.ColorTransform;
     import flash.utils.getTimer;
     import com.company.util.MoreColorUtil;
-    import __AS3__.vec.*;
 
     public class PartyPanel extends Panel 
     {

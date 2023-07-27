@@ -12,7 +12,6 @@ package kabam.rotmg.util.components
     import kabam.lib.ui.impl.LayoutList;
     import kabam.lib.ui.api.Size;
     import flash.display.DisplayObject;
-    import __AS3__.vec.Vector;
 
     public class VerticalScrollingList extends Sprite implements List 
     {

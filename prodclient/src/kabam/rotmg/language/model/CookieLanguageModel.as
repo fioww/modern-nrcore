@@ -7,8 +7,6 @@ package kabam.rotmg.language.model
 {
     import flash.net.SharedObject;
     import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
 
     public class CookieLanguageModel implements LanguageModel 
     {

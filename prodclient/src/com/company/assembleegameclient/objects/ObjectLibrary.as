@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.objects
 {
-    import __AS3__.vec.Vector;
     import flash.utils.Dictionary;
     import com.company.assembleegameclient.objects.animation.AnimationsData;
     import kabam.rotmg.assets.EmbeddedData;
@@ -19,7 +18,6 @@ package com.company.assembleegameclient.objects
     import kabam.rotmg.constants.GeneralConstants;
     import com.company.util.ConversionUtil;
     import kabam.rotmg.messaging.impl.data.StatData;
-    import __AS3__.vec.*;
 
     public class ObjectLibrary 
     {

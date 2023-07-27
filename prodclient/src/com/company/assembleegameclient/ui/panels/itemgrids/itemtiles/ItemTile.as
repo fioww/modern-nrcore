@@ -9,7 +9,6 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
     import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
     import flash.display.GraphicsSolidFill;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import flash.display.Shape;
     import io.decagames.rotmg.ui.labels.UILabel;
@@ -20,7 +19,6 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
     import com.company.assembleegameclient.util.TierUtil;
     import com.company.assembleegameclient.util.FilterUtil;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class ItemTile extends Sprite 
     {

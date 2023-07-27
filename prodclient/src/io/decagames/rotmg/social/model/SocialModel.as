@@ -11,7 +11,6 @@ package io.decagames.rotmg.social.model
     import io.decagames.rotmg.social.tasks.GuildDataRequestTask;
     import io.decagames.rotmg.social.signals.SocialDataSignal;
     import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
     import flash.utils.Dictionary;
     import kabam.rotmg.servers.api.Server;
     import io.decagames.rotmg.social.config.FriendsActions;
@@ -23,7 +22,6 @@ package io.decagames.rotmg.social.model
     import com.company.assembleegameclient.util.TimeUtil;
     import com.company.assembleegameclient.util.FameUtil;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class SocialModel 
     {

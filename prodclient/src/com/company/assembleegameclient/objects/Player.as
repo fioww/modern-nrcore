@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.objects
 {
-    import __AS3__.vec.Vector;
     import flash.geom.Point;
     import flash.geom.Matrix;
     import com.company.assembleegameclient.util.AnimatedChar;
@@ -61,7 +60,6 @@ package com.company.assembleegameclient.objects
     import com.company.assembleegameclient.util.FreeList;
     import kabam.rotmg.ui.model.TabStripModel;
     import kabam.rotmg.game.model.PotionInventoryModel;
-    import __AS3__.vec.*;
     import com.company.assembleegameclient.objects.particles.*;
 
     public class Player extends Character 

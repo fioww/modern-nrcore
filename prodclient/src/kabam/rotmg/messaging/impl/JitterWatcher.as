@@ -8,13 +8,11 @@ package kabam.rotmg.messaging.impl
     import flash.display.Sprite;
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
     import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import __AS3__.vec.Vector;
     import flash.text.TextFieldAutoSize;
     import flash.filters.DropShadowFilter;
     import flash.events.Event;
     import flash.utils.getTimer;
     import kabam.rotmg.text.model.TextKey;
-    import __AS3__.vec.*;
 
     public class JitterWatcher extends Sprite 
     {

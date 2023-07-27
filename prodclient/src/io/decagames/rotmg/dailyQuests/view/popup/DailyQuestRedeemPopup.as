@@ -7,7 +7,6 @@ package io.decagames.rotmg.dailyQuests.view.popup
 {
     import io.decagames.rotmg.ui.popups.modal.ModalPopup;
     import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlot;
     import io.decagames.rotmg.ui.texture.TextureParser;
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
@@ -18,7 +17,6 @@ package io.decagames.rotmg.dailyQuests.view.popup
     import io.decagames.rotmg.ui.labels.UILabel;
     import flash.text.TextFieldAutoSize;
     import io.decagames.rotmg.dailyQuests.model.DailyQuest;
-    import __AS3__.vec.*;
 
     public class DailyQuestRedeemPopup extends ModalPopup 
     {

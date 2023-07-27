@@ -5,9 +5,7 @@
 
 package kabam.rotmg.language.model
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.model.DebugTextInfo;
-    import __AS3__.vec.*;
 
     public class DebugStringMap implements StringMap 
     {

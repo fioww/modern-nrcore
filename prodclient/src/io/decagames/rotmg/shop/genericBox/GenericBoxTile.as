@@ -11,7 +11,6 @@ package io.decagames.rotmg.shop.genericBox
     import io.decagames.rotmg.ui.labels.UILabel;
     import io.decagames.rotmg.shop.ShopBuyButton;
     import io.decagames.rotmg.ui.buttons.SliceScalingButton;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.shop.ShopBoxTag;
     import io.decagames.rotmg.ui.spinner.FixedNumbersSpinner;
     import io.decagames.rotmg.shop.genericBox.data.GenericBoxInfo;
@@ -20,7 +19,6 @@ package io.decagames.rotmg.shop.genericBox
     import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
     import flash.geom.ColorTransform;
     import io.decagames.rotmg.utils.colors.Tint;
-    import __AS3__.vec.*;
 
     public class GenericBoxTile extends UIGridElement 
     {

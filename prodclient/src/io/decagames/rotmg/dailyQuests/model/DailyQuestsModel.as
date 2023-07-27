@@ -5,13 +5,11 @@
 
 package io.decagames.rotmg.dailyQuests.model
 {
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlot;
     import kabam.rotmg.ui.model.HUDModel;
     import kabam.rotmg.ui.signals.UpdateQuestSignal;
     import kabam.rotmg.constants.GeneralConstants;
     import io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo;
-    import __AS3__.vec.*;
 
     public class DailyQuestsModel 
     {

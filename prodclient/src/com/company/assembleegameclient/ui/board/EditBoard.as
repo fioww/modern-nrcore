@@ -15,7 +15,6 @@ package com.company.assembleegameclient.ui.board
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import flash.display.Shape;
@@ -23,7 +22,6 @@ package com.company.assembleegameclient.ui.board
     import flash.events.Event;
     import kabam.rotmg.text.model.TextKey;
     import flash.events.MouseEvent;
-    import __AS3__.vec.*;
     import com.company.assembleegameclient.ui.board.*;
 
     internal class EditBoard extends Sprite 

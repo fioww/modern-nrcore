@@ -16,7 +16,6 @@ package com.company.assembleegameclient.mapeditor
     import com.company.util.AssetLibrary;
     import flash.events.Event;
     import com.company.assembleegameclient.mapeditor.METile;
-    import __AS3__.vec.Vector;
     import flash.geom.Rectangle;
     import flash.events.MouseEvent;
     import flash.events.KeyboardEvent;
@@ -31,7 +30,6 @@ package com.company.assembleegameclient.mapeditor
     import com.company.util.PointUtil;
     import com.adobe.images.PNGEncoder;
     import flash.utils.ByteArray;
-    import __AS3__.vec.*;
     import com.company.assembleegameclient.mapeditor.*;
 
     internal class MEMap extends Sprite 

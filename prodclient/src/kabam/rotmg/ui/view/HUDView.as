@@ -21,14 +21,12 @@ package kabam.rotmg.ui.view
     import flash.display.GraphicsPath;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
-    import __AS3__.vec.Vector;
     import flash.events.Event;
     import com.company.assembleegameclient.game.AGameSprite;
     import kabam.rotmg.messaging.impl.incoming.TradeStart;
     import kabam.rotmg.messaging.impl.incoming.TradeChanged;
     import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
     import com.company.util.SpriteUtil;
-    import __AS3__.vec.*;
 
     public class HUDView extends Sprite implements UnFocusAble 
     {

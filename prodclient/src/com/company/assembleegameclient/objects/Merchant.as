@@ -17,13 +17,11 @@ package com.company.assembleegameclient.objects
     import kabam.rotmg.game.model.AddSpeechBalloonVO;
     import com.gskinner.motion.GTween;
     import com.gskinner.motion.easing.Sine;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
     import com.company.assembleegameclient.constants.InventoryOwnerTypes;
     import com.company.assembleegameclient.ui.tooltip.ToolTip;
     import com.company.ui.BaseSimpleText;
     import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
 
     public class Merchant extends SellableObject implements IInteractiveObject 
     {

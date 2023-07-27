@@ -6,7 +6,6 @@
 package com.company.assembleegameclient.objects
 {
     import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import __AS3__.vec.Vector;
 
     public class Character extends GameObject 
     {

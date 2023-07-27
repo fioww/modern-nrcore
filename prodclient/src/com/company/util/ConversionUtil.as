@@ -5,11 +5,9 @@
 
 package com.company.util
 {
-    import __AS3__.vec.Vector;
     import flash.geom.Rectangle;
     import flash.geom.Point;
     import flash.geom.Vector3D;
-    import __AS3__.vec.*;
 
     public class ConversionUtil 
     {

@@ -8,11 +8,9 @@ package io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard
     import kabam.rotmg.core.model.PlayerModel;
     import kabam.rotmg.classes.model.ClassesModel;
     import kabam.rotmg.assets.services.CharacterFactory;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.classes.model.CharacterClass;
     import kabam.rotmg.classes.model.CharacterSkin;
     import com.company.util.ConversionUtil;
-    import __AS3__.vec.*;
 
     public class SeasonalItemDataFactory 
     {

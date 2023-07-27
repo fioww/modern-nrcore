@@ -5,12 +5,10 @@
 
 package com.company.assembleegameclient.objects.particles
 {
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.objects.GameObject;
     import flash.display.BitmapData;
     import com.company.util.AssetLibrary;
     import com.company.assembleegameclient.util.TextureRedrawer;
-    import __AS3__.vec.*;
 
     public class ParticleGenerator extends ParticleEffect 
     {

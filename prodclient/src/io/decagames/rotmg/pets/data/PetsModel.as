@@ -8,7 +8,6 @@ package io.decagames.rotmg.pets.data
     import io.decagames.rotmg.pets.signals.NotifyActivePetUpdated;
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
     import kabam.rotmg.core.model.PlayerModel;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.pets.data.vo.PetVO;
     import flash.utils.Dictionary;
     import com.company.assembleegameclient.objects.ObjectLibrary;
@@ -17,7 +16,6 @@ package io.decagames.rotmg.pets.data
     import io.decagames.rotmg.pets.data.vo.SkinVO;
     import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
     import com.company.assembleegameclient.appengine.SavedCharacter;
-    import __AS3__.vec.*;
 
     public class PetsModel 
     {

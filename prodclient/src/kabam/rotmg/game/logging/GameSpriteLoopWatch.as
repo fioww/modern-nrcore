@@ -6,8 +6,6 @@
 package kabam.rotmg.game.logging
 {
     import kabam.lib.console.model.Watch;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
 
     public class GameSpriteLoopWatch extends Watch 
     {

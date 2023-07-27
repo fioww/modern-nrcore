@@ -21,7 +21,6 @@ package io.decagames.rotmg.pets.windows.yard.list
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
     import com.company.assembleegameclient.ui.tooltip.TextToolTip;
     import kabam.rotmg.tooltips.HoverTooltipDelegate;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.pets.components.petItem.PetItem;
     import io.decagames.rotmg.seasonalEvent.popups.SeasonalEventErrorPopup;
     import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
@@ -30,7 +29,6 @@ package io.decagames.rotmg.pets.windows.yard.list
     import flash.events.MouseEvent;
     import io.decagames.rotmg.pets.data.vo.PetVO;
     import kabam.rotmg.messaging.impl.EvolvePetInfo;
-    import __AS3__.vec.*;
 
     public class PetYardListMediator extends Mediator 
     {

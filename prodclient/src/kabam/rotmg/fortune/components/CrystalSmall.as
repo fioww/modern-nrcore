@@ -7,7 +7,6 @@ package kabam.rotmg.fortune.components
 {
     import flash.display.Sprite;
     import flash.display.Bitmap;
-    import __AS3__.vec.Vector;
     import flash.text.TextField;
     import flash.filters.GlowFilter;
     import flash.display.BitmapData;
@@ -25,7 +24,6 @@ package kabam.rotmg.fortune.components
     import com.gskinner.motion.GTween;
     import flash.ui.Mouse;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class CrystalSmall extends Sprite 
     {

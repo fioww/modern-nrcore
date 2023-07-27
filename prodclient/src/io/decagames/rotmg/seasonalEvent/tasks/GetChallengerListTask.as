@@ -16,7 +16,6 @@ package io.decagames.rotmg.seasonalEvent.tasks
     import kabam.rotmg.legends.model.Timespan;
     import io.decagames.rotmg.seasonalEvent.signals.SeasonalLeaderBoardErrorSignal;
     import io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard.SeasonalLeaderBoard;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard.SeasonalLeaderBoardItemData;
 
     public class GetChallengerListTask extends BaseTask 

@@ -22,7 +22,6 @@ package io.decagames.rotmg.social
     import io.decagames.rotmg.social.signals.SocialDataSignal;
     import io.decagames.rotmg.social.popups.InviteFriendPopup;
     import io.decagames.rotmg.ui.buttons.BaseButton;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.social.model.FriendVO;
     import io.decagames.rotmg.social.widgets.FriendListItem;
     import io.decagames.rotmg.social.data.SocialItemState;

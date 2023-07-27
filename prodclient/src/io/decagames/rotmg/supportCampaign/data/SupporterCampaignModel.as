@@ -5,7 +5,6 @@
 
 package io.decagames.rotmg.supportCampaign.data
 {
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.supportCampaign.data.vo.RankVO;
     import flash.utils.Dictionary;
     import kabam.rotmg.core.StaticInjectorContext;
@@ -14,7 +13,6 @@ package io.decagames.rotmg.supportCampaign.data
     import flash.display.DisplayObject;
     import com.company.assembleegameclient.util.TimeUtil;
     import io.decagames.rotmg.utils.date.TimeLeft;
-    import __AS3__.vec.*;
 
     public class SupporterCampaignModel 
     {

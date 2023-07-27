@@ -9,7 +9,6 @@ package kabam.rotmg.mysterybox.components
     import kabam.rotmg.appengine.api.AppEngineClient;
     import kabam.rotmg.account.core.Account;
     import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import __AS3__.vec.Vector;
     import flash.display.Bitmap;
     import kabam.rotmg.fortune.components.ItemWithTooltip;
     import kabam.rotmg.pets.view.components.DialogCloseButton;
@@ -48,7 +47,6 @@ package kabam.rotmg.mysterybox.components
     import io.decagames.rotmg.shop.ShopPopupView;
     import com.gskinner.motion.GTween;
     import com.gskinner.motion.easing.Sine;
-    import __AS3__.vec.*;
 
     public class MysteryBoxRollModal extends Sprite 
     {

@@ -8,7 +8,6 @@ package com.company.assembleegameclient.screens
     import flash.display.Sprite;
     import org.osflash.signals.Signal;
     import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.ui.buttons.InfoButton;
     import kabam.rotmg.ui.view.ButtonFactory;
     import kabam.rotmg.core.signals.LeagueItemSignal;
@@ -20,7 +19,6 @@ package com.company.assembleegameclient.screens
     import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
     import flash.events.MouseEvent;
     import com.company.assembleegameclient.util.FilterUtil;
-    import __AS3__.vec.*;
 
     public class CharacterTypeSelectionScreen extends Sprite 
     {

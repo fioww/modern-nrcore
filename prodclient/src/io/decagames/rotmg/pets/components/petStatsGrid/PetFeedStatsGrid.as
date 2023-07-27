@@ -7,7 +7,6 @@ package io.decagames.rotmg.pets.components.petStatsGrid
 {
     import io.decagames.rotmg.ui.gird.UIGrid;
     import io.decagames.rotmg.pets.data.vo.IPetVO;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.ui.PetFeedProgressBar;
     import flash.display.Sprite;
     import io.decagames.rotmg.ui.labels.UILabel;
@@ -16,7 +15,6 @@ package io.decagames.rotmg.pets.components.petStatsGrid
     import io.decagames.rotmg.pets.data.vo.AbilityVO;
     import io.decagames.rotmg.pets.data.ability.AbilitiesUtil;
     import flash.text.TextFormatAlign;
-    import __AS3__.vec.*;
 
     public class PetFeedStatsGrid extends UIGrid 
     {

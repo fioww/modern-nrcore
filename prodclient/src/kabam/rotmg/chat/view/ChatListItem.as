@@ -6,7 +6,6 @@
 package kabam.rotmg.chat.view
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import flash.display.DisplayObject;
     import flash.utils.getTimer;
     import flash.events.MouseEvent;

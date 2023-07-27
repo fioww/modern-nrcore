@@ -5,7 +5,6 @@
 
 package io.decagames.rotmg.social.model
 {
-    import __AS3__.vec.Vector;
 
     public class GuildVO 
     {

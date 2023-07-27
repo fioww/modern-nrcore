@@ -5,7 +5,6 @@
 
 package kabam.rotmg.servers.api
 {
-    import __AS3__.vec.Vector;
 
     public interface ServerModel 
     {

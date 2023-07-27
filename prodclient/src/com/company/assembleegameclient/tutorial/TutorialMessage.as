@@ -15,14 +15,12 @@ package com.company.assembleegameclient.tutorial
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
     import flash.events.MouseEvent;
     import flash.events.Event;
     import flash.utils.getTimer;
-    import __AS3__.vec.*;
 
     public class TutorialMessage extends Sprite 
     {

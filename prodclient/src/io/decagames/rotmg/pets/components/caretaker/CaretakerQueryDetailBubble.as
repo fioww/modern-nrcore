@@ -24,7 +24,7 @@ package io.decagames.rotmg.pets.components.caretaker
         private const POINT_CENTER:int = 25;
         private const PADDING:int = 8;
         private const bubble:Shape = new Shape();
-        private const textfield:TextFieldDisplayConcrete = CaretakerQueryDetailBubble.makeText();
+        private const textfield:TextFieldDisplayConcrete = makeText();
 
         public function CaretakerQueryDetailBubble()
         {

@@ -6,7 +6,6 @@
 package com.company.assembleegameclient.ui.options
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.model.TextKey;
     import com.company.assembleegameclient.game.GameSprite;
     import com.company.assembleegameclient.screens.TitleMenuOption;
@@ -46,7 +45,6 @@ package com.company.assembleegameclient.ui.options
     import flash.net.URLRequest;
     import flash.net.URLRequestMethod;
     import flash.net.navigateToURL;
-    import __AS3__.vec.*;
 
     public class Options extends Sprite 
     {

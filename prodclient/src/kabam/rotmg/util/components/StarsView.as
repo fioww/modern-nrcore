@@ -6,11 +6,9 @@
 package kabam.rotmg.util.components
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import com.company.rotmg.graphics.StarGraphic;
     import flash.display.Graphics;
     import flash.geom.ColorTransform;
-    import __AS3__.vec.*;
 
     public class StarsView extends Sprite 
     {
@@ -22,8 +20,8 @@ package kabam.rotmg.util.components
         private static const EMPTY_STAR_COLOR:uint = 0x838383;
         private static const FILLED_STAR_COLOR:uint = 0xFFFFFF;
 
-        private const stars:Vector.<StarGraphic> = StarsView.makeStars();
-        private const background:Sprite = StarsView.makeBackground();
+        private const stars:Vector.<StarGraphic> = makeStars();
+        private const background:Sprite = makeBackground();
 
 
         private function makeStars():Vector.<StarGraphic>

@@ -9,7 +9,6 @@ package com.company.assembleegameclient.map.partyoverlay
     import com.company.assembleegameclient.ui.menu.Menu;
     import flash.display.DisplayObjectContainer;
     import com.company.assembleegameclient.objects.GameObject;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.map.Map;
     import flash.display.Shape;
     import com.company.assembleegameclient.ui.tooltip.ToolTip;
@@ -22,7 +21,6 @@ package com.company.assembleegameclient.map.partyoverlay
     import com.company.util.Trig;
     import com.company.assembleegameclient.map.Camera;
     import flash.display.Graphics;
-    import __AS3__.vec.*;
 
     public class GameObjectArrow extends Sprite 
     {

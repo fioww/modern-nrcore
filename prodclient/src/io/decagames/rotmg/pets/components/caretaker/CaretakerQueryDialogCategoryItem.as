@@ -26,8 +26,8 @@ package io.decagames.rotmg.pets.components.caretaker
 
         private const helper:GraphicsHelper = new GraphicsHelper();
         private const rect:BevelRect = new BevelRect(WIDTH, HEIGHT, BEVEL);
-        private const background:Shape = CaretakerQueryDialogCategoryItem.makeBackground();
-        private const textfield:TextFieldDisplayConcrete = CaretakerQueryDialogCategoryItem.makeTextfield();
+        private const background:Shape = makeBackground();
+        private const textfield:TextFieldDisplayConcrete = makeTextfield();
         public const textChanged:Signal = textfield.textChanged;
 
         public var info:String;

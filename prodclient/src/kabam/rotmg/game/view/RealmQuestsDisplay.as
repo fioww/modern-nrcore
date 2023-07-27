@@ -6,7 +6,6 @@
 package kabam.rotmg.game.view
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.ui.labels.UILabel;
     import flash.display.Graphics;
     import flash.display.Bitmap;
@@ -21,7 +20,6 @@ package kabam.rotmg.game.view
     import flash.filters.DropShadowFilter;
     import com.greensock.TweenMax;
     import kabam.rotmg.game.model.QuestModel;
-    import __AS3__.vec.*;
 
     public class RealmQuestsDisplay extends Sprite 
     {

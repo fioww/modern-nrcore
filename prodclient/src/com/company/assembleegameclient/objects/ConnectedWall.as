@@ -8,11 +8,9 @@ package com.company.assembleegameclient.objects
     import flash.geom.Vector3D;
     import flash.display.BitmapData;
     import com.company.util.AssetLibrary;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.engine3d.ObjectFace3D;
     import com.company.assembleegameclient.parameters.Parameters;
     import kabam.rotmg.stage3D.GraphicsFillExtra;
-    import __AS3__.vec.*;
 
     public class ConnectedWall extends ConnectedObject 
     {

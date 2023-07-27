@@ -16,7 +16,6 @@ package com.company.assembleegameclient.ui.dialogs
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import kabam.rotmg.ui.view.SignalWaiter;
@@ -29,7 +28,6 @@ package com.company.assembleegameclient.ui.dialogs
     import kabam.rotmg.core.StaticInjectorContext;
     import flash.display.Graphics;
     import flash.events.Event;
-    import __AS3__.vec.*;
 
     public class StaticDialog extends Sprite 
     {
@@ -56,7 +54,7 @@ package com.company.assembleegameclient.ui.dialogs
 
         public var box_:Sprite = new Sprite();
         public var rect_:Shape = new Shape();
-        public var dialogWidth:int = StaticDialog.setDialogWidth();
+        public var dialogWidth:int = setDialogWidth();
         private var outlineFill_:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);
         private var lineStyle_:GraphicsStroke = new GraphicsStroke(1, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, outlineFill_);
         private var backgroundFill_:GraphicsSolidFill = new GraphicsSolidFill(0x363636, 1);

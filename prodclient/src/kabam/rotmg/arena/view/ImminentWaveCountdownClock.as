@@ -24,15 +24,15 @@ package kabam.rotmg.arena.view
         private var WaveAsset:Class = ImminentWaveCountdownClock_WaveAsset;
         public const close:Signal = new Signal();
         private const countDownContainer:Sprite = new Sprite();
-        private const nextWaveText:StaticTextDisplay = ImminentWaveCountdownClock.makeNextWaveText();
+        private const nextWaveText:StaticTextDisplay = makeNextWaveText();
         private const countdownStringBuilder:StaticStringBuilder = new StaticStringBuilder();
-        private const countdownText:StaticTextDisplay = ImminentWaveCountdownClock.makeCountdownText();
+        private const countdownText:StaticTextDisplay = makeCountdownText();
         private const waveTimer:Timer = new Timer(1000);
         private const waveStartContainer:Sprite = new Sprite();
-        private const waveAsset:* = ImminentWaveCountdownClock.makeWaveAsset();
-        private const waveText:StaticTextDisplay = ImminentWaveCountdownClock.makeWaveText();
-        private const waveNumberText:StaticTextDisplay = ImminentWaveCountdownClock.makeWaveNumberText();
-        private const startText:StaticTextDisplay = ImminentWaveCountdownClock.makeStartText();
+        private const waveAsset:* = makeWaveAsset();
+        private const waveText:StaticTextDisplay = makeWaveText();
+        private const waveNumberText:StaticTextDisplay = makeWaveNumberText();
+        private const startText:StaticTextDisplay = makeStartText();
         private const waveStartTimer:Timer = new Timer(1500, 1);
 
 

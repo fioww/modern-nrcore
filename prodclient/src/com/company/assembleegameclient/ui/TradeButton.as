@@ -8,7 +8,6 @@ package com.company.assembleegameclient.ui
     import flash.display.Sprite;
     import flash.display.Shape;
     import kabam.rotmg.text.view.StaticTextDisplay;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import flash.utils.getTimer;
     import flash.text.TextFieldAutoSize;

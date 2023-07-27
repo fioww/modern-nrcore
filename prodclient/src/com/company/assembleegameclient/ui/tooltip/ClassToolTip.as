@@ -21,7 +21,6 @@ package com.company.assembleegameclient.ui.tooltip
     import flash.display.BitmapData;
     import com.company.util.CachingColorTransformer;
     import com.company.util.ConversionUtil;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.util.EquipmentUtil;
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import com.company.assembleegameclient.util.FilterUtil;

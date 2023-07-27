@@ -25,7 +25,7 @@ package kabam.rotmg.arena.view
         private var isDown:Boolean;
         private var isSelected:Boolean = false;
 
-        public var label:StaticTextDisplay = ArenaLeaderboardTab.makeLabel();
+        public var label:StaticTextDisplay = makeLabel();
         public const readyToAlign:Signal = label.textChanged;
         public const selected:Signal = new Signal(ArenaLeaderboardTab);
 

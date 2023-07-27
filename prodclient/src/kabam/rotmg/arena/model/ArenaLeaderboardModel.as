@@ -5,9 +5,7 @@
 
 package kabam.rotmg.arena.model
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.model.TextKey;
-    import __AS3__.vec.*;
 
     public class ArenaLeaderboardModel 
     {

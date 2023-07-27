@@ -12,7 +12,6 @@ package com.company.assembleegameclient.mapeditor
     import flash.events.FocusEvent;
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import flash.events.Event;
-    import __AS3__.vec.Vector;
 
     public class Filter extends Sprite 
     {

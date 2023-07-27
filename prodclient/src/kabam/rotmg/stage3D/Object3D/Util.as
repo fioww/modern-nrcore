@@ -7,7 +7,6 @@ package kabam.rotmg.stage3D.Object3D
 {
     import flash.geom.Matrix3D;
     import flash.utils.ByteArray;
-    import __AS3__.vec.*;
 
     public class Util 
     {

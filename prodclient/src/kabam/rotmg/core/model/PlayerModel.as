@@ -11,7 +11,6 @@ package kabam.rotmg.core.model
     import kabam.rotmg.account.kongregate.KongregateAccount;
     import com.company.assembleegameclient.parameters.Parameters;
     import com.company.assembleegameclient.appengine.SavedCharacter;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.appengine.SavedNewsItem;
     import kabam.rotmg.servers.api.LatLong;
 

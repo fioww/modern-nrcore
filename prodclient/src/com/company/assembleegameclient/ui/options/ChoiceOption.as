@@ -7,7 +7,6 @@ package com.company.assembleegameclient.ui.options
 {
     import com.company.assembleegameclient.parameters.Parameters;
     import flash.events.Event;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
     public class ChoiceOption extends BaseOption 

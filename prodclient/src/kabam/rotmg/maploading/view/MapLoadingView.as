@@ -8,7 +8,6 @@ package kabam.rotmg.maploading.view
     import flash.display.Sprite;
     import flash.display.DisplayObjectContainer;
     import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-    import __AS3__.vec.Vector;
     import flash.display.DisplayObject;
     import flash.display.MovieClip;
     import kabam.rotmg.assets.model.Animation;
@@ -22,7 +21,6 @@ package kabam.rotmg.maploading.view
     import kabam.rotmg.account.web.view.WebLoginDialogForced;
     import kabam.rotmg.account.web.view.WebRegisterDialog;
     import com.gskinner.motion.GTween;
-    import __AS3__.vec.*;
 
     public class MapLoadingView extends Sprite 
     {

@@ -15,7 +15,6 @@ package com.company.assembleegameclient.map.mapoverlay
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import flash.text.TextFieldAutoSize;
@@ -28,7 +27,6 @@ package com.company.assembleegameclient.map.mapoverlay
     import kabam.rotmg.core.StaticInjectorContext;
     import com.company.assembleegameclient.parameters.Parameters;
     import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
 
     public class SpeechBalloon extends Sprite implements IMapOverlayElement 
     {

@@ -25,13 +25,13 @@ package kabam.rotmg.arena.view
         public const buyContinue:Signal = new Signal(int, int);
         private const WIDTH:int = 350;
         private const HEIGHT:int = 150;
-        private const background:DialogBackground = ContinueOrQuitDialog.makeBackground();
-        private const title:StaticTextDisplay = ContinueOrQuitDialog.makeTitle();
-        private const quitSubtitle:StaticTextDisplay = ContinueOrQuitDialog.makeSubtitle();
-        private const quitButton:StaticTextButton = ContinueOrQuitDialog.makeQuitButton();
-        private const continueButton:LegacyBuyButton = ContinueOrQuitDialog.makeContinueButton();
-        private const restartSubtitle:StaticTextDisplay = ContinueOrQuitDialog.makeSubtitle();
-        private const processingText:StaticTextDisplay = ContinueOrQuitDialog.makeSubtitle();
+        private const background:DialogBackground = makeBackground();
+        private const title:StaticTextDisplay = makeTitle();
+        private const quitSubtitle:StaticTextDisplay = makeSubtitle();
+        private const quitButton:StaticTextButton = makeQuitButton();
+        private const continueButton:LegacyBuyButton = makeContinueButton();
+        private const restartSubtitle:StaticTextDisplay = makeSubtitle();
+        private const processingText:StaticTextDisplay = makeSubtitle();
 
         private var cost:int;
 

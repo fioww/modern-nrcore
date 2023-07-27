@@ -6,7 +6,6 @@
 package com.company.assembleegameclient.mapeditor
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import com.company.assembleegameclient.mapeditor.Element;
@@ -24,7 +23,6 @@ package com.company.assembleegameclient.mapeditor
     import flash.net.FileReference;
     import flash.display.BitmapData;
     import com.adobe.images.PNGEncoder;
-    import __AS3__.vec.*;
     import com.company.assembleegameclient.mapeditor.*;
 
     internal class Chooser extends Sprite 

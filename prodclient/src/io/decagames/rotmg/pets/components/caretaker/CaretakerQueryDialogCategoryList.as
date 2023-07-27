@@ -10,9 +10,7 @@ package io.decagames.rotmg.pets.components.caretaker
     import org.osflash.signals.Signal;
     import kabam.lib.ui.impl.VerticalLayout;
     import flash.display.DisplayObject;
-    import __AS3__.vec.Vector;
     import flash.events.MouseEvent;
-    import __AS3__.vec.*;
 
     public class CaretakerQueryDialogCategoryList extends LayoutList 
     {

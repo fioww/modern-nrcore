@@ -8,10 +8,8 @@ package io.decagames.rotmg.dailyQuests.command
     import robotlegs.bender.bundles.mvcs.Command;
     import io.decagames.rotmg.dailyQuests.messages.incoming.QuestFetchResponse;
     import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.dailyQuests.model.DailyQuest;
     import io.decagames.rotmg.dailyQuests.messages.data.QuestData;
-    import __AS3__.vec.*;
 
     public class QuestFetchCompleteCommand extends Command 
     {

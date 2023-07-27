@@ -5,12 +5,10 @@
 
 package com.company.assembleegameclient.ui.panels.itemgrids
 {
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
     import com.company.assembleegameclient.objects.GameObject;
     import com.company.assembleegameclient.objects.Player;
     import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile;
-    import __AS3__.vec.*;
 
     public class InventoryGrid extends ItemGrid 
     {

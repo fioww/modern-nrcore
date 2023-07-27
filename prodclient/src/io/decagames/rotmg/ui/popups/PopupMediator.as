@@ -13,8 +13,6 @@ package io.decagames.rotmg.ui.popups
     import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
     import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
     import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
 
     public class PopupMediator extends Mediator 
     {

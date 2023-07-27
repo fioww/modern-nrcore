@@ -5,9 +5,7 @@
 
 package kabam.rotmg.dailyLogin.model
 {
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.utils.date.TimeSpan;
-    import __AS3__.vec.*;
 
     public class DailyLoginModel 
     {

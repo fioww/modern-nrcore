@@ -39,10 +39,10 @@ package kabam.rotmg.packages.view
         public var close:Signal = new Signal();
         internal var loader:LoaderProxy = new LoaderProxyConcrete();
         internal var goldDisplay:GoldDisplay = new GoldDisplay();
-        private const busyIndicator:DisplayObject = PackageOfferDialog.makeBusyIndicator();
-        private const buyNow:Sprite = PackageOfferDialog.makeBuyNow();
-        private const title:TextFieldDisplayConcrete = PackageOfferDialog.makeTitle();
-        private const closeButton:DialogCloseButton = PackageOfferDialog.makeCloseButton();
+        private const busyIndicator:DisplayObject = makeBusyIndicator();
+        private const buyNow:Sprite = makeBuyNow();
+        private const title:TextFieldDisplayConcrete = makeTitle();
+        private const closeButton:DialogCloseButton = makeCloseButton();
         private var spaceAvailable:Rectangle = new Rectangle();
 
 

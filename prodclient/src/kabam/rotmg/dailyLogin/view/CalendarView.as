@@ -8,7 +8,6 @@ package kabam.rotmg.dailyLogin.view
     import flash.display.Sprite;
     import kabam.rotmg.dailyLogin.model.CalendarDayModel;
     import kabam.rotmg.dailyLogin.config.CalendarSettings;
-    import __AS3__.vec.Vector;
 
     public class CalendarView extends Sprite 
     {

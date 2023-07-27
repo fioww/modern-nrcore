@@ -8,12 +8,10 @@ package kabam.rotmg.game.view.components
     import flash.display.Sprite;
     import kabam.rotmg.game.model.StatModel;
     import kabam.rotmg.text.model.TextKey;
-    import __AS3__.vec.Vector;
     import org.osflash.signals.natives.NativeSignal;
     import flash.events.MouseEvent;
     import com.company.assembleegameclient.objects.Player;
     import flash.filters.GlowFilter;
-    import __AS3__.vec.*;
 
     public class StatsView extends Sprite 
     {

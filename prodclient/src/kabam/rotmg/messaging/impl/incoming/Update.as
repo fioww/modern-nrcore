@@ -5,13 +5,11 @@
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
     import kabam.rotmg.messaging.impl.data.GroundTileData;
     import kabam.rotmg.messaging.impl.data.ObjectData;
     import kabam.rotmg.messaging.impl.data.CompressedInt;
     import com.company.assembleegameclient.util.FreeList;
     import flash.utils.IDataInput;
-    import __AS3__.vec.*;
 
     public class Update extends IncomingMessage 
     {

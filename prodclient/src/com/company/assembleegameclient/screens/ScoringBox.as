@@ -8,7 +8,6 @@ package com.company.assembleegameclient.screens
     import flash.display.Sprite;
     import flash.geom.Rectangle;
     import flash.display.Shape;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.ui.Scrollbar;
     import flash.events.Event;
     import kabam.rotmg.text.model.TextKey;
@@ -18,7 +17,6 @@ package com.company.assembleegameclient.screens
     import flash.display.Bitmap;
     import flash.utils.getTimer;
     import flash.display.DisplayObject;
-    import __AS3__.vec.*;
 
     public class ScoringBox extends Sprite 
     {

@@ -7,7 +7,6 @@ package kabam.rotmg.mysterybox.components
 {
     import flash.display.Sprite;
     import kabam.rotmg.pets.view.components.DialogCloseButton;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.core.StaticInjectorContext;
     import org.swiftsuspenders.Injector;
     import kabam.rotmg.mysterybox.services.MysteryBoxModel;
@@ -21,7 +20,6 @@ package kabam.rotmg.mysterybox.components
     import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
     import flash.display.DisplayObject;
     import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
-    import __AS3__.vec.*;
 
     public class MysteryBoxSelectModal extends Sprite 
     {

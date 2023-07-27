@@ -5,9 +5,7 @@
 
 package kabam.rotmg.messaging.impl.outgoing
 {
-    import __AS3__.vec.Vector;
     import flash.utils.IDataOutput;
-    import __AS3__.vec.*;
 
     public class ChangeTrade extends OutgoingMessage 
     {

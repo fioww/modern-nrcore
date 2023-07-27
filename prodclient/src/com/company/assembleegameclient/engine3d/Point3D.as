@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.engine3d
 {
-    import __AS3__.vec.Vector;
     import flash.display.GraphicsPathCommand;
     import flash.display.GraphicsEndFill;
     import flash.display.GraphicsPath;
@@ -19,7 +18,6 @@ package com.company.assembleegameclient.engine3d
     import flash.geom.Matrix3D;
     import com.company.assembleegameclient.map.Camera;
     import flash.display.BitmapData;
-    import __AS3__.vec.*;
 
     public class Point3D 
     {

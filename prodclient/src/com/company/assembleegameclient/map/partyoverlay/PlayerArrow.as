@@ -11,7 +11,6 @@ package com.company.assembleegameclient.map.partyoverlay
     import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
     import com.company.assembleegameclient.ui.menu.Menu;
     import com.company.assembleegameclient.objects.GameObject;
-    import __AS3__.vec.Vector;
 
     public class PlayerArrow extends GameObjectArrow 
     {

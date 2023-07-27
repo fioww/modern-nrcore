@@ -6,8 +6,6 @@
 package com.company.assembleegameclient.util
 {
     import flash.utils.Dictionary;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
 
     public class FreeList 
     {

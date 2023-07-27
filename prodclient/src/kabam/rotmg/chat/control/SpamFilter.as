@@ -8,8 +8,8 @@ package kabam.rotmg.chat.control
     public class SpamFilter 
     {
 
-        private const filterTable:Array = SpamFilter.createFilterTable();
-        private const testPatterns:Array = SpamFilter.returnTestPatterns();
+        private const filterTable:Array = createFilterTable();
+        private const testPatterns:Array = returnTestPatterns();
 
         private var newPatterns:Array;
         private var patterns:Array;

@@ -27,7 +27,6 @@ package io.decagames.rotmg.shop
     import io.decagames.rotmg.ui.tabs.UITab;
     import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
     import io.decagames.rotmg.shop.genericBox.GenericBoxTile;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.shop.mysteryBox.MysteryBoxTile;
     import kabam.rotmg.packages.model.PackageInfo;
     import io.decagames.rotmg.shop.packages.PackageBoxTile;

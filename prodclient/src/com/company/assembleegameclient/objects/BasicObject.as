@@ -7,11 +7,9 @@ package com.company.assembleegameclient.objects
 {
     import com.company.assembleegameclient.map.Map;
     import com.company.assembleegameclient.map.Square;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
     import flash.display.IGraphicsData;
     import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
 
     public class BasicObject 
     {

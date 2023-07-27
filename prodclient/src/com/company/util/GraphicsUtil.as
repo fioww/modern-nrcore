@@ -6,7 +6,6 @@
 package com.company.util
 {
     import flash.display.GraphicsEndFill;
-    import __AS3__.vec.Vector;
     import flash.display.GraphicsPathCommand;
     import flash.display.GraphicsStroke;
     import flash.display.LineScaleMode;

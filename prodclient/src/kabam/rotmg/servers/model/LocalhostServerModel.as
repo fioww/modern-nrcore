@@ -9,10 +9,8 @@ package kabam.rotmg.servers.model
     import kabam.rotmg.core.model.PlayerModel;
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
     import kabam.rotmg.servers.api.Server;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.parameters.Parameters;
     import com.company.assembleegameclient.appengine.SavedCharacter;
-    import __AS3__.vec.*;
 
     public class LocalhostServerModel implements ServerModel 
     {

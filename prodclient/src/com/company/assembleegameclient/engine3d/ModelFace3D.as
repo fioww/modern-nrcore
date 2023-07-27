@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.engine3d
 {
-    import __AS3__.vec.Vector;
 
     public class ModelFace3D 
     {

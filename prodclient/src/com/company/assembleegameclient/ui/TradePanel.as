@@ -11,7 +11,6 @@ package com.company.assembleegameclient.ui
     import kabam.rotmg.text.model.TextKey;
     import flash.events.MouseEvent;
     import kabam.rotmg.messaging.impl.incoming.TradeStart;
-    import __AS3__.vec.Vector;
 
     public class TradePanel extends Sprite 
     {

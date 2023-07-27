@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.mapeditor
 {
-    import __AS3__.vec.Vector;
 
     public class METile 
     {

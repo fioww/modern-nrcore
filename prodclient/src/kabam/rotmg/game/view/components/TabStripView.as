@@ -9,7 +9,6 @@ package kabam.rotmg.game.view.components
     import org.osflash.signals.Signal;
     import com.company.assembleegameclient.ui.icons.IconButtonFactory;
     import com.company.assembleegameclient.objects.ImageFactory;
-    import __AS3__.vec.Vector;
     import flash.events.MouseEvent;
     import flash.display.GraphicsSolidFill;
     import flash.display.GraphicsPath;
@@ -17,7 +16,6 @@ package kabam.rotmg.game.view.components
     import com.company.util.GraphicsUtil;
     import flash.display.Bitmap;
     import com.company.ui.BaseSimpleText;
-    import __AS3__.vec.*;
 
     public class TabStripView extends Sprite 
     {

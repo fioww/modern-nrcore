@@ -9,7 +9,6 @@ package com.company.assembleegameclient.objects
     import kabam.rotmg.core.StaticInjectorContext;
     import kabam.rotmg.text.view.BitmapTextFactory;
     import flash.display.BitmapData;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.assembleegameclient.map.Camera;
     import com.company.assembleegameclient.ui.panels.PortalPanel;

@@ -6,7 +6,6 @@
 package kabam.rotmg.messaging.impl.outgoing.arena
 {
     import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.messaging.impl.data.SlotObjectData;
     import flash.utils.IDataOutput;
 

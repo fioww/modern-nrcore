@@ -5,9 +5,7 @@
 
 package io.decagames.rotmg.dailyQuests.messages.data
 {
-    import __AS3__.vec.Vector;
     import flash.utils.IDataInput;
-    import __AS3__.vec.*;
 
     public class QuestData 
     {

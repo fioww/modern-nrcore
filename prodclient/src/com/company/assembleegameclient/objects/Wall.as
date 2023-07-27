@@ -5,14 +5,12 @@
 
 package com.company.assembleegameclient.objects
 {
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.engine3d.Face3D;
     import flash.display.BitmapData;
     import com.company.util.BitmapUtil;
     import com.company.assembleegameclient.map.Square;
     import flash.display.IGraphicsData;
     import com.company.assembleegameclient.map.Camera;
-    import __AS3__.vec.*;
 
     public class Wall extends GameObject 
     {

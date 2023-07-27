@@ -7,9 +7,7 @@ package kabam.rotmg.servers.control
 {
     import kabam.rotmg.servers.api.ServerModel;
     import kabam.rotmg.servers.api.Server;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class ParseServerDataCommand 
     {

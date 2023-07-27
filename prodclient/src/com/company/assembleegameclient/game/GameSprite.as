@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.game
 {
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.map.Map;
     import flash.filters.ColorMatrixFilter;
     import com.company.util.MoreColorUtil;

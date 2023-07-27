@@ -8,10 +8,8 @@ package io.decagames.rotmg.ui.popups.header
     import flash.display.Sprite;
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
     import io.decagames.rotmg.ui.labels.UILabel;
-    import __AS3__.vec.Vector;
     import io.decagames.rotmg.ui.buttons.SliceScalingButton;
     import io.decagames.rotmg.ui.texture.TextureParser;
-    import __AS3__.vec.*;
 
     public class PopupHeader extends Sprite 
     {

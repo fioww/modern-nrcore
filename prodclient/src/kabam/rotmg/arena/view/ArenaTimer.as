@@ -15,7 +15,7 @@ package kabam.rotmg.arena.view
     public class ArenaTimer extends Sprite 
     {
 
-        private const timerText:StaticTextDisplay = ArenaTimer.makeTimerText();
+        private const timerText:StaticTextDisplay = makeTimerText();
         private const timerStringBuilder:StaticStringBuilder = new StaticStringBuilder();
         private const timer:Timer = new Timer(1000);
 

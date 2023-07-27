@@ -14,9 +14,9 @@ package kabam.rotmg.packages.view
     public class BusyIndicator extends Sprite 
     {
 
-        private const pinwheel:Sprite = BusyIndicator.makePinWheel();
-        private const innerCircleMask:Sprite = BusyIndicator.makeInner();
-        private const quarterCircleMask:Sprite = BusyIndicator.makeQuarter();
+        private const pinwheel:Sprite = makePinWheel();
+        private const innerCircleMask:Sprite = makeInner();
+        private const quarterCircleMask:Sprite = makeQuarter();
         private const timer:Timer = new Timer(25);
         private const radius:int = 22;
         private const color:uint = 0xFFFFFF;

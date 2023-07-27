@@ -6,11 +6,9 @@
 package com.company.assembleegameclient.screens
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import kabam.rotmg.servers.api.Server;
     import flash.events.MouseEvent;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
 
     public class ServerBoxes extends Sprite 
     {

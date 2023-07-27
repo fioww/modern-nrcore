@@ -13,11 +13,9 @@ package kabam.rotmg.dailyLogin.view
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import flash.geom.Rectangle;
-    import __AS3__.vec.*;
 
     public class CalendarTabsView extends Sprite 
     {

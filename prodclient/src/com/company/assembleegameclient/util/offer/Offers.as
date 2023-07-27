@@ -5,8 +5,6 @@
 
 package com.company.assembleegameclient.util.offer
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
 
     public class Offers 
     {

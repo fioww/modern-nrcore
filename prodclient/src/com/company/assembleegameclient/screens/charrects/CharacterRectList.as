@@ -18,7 +18,6 @@ package com.company.assembleegameclient.screens.charrects
     import com.company.assembleegameclient.appengine.SavedCharacter;
     import kabam.rotmg.classes.model.CharacterClass;
     import com.company.assembleegameclient.appengine.CharacterStats;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.parameters.Parameters;
     import kabam.rotmg.core.StaticInjectorContext;
     import org.swiftsuspenders.Injector;

@@ -5,7 +5,6 @@
 
 package com.company.assembleegameclient.account.ui.components
 {
-    import __AS3__.vec.Vector;
 
     public class SelectionGroup 
     {

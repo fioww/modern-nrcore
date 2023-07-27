@@ -19,7 +19,6 @@ package com.company.assembleegameclient.ui.panels.itemgrids
     import kabam.rotmg.text.model.TextKey;
     import com.company.assembleegameclient.ui.tooltip.TextToolTip;
     import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-    import __AS3__.vec.Vector;
 
     public class ItemGrid extends Panel 
     {

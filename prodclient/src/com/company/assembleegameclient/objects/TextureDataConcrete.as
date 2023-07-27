@@ -16,7 +16,6 @@ package com.company.assembleegameclient.objects
     import com.company.assembleegameclient.util.AnimatedChar;
     import com.company.assembleegameclient.util.AssetLoader;
     import flash.utils.Dictionary;
-    import __AS3__.vec.*;
     import com.company.assembleegameclient.appengine.*;
 
     public class TextureDataConcrete extends TextureData 

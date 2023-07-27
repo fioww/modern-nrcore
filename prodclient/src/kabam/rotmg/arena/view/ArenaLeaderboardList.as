@@ -6,12 +6,10 @@
 package kabam.rotmg.arena.view
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
     import flash.display.DisplayObject;
     import kabam.rotmg.util.components.VerticalScrollingList;
     import kabam.lib.ui.api.Size;
     import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-    import __AS3__.vec.*;
 
     public class ArenaLeaderboardList extends Sprite 
     {

@@ -49,14 +49,14 @@ package io.decagames.rotmg.pets.components.caretaker
             "info":"CaretakerQueryDialog.info_evolution"
         }];
 
-        private const layoutWaiter:SignalWaiter = CaretakerQueryDialog.makeDeferredLayout();
-        private const container:DisplayObjectContainer = CaretakerQueryDialog.makeContainer();
-        private const background:PopupWindowBackground = CaretakerQueryDialog.makeBackground();
-        private const caretaker:CaretakerQueryDialogCaretaker = CaretakerQueryDialog.makeCaretaker();
-        private const title:TextFieldDisplayConcrete = CaretakerQueryDialog.makeTitle();
-        private const categories:CaretakerQueryDialogCategoryList = CaretakerQueryDialog.makeCategoryList();
-        private const backButton:DeprecatedTextButton = CaretakerQueryDialog.makeBackButton();
-        private const closeButton:DeprecatedTextButton = CaretakerQueryDialog.makeCloseButton();
+        private const layoutWaiter:SignalWaiter = makeDeferredLayout();
+        private const container:DisplayObjectContainer = makeContainer();
+        private const background:PopupWindowBackground = makeBackground();
+        private const caretaker:CaretakerQueryDialogCaretaker = makeCaretaker();
+        private const title:TextFieldDisplayConcrete = makeTitle();
+        private const categories:CaretakerQueryDialogCategoryList = makeCategoryList();
+        private const backButton:DeprecatedTextButton = makeBackButton();
+        private const closeButton:DeprecatedTextButton = makeCloseButton();
         public const closed:Signal = new NativeMappedSignal(closeButton, MouseEvent.CLICK);
 
 

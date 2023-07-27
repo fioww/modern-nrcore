@@ -7,7 +7,6 @@ package com.company.assembleegameclient.map
 {
     import com.company.assembleegameclient.engine3d.Face3D;
     import flash.display.BitmapData;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.parameters.Parameters;
     import kabam.rotmg.stage3D.GraphicsFillExtra;
     import flash.display.IGraphicsData;

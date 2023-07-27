@@ -6,9 +6,7 @@
 package com.company.assembleegameclient.objects.particles
 {
     import com.company.assembleegameclient.objects.GameObject;
-    import __AS3__.vec.Vector;
     import kabam.lib.math.easing.Back;
-    import __AS3__.vec.*;
 
     public class InspireEffect extends ParticleEffect 
     {

@@ -6,11 +6,9 @@
 package io.decagames.rotmg.seasonalEvent.data
 {
     import robotlegs.bender.framework.api.IContext;
-    import __AS3__.vec.Vector;
     import com.company.assembleegameclient.screens.LeagueData;
     import io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard.SeasonalLeaderBoardItemData;
     import io.decagames.rotmg.seasonalEvent.config.SeasonalConfig;
-    import __AS3__.vec.*;
 
     public class SeasonalEventModel 
     {
