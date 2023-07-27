@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.account.ui.ChooseNameFrame
+﻿//com.company.assembleegameclient.account.ui.ChooseNameFrame
 
 package com.company.assembleegameclient.account.ui
 {
@@ -22,7 +19,7 @@ package com.company.assembleegameclient.account.ui
 
         public function ChooseNameFrame(_arg_1:AGameSprite, _arg_2:Boolean)
         {
-            super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE, "/chooseName");
+            super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE);
             this.gameSprite = _arg_1;
             this.isPurchase = _arg_2;
             this.nameInput = new TextInputField(TextKey.CHOOSE_NAME_NAME, false);

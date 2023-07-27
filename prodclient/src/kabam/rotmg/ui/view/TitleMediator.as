@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.view.TitleMediator
+﻿//kabam.rotmg.ui.view.TitleMediator
 
 package kabam.rotmg.ui.view
 {
@@ -20,7 +17,6 @@ package kabam.rotmg.ui.view
     import robotlegs.bender.framework.api.ILogger;
     import kabam.rotmg.appengine.api.AppEngineClient;
     import kabam.rotmg.build.api.BuildData;
-    import kabam.rotmg.core.service.GoogleAnalytics;
     import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
     import com.company.assembleegameclient.parameters.Parameters;
     import flash.net.URLRequest;
@@ -70,8 +66,6 @@ package kabam.rotmg.ui.view
         public var client:AppEngineClient;
         [Inject]
         public var buildData:BuildData;
-        [Inject]
-        public var tracking:GoogleAnalytics;
 
 
         override public function initialize():void

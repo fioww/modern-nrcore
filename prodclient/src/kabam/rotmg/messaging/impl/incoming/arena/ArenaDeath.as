@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath
+﻿//kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath
 
 package kabam.rotmg.messaging.impl.incoming.arena
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.external.command.MapExternalCallbacksCommand
+﻿//kabam.rotmg.external.command.MapExternalCallbacksCommand
 
 package kabam.rotmg.external.command
 {

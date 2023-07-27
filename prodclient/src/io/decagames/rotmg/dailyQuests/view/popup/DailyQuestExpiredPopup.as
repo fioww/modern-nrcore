@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.dailyQuests.view.popup.DailyQuestExpiredPopup
+﻿//io.decagames.rotmg.dailyQuests.view.popup.DailyQuestExpiredPopup
 
 package io.decagames.rotmg.dailyQuests.view.popup
 {

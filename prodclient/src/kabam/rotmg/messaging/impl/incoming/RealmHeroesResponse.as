@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.incoming.RealmHeroesResponse
+﻿//kabam.rotmg.messaging.impl.incoming.RealmHeroesResponse
 
 package kabam.rotmg.messaging.impl.incoming
 {

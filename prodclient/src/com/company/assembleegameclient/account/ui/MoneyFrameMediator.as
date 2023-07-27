@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.account.ui.MoneyFrameMediator
+﻿//com.company.assembleegameclient.account.ui.MoneyFrameMediator
 
 package com.company.assembleegameclient.account.ui
 {

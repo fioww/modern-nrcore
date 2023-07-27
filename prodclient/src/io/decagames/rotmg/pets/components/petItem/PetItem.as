@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.components.petItem.PetItem
+﻿//io.decagames.rotmg.pets.components.petItem.PetItem
 
 package io.decagames.rotmg.pets.components.petItem
 {

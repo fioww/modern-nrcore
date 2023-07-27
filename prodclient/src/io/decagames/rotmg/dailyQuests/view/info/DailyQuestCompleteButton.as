@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.dailyQuests.view.info.DailyQuestCompleteButton
+﻿//io.decagames.rotmg.dailyQuests.view.info.DailyQuestCompleteButton
 
 package io.decagames.rotmg.dailyQuests.view.info
 {

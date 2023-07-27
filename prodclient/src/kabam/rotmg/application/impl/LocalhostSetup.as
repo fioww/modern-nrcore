@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.application.impl.LocalhostSetup
+﻿//kabam.rotmg.application.impl.LocalhostSetup
 
 package kabam.rotmg.application.impl
 {
@@ -12,18 +9,12 @@ package kabam.rotmg.application.impl
     {
 
         private const SERVER:String = "http://localhost:8080";
-        private const ANALYTICS:String = "UA-101960510-5";
         private const BUILD_LABEL:String = "<font color='#FFEE00'>LOCALHOST</font> #{VERSION}";
 
 
         public function getAppEngineUrl(_arg_1:Boolean=false):String
         {
             return (this.SERVER);
-        }
-
-        public function getAnalyticsCode():String
-        {
-            return (this.ANALYTICS);
         }
 
         public function getBuildLabel():String

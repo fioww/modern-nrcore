@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//flashx.textLayout.formats.TextAlign
+﻿//flashx.textLayout.formats.TextAlign
 
 package flashx.textLayout.formats
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.greensock.plugins.ColorMatrixFilterPlugin
+﻿//com.greensock.plugins.ColorMatrixFilterPlugin
 
 package com.greensock.plugins
 {

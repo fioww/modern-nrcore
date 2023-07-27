@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.game.IdleWatcher
+﻿//com.company.assembleegameclient.game.IdleWatcher
 
 package com.company.assembleegameclient.game
 {

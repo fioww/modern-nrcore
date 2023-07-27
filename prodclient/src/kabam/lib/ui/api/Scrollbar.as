@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.ui.api.Scrollbar
+﻿//kabam.lib.ui.api.Scrollbar
 
 package kabam.lib.ui.api
 {

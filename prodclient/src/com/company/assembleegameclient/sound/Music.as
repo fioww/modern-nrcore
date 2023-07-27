@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.sound.Music
+﻿//com.company.assembleegameclient.sound.Music
 
 package com.company.assembleegameclient.sound
 {
@@ -12,7 +9,6 @@ package com.company.assembleegameclient.sound
     import kabam.rotmg.application.api.ApplicationSetup;
     import com.company.assembleegameclient.parameters.Parameters;
     import flash.net.URLRequest;
-    import kabam.rotmg.core.service.GoogleAnalytics;
 
     public class Music 
     {
@@ -36,10 +32,6 @@ package com.company.assembleegameclient.sound
 
         public static function setPlayMusic(_arg_1:Boolean):void
         {
-            var _local_2:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_2)
-            {
-            };
             Parameters.data_.playMusic = _arg_1;
             Parameters.save();
             musicVolumeTransform.volume = ((Parameters.data_.playMusic) ? volume : 0);

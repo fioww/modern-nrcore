@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.application.api.ApplicationSetup
+﻿//kabam.rotmg.application.api.ApplicationSetup
 
 package kabam.rotmg.application.api
 {
@@ -10,7 +7,6 @@ package kabam.rotmg.application.api
 
         function getBuildLabel():String;
         function getAppEngineUrl(_arg_1:Boolean=false):String;
-        function getAnalyticsCode():String;
         function useLocalTextures():Boolean;
         function isToolingEnabled():Boolean;
         function areDeveloperHotkeysEnabled():Boolean;

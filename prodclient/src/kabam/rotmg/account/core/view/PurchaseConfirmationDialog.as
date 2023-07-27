@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.view.PurchaseConfirmationDialog
+﻿//kabam.rotmg.account.core.view.PurchaseConfirmationDialog
 
 package kabam.rotmg.account.core.view
 {
@@ -14,7 +11,7 @@ package kabam.rotmg.account.core.view
 
         public function PurchaseConfirmationDialog(_arg_1:Function):void
         {
-            super("Purchase confirmation", "Continue with purchase?", "Yes", "No", null);
+            super("Purchase confirmation", "Continue with purchase?", "Yes", "No");
             this.confirmedHandler = _arg_1;
         }
 

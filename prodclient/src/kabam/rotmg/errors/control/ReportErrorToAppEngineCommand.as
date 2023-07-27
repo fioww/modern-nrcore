@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.errors.control.ReportErrorToAppEngineCommand
+﻿//kabam.rotmg.errors.control.ReportErrorToAppEngineCommand
 
 package kabam.rotmg.errors.control
 {

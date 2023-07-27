@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard.SeasonalItemDataFactory
+﻿//io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard.SeasonalItemDataFactory
 
 package io.decagames.rotmg.seasonalEvent.SeasonalLeaderBoard
 {

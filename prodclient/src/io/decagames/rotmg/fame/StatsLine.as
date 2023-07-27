@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.fame.StatsLine
+﻿//io.decagames.rotmg.fame.StatsLine
 
 package io.decagames.rotmg.fame
 {

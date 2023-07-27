@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.screens.ServerBox
+﻿//com.company.assembleegameclient.screens.ServerBox
 
 package com.company.assembleegameclient.screens
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.stage3D.shaders.FragmentShader
+﻿//kabam.rotmg.stage3D.shaders.FragmentShader
 
 package kabam.rotmg.stage3D.shaders
 {

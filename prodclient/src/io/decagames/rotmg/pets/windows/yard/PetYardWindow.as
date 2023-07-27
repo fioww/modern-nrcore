@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.windows.yard.PetYardWindow
+﻿//io.decagames.rotmg.pets.windows.yard.PetYardWindow
 
 package io.decagames.rotmg.pets.windows.yard
 {

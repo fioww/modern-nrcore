@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.commands.WebLoginCommand
+﻿//kabam.rotmg.account.web.commands.WebLoginCommand
 
 package kabam.rotmg.account.web.commands
 {
@@ -11,7 +8,6 @@ package kabam.rotmg.account.web.commands
     import kabam.rotmg.dialogs.control.CloseDialogsSignal;
     import kabam.rotmg.core.signals.TaskErrorSignal;
     import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-    import kabam.rotmg.core.signals.TrackEventSignal;
     import kabam.rotmg.core.signals.InvalidateDataSignal;
     import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
     import kabam.rotmg.core.model.ScreenModel;
@@ -25,7 +21,6 @@ package kabam.rotmg.account.web.commands
     import com.company.assembleegameclient.screens.CharacterTypeSelectionScreen;
     import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
     import flash.display.Sprite;
-    import kabam.rotmg.core.service.TrackingData;
 
     public class WebLoginCommand 
     {
@@ -42,8 +37,6 @@ package kabam.rotmg.account.web.commands
         public var loginError:TaskErrorSignal;
         [Inject]
         public var updateLogin:UpdateAccountInfoSignal;
-        [Inject]
-        public var track:TrackEventSignal;
         [Inject]
         public var invalidate:InvalidateDataSignal;
         [Inject]
@@ -94,14 +87,6 @@ package kabam.rotmg.account.web.commands
                 _local_1 = ((Boolean(this.seasonalEventModel.isSeasonalMode)) ? CharacterTypeSelectionScreen : CharacterSelectionAndNewsScreen);
             };
             return (new (_local_1)());
-        }
-
-        private function getTrackingData():TrackingData
-        {
-            var _local_1:TrackingData = new TrackingData();
-            _local_1.category = "account";
-            _local_1.action = "signedIn";
-            return (_local_1);
         }
 
 

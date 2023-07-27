@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.panels.mediators.ArenaPortalPanelMediator
+﻿//com.company.assembleegameclient.ui.panels.mediators.ArenaPortalPanelMediator
 
 package com.company.assembleegameclient.ui.panels.mediators
 {
@@ -90,7 +87,7 @@ package com.company.assembleegameclient.ui.panels.mediators
             }
             else
             {
-                this.dialog = new Dialog(TextKey.MUST_BE_NAMED_TITLE, TextKey.MUST_BE_NAMED_DESC, TextKey.ERRORDIALOG_OK, null, null);
+                this.dialog = new Dialog(TextKey.MUST_BE_NAMED_TITLE, TextKey.MUST_BE_NAMED_DESC, TextKey.ERRORDIALOG_OK, null);
                 this.dialog.addEventListener(Dialog.LEFT_BUTTON, this.onNoNameDialogClose);
                 this.openDialog.dispatch(this.dialog);
             };
@@ -108,7 +105,7 @@ package com.company.assembleegameclient.ui.panels.mediators
             {
                 if (!this.gameModel.player.nameChosen_)
                 {
-                    this.dialog = new Dialog(TextKey.MUST_BE_NAMED_TITLE, TextKey.MUST_BE_NAMED_DESC, TextKey.ERRORDIALOG_OK, null, null);
+                    this.dialog = new Dialog(TextKey.MUST_BE_NAMED_TITLE, TextKey.MUST_BE_NAMED_DESC, TextKey.ERRORDIALOG_OK, null);
                     this.dialog.addEventListener(Dialog.LEFT_BUTTON, this.onNoNameDialogClose);
                     this.openDialog.dispatch(this.dialog);
                 }

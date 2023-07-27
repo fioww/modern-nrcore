@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient
+﻿//kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient
 
 package kabam.rotmg.appengine.impl
 {

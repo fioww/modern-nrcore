@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.social.signals.RefreshListSignal
+﻿//io.decagames.rotmg.social.signals.RefreshListSignal
 
 package io.decagames.rotmg.social.signals
 {

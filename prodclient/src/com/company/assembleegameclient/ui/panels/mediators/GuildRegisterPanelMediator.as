@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.panels.mediators.GuildRegisterPanelMediator
+﻿//com.company.assembleegameclient.ui.panels.mediators.GuildRegisterPanelMediator
 
 package com.company.assembleegameclient.ui.panels.mediators
 {
@@ -55,7 +52,7 @@ package com.company.assembleegameclient.ui.panels.mediators
                 return;
             };
             var _local_2:Player = _local_1.map.player_;
-            var _local_3:Dialog = new Dialog(TextKey.RENOUNCE_DIALOG_SUBTITLE, TextKey.RENOUNCE_DIALOG_TITLE, TextKey.RENOUNCE_DIALOG_CANCEL, TextKey.RENOUNCE_DIALOG_ACCEPT, "/renounceGuild");
+            var _local_3:Dialog = new Dialog(TextKey.RENOUNCE_DIALOG_SUBTITLE, TextKey.RENOUNCE_DIALOG_TITLE, TextKey.RENOUNCE_DIALOG_CANCEL, TextKey.RENOUNCE_DIALOG_ACCEPT);
             _local_3.setTextParams(TextKey.RENOUNCE_DIALOG_TITLE, {"guildName":_local_2.guildName_});
             _local_3.addEventListener(Dialog.LEFT_BUTTON, this.onRenounce);
             _local_3.addEventListener(Dialog.RIGHT_BUTTON, this.onCancel);

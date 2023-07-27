@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.kongregate.view.KongregateAccountDetailMediator
+﻿//kabam.rotmg.account.kongregate.view.KongregateAccountDetailMediator
 
 package kabam.rotmg.account.kongregate.view
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.shop.ShopBuyButtonMediator
+﻿//io.decagames.rotmg.shop.ShopBuyButtonMediator
 
 package io.decagames.rotmg.shop
 {

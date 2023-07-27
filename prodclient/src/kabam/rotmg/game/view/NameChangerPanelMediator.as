@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.view.NameChangerPanelMediator
+﻿//kabam.rotmg.game.view.NameChangerPanelMediator
 
 package kabam.rotmg.game.view
 {

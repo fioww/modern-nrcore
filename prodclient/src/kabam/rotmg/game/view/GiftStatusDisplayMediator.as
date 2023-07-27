@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.view.GiftStatusDisplayMediator
+﻿//kabam.rotmg.game.view.GiftStatusDisplayMediator
 
 package kabam.rotmg.game.view
 {

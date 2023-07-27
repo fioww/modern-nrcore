@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.tutorial.Step
+﻿//com.company.assembleegameclient.tutorial.Step
 
 package com.company.assembleegameclient.tutorial
 {
@@ -15,7 +12,6 @@ package com.company.assembleegameclient.tutorial
         public var uiDrawArrows_:Vector.<UIDrawArrow> = new Vector.<UIDrawArrow>();
         public var reqs_:Vector.<Requirement> = new Vector.<Requirement>();
         public var satisfiedSince_:int = 0;
-        public var trackingSent:Boolean;
 
         public function Step(_arg_1:XML)
         {

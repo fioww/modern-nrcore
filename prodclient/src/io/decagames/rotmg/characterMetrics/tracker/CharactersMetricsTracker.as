@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker
+﻿//io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker
 
 package io.decagames.rotmg.characterMetrics.tracker
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.social.widgets.GuildListItemMediator
+﻿//io.decagames.rotmg.social.widgets.GuildListItemMediator
 
 package io.decagames.rotmg.social.widgets
 {
@@ -86,7 +83,7 @@ package io.decagames.rotmg.social.widgets
 
         private function onRemoveClick(_arg_1:MouseEvent):void
         {
-            var _local_2:Dialog = new Dialog("", "", TextKey.REMOVE_LEFT, TextKey.REMOVE_RIGHT, "/removeFromGuild");
+            var _local_2:Dialog = new Dialog("", "", TextKey.REMOVE_LEFT, TextKey.REMOVE_RIGHT);
             _local_2.setTextParams(TextKey.REMOVE_TEXT, {"name":this.view.getLabelText()});
             _local_2.setTitleStringBuilder(new LineBuilder().setParams(TextKey.REMOVE_TITLE, {"name":this.view.getLabelText()}));
             _local_2.addEventListener(Dialog.LEFT_BUTTON, this.onCancelDialog);
@@ -151,7 +148,7 @@ package io.decagames.rotmg.social.widgets
         private function onPromoteClick(_arg_1:MouseEvent):void
         {
             var _local_2:String = GuildUtil.rankToString(GuildUtil.promotedRank(this.view.guildMemberVO.rank));
-            var _local_3:Dialog = new Dialog("", "", TextKey.PROMOTE_LEFTBUTTON, TextKey.PROMOTE_RIGHTBUTTON, "/promote");
+            var _local_3:Dialog = new Dialog("", "", TextKey.PROMOTE_LEFTBUTTON, TextKey.PROMOTE_RIGHTBUTTON);
             _local_3.setTextParams(TextKey.PROMOTE_TEXT, {
                 "name":this.view.getLabelText(),
                 "rank":_local_2
@@ -181,7 +178,7 @@ package io.decagames.rotmg.social.widgets
         private function onDemoteClick(_arg_1:MouseEvent):void
         {
             var _local_2:String = GuildUtil.rankToString(GuildUtil.demotedRank(this.view.guildMemberVO.rank));
-            var _local_3:Dialog = new Dialog("", "", TextKey.DEMOTE_LEFT, TextKey.DEMOTE_RIGHT, "/demote");
+            var _local_3:Dialog = new Dialog("", "", TextKey.DEMOTE_LEFT, TextKey.DEMOTE_RIGHT);
             _local_3.setTextParams(TextKey.DEMOTE_TEXT, {
                 "name":this.view.getLabelText(),
                 "rank":_local_2

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.chat.view.ChatInputNotAllowed
+﻿//kabam.rotmg.chat.view.ChatInputNotAllowed
 
 package kabam.rotmg.chat.view
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.objects.ObjectLibrary
+﻿//com.company.assembleegameclient.objects.ObjectLibrary
 
 package com.company.assembleegameclient.objects
 {

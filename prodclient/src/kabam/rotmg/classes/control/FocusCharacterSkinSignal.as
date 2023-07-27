@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.classes.control.FocusCharacterSkinSignal
+﻿//kabam.rotmg.classes.control.FocusCharacterSkinSignal
 
 package kabam.rotmg.classes.control
 {

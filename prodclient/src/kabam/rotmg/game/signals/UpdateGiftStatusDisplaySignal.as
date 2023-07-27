@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal
+﻿//kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal
 
 package kabam.rotmg.game.signals
 {

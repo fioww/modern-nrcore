@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.rotmg.graphics.DeleteXGraphic
+﻿//com.company.rotmg.graphics.DeleteXGraphic
 
 package com.company.rotmg.graphics
 {

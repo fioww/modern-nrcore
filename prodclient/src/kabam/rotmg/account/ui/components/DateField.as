@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.ui.components.DateField
+﻿//kabam.rotmg.account.ui.components.DateField
 
 package kabam.rotmg.account.ui.components
 {

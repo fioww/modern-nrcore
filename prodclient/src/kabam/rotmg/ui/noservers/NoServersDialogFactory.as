@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.noservers.NoServersDialogFactory
+﻿//kabam.rotmg.ui.noservers.NoServersDialogFactory
 
 package kabam.rotmg.ui.noservers
 {

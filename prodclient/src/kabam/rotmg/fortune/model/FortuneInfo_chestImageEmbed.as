@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.fortune.model.FortuneInfo_chestImageEmbed
+﻿//kabam.rotmg.fortune.model.FortuneInfo_chestImageEmbed
 
 package kabam.rotmg.fortune.model
 {

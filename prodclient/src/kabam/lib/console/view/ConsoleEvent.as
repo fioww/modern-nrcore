@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.console.view.ConsoleEvent
+﻿//kabam.lib.console.view.ConsoleEvent
 
 package kabam.lib.console.view
 {

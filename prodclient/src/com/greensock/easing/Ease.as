@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.greensock.easing.Ease
+﻿//com.greensock.easing.Ease
 
 package com.greensock.easing
 {

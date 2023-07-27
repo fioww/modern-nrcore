@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.tos.popups.buttons.GoBackButtonMediator
+﻿//io.decagames.rotmg.tos.popups.buttons.GoBackButtonMediator
 
 package io.decagames.rotmg.tos.popups.buttons
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.maploading.commands.CharacterAnimationFactory
+﻿//kabam.rotmg.maploading.commands.CharacterAnimationFactory
 
 package kabam.rotmg.maploading.commands
 {

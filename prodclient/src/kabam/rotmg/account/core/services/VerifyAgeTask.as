@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.services.VerifyAgeTask
+﻿//kabam.rotmg.account.core.services.VerifyAgeTask
 
 package kabam.rotmg.account.core.services
 {

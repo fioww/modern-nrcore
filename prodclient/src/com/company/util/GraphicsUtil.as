@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.util.GraphicsUtil
+﻿//com.company.util.GraphicsUtil
 
 package com.company.util
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.guild.GuildChronicleScreen
+﻿//com.company.assembleegameclient.ui.guild.GuildChronicleScreen
 
 package com.company.assembleegameclient.ui.guild
 {
@@ -109,7 +106,7 @@ package com.company.assembleegameclient.ui.guild
 
         private function showError(_arg_1:String):void
         {
-            var _local_2:Dialog = new Dialog(TextKey.GUILD_CHRONICLE_LEFT, _arg_1, TextKey.GUILD_CHRONICLE_RIGHT, null, "/guildError");
+            var _local_2:Dialog = new Dialog(TextKey.GUILD_CHRONICLE_LEFT, _arg_1, TextKey.GUILD_CHRONICLE_RIGHT, null);
             _local_2.addEventListener(Dialog.LEFT_BUTTON, this.onErrorTextDone);
             stage.addChild(_local_2);
         }

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.utils.dictionary.DictionaryUtils
+﻿//io.decagames.rotmg.utils.dictionary.DictionaryUtils
 
 package io.decagames.rotmg.utils.dictionary
 {

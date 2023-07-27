@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.game.GameSprite
+﻿//com.company.assembleegameclient.game.GameSprite
 
 package com.company.assembleegameclient.game
 {
@@ -37,7 +34,6 @@ package com.company.assembleegameclient.game
     import com.company.assembleegameclient.objects.GameObject;
     import flash.display.DisplayObject;
     import flash.display.Sprite;
-    import kabam.rotmg.core.service.GoogleAnalytics;
     import kabam.rotmg.promotions.view.SpecialOfferButton;
     import kabam.rotmg.game.model.QuestModel;
     import io.decagames.rotmg.seasonalEvent.data.SeasonalEventModel;
@@ -121,7 +117,6 @@ package com.company.assembleegameclient.game
         private var displaysPosY:uint = 4;
         private var currentPackage:DisplayObject = new Sprite();
         private var packageY:Number;
-        private var googleAnalytics:GoogleAnalytics;
         private var specialOfferButton:SpecialOfferButton;
         private var questModel:QuestModel;
         private var seasonalEventModel:SeasonalEventModel;
@@ -243,7 +238,6 @@ package com.company.assembleegameclient.game
                 this.showWaveCounter();
             };
             var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
-            this.googleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
             this.isNexus_ = (this.mapName == Map.NEXUS);
             if (this.isNexus_)
             {
@@ -283,34 +277,8 @@ package com.company.assembleegameclient.game
             {
                 this.questModel.previousRealm = "";
             };
-            var _local_2:AppEngineClient = StaticInjectorContext.getInjector().getInstance(AppEngineClient);
-            var _local_3:Object = {
-                "game_net_user_id":_local_1.gameNetworkUserId(),
-                "game_net":_local_1.gameNetwork(),
-                "play_platform":_local_1.playPlatform()
-            };
-            MoreObjectUtil.addToObject(_local_3, _local_1.getCredentials());
-            if (((((!(this.mapName == "Kitchen")) && (!(this.mapName == "Tutorial"))) && (!(this.mapName == "Nexus Explanation"))) && (Parameters.data_.watchForTutorialExit == true)))
-            {
-                Parameters.data_.watchForTutorialExit = false;
-                this.callTracking('rotmg.Marketing.track("tutorialComplete")');
-                _local_3["fteStepCompleted"] = 9900;
-                _local_2.sendRequest("/log/logFteStep", _local_3);
-            };
-            if (this.mapName == "Kitchen")
-            {
-                _local_3["fteStepCompleted"] = 200;
-                _local_2.sendRequest("/log/logFteStep", _local_3);
-            };
             if (this.mapName == "Tutorial")
             {
-                if (Parameters.data_.needsTutorial == true)
-                {
-                    Parameters.data_.watchForTutorialExit = true;
-                    this.callTracking('rotmg.Marketing.track("install")');
-                    _local_3["fteStepCompleted"] = 100;
-                    _local_2.sendRequest("/log/logFteStep", _local_3);
-                };
                 this.startTutorial();
             }
             else
@@ -548,21 +516,6 @@ package com.company.assembleegameclient.game
             this.rankText_.x = 8;
             this.rankText_.y = 2;
             addChild(this.rankText_);
-        }
-
-        private function callTracking(_arg_1:String):void
-        {
-            if (ExternalInterface.available == false)
-            {
-                return;
-            };
-            try
-            {
-                ExternalInterface.call(_arg_1);
-            }
-            catch(err:Error)
-            {
-            };
         }
 
         private function startTutorial():void

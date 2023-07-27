@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.startup.model.impl.SignalTaskDelegate
+﻿//kabam.rotmg.startup.model.impl.SignalTaskDelegate
 
 package kabam.rotmg.startup.model.impl
 {

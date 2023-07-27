@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.startup.control.StartupSignal
+﻿//kabam.rotmg.startup.control.StartupSignal
 
 package kabam.rotmg.startup.control
 {

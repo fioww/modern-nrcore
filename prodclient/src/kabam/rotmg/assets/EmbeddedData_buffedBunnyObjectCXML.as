@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedData_buffedBunnyObjectCXML
+﻿//kabam.rotmg.assets.EmbeddedData_buffedBunnyObjectCXML
 
 package kabam.rotmg.assets
 {

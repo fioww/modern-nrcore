@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.screens.CharacterTypeSelectionMediator
+﻿//com.company.assembleegameclient.screens.CharacterTypeSelectionMediator
 
 package com.company.assembleegameclient.screens
 {

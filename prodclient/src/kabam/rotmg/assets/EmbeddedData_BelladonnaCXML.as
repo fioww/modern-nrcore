@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedData_BelladonnaCXML
+﻿//kabam.rotmg.assets.EmbeddedData_BelladonnaCXML
 
 package kabam.rotmg.assets
 {

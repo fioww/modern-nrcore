@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.servers.api.Server
+﻿//kabam.rotmg.servers.api.Server
 
 package kabam.rotmg.servers.api
 {

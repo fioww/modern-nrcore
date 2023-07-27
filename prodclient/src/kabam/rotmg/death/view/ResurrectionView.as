@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.death.view.ResurrectionView
+﻿//kabam.rotmg.death.view.ResurrectionView
 
 package kabam.rotmg.death.view
 {
@@ -45,7 +42,7 @@ package kabam.rotmg.death.view
 
         public function createPopup():void
         {
-            this.popup = new Dialog(TextKey.RESURRECTION_VIEW_YOU_DIED, TextKey.RESURRECTION_VIEW_DEATH_TEXT, TextKey.RESURRECTION_VIEW_SAVE_ME, null, null);
+            this.popup = new Dialog(TextKey.RESURRECTION_VIEW_YOU_DIED, TextKey.RESURRECTION_VIEW_DEATH_TEXT, TextKey.RESURRECTION_VIEW_SAVE_ME, null);
             this.popup.addEventListener(Dialog.LEFT_BUTTON, this.onButtonClick);
             this.showDialog.dispatch(this.popup);
         }

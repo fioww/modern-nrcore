@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.view.components.MapBackground_EMBEDDED_BACKGROUNDMAP
+﻿//kabam.rotmg.ui.view.components.MapBackground_EMBEDDED_BACKGROUNDMAP
 
 package kabam.rotmg.ui.view.components
 {

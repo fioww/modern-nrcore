@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.popup.leaveYard.LeavePetYardDialogMediator
+﻿//io.decagames.rotmg.pets.popup.leaveYard.LeavePetYardDialogMediator
 
 package io.decagames.rotmg.pets.popup.leaveYard
 {

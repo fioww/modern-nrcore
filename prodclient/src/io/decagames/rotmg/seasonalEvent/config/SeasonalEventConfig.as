@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.seasonalEvent.config.SeasonalEventConfig
+﻿//io.decagames.rotmg.seasonalEvent.config.SeasonalEventConfig
 
 package io.decagames.rotmg.seasonalEvent.config
 {

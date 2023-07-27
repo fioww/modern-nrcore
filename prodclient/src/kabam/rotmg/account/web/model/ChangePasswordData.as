@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.model.ChangePasswordData
+﻿//kabam.rotmg.account.web.model.ChangePasswordData
 
 package kabam.rotmg.account.web.model
 {

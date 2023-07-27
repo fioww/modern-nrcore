@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.chat.control.TextHandler
+﻿//kabam.rotmg.chat.control.TextHandler
 
 package kabam.rotmg.chat.control
 {

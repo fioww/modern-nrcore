@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.game.MoveRecords
+﻿//com.company.assembleegameclient.game.MoveRecords
 
 package com.company.assembleegameclient.game
 {

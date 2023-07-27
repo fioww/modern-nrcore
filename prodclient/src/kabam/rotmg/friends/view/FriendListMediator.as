@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.friends.view.FriendListMediator
+﻿//kabam.rotmg.friends.view.FriendListMediator
 
 package kabam.rotmg.friends.view
 {

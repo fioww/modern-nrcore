@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.dialogs.view.DialogsView
+﻿//kabam.rotmg.dialogs.view.DialogsView
 
 package kabam.rotmg.dialogs.view
 {

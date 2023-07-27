@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.data.ObjectData
+﻿//kabam.rotmg.messaging.impl.data.ObjectData
 
 package kabam.rotmg.messaging.impl.data
 {

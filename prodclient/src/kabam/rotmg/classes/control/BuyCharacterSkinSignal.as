@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.classes.control.BuyCharacterSkinSignal
+﻿//kabam.rotmg.classes.control.BuyCharacterSkinSignal
 
 package kabam.rotmg.classes.control
 {

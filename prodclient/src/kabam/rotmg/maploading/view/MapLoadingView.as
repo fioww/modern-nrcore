@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.maploading.view.MapLoadingView
+﻿//kabam.rotmg.maploading.view.MapLoadingView
 
 package kabam.rotmg.maploading.view
 {

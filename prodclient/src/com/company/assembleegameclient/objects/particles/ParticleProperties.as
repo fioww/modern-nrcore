@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.objects.particles.ParticleProperties
+﻿//com.company.assembleegameclient.objects.particles.ParticleProperties
 
 package com.company.assembleegameclient.objects.particles
 {

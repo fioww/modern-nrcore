@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.objects.particles.SparkerParticle
+﻿//com.company.assembleegameclient.objects.particles.SparkerParticle
 
 package com.company.assembleegameclient.objects.particles
 {

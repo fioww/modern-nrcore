@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.kabam.view.KabamAccountInfoView
+﻿//kabam.rotmg.account.kabam.view.KabamAccountInfoView
 
 package kabam.rotmg.account.kabam.view
 {

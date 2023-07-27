@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.utils.PetAbilityDisplayIDGetter
+﻿//io.decagames.rotmg.pets.utils.PetAbilityDisplayIDGetter
 
 package io.decagames.rotmg.pets.utils
 {

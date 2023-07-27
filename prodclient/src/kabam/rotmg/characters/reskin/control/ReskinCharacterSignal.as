@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.characters.reskin.control.ReskinCharacterSignal
+﻿//kabam.rotmg.characters.reskin.control.ReskinCharacterSignal
 
 package kabam.rotmg.characters.reskin.control
 {

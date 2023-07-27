@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.unity.popup.UnitySignUpConstants
+﻿//io.decagames.rotmg.unity.popup.UnitySignUpConstants
 
 package io.decagames.rotmg.unity.popup
 {

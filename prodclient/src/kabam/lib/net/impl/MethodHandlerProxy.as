@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.net.impl.MethodHandlerProxy
+﻿//kabam.lib.net.impl.MethodHandlerProxy
 
 package kabam.lib.net.impl
 {

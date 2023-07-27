@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.fortune.services.FortuneModel
+﻿//kabam.rotmg.fortune.services.FortuneModel
 
 package kabam.rotmg.fortune.services
 {

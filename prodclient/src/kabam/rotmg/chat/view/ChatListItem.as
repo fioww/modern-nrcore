@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.chat.view.ChatListItem
+﻿//kabam.rotmg.chat.view.ChatListItem
 
 package kabam.rotmg.chat.view
 {

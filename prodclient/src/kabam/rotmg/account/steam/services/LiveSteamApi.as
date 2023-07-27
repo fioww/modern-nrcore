@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.steam.services.LiveSteamApi
+﻿//kabam.rotmg.account.steam.services.LiveSteamApi
 
 package kabam.rotmg.account.steam.services
 {

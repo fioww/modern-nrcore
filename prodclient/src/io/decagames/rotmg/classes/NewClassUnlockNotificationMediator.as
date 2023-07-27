@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.classes.NewClassUnlockNotificationMediator
+﻿//io.decagames.rotmg.classes.NewClassUnlockNotificationMediator
 
 package io.decagames.rotmg.classes
 {

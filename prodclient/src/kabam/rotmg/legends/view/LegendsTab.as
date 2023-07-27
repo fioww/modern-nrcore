@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.legends.view.LegendsTab
+﻿//kabam.rotmg.legends.view.LegendsTab
 
 package kabam.rotmg.legends.view
 {

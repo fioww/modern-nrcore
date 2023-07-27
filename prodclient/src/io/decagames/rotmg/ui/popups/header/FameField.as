@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.ui.popups.header.FameField
+﻿//io.decagames.rotmg.ui.popups.header.FameField
 
 package io.decagames.rotmg.ui.popups.header
 {

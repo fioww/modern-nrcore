@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.core.signals.SetLoadingMessageSignal
+﻿//kabam.rotmg.core.signals.SetLoadingMessageSignal
 
 package kabam.rotmg.core.signals
 {

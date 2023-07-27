@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.characters.reskin.view.ReskinCharacterView
+﻿//kabam.rotmg.characters.reskin.view.ReskinCharacterView
 
 package kabam.rotmg.characters.reskin.view
 {

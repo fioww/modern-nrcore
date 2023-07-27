@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.GameServerConnectionConcrete
+﻿//kabam.rotmg.messaging.impl.GameServerConnectionConcrete
 
 package kabam.rotmg.messaging.impl
 {
@@ -15,7 +12,10 @@ package kabam.rotmg.messaging.impl
     import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
     import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
     import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
-    import robotlegs.bender.framework.api.ILogger;
+
+import org.osflash.signals.Signal;
+
+import robotlegs.bender.framework.api.ILogger;
     import kabam.rotmg.death.control.HandleDeathSignal;
     import kabam.rotmg.death.control.ZombifySignal;
     import kabam.rotmg.game.focus.control.SetGameFocusSignal;
@@ -238,7 +238,6 @@ package kabam.rotmg.messaging.impl
     import kabam.rotmg.ui.view.TitleView;
     import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
     import kabam.rotmg.messaging.impl.data.SlotObjectData;
-    import kabam.rotmg.core.service.GoogleAnalytics;
     import flash.events.TimerEvent;
     import com.company.assembleegameclient.ui.dialogs.Dialog;
     import flash.events.Event;
@@ -637,8 +636,8 @@ package kabam.rotmg.messaging.impl
             var _local_2:ICipher;
             if (Parameters.ENABLE_ENCRYPTION)
             {
-                _local_1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("6a39570cc9de4ec71d64821894c79332b197f92ba85ed281a023".substring(0, 26)));
-                _local_2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray("6a39570cc9de4ec71d64821894c79332b197f92ba85ed281a023".substring(26)));
+                _local_1 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray(Parameters.RANDOM1));
+                _local_2 = Crypto.getCipher("rc4", MoreStringUtil.hexStringToByteArray(Parameters.RANDOM2));
                 serverConnection.setOutgoingCipher(_local_1);
                 serverConnection.setIncomingCipher(_local_2);
             };
@@ -2530,7 +2529,6 @@ package kabam.rotmg.messaging.impl
 
         private function onClosed():void
         {
-            var _local_1:GoogleAnalytics;
             var _local_2:HideMapLoadingSignal;
             var _local_3:Server;
             var _local_4:ReconnectEvent;
@@ -2538,8 +2536,6 @@ package kabam.rotmg.messaging.impl
             {
                 if (this.playerId_ != -1)
                 {
-                    _local_1 = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-                    _local_1.trackEvent("error", "disconnect", gs_.map.name_);
                     gs_.closed.dispatch();
                 }
                 else
@@ -2597,6 +2593,11 @@ package kabam.rotmg.messaging.impl
             lastConnectionFailureMessage = _arg_1.errorDescription_;
             lastConnectionFailureID = _arg_1.errorConnectionId_;
             this.serverFull_ = false;
+
+            // remove loading screen
+            var hideLoadingScreen:Signal = this.injector.getInstance(HideMapLoadingSignal);
+            hideLoadingScreen && hideLoadingScreen.dispatch();
+
             switch (_arg_1.errorId_)
             {
                 case Failure.INCORRECT_VERSION:
@@ -2620,9 +2621,29 @@ package kabam.rotmg.messaging.impl
                 case Failure.SERVER_QUEUE_FULL:
                     this.handleServerFull(_arg_1);
                     return;
+                case Failure.JSON_DIALOG:
+                    this.handleJsonDialog(_arg_1);
+                    return;
                 default:
                     this.handleDefaultFailure(_arg_1);
             };
+        }
+
+        private function handleJsonDialog(_arg_1:Failure):void {
+            var errorMsg:Object = JSON.parse(_arg_1.errorDescription_);
+            var dlg:Dialog;
+
+            // check for correct client version
+            if (Parameters.CLIENT_VERSION != errorMsg.build) {
+                handleIncorrectVersionFailureBasic(errorMsg.build);
+                return;
+            }
+
+            // correct version, display custom json dialog
+            dlg = new Dialog(errorMsg.title, errorMsg.description, "Ok", null, null);
+            dlg.addEventListener(Dialog.LEFT_BUTTON, this.onDoClientUpdate);
+            gs_.stage.addChild(dlg);
+            this.retryConnection_ = false;
         }
 
         private function handleEmailVerificationNeeded(_arg_1:Failure):void
@@ -2679,10 +2700,15 @@ package kabam.rotmg.messaging.impl
 
         private function handleIncorrectVersionFailure(_arg_1:Failure):void
         {
-            var _local_2:Dialog = new Dialog(TextKey.CLIENT_UPDATE_TITLE, "", TextKey.CLIENT_UPDATE_LEFT_BUTTON, null, "/clientUpdate");
+            handleIncorrectVersionFailureBasic(_arg_1.errorDescription_);
+        }
+
+        private function handleIncorrectVersionFailureBasic(_arg_1:String):void
+        {
+            var _local_2:Dialog = new Dialog(TextKey.CLIENT_UPDATE_TITLE, "", TextKey.CLIENT_UPDATE_LEFT_BUTTON, null);
             _local_2.setTextParams(TextKey.CLIENT_UPDATE_DESCRIPTION, {
                 "client":Parameters.CLIENT_VERSION,
-                "server":_arg_1.errorDescription_
+                "server":_arg_1
             });
             _local_2.addEventListener(Dialog.LEFT_BUTTON, this.onDoClientUpdate);
             gs_.stage.addChild(_local_2);
@@ -2691,21 +2717,12 @@ package kabam.rotmg.messaging.impl
 
         private function handleDefaultFailure(_arg_1:Failure):void
         {
-            var _local_3:GoogleAnalytics;
             var _local_2:String = LineBuilder.getLocalizedStringFromJSON(_arg_1.errorDescription_);
             if (_local_2 == "")
             {
                 _local_2 = _arg_1.errorDescription_;
             };
             this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME, _local_2));
-            if (_arg_1.errorDescription_ != "")
-            {
-                _local_3 = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-                if (_local_3)
-                {
-                    _local_3.trackEvent("disconnect", _arg_1.errorDescription_, _arg_1.errorConnectionId_);
-                };
-            };
         }
 
         private function onDoClientUpdate(_arg_1:Event):void

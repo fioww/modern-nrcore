@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.mapeditor.Object3DChooser
+﻿//com.company.assembleegameclient.mapeditor.Object3DChooser
 
 package com.company.assembleegameclient.mapeditor
 {

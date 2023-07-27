@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.account.ui.NewChooseNameFrame
+﻿//com.company.assembleegameclient.account.ui.NewChooseNameFrame
 
 package com.company.assembleegameclient.account.ui
 {
@@ -19,7 +16,7 @@ package com.company.assembleegameclient.account.ui
 
         public function NewChooseNameFrame()
         {
-            super("Choose a unique player name", "", TextKey.CHOOSE_NAME_CHOOSE, "/newChooseName");
+            super("Choose a unique player name", "", TextKey.CHOOSE_NAME_CHOOSE);
             this.name_ = new TextInputField("Player Name", false);
             this.name_.inputText_.restrict = "A-Za-z";
             var _local_1:int = 10;

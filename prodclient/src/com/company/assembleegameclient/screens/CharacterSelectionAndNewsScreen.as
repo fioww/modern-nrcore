@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen
+﻿//com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen
 
 package com.company.assembleegameclient.screens
 {

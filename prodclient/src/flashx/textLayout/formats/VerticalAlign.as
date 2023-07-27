@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//flashx.textLayout.formats.VerticalAlign
+﻿//flashx.textLayout.formats.VerticalAlign
 
 package flashx.textLayout.formats
 {

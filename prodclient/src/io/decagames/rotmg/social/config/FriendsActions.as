@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.social.config.FriendsActions
+﻿//io.decagames.rotmg.social.config.FriendsActions
 
 package io.decagames.rotmg.social.config
 {

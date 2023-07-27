@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.panels.ButtonPanel
+﻿//com.company.assembleegameclient.ui.panels.ButtonPanel
 
 package com.company.assembleegameclient.ui.panels
 {

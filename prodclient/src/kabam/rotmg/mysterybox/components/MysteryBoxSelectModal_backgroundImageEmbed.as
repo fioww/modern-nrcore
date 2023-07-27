@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.mysterybox.components.MysteryBoxSelectModal_backgroundImageEmbed
+﻿//kabam.rotmg.mysterybox.components.MysteryBoxSelectModal_backgroundImageEmbed
 
 package kabam.rotmg.mysterybox.components
 {

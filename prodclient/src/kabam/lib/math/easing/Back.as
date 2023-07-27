@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.math.easing.Back
+﻿//kabam.lib.math.easing.Back
 
 package kabam.lib.math.easing
 {

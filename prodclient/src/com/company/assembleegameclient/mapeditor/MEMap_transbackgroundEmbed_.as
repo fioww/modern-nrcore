@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.mapeditor.MEMap_transbackgroundEmbed_
+﻿//com.company.assembleegameclient.mapeditor.MEMap_transbackgroundEmbed_
 
 package com.company.assembleegameclient.mapeditor
 {

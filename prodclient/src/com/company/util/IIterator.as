@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.util.IIterator
+﻿//com.company.util.IIterator
 
 package com.company.util
 {

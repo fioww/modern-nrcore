@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.characters.reskin.control.ReskinCharacterCommand
+﻿//kabam.rotmg.characters.reskin.control.ReskinCharacterCommand
 
 package kabam.rotmg.characters.reskin.control
 {

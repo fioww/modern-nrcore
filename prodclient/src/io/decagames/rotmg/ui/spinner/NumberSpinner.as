@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.ui.spinner.NumberSpinner
+﻿//io.decagames.rotmg.ui.spinner.NumberSpinner
 
 package io.decagames.rotmg.ui.spinner
 {

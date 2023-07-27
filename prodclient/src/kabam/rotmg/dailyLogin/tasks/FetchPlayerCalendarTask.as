@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask
+﻿//kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask
 
 package kabam.rotmg.dailyLogin.tasks
 {

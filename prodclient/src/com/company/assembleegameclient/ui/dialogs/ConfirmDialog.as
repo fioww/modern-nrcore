@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.dialogs.ConfirmDialog
+﻿//com.company.assembleegameclient.ui.dialogs.ConfirmDialog
 
 package com.company.assembleegameclient.ui.dialogs
 {
@@ -17,7 +14,7 @@ package com.company.assembleegameclient.ui.dialogs
         public function ConfirmDialog(_arg_1:String, _arg_2:String, _arg_3:Function)
         {
             this._callback = _arg_3;
-            super(_arg_1, _arg_2, "Cancel", "OK", null);
+            super(_arg_1, _arg_2, "Cancel", "OK");
             addEventListener(Dialog.LEFT_BUTTON, this.onCancel);
             addEventListener(Dialog.RIGHT_BUTTON, this.onConfirm);
         }

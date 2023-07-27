@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.supportCampaign.tab.donate.popup.DonateConfirmationPopupMediator
+﻿//io.decagames.rotmg.supportCampaign.tab.donate.popup.DonateConfirmationPopupMediator
 
 package io.decagames.rotmg.supportCampaign.tab.donate.popup
 {

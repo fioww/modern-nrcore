@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.view.components.TabStripView
+﻿//kabam.rotmg.game.view.components.TabStripView
 
 package kabam.rotmg.game.view.components
 {

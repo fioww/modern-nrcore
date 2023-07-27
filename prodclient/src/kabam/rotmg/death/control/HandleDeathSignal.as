@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.death.control.HandleDeathSignal
+﻿//kabam.rotmg.death.control.HandleDeathSignal
 
 package kabam.rotmg.death.control
 {

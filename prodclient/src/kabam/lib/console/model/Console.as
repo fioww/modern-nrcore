@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.console.model.Console
+﻿//kabam.lib.console.model.Console
 
 package kabam.lib.console.model
 {

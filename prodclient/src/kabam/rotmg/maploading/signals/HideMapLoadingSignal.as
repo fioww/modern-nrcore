@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.maploading.signals.HideMapLoadingSignal
+﻿//kabam.rotmg.maploading.signals.HideMapLoadingSignal
 
 package kabam.rotmg.maploading.signals
 {

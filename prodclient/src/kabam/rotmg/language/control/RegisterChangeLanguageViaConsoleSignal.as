@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.language.control.RegisterChangeLanguageViaConsoleSignal
+﻿//kabam.rotmg.language.control.RegisterChangeLanguageViaConsoleSignal
 
 package kabam.rotmg.language.control
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.view.SignalWaiter
+﻿//kabam.rotmg.ui.view.SignalWaiter
 
 package kabam.rotmg.ui.view
 {

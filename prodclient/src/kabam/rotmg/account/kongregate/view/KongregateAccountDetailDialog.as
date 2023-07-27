@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.kongregate.view.KongregateAccountDetailDialog
+﻿//kabam.rotmg.account.kongregate.view.KongregateAccountDetailDialog
 
 package kabam.rotmg.account.kongregate.view
 {
@@ -37,7 +34,7 @@ package kabam.rotmg.account.kongregate.view
         public function setInfo(_arg_1:String, _arg_2:String, _arg_3:Boolean):void
         {
             var _local_4:Frame;
-            _local_4 = new Frame(TextKey.KONGREGATEACCOUNTDETAILDIALOG_TITLE, "", TextKey.KONGREGATEACCOUNTDETAILDIALOG_RIGHTBUTTON, "/kongregateCurrentLogin");
+            _local_4 = new Frame(TextKey.KONGREGATEACCOUNTDETAILDIALOG_TITLE, "", TextKey.KONGREGATEACCOUNTDETAILDIALOG_RIGHTBUTTON);
             addChild(_local_4);
             this.loginText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xB3B3B3);
             this.loginText_.setBold(true);

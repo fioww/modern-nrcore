@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.view.DateFieldValidator
+﻿//kabam.rotmg.account.web.view.DateFieldValidator
 
 package kabam.rotmg.account.web.view
 {

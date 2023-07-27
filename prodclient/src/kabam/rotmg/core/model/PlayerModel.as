@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.core.model.PlayerModel
+﻿//kabam.rotmg.core.model.PlayerModel
 
 package kabam.rotmg.core.model
 {

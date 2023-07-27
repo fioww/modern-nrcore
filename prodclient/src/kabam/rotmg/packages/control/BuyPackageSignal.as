@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.packages.control.BuyPackageSignal
+﻿//kabam.rotmg.packages.control.BuyPackageSignal
 
 package kabam.rotmg.packages.control
 {

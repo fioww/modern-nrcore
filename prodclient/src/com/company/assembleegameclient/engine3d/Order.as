@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.engine3d.Order
+﻿//com.company.assembleegameclient.engine3d.Order
 
 package com.company.assembleegameclient.engine3d
 {

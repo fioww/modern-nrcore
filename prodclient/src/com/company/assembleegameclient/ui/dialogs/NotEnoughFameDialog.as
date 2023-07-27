@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog
+﻿//com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog
 
 package com.company.assembleegameclient.ui.dialogs
 {
@@ -13,7 +10,7 @@ package com.company.assembleegameclient.ui.dialogs
 
         public function NotEnoughFameDialog()
         {
-            super(TextKey.NOT_ENOUGH_FAME_DIALOG_TITLE, TextKey.NOT_ENOUGH_FAME_DIALOG_TEXT, TextKey.NOT_ENOUGH_FAME_DIALOG_LEFTBUTTON, null, "/notEnoughFame");
+            super(TextKey.NOT_ENOUGH_FAME_DIALOG_TITLE, TextKey.NOT_ENOUGH_FAME_DIALOG_TEXT, TextKey.NOT_ENOUGH_FAME_DIALOG_LEFTBUTTON, null);
             addEventListener(LEFT_BUTTON, this.onOk);
         }
 

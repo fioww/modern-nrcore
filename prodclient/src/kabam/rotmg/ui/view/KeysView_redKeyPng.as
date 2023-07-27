@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.view.KeysView_redKeyPng
+﻿//kabam.rotmg.ui.view.KeysView_redKeyPng
 
 package kabam.rotmg.ui.view
 {

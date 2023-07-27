@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.death.view.ZombifyDialog
+﻿//kabam.rotmg.death.view.ZombifyDialog
 
 package kabam.rotmg.death.view
 {
@@ -23,7 +20,7 @@ package kabam.rotmg.death.view
 
         public function ZombifyDialog()
         {
-            this.dialog = new Dialog(TITLE, BODY, BUTTON, null, null);
+            this.dialog = new Dialog(TITLE, BODY, BUTTON, null);
             this.dialog.offsetX = -100;
             this.dialog.offsetY = 200;
             this.dialog.addEventListener(Dialog.LEFT_BUTTON, this.onButtonClick);

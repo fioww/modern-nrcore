@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.dailyQuests.model.DailyQuest
+﻿//io.decagames.rotmg.dailyQuests.model.DailyQuest
 
 package io.decagames.rotmg.dailyQuests.model
 {

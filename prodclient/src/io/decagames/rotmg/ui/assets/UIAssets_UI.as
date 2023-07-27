@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.ui.assets.UIAssets_UI
+﻿//io.decagames.rotmg.ui.assets.UIAssets_UI
 
 package io.decagames.rotmg.ui.assets
 {

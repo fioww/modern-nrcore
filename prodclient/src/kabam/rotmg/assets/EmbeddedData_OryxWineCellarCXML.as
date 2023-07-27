@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedData_OryxWineCellarCXML
+﻿//kabam.rotmg.assets.EmbeddedData_OryxWineCellarCXML
 
 package kabam.rotmg.assets
 {

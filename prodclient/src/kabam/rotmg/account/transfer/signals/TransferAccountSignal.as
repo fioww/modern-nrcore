@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.transfer.signals.TransferAccountSignal
+﻿//kabam.rotmg.account.transfer.signals.TransferAccountSignal
 
 package kabam.rotmg.account.transfer.signals
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.supportCampaign.signals.MaxRankReachedSignal
+﻿//io.decagames.rotmg.supportCampaign.signals.MaxRankReachedSignal
 
 package io.decagames.rotmg.supportCampaign.signals
 {

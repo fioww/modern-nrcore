@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.kabam.KabamAccountConfig
+﻿//kabam.rotmg.account.kabam.KabamAccountConfig
 
 package kabam.rotmg.account.kabam
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.packages.control.BeginnersPackageAvailableSignal
+﻿//kabam.rotmg.packages.control.BeginnersPackageAvailableSignal
 
 package kabam.rotmg.packages.control
 {

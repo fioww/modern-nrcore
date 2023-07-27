@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.securityQuestions.signals.SaveSecurityQuestionsSignal
+﻿//kabam.rotmg.account.securityQuestions.signals.SaveSecurityQuestionsSignal
 
 package kabam.rotmg.account.securityQuestions.signals
 {

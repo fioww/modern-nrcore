@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.greensock.plugins.FramePlugin
+﻿//com.greensock.plugins.FramePlugin
 
 package com.greensock.plugins
 {

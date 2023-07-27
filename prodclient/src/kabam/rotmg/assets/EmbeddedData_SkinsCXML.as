@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedData_SkinsCXML
+﻿//kabam.rotmg.assets.EmbeddedData_SkinsCXML
 
 package kabam.rotmg.assets
 {

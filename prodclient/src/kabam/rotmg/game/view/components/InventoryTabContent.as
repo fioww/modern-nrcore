@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.view.components.InventoryTabContent
+﻿//kabam.rotmg.game.view.components.InventoryTabContent
 
 package kabam.rotmg.game.view.components
 {

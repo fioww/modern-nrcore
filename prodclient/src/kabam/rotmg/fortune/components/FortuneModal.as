@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.fortune.components.FortuneModal
+﻿//kabam.rotmg.fortune.components.FortuneModal
 
 package kabam.rotmg.fortune.components
 {
@@ -718,7 +715,7 @@ package kabam.rotmg.fortune.components
         {
             var _local_1:OpenDialogSignal;
             _local_1 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-            var _local_2:Dialog = new Dialog("MysteryBoxRollModal.purchaseFailedString", "MysteryBoxRollModal.pleaseTryAgainString", "MysteryBoxRollModal.okString", null, null);
+            var _local_2:Dialog = new Dialog("MysteryBoxRollModal.purchaseFailedString", "MysteryBoxRollModal.pleaseTryAgainString", "MysteryBoxRollModal.okString", null);
             _local_2.addEventListener(Dialog.LEFT_BUTTON, this.onErrorOk, false, 0, true);
             _local_1.dispatch(_local_2);
         }

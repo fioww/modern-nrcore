@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.incoming.Failure
+﻿//kabam.rotmg.messaging.impl.incoming.Failure
 
 package kabam.rotmg.messaging.impl.incoming
 {
@@ -15,6 +12,7 @@ package kabam.rotmg.messaging.impl.incoming
         public static const INVALID_TELEPORT_TARGET:int = 6;
         public static const EMAIL_VERIFICATION_NEEDED:int = 7;
         public static const TELEPORT_REALM_BLOCK:int = 9;
+        public static const JSON_DIALOG:int = 8;
         public static const WRONG_SERVER_ENTERED:int = 10;
         public static const SERVER_QUEUE_FULL:int = 15;
 

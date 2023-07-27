@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.stage3D.graphic3D.TextureFactory
+﻿//kabam.rotmg.stage3D.graphic3D.TextureFactory
 
 package kabam.rotmg.stage3D.graphic3D
 {

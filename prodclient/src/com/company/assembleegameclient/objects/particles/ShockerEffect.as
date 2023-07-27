@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.objects.particles.ShockerEffect
+﻿//com.company.assembleegameclient.objects.particles.ShockerEffect
 
 package com.company.assembleegameclient.objects.particles
 {

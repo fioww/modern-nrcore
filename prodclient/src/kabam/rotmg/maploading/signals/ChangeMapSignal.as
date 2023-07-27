@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.maploading.signals.ChangeMapSignal
+﻿//kabam.rotmg.maploading.signals.ChangeMapSignal
 
 package kabam.rotmg.maploading.signals
 {

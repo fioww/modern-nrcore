@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.characters.model.CharacterModel
+﻿//kabam.rotmg.characters.model.CharacterModel
 
 package kabam.rotmg.characters.model
 {

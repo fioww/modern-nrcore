@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.view.WebRegisterDialog
+﻿//kabam.rotmg.account.web.view.WebRegisterDialog
 
 package kabam.rotmg.account.web.view
 {
@@ -38,7 +35,7 @@ package kabam.rotmg.account.web.view
 
         public function WebRegisterDialog()
         {
-            super("Register an account to play Realm of the Mad God", "RegisterWebAccountDialog.leftButton", "RegisterWebAccountDialog.rightButton", "/registerAccount", 326);
+            super("Register an account to play Realm of the Mad God", "RegisterWebAccountDialog.leftButton", "RegisterWebAccountDialog.rightButton", 326);
             this.makeUIElements();
             this.makeSignals();
         }

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEvent
+﻿//com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileEvent
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {

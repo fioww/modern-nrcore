@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.seasonalEvent.buttons.SeasonalInfoButton
+﻿//io.decagames.rotmg.seasonalEvent.buttons.SeasonalInfoButton
 
 package io.decagames.rotmg.seasonalEvent.buttons
 {

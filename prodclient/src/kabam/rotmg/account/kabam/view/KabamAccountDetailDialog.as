@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.kabam.view.KabamAccountDetailDialog
+﻿//kabam.rotmg.account.kabam.view.KabamAccountDetailDialog
 
 package kabam.rotmg.account.kabam.view
 {
@@ -30,7 +27,7 @@ package kabam.rotmg.account.kabam.view
         public function setInfo(_arg_1:String):void
         {
             var _local_2:Frame;
-            _local_2 = new Frame(TextKey.KABAMACCOUNTDETAILDIALOG_TITLE, "", TextKey.KABAMACCOUNTDETAILDIALOG_RIGHTBUTTON, "/currentKabamLogin");
+            _local_2 = new Frame(TextKey.KABAMACCOUNTDETAILDIALOG_TITLE, "", TextKey.KABAMACCOUNTDETAILDIALOG_RIGHTBUTTON);
             addChild(_local_2);
             this.loginText_ = new TextFieldDisplayConcrete().setSize(18).setColor(0xB3B3B3);
             this.loginText_.setBold(true);

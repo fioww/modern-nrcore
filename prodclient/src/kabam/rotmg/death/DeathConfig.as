@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.death.DeathConfig
+﻿//kabam.rotmg.death.DeathConfig
 
 package kabam.rotmg.death
 {

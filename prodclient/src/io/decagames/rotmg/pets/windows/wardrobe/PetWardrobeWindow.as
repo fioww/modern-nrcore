@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindow
+﻿//io.decagames.rotmg.pets.windows.wardrobe.PetWardrobeWindow
 
 package io.decagames.rotmg.pets.windows.wardrobe
 {

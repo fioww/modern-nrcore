@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.core.signals.LaunchGameSignal
+﻿//kabam.rotmg.core.signals.LaunchGameSignal
 
 package kabam.rotmg.core.signals
 {

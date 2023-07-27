@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.services.GetCharListTask
+﻿//kabam.rotmg.account.core.services.GetCharListTask
 
 package kabam.rotmg.account.core.services
 {

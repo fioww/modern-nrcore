@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.shop.mysteryBox.contentPopup.MysteryBoxContentPopupMediator
+﻿//io.decagames.rotmg.shop.mysteryBox.contentPopup.MysteryBoxContentPopupMediator
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {

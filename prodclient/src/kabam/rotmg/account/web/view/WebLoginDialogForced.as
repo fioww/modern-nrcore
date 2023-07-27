@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.view.WebLoginDialogForced
+﻿//kabam.rotmg.account.web.view.WebLoginDialogForced
 
 package kabam.rotmg.account.web.view
 {
@@ -35,7 +32,7 @@ package kabam.rotmg.account.web.view
 
         public function WebLoginDialogForced(_arg_1:Boolean=false)
         {
-            super(TextKey.WEB_LOGIN_DIALOG_TITLE, "", TextKey.WEB_LOGIN_DIALOG_RIGHT, "/signIn");
+            super(TextKey.WEB_LOGIN_DIALOG_TITLE, "", TextKey.WEB_LOGIN_DIALOG_RIGHT);
             this.makeUI();
             if (_arg_1)
             {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.text.view.stringBuilder.LineBuilder
+﻿//kabam.rotmg.text.view.stringBuilder.LineBuilder
 
 package kabam.rotmg.text.view.stringBuilder
 {
@@ -20,7 +17,13 @@ package kabam.rotmg.text.view.stringBuilder
 
         public static function fromJSON(_arg_1:String):LineBuilder
         {
-            var _local_2:Object = JSON.parse(_arg_1);
+            var _local_2:Object;
+            try {
+                _local_2 = JSON.parse(_arg_1);
+            }
+            catch (e:Error) {
+                _local_2 = { "key":_arg_1, "tokens":null };
+            }
             return (new (LineBuilder)().setParams(_local_2.key, _local_2.tokens));
         }
 

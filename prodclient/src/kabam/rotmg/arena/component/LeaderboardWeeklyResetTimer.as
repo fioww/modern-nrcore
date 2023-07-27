@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer
+﻿//kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer
 
 package kabam.rotmg.arena.component
 {

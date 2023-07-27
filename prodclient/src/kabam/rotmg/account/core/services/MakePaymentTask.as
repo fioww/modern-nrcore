@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.services.MakePaymentTask
+﻿//kabam.rotmg.account.core.services.MakePaymentTask
 
 package kabam.rotmg.account.core.services
 {

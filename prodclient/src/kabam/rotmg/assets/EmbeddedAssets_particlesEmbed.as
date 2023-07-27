@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedAssets_particlesEmbed
+﻿//kabam.rotmg.assets.EmbeddedAssets_particlesEmbed
 
 package kabam.rotmg.assets
 {

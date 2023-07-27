@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedData_TestingObjectsCXML
+﻿//kabam.rotmg.assets.EmbeddedData_TestingObjectsCXML
 
 package kabam.rotmg.assets
 {

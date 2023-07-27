@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.map.partyoverlay.PlayerArrow
+﻿//com.company.assembleegameclient.map.partyoverlay.PlayerArrow
 
 package com.company.assembleegameclient.map.partyoverlay
 {

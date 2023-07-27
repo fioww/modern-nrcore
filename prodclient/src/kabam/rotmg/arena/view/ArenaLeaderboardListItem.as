@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.arena.view.ArenaLeaderboardListItem
+﻿//kabam.rotmg.arena.view.ArenaLeaderboardListItem
 
 package kabam.rotmg.arena.view
 {

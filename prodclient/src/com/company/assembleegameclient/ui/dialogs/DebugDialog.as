@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.dialogs.DebugDialog
+﻿//com.company.assembleegameclient.ui.dialogs.DebugDialog
 
 package com.company.assembleegameclient.ui.dialogs
 {
@@ -16,7 +13,7 @@ package com.company.assembleegameclient.ui.dialogs
 
         public function DebugDialog(_arg_1:String, _arg_2:String="Debug", _arg_3:Function=null)
         {
-            super(_arg_2, _arg_1, "OK", null, null);
+            super(_arg_2, _arg_1, "OK", null);
             this.f = _arg_3;
             addEventListener(Dialog.LEFT_BUTTON, this.onDialogComplete);
         }

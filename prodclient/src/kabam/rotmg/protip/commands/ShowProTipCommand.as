@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.protip.commands.ShowProTipCommand
+﻿//kabam.rotmg.protip.commands.ShowProTipCommand
 
 package kabam.rotmg.protip.commands
 {

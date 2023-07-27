@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.commands.EnterGameCommand
+﻿//kabam.rotmg.ui.commands.EnterGameCommand
 
 package kabam.rotmg.ui.commands
 {

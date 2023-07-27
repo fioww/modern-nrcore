@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.language.DebugTextAndMapProvider
+﻿//kabam.rotmg.language.DebugTextAndMapProvider
 
 package kabam.rotmg.language
 {

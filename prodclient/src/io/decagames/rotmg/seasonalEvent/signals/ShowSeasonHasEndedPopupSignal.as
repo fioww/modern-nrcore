@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.seasonalEvent.signals.ShowSeasonHasEndedPopupSignal
+﻿//io.decagames.rotmg.seasonalEvent.signals.ShowSeasonHasEndedPopupSignal
 
 package io.decagames.rotmg.seasonalEvent.signals
 {

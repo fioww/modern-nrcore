@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.screens.ServersScreen
+﻿//com.company.assembleegameclient.screens.ServersScreen
 
 package com.company.assembleegameclient.screens
 {
@@ -15,7 +12,6 @@ package com.company.assembleegameclient.screens
     import kabam.rotmg.ui.view.components.ScreenBase;
     import flash.events.Event;
     import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.core.service.GoogleAnalytics;
     import kabam.rotmg.ui.view.components.MenuOptionsBar;
     import flash.display.Graphics;
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
@@ -59,11 +55,6 @@ package com.company.assembleegameclient.screens
             this.makeServerBoxes();
             ((this.serverBoxes_.height > 400) && (this.makeScrollbar()));
             this.makeMenuBar();
-            var _local_2:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_2)
-            {
-                _local_2.trackPageView("/serversScreen");
-            };
         }
 
         private function makeMenuBar():void

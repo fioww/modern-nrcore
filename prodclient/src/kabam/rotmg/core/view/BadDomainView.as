@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.core.view.BadDomainView
+﻿//kabam.rotmg.core.view.BadDomainView
 
 package kabam.rotmg.core.view
 {

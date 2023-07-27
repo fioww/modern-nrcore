@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.view.BuyingDialog
+﻿//kabam.rotmg.account.core.view.BuyingDialog
 
 package kabam.rotmg.account.core.view
 {
@@ -13,7 +10,7 @@ package kabam.rotmg.account.core.view
 
         public function BuyingDialog()
         {
-            super(null, TextKey.BUYING_CHARACTER_SLOT, null, null, "/buyingCharSlot");
+            super(null, TextKey.BUYING_CHARACTER_SLOT, null, null);
         }
 
     }

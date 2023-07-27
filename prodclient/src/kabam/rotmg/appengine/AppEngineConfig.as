@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.appengine.AppEngineConfig
+﻿//kabam.rotmg.appengine.AppEngineConfig
 
 package kabam.rotmg.appengine
 {
@@ -15,12 +12,9 @@ package kabam.rotmg.appengine
     import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
     import kabam.rotmg.appengine.api.AppEngineClient;
     import kabam.rotmg.appengine.impl.StatsRecorderAppEngineClient;
-    import kabam.rotmg.appengine.impl.TrackingAppEngineClient;
 
     public class AppEngineConfig implements IConfig 
     {
-
-        private const TRACK_APP_ENGINE_CALLS:Boolean = true;
 
         [Inject]
         public var context:IContext;
@@ -39,14 +33,7 @@ package kabam.rotmg.appengine
             }
             else
             {
-                if (this.TRACK_APP_ENGINE_CALLS)
-                {
-                    this.configureForTracking();
-                }
-                else
-                {
-                    this.configureForSimplicity();
-                };
+                this.configureForSimplicity();
             };
         }
 
@@ -60,12 +47,6 @@ package kabam.rotmg.appengine
             this.injector.map(AppEngineRequestStats).asSingleton();
             this.injector.map(SimpleAppEngineClient);
             this.injector.map(AppEngineClient).toType(StatsRecorderAppEngineClient);
-        }
-
-        private function configureForTracking():void
-        {
-            this.injector.map(SimpleAppEngineClient);
-            this.injector.map(AppEngineClient).toType(TrackingAppEngineClient);
         }
 
         private function configureForSimplicity():void

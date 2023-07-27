@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.view.CharacterDetailsMediator
+﻿//kabam.rotmg.ui.view.CharacterDetailsMediator
 
 package kabam.rotmg.ui.view
 {
@@ -21,7 +18,6 @@ package kabam.rotmg.ui.view
     import kabam.rotmg.friends.view.FriendListView;
     import flash.events.MouseEvent;
     import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.core.service.GoogleAnalytics;
     import com.company.assembleegameclient.ui.options.Options;
     import com.company.assembleegameclient.objects.Player;
 
@@ -125,10 +121,6 @@ package kabam.rotmg.ui.view
         {
             this.tellModel.clearRecipients();
             this.hudModel.gameSprite.gsc_.escape();
-            var _local_1:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_1)
-            {
-            };
             Parameters.data_.needsRandomRealm = false;
             Parameters.save();
         }
@@ -136,10 +128,6 @@ package kabam.rotmg.ui.view
         private function onGotoOptions():void
         {
             this.hudModel.gameSprite.mui_.clearInput();
-            var _local_1:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_1)
-            {
-            };
             this.hudModel.gameSprite.addChild(new Options(this.hudModel.gameSprite));
         }
 

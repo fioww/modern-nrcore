@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.dailyLogin.model.CalendarDayModel
+﻿//kabam.rotmg.dailyLogin.model.CalendarDayModel
 
 package kabam.rotmg.dailyLogin.model
 {

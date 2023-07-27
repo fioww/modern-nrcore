@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.tutorial.Requirement
+﻿//com.company.assembleegameclient.tutorial.Requirement
 
 package com.company.assembleegameclient.tutorial
 {

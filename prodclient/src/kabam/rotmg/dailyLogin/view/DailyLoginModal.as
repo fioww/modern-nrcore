@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.dailyLogin.view.DailyLoginModal
+﻿//kabam.rotmg.dailyLogin.view.DailyLoginModal
 
 package kabam.rotmg.dailyLogin.view
 {

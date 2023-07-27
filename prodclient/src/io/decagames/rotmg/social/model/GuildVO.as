@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.social.model.GuildVO
+﻿//io.decagames.rotmg.social.model.GuildVO
 
 package io.decagames.rotmg.social.model
 {

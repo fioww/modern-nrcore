@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.language.model.StringMapConcrete
+﻿//kabam.rotmg.language.model.StringMapConcrete
 
 package kabam.rotmg.language.model
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.commands.ShowTitleUICommand
+﻿//kabam.rotmg.ui.commands.ShowTitleUICommand
 
 package kabam.rotmg.ui.commands
 {

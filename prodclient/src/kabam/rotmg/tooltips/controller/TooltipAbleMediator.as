@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.tooltips.controller.TooltipAbleMediator
+﻿//kabam.rotmg.tooltips.controller.TooltipAbleMediator
 
 package kabam.rotmg.tooltips.controller
 {

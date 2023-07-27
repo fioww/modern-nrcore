@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.shop.mysteryBox.rollModal.elements.Spinner
+﻿//io.decagames.rotmg.shop.mysteryBox.rollModal.elements.Spinner
 
 package io.decagames.rotmg.shop.mysteryBox.rollModal.elements
 {

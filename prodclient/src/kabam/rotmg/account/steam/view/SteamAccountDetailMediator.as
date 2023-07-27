@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.steam.view.SteamAccountDetailMediator
+﻿//kabam.rotmg.account.steam.view.SteamAccountDetailMediator
 
 package kabam.rotmg.account.steam.view
 {

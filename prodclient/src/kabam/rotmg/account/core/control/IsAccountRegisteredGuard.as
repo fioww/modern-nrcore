@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.control.IsAccountRegisteredGuard
+﻿//kabam.rotmg.account.core.control.IsAccountRegisteredGuard
 
 package kabam.rotmg.account.core.control
 {

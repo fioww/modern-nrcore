@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse
+﻿//kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse
 
 package kabam.rotmg.dailyLogin.message
 {

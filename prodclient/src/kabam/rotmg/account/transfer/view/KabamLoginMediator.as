@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.transfer.view.KabamLoginMediator
+﻿//kabam.rotmg.account.transfer.view.KabamLoginMediator
 
 package kabam.rotmg.account.transfer.view
 {

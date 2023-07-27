@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.stage3D.proxies.TextureProxy
+﻿//kabam.rotmg.stage3D.proxies.TextureProxy
 
 package kabam.rotmg.stage3D.proxies
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.util.RectangleUtil
+﻿//com.company.util.RectangleUtil
 
 package com.company.util
 {

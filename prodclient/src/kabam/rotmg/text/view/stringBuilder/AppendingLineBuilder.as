@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder
+﻿//kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder
 
 package kabam.rotmg.text.view.stringBuilder
 {

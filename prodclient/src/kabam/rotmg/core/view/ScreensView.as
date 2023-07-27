@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.core.view.ScreensView
+﻿//kabam.rotmg.core.view.ScreensView
 
 package kabam.rotmg.core.view
 {

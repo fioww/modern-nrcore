@@ -1,12 +1,8 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.OutstandingBuy
+﻿//kabam.rotmg.messaging.impl.OutstandingBuy
 
 package kabam.rotmg.messaging.impl
 {
     import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.core.service.GoogleAnalytics;
 
     internal class OutstandingBuy 
     {
@@ -26,10 +22,6 @@ package kabam.rotmg.messaging.impl
 
         public function record():void
         {
-            var _local_1:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_1)
-            {
-            };
         }
 
 

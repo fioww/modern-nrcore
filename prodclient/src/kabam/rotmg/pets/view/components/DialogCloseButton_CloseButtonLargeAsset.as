@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.pets.view.components.DialogCloseButton_CloseButtonLargeAsset
+﻿//kabam.rotmg.pets.view.components.DialogCloseButton_CloseButtonLargeAsset
 
 package kabam.rotmg.pets.view.components
 {

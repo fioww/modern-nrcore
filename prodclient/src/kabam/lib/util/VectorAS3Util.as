@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.util.VectorAS3Util
+﻿//kabam.lib.util.VectorAS3Util
 
 package kabam.lib.util
 {

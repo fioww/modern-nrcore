@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.view.WebAccountDetailDialog
+﻿//kabam.rotmg.account.web.view.WebAccountDetailDialog
 
 package kabam.rotmg.account.web.view
 {
@@ -32,7 +29,7 @@ package kabam.rotmg.account.web.view
 
         public function WebAccountDetailDialog(_arg_1:String="WebAccountDetailDialog.title", _arg_2:String="WebAccountDetailDialog.loginText")
         {
-            super(_arg_1, "", "WebAccountDetailDialog.rightButton", "/currentLogin");
+            super(_arg_1, "", "WebAccountDetailDialog.rightButton");
             this.headerText = _arg_2;
             this.makeLoginText();
             this.makeEmailText();

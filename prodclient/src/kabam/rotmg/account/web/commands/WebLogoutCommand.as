@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.commands.WebLogoutCommand
+﻿//kabam.rotmg.account.web.commands.WebLogoutCommand
 
 package kabam.rotmg.account.web.commands
 {

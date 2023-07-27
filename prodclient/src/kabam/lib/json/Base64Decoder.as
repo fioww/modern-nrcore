@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.json.Base64Decoder
+﻿//kabam.lib.json.Base64Decoder
 
 package kabam.lib.json
 {

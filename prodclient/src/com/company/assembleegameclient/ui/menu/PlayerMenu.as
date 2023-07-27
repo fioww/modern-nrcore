@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.menu.PlayerMenu
+﻿//com.company.assembleegameclient.ui.menu.PlayerMenu
 
 package com.company.assembleegameclient.ui.menu
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.screens.CharacterBox
+﻿//com.company.assembleegameclient.screens.CharacterBox
 
 package com.company.assembleegameclient.screens
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.fame.control.ShowFameViewSignal
+﻿//kabam.rotmg.fame.control.ShowFameViewSignal
 
 package kabam.rotmg.fame.control
 {

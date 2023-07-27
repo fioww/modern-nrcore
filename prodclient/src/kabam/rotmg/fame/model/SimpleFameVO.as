@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.fame.model.SimpleFameVO
+﻿//kabam.rotmg.fame.model.SimpleFameVO
 
 package kabam.rotmg.fame.model
 {

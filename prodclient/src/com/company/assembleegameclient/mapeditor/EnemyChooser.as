@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.mapeditor.EnemyChooser
+﻿//com.company.assembleegameclient.mapeditor.EnemyChooser
 
 package com.company.assembleegameclient.mapeditor
 {

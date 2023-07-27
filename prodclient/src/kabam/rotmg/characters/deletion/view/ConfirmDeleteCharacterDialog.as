@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterDialog
+﻿//kabam.rotmg.characters.deletion.view.ConfirmDeleteCharacterDialog
 
 package kabam.rotmg.characters.deletion.view
 {
@@ -33,7 +30,7 @@ package kabam.rotmg.characters.deletion.view
         {
             var _local_3:Boolean = StaticInjectorContext.getInjector().getInstance(SeasonalEventModel).isChallenger;
             var _local_4:String = ((_local_3) ? "It will cost you a character life to delete {name} the {displayID} - Are you really sure you want to?" : TextKey.CONFIRMDELETECHARACTERDIALOG);
-            var _local_5:Dialog = new Dialog(TextKey.CONFIRMDELETE_VERIFYDELETION, "", TextKey.CONFIRMDELETE_CANCEL, TextKey.CONFIRMDELETE_DELETE, "/deleteDialog");
+            var _local_5:Dialog = new Dialog(TextKey.CONFIRMDELETE_VERIFYDELETION, "", TextKey.CONFIRMDELETE_CANCEL, TextKey.CONFIRMDELETE_DELETE);
             _local_5.setTextParams(_local_4, {
                 "name":_arg_1,
                 "displayID":_arg_2

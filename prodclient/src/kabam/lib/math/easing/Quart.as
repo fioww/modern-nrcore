@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.math.easing.Quart
+﻿//kabam.lib.math.easing.Quart
 
 package kabam.lib.math.easing
 {

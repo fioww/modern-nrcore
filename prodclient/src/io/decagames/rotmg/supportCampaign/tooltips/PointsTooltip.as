@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.supportCampaign.tooltips.PointsTooltip
+﻿//io.decagames.rotmg.supportCampaign.tooltips.PointsTooltip
 
 package io.decagames.rotmg.supportCampaign.tooltips
 {

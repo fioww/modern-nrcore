@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.mapeditor.EditTilePropertiesFrame
+﻿//com.company.assembleegameclient.mapeditor.EditTilePropertiesFrame
 
 package com.company.assembleegameclient.mapeditor
 {
@@ -17,7 +14,7 @@ package com.company.assembleegameclient.mapeditor
 
         public function EditTilePropertiesFrame(_arg_1:String)
         {
-            super("Tile properties", "Cancel", "Save", null);
+            super("Tile properties", "Cancel", "Save");
             this.objectName_ = new TextInputField("Object Name", false);
             if (_arg_1 != null)
             {

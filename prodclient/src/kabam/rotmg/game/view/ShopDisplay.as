@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.view.ShopDisplay
+﻿//kabam.rotmg.game.view.ShopDisplay
 
 package kabam.rotmg.game.view
 {

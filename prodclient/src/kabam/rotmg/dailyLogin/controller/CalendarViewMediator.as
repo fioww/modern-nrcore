@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.dailyLogin.controller.CalendarViewMediator
+﻿//kabam.rotmg.dailyLogin.controller.CalendarViewMediator
 
 package kabam.rotmg.dailyLogin.controller
 {

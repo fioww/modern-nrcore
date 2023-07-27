@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.greensock.plugins.ColorTransformPlugin
+﻿//com.greensock.plugins.ColorTransformPlugin
 
 package com.greensock.plugins
 {

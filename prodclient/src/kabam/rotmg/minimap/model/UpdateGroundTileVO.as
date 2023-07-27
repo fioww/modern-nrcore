@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.minimap.model.UpdateGroundTileVO
+﻿//kabam.rotmg.minimap.model.UpdateGroundTileVO
 
 package kabam.rotmg.minimap.model
 {

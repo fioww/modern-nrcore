@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.seasonalEvent.tasks.GetLegacyChallengerListTask
+﻿//io.decagames.rotmg.seasonalEvent.tasks.GetLegacyChallengerListTask
 
 package io.decagames.rotmg.seasonalEvent.tasks
 {

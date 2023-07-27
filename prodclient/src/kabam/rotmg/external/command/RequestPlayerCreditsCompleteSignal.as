@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.external.command.RequestPlayerCreditsCompleteSignal
+﻿//kabam.rotmg.external.command.RequestPlayerCreditsCompleteSignal
 
 package kabam.rotmg.external.command
 {

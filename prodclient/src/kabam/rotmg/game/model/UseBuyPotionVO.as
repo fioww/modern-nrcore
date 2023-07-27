@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.model.UseBuyPotionVO
+﻿//kabam.rotmg.game.model.UseBuyPotionVO
 
 package kabam.rotmg.game.model
 {

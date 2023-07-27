@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.panels.mediators.InteractPanelMediator
+﻿//com.company.assembleegameclient.ui.panels.mediators.InteractPanelMediator
 
 package com.company.assembleegameclient.ui.panels.mediators
 {

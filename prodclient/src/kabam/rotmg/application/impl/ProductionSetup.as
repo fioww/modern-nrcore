@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.application.impl.ProductionSetup
+﻿//kabam.rotmg.application.impl.ProductionSetup
 
 package kabam.rotmg.application.impl
 {
@@ -14,23 +11,17 @@ package kabam.rotmg.application.impl
         private const SERVER:String = "www.realmofthemadgod.com";
         private const UNENCRYPTED:String = ("http://" + SERVER);
         private const ENCRYPTED:String = ("https://" + SERVER);
-        private const ANALYTICS:String = "UA-101960510-3";
-        private const BUILD_LABEL:String = "RotMG #{VERSION}.{MINOR}";
+        private const BUILD_LABEL:String = "RotMG #{VERSION}";
 
 
         public function getAppEngineUrl(_arg_1:Boolean=false):String
         {
-            return (this.ENCRYPTED);
-        }
-
-        public function getAnalyticsCode():String
-        {
-            return (this.ANALYTICS);
+            return (this.UNENCRYPTED);
         }
 
         public function getBuildLabel():String
         {
-            return (this.BUILD_LABEL.replace("{VERSION}", Parameters.CLIENT_VERSION).replace("{MINOR}", ""));
+            return this.BUILD_LABEL.replace("{VERSION}", Parameters.CLIENT_VERSION);
         }
 
         public function useLocalTextures():Boolean

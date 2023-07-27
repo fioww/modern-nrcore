@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.text.view.DebugTextField
+﻿//kabam.rotmg.text.view.DebugTextField
 
 package kabam.rotmg.text.view
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.mapeditor.SubmitMapForm
+﻿//com.company.assembleegameclient.mapeditor.SubmitMapForm
 
 package com.company.assembleegameclient.mapeditor
 {
@@ -36,7 +33,7 @@ package com.company.assembleegameclient.mapeditor
 
         public function SubmitMapForm(_arg_1:String, _arg_2:Object, _arg_3:Account)
         {
-            super("SubmitMapForm.Title", TextKey.FRAME_CANCEL, TextKey.WEB_CHANGE_PASSWORD_RIGHT, null, 300);
+            super("SubmitMapForm.Title", TextKey.FRAME_CANCEL, TextKey.WEB_CHANGE_PASSWORD_RIGHT, 300);
             cancel = new Signal();
             this.account = _arg_3;
             this.mapjm = _arg_1;

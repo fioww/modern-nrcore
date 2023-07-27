@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.tasks.BaseTask
+﻿//kabam.lib.tasks.BaseTask
 
 package kabam.lib.tasks
 {

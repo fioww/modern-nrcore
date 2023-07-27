@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.arena.service.ArenaLeaderboardFactory
+﻿//kabam.rotmg.arena.service.ArenaLeaderboardFactory
 
 package kabam.rotmg.arena.service
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.ui.SoundIcon
+﻿//com.company.assembleegameclient.ui.SoundIcon
 
 package com.company.assembleegameclient.ui
 {

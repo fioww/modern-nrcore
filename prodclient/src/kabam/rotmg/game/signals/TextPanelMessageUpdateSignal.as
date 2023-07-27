@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.game.signals.TextPanelMessageUpdateSignal
+﻿//kabam.rotmg.game.signals.TextPanelMessageUpdateSignal
 
 package kabam.rotmg.game.signals
 {

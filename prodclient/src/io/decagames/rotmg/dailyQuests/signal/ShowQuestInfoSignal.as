@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal
+﻿//io.decagames.rotmg.dailyQuests.signal.ShowQuestInfoSignal
 
 package io.decagames.rotmg.dailyQuests.signal
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedAssets_lofiInterfaceEmbed_
+﻿//kabam.rotmg.assets.EmbeddedAssets_lofiInterfaceEmbed_
 
 package kabam.rotmg.assets
 {

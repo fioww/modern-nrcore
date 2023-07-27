@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.console.signals.ClearConsoleSignal
+﻿//kabam.lib.console.signals.ClearConsoleSignal
 
 package kabam.lib.console.signals
 {

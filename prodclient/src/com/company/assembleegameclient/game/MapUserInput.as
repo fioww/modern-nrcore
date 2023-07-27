@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.game.MapUserInput
+﻿//com.company.assembleegameclient.game.MapUserInput
 
 package com.company.assembleegameclient.game
 {

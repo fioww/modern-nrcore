@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.application.model.DomainModel
+﻿//kabam.rotmg.application.model.DomainModel
 
 package kabam.rotmg.application.model
 {
@@ -46,14 +43,15 @@ package kabam.rotmg.application.model
 
         private function isLocalDomainInWhiteList():Boolean
         {
-            var _local_3:String;
+            return true;
+            /*var _local_3:String;
             var _local_1:String = this.getLocalDomain();
             var _local_2:* = (_local_1 == this.LOCALHOST);
             for each (_local_3 in this.WHITELIST)
             {
                 _local_2 = ((_local_2) || (_local_1 == _local_3));
             };
-            return (_local_2);
+            return (_local_2);*/
         }
 
         private function getLocalDomain():String

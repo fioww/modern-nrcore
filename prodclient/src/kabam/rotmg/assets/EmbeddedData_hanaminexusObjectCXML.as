@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.EmbeddedData_hanaminexusObjectCXML
+﻿//kabam.rotmg.assets.EmbeddedData_hanaminexusObjectCXML
 
 package kabam.rotmg.assets
 {

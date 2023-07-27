@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.promotions.model.BeginnersPackageModel
+﻿//kabam.rotmg.promotions.model.BeginnersPackageModel
 
 package kabam.rotmg.promotions.model
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.incoming.InvResult
+﻿//kabam.rotmg.messaging.impl.incoming.InvResult
 
 package kabam.rotmg.messaging.impl.incoming
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.core.service.PurchaseCharacterErrorTask
+﻿//kabam.rotmg.core.service.PurchaseCharacterErrorTask
 
 package kabam.rotmg.core.service
 {

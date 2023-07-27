@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.view.MoneyFrame
+﻿//kabam.rotmg.account.core.view.MoneyFrame
 
 package kabam.rotmg.account.core.view
 {
@@ -26,7 +23,6 @@ package kabam.rotmg.account.core.view
     {
 
         private static const TITLE:String = TextKey.MONEY_FRAME_TITLE;//"MoneyFrame.title"
-        private static const TRACKING:String = "/money";
         private static const PAYMENT_SUBTITLE:String = TextKey.MONEY_FRAME_PAYMENT;//"MoneyFrame.payment"
         private static const GOLD_SUBTITLE:String = TextKey.MONEY_FRAME_GOLD;//"MoneyFrame.gold"
         private static const BUY_NOW:String = TextKey.MONEY_FRAME_BUY;//"MoneyFrame.buy"
@@ -52,7 +48,7 @@ package kabam.rotmg.account.core.view
         {
             this.offers = _arg_1;
             this.config = _arg_2;
-            this.frame = new Frame(TITLE, "", "", TRACKING, WIDTH);
+            this.frame = new Frame(TITLE, "", "", WIDTH);
             ((_arg_2.showPaymentMethods()) && (this.addPaymentMethods()));
             this.addOffers();
             this.addBuyNowButton();

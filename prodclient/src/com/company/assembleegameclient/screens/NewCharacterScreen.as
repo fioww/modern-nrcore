@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.screens.NewCharacterScreen
+﻿//com.company.assembleegameclient.screens.NewCharacterScreen
 
 package com.company.assembleegameclient.screens
 {
@@ -16,7 +13,6 @@ package com.company.assembleegameclient.screens
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import com.company.assembleegameclient.appengine.SavedCharactersList;
     import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.core.service.GoogleAnalytics;
     import kabam.rotmg.core.model.PlayerModel;
     import flash.events.Event;
 
@@ -88,11 +84,6 @@ package com.company.assembleegameclient.screens
             this.backButton_.y = 550;
             this.creditDisplay_.x = stage.stageWidth;
             this.creditDisplay_.y = 20;
-            var _local_3:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_3)
-            {
-                _local_3.trackPageView("/newCharScreen");
-            };
         }
 
         private function onBackClick(_arg_1:Event):void
@@ -123,11 +114,6 @@ package com.company.assembleegameclient.screens
                 return;
             };
             var _local_3:int = _local_2.objectType();
-            var _local_4:String = ObjectLibrary.typeToDisplayId_[_local_3];
-            var _local_5:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_5)
-            {
-            };
             this.selected.dispatch(_local_3);
         }
 

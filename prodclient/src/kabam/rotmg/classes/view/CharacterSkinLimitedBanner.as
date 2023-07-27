@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.classes.view.CharacterSkinLimitedBanner
+﻿//kabam.rotmg.classes.view.CharacterSkinLimitedBanner
 
 package kabam.rotmg.classes.view
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.classes.view.ClassDetailMediator
+﻿//kabam.rotmg.classes.view.ClassDetailMediator
 
 package kabam.rotmg.classes.view
 {

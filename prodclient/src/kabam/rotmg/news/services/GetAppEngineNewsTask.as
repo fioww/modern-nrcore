@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.news.services.GetAppEngineNewsTask
+﻿//kabam.rotmg.news.services.GetAppEngineNewsTask
 
 package kabam.rotmg.news.services
 {

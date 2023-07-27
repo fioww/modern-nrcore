@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.characters.deletion.view.DeletingCharacterView
+﻿//kabam.rotmg.characters.deletion.view.DeletingCharacterView
 
 package kabam.rotmg.characters.deletion.view
 {
@@ -12,7 +9,7 @@ package kabam.rotmg.characters.deletion.view
 
         public function DeletingCharacterView()
         {
-            super(null, "DeletingCharacterView.text", null, null, "/deletingChar");
+            super(null, "DeletingCharacterView.text", null, null);
         }
 
     }

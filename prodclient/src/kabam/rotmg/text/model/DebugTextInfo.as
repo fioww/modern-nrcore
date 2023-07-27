@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.text.model.DebugTextInfo
+﻿//kabam.rotmg.text.model.DebugTextInfo
 
 package kabam.rotmg.text.model
 {

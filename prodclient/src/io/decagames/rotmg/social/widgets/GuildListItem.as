@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.social.widgets.GuildListItem
+﻿//io.decagames.rotmg.social.widgets.GuildListItem
 
 package io.decagames.rotmg.social.widgets
 {

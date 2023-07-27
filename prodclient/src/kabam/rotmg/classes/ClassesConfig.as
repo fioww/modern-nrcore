@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.classes.ClassesConfig
+﻿//kabam.rotmg.classes.ClassesConfig
 
 package kabam.rotmg.classes
 {

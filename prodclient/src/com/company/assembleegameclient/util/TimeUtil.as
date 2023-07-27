@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.util.TimeUtil
+﻿//com.company.assembleegameclient.util.TimeUtil
 
 package com.company.assembleegameclient.util
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.messaging.impl.incoming.AllyShoot
+﻿//kabam.rotmg.messaging.impl.incoming.AllyShoot
 
 package kabam.rotmg.messaging.impl.incoming
 {

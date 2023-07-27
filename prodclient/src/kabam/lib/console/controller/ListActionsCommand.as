@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.console.controller.ListActionsCommand
+﻿//kabam.lib.console.controller.ListActionsCommand
 
 package kabam.lib.console.controller
 {

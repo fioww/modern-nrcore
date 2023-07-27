@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.mysterybox.components.MysteryBoxRollModal
+﻿//kabam.rotmg.mysterybox.components.MysteryBoxRollModal
 
 package kabam.rotmg.mysterybox.components
 {
@@ -515,7 +512,7 @@ package kabam.rotmg.mysterybox.components
                         _local_8 = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.blockedForUser", {"date":_local_16[1]});
                     };
                 };
-                _local_9 = new Dialog("MysteryBoxRollModal.purchaseFailedString", _local_8, "MysteryBoxRollModal.okString", null, null);
+                _local_9 = new Dialog("MysteryBoxRollModal.purchaseFailedString", _local_8, "MysteryBoxRollModal.okString", null);
                 _local_9.addEventListener(Dialog.LEFT_BUTTON, this.onErrorOk);
                 _local_7.dispatch(_local_9);
                 _local_10 = StaticInjectorContext.getInjector();

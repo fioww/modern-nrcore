@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.core.services.RegisterAccountTask
+﻿//kabam.rotmg.account.core.services.RegisterAccountTask
 
 package kabam.rotmg.account.core.services
 {

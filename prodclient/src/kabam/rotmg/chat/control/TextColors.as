@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.chat.control.TextColors
+﻿//kabam.rotmg.chat.control.TextColors
 
 package kabam.rotmg.chat.control
 {

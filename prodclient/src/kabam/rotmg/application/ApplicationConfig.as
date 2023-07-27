@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.application.ApplicationConfig
+﻿//kabam.rotmg.application.ApplicationConfig
 
 package kabam.rotmg.application
 {

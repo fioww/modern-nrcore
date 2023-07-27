@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.components.caretaker.CaretakerQueryDetailBubble
+﻿//io.decagames.rotmg.pets.components.caretaker.CaretakerQueryDetailBubble
 
 package io.decagames.rotmg.pets.components.caretaker
 {

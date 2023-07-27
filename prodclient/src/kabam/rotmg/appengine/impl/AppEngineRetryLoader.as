@@ -1,14 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.appengine.impl.AppEngineRetryLoader
+﻿//kabam.rotmg.appengine.impl.AppEngineRetryLoader
 
 package kabam.rotmg.appengine.impl
 {
+    import flash.net.URLStream;
+
     import kabam.rotmg.appengine.api.RetryLoader;
     import org.osflash.signals.OnceSignal;
     import flash.net.URLRequest;
-    import flash.net.URLLoader;
     import flash.net.URLLoaderDataFormat;
     import flash.net.URLRequestMethod;
     import flash.net.URLVariables;
@@ -28,9 +26,10 @@ package kabam.rotmg.appengine.impl
         private var url:String;
         private var params:Object;
         private var urlRequest:URLRequest;
-        private var urlLoader:URLLoader;
+        private var urlStream:URLStream;
         private var retriesLeft:int;
         private var inProgress:Boolean;
+        private var data:ByteArray;
 
         public function AppEngineRetryLoader()
         {
@@ -72,8 +71,9 @@ package kabam.rotmg.appengine.impl
         {
             this.cancelPendingRequest();
             this.urlRequest = this.makeUrlRequest();
-            this.urlLoader = this.makeUrlLoader();
-            this.urlLoader.load(this.urlRequest);
+            this.urlStream = this.makeUrlStream();
+            this.data = new ByteArray();
+            this.urlStream.load(this.urlRequest);
         }
 
         private function makeUrlRequest():URLRequest
@@ -96,10 +96,10 @@ package kabam.rotmg.appengine.impl
             return (_local_1);
         }
 
-        private function makeUrlLoader():URLLoader
+
+        private function makeUrlStream():URLStream
         {
-            var _local_1:URLLoader = new URLLoader();
-            _local_1.dataFormat = this.dataFormat;
+            var _local_1:URLStream = new URLStream();
             _local_1.addEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
             _local_1.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityError);
             _local_1.addEventListener(Event.COMPLETE, this.onComplete);
@@ -109,11 +109,16 @@ package kabam.rotmg.appengine.impl
         private function onIOError(_arg_1:IOErrorEvent):void
         {
             this.inProgress = false;
-            var _local_2:String = this.urlLoader.data;
-            if (_local_2.length == 0)
-            {
+
+            var _local_2:String;
+            if (this.urlStream.bytesAvailable == 0) {
                 _local_2 = "Unable to contact server";
-            };
+            }
+            else {
+                this.urlStream.readBytes(this.data, 0, this.urlStream.bytesAvailable);
+                _local_2 = this.data.readUTFBytes(this.data.length);
+            }
+
             this.retryOrReportError(_local_2);
         }
 
@@ -138,13 +143,22 @@ package kabam.rotmg.appengine.impl
         private function onComplete(_arg_1:Event):void
         {
             this.inProgress = false;
+
+            this.urlStream.readBytes(this.data, 0, this.urlStream.bytesAvailable);
+            try
+            {
+                this.data.inflate();
+            }
+            catch (e:Error) {}
+            this.data.position = 0;
+
             if (this.dataFormat == URLLoaderDataFormat.TEXT)
             {
-                this.handleTextResponse(this.urlLoader.data);
+                this.handleTextResponse(this.data.readUTFBytes(this.data.length));
             }
             else
             {
-                this.cleanUpAndComplete(true, ByteArray(this.urlLoader.data));
+                this.cleanUpAndComplete(true, this.data);
             };
         }
 
@@ -185,13 +199,13 @@ package kabam.rotmg.appengine.impl
 
         private function cancelPendingRequest():void
         {
-            if (this.urlLoader)
+            if (this.urlStream)
             {
-                this.urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
-                this.urlLoader.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityError);
-                this.urlLoader.removeEventListener(Event.COMPLETE, this.onComplete);
+                this.urlStream.removeEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
+                this.urlStream.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityError);
+                this.urlStream.removeEventListener(Event.COMPLETE, this.onComplete);
                 this.closeLoader();
-                this.urlLoader = null;
+                this.urlStream = null;
             };
         }
 
@@ -199,7 +213,7 @@ package kabam.rotmg.appengine.impl
         {
             try
             {
-                this.urlLoader.close();
+                this.urlStream.close();
             }
             catch(e:Error)
             {

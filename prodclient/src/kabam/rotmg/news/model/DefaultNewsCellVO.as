@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.news.model.DefaultNewsCellVO
+﻿//kabam.rotmg.news.model.DefaultNewsCellVO
 
 package kabam.rotmg.news.model
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.securityQuestions.mediators.SecurityQuestionsMediator
+﻿//kabam.rotmg.account.securityQuestions.mediators.SecurityQuestionsMediator
 
 package kabam.rotmg.account.securityQuestions.mediators
 {

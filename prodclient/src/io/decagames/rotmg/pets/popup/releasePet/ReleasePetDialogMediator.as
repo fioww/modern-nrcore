@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.popup.releasePet.ReleasePetDialogMediator
+﻿//io.decagames.rotmg.pets.popup.releasePet.ReleasePetDialogMediator
 
 package io.decagames.rotmg.pets.popup.releasePet
 {

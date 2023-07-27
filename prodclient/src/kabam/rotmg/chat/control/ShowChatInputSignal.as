@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.chat.control.ShowChatInputSignal
+﻿//kabam.rotmg.chat.control.ShowChatInputSignal
 
 package kabam.rotmg.chat.control
 {

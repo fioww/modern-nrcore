@@ -1,14 +1,10 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.assembleegameclient.sound.SFX
+﻿//com.company.assembleegameclient.sound.SFX
 
 package com.company.assembleegameclient.sound
 {
     import flash.media.SoundTransform;
     import com.company.assembleegameclient.parameters.Parameters;
     import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.core.service.GoogleAnalytics;
 
     public class SFX 
     {
@@ -23,10 +19,6 @@ package com.company.assembleegameclient.sound
 
         public static function setPlaySFX(_arg_1:Boolean):void
         {
-            var _local_2:GoogleAnalytics = StaticInjectorContext.getInjector().getInstance(GoogleAnalytics);
-            if (_local_2)
-            {
-            };
             Parameters.data_.playSFX = _arg_1;
             Parameters.save();
             SoundEffectLibrary.updateTransform();

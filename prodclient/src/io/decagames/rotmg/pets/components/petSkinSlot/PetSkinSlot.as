@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.components.petSkinSlot.PetSkinSlot
+﻿//io.decagames.rotmg.pets.components.petSkinSlot.PetSkinSlot
 
 package io.decagames.rotmg.pets.components.petSkinSlot
 {

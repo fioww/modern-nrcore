@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.pets.data.family.PetFamilyColors
+﻿//io.decagames.rotmg.pets.data.family.PetFamilyColors
 
 package io.decagames.rotmg.pets.data.family
 {

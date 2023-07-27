@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//com.company.util.HTMLUtil
+﻿//com.company.util.HTMLUtil
 
 package com.company.util
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.tooltips.view.TooltipsView
+﻿//kabam.rotmg.tooltips.view.TooltipsView
 
 package kabam.rotmg.tooltips.view
 {

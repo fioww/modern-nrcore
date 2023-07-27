@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.promotions.view.BeginnersPackageButtonMediator
+﻿//kabam.rotmg.promotions.view.BeginnersPackageButtonMediator
 
 package kabam.rotmg.promotions.view
 {

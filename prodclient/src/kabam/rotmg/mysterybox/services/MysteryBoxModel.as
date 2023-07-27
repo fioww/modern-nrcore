@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.mysterybox.services.MysteryBoxModel
+﻿//kabam.rotmg.mysterybox.services.MysteryBoxModel
 
 package kabam.rotmg.mysterybox.services
 {

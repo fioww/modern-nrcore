@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.characters.deletion.control.DeleteCharacterSignal
+﻿//kabam.rotmg.characters.deletion.control.DeleteCharacterSignal
 
 package kabam.rotmg.characters.deletion.control
 {

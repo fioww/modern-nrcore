@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.core.commands.SetScreenWithValidDataCommand
+﻿//kabam.rotmg.core.commands.SetScreenWithValidDataCommand
 
 package kabam.rotmg.core.commands
 {

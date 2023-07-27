@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.ui.view.AgeVerificationDialog
+﻿//kabam.rotmg.ui.view.AgeVerificationDialog
 
 package kabam.rotmg.ui.view
 {
@@ -31,7 +28,7 @@ package kabam.rotmg.ui.view
 
         public function AgeVerificationDialog()
         {
-            super(TextKey.AGE_VERIFICATION_DIALOG_TITLE, "", TextKey.AGE_VERIFICATION_DIALOG_LEFT, TextKey.AGE_VERIFICATION_DIALOG_RIGHT, "/ageVerificationDialog");
+            super(TextKey.AGE_VERIFICATION_DIALOG_TITLE, "", TextKey.AGE_VERIFICATION_DIALOG_LEFT, TextKey.AGE_VERIFICATION_DIALOG_RIGHT);
             addEventListener(Dialog.LEFT_BUTTON, this.onCancel);
             addEventListener(Dialog.RIGHT_BUTTON, this.onVerify);
         }

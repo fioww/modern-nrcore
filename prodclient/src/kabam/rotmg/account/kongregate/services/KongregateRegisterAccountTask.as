@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.kongregate.services.KongregateRegisterAccountTask
+﻿//kabam.rotmg.account.kongregate.services.KongregateRegisterAccountTask
 
 package kabam.rotmg.account.kongregate.services
 {
@@ -10,9 +7,7 @@ package kabam.rotmg.account.kongregate.services
     import kabam.rotmg.account.web.model.AccountData;
     import kabam.rotmg.account.kongregate.view.KongregateApi;
     import kabam.rotmg.account.core.Account;
-    import kabam.rotmg.core.signals.TrackEventSignal;
     import kabam.rotmg.appengine.api.AppEngineClient;
-    import kabam.rotmg.core.service.TrackingData;
 
     public class KongregateRegisterAccountTask extends BaseTask implements RegisterAccountTask 
     {
@@ -23,8 +18,6 @@ package kabam.rotmg.account.kongregate.services
         public var api:KongregateApi;
         [Inject]
         public var account:Account;
-        [Inject]
-        public var track:TrackEventSignal;
         [Inject]
         public var client:AppEngineClient;
 
@@ -54,15 +47,6 @@ package kabam.rotmg.account.kongregate.services
         private function onInternalRegisterDone(_arg_1:String):void
         {
             this.updateAccount(_arg_1);
-            this.trackAccountRegistration();
-        }
-
-        private function trackAccountRegistration():void
-        {
-            var _local_1:TrackingData = new TrackingData();
-            _local_1.category = "kongregateAccount";
-            _local_1.action = "accountRegistered";
-            this.track.dispatch(_local_1);
         }
 
         private function updateAccount(_arg_1:String):void

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.web.commands.WebOpenVerifyEmailCommand
+﻿//kabam.rotmg.account.web.commands.WebOpenVerifyEmailCommand
 
 package kabam.rotmg.account.web.commands
 {

@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.minimap.view.MiniMapMediator
+﻿//kabam.rotmg.minimap.view.MiniMapMediator
 
 package kabam.rotmg.minimap.view
 {

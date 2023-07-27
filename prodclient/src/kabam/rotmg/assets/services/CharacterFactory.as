@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.assets.services.CharacterFactory
+﻿//kabam.rotmg.assets.services.CharacterFactory
 
 package kabam.rotmg.assets.services
 {

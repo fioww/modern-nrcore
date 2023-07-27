@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//io.decagames.rotmg.nexusShop.config.NexusShopConfig
+﻿//io.decagames.rotmg.nexusShop.config.NexusShopConfig
 
 package io.decagames.rotmg.nexusShop.config
 {

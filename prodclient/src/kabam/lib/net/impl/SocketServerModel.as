@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.lib.net.impl.SocketServerModel
+﻿//kabam.lib.net.impl.SocketServerModel
 
 package kabam.lib.net.impl
 {

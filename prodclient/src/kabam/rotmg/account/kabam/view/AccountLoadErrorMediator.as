@@ -1,7 +1,4 @@
-﻿// Decompiled by AS3 Sorcerer 6.78
-// www.buraks.com/as3sorcerer
-
-//kabam.rotmg.account.kabam.view.AccountLoadErrorMediator
+﻿//kabam.rotmg.account.kabam.view.AccountLoadErrorMediator
 
 package kabam.rotmg.account.kabam.view
 {
