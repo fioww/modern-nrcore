@@ -244,7 +244,6 @@ namespace wServer.realm.commands
                 {
                     Name = $"#{player.Name}",
                     NumStars = player.Stars,
-                    Admin = player.Admin,
                     BubbleTime = 0,
                     Txt = notif
                 }, null, PacketPriority.Low);
@@ -2040,6 +2039,23 @@ namespace wServer.realm.commands
         {
             GCSettings.LargeObjectHeapCompactionMode = GCLargeObjectHeapCompactionMode.CompactOnce;
             GC.Collect();
+            return true;
+        }
+    }
+
+    class SetChallengerStar : Command
+    {
+        public SetChallengerStar() : base("setChallengerStar", permLevel: 100, alias: "setChallenger") { }
+
+        protected override bool Process(Player player, RealmTime time, string args)
+        {
+            if (string.IsNullOrWhiteSpace(args) || !int.TryParse(args, out var val) || val < 0 || val > 4)
+            {
+                player.SendInfo("Usage: /setchallengerstar <value between 0 and 4>");
+                return false;
+            }
+
+            player.ChallengerStarBG = val;
             return true;
         }
     }

@@ -113,13 +113,12 @@ namespace wServer.logic.loot
             foreach (var player in eligiblePlayers)
             {
                 var lootDropBoost = player.Item1.LDBoostTime > 0 ? 1.5 : 1;
-                var luckStatBoost = 1 + player.Item1.Stats.Boost[10] / 100.0;
 
                 var loot = new List<Item>();
                 foreach (var i in possibleDrops)
                 {
                     if (i.Threshold > 0 && i.Threshold <= player.Item2 &&
-                        Rand.NextDouble() < i.Probabilty * lootDropBoost * luckStatBoost)
+                        Rand.NextDouble() < i.Probabilty * lootDropBoost)
                     {
                         loot.Add(i.Item);
                         reqDrops[i]--;

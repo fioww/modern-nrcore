@@ -247,10 +247,10 @@ package kabam.rotmg.chat.view
             {
                 return (61695);
             };
-            if (this.message.isFromSupporter)
+            if (this.message.nameColor_ != -1)
             {
-                return (SupporterCampaignModel.SUPPORT_COLOR);
-            };
+                return this.message.nameColor_;
+            }
             return (0xFF00);
         }
 
@@ -277,6 +277,10 @@ package kabam.rotmg.chat.view
             {
                 return (0xFFFF00);
             };
+            if (this.message.textColor_ != -1)
+            {
+                return this.message.textColor_;
+            }
             if (this.message.recipient == GUILD)
             {
                 return (10944349);

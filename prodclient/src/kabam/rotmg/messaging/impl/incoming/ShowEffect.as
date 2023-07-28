@@ -3,7 +3,6 @@
 package kabam.rotmg.messaging.impl.incoming
 {
     import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import kabam.rotmg.messaging.impl.data.CompressedInt;
     import flash.utils.IDataInput;
 
     public class ShowEffect extends IncomingMessage 
@@ -70,7 +69,7 @@ package kabam.rotmg.messaging.impl.incoming
             var _local_2:uint = _arg_1.readUnsignedByte();
             if ((_local_2 & EFFECT_BIT_ID))
             {
-                this.targetObjectId_ = CompressedInt.Read(_arg_1);
+                this.targetObjectId_ = _arg_1.readInt();
             }
             else
             {

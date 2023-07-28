@@ -8,7 +8,7 @@ namespace wServer.realm
     {
         //static readonly ILog Log = LogManager.GetLogger(typeof(StatsManager));
 
-        internal const int NumStatTypes = 11;
+        internal const int NumStatTypes = 8;
         private const float MinAttackMult = 0.5f;
         private const float MaxAttackMult = 2f;
         private const float MinAttackFreq = 0.0015f;
@@ -186,8 +186,6 @@ namespace wServer.realm
                 case 5: return "Dexterity";
                 case 6: return "HpRegen";
                 case 7: return "MpRegen";
-                case 8: return "DamageMin";
-                case 9: return "DamageMax";
                 case 10: return "LuckBoost";
             } return null;
         }
@@ -204,8 +202,6 @@ namespace wServer.realm
                 case "Dexterity": return 5;
                 case "HpRegen": return 6;
                 case "MpRegen": return 7;
-                case "DamageMin": return 8;
-                case "DamageMax": return 9;
                 case "LuckBoost": return 10;
             } return -1;
         }
@@ -230,12 +226,6 @@ namespace wServer.realm
                     return 6;
                 case StatsType.Wisdom:
                     return 7;
-                case StatsType.DamageMin:
-                    return 8;
-                case StatsType.DamageMax:
-                    return 9;
-                case StatsType.Luck:
-                    return 10;
                 default:
                     return -1;
             }
@@ -261,12 +251,6 @@ namespace wServer.realm
                     return StatsType.Vitality;
                 case 7:
                     return StatsType.Wisdom;
-                case 8:
-                    return StatsType.DamageMin;
-                case 9:
-                    return StatsType.DamageMax;
-                case 10:
-                    return StatsType.Luck;
                 default:
                     return StatsType.None;
             }
@@ -292,12 +276,6 @@ namespace wServer.realm
                     return StatsType.VitalityBonus;
                 case 7:
                     return StatsType.WisdomBonus;
-                case 8:
-                    return StatsType.DamageMinBonus;
-                case 9:
-                    return StatsType.DamageMaxBonus;
-                case 10:
-                    return StatsType.LuckBonus;
                 default:
                     return StatsType.None;
             }

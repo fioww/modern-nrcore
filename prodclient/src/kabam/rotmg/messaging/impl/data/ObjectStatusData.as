@@ -17,9 +17,9 @@ package kabam.rotmg.messaging.impl.data
         public function parseFromInput(_arg_1:IDataInput):void
         {
             var _local_3:int;
-            this.objectId_ = CompressedInt.Read(_arg_1);
+            this.objectId_ = _arg_1.readInt();
             this.pos_.parseFromInput(_arg_1);
-            var _local_2:int = CompressedInt.Read(_arg_1);
+            var _local_2:int = _arg_1.readShort();
             _local_3 = _local_2;
             while (_local_3 < this.stats_.length)
             {

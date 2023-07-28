@@ -46,7 +46,6 @@ package com.company.assembleegameclient.objects
     import flash.geom.ColorTransform;
     import com.company.assembleegameclient.util.TextureRedrawer;
     import com.company.util.CachingColorTransformer;
-    import io.decagames.rotmg.supportCampaign.data.SupporterFeatures;
     import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
     import kabam.rotmg.constants.UseType;
     import kabam.rotmg.constants.ActivationType;
@@ -85,7 +84,6 @@ package com.company.assembleegameclient.objects
         public var isShooting:Boolean;
         public var creditsWereChanged:Signal = new Signal();
         public var fameWasChanged:Signal = new Signal();
-        public var supporterFlagWasChanged:Signal = new Signal();
         private var famePortrait_:BitmapData = null;
         public var lastSwap_:int = -1;
         public var accountId_:String = "";
@@ -133,7 +131,6 @@ package com.company.assembleegameclient.objects
         public var wisdomMax_:int = 0;
         public var maxHPMax_:int = 0;
         public var maxMPMax_:int = 0;
-        public var supporterFlag:int = 0;
         public var hasBackpack_:Boolean = false;
         public var starred_:Boolean = false;
         public var ignored_:Boolean = false;
@@ -339,17 +336,6 @@ package com.company.assembleegameclient.objects
         {
             this.fame_ = _arg_1;
             this.fameWasChanged.dispatch();
-        }
-
-        public function setSupporterFlag(_arg_1:int):void
-        {
-            this.supporterFlag = _arg_1;
-            this.supporterFlagWasChanged.dispatch();
-        }
-
-        public function hasSupporterFeature(_arg_1:int):Boolean
-        {
-            return ((this.supporterFlag & _arg_1) == _arg_1);
         }
 
         public function setTokens(_arg_1:int):void
@@ -1121,14 +1107,7 @@ package com.company.assembleegameclient.objects
             var _local_9:BitmapData = texturingCache_[_local_8];
             if (_local_9 == null)
             {
-                if (this.hasSupporterFeature(SupporterFeatures.GLOW))
-                {
-                    _local_9 = GlowRedrawer.outlineGlow(_local_8, SupporterCampaignModel.SUPPORT_COLOR, 1.4, false, 0, true);
-                }
-                else
-                {
-                    _local_9 = GlowRedrawer.outlineGlow(_local_8, ((this.legendaryRank_ == -1) ? 0 : 0xFF0000));
-                };
+                _local_9 = GlowRedrawer.outlineGlow(_local_8, this.legendaryRank_);
                 texturingCache_[_local_8] = _local_9;
             };
             if ((((isPaused()) || (isStasis())) || (isPetrified())))

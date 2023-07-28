@@ -111,14 +111,10 @@ namespace wServer.realm
         PetAbilityType3 = 95,
         Effects2 = 96,
         Tokens = 97,
-        DamageMin = 98,
-        DamageMax = 99,
-        DamageMinBonus = 100,
-        DamageMaxBonus = 101,
-        LuckBonus = 105,
-        Rank = 103,
-        Admin = 104,
-        Luck = 102,
+        SupporterPoints = 98,
+        ChallengerStarBG = 99,
+        ProjectileSpeedMult = 100,
+        ProjectileLifeMult = 101,
 
         None = 255
     }

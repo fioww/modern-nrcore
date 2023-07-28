@@ -35,7 +35,6 @@ package com.company.assembleegameclient.ui.options
     import com.company.util.KeyCodes;
     import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
     import com.company.assembleegameclient.objects.Player;
-    import io.decagames.rotmg.supportCampaign.data.SupporterFeatures;
     import flash.display.StageDisplayState;
     import com.company.assembleegameclient.sound.Music;
     import com.company.assembleegameclient.sound.SFX;
@@ -646,15 +645,6 @@ package com.company.assembleegameclient.ui.options
         private function onToggleTierTag():void
         {
             StaticInjectorContext.getInjector().getInstance(ToggleShowTierTagSignal).dispatch(Parameters.data_.showTierTag);
-        }
-
-        private function onCharacterGlow():void
-        {
-            var _local_1:Player = this.gs_.map.player_;
-            if (_local_1.hasSupporterFeature(SupporterFeatures.GLOW))
-            {
-                _local_1.clearTextureCache();
-            };
         }
 
         private function onShowQuestPortraitsChange():void

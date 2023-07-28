@@ -24,7 +24,6 @@ package io.decagames.rotmg.supportCampaign.tab
     import flash.display.DisplayObject;
     import flash.events.Event;
     import com.company.assembleegameclient.objects.Player;
-    import io.decagames.rotmg.supportCampaign.data.SupporterFeatures;
     import io.decagames.rotmg.shop.NotEnoughResources;
     import com.company.assembleegameclient.util.Currency;
     import io.decagames.rotmg.ui.buttons.BaseButton;
@@ -180,12 +179,6 @@ package io.decagames.rotmg.supportCampaign.tab
             this.view.drawProgress(this.model.points, this.model.rankConfig, this.model.rank, this.model.claimed);
             this.updateInfoTooltip();
             this.selectedSignal.dispatch(this.model.nextClaimableTier);
-            var _local_1:Player = this.gameModel.player;
-            if (_local_1.hasSupporterFeature(SupporterFeatures.GLOW))
-            {
-                _local_1.supporterPoints = this.model.points;
-                _local_1.clearTextureCache();
-            };
         }
 
         private function updateInfoTooltip():void

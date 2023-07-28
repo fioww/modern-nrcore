@@ -946,7 +946,7 @@ import robotlegs.bender.framework.api.ILogger;
             serverConnection.sendMessage(_local_3);
         }
 
-        public function move(_arg_1:int, _arg_2:uint, _arg_3:Player):void
+        public function move(_arg_1:int, _arg_3:Player):void
         {
             var _local_8:int;
             var _local_9:int;
@@ -958,9 +958,9 @@ import robotlegs.bender.framework.api.ILogger;
                 _local_5 = _arg_3.y_;
             };
             var _local_6:Move = (this.messages.require(MOVE) as Move);
+            _local_6.objectId_ = _arg_3.objectId_;
             _local_6.tickId_ = _arg_1;
             _local_6.time_ = gs_.lastUpdate_;
-            _local_6.serverRealTimeMSofLastNewTick_ = _arg_2;
             _local_6.newPosition_.x_ = _local_4;
             _local_6.newPosition_.y_ = _local_5;
             var _local_7:int = gs_.moveRecords_.lastClearTime_;
@@ -1520,8 +1520,7 @@ import robotlegs.bender.framework.api.ILogger;
             {
                 jitterWatcher_.record();
             };
-            lastServerRealTimeMS_ = _arg_1.serverRealTimeMS_;
-            this.move(_arg_1.tickId_, lastServerRealTimeMS_, this.player);
+            this.move(_arg_1.tickId_, this.player);
             for each (_local_2 in _arg_1.statuses_)
             {
                 this.processObjectStatus(_local_2, _arg_1.tickTime_, _arg_1.tickId_);
@@ -1912,12 +1911,6 @@ import robotlegs.bender.framework.api.ILogger;
                             };
                         };
                         break;
-                    case StatData.SUPPORTER_STAT:
-                        if (_local_4 != null)
-                        {
-                            _local_4.setSupporterFlag(_local_8);
-                        };
-                        break;
                     case StatData.MERCHANDISE_CURRENCY_STAT:
                         (_arg_1 as SellableObject).setCurrency(_local_8);
                         break;
@@ -2206,10 +2199,6 @@ import robotlegs.bender.framework.api.ILogger;
             var _local_6:int = _arg_1.keyTime_;
             var _local_7:ByteArray = _arg_1.key_;
             isFromArena_ = _arg_1.isFromArena_;
-            if (_arg_1.stats_)
-            {
-                this.statsTracker.setBinaryStringData(_local_5, _arg_1.stats_);
-            };
             this.isNexusing = false;
             var _local_8:ReconnectEvent = new ReconnectEvent(_local_2, _local_3, _local_4, _local_5, _local_6, _local_7, isFromArena_);
             gs_.dispatchEvent(_local_8);

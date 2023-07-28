@@ -19,28 +19,6 @@ namespace wServer.networking.packets.outgoing
         public override PacketId ID => PacketId.UPDATE;
         public override Packet CreateInstance() { return new Update(); }
 
-        protected override void Read(NReader rdr)
-        {
-            Tiles = new TileData[rdr.ReadInt16()];
-            for (var i = 0; i < Tiles.Length; i++)
-            {
-                Tiles[i] = new TileData()
-                {
-                    X = rdr.ReadInt16(),
-                    Y = rdr.ReadInt16(),
-                    Tile = (Tile)rdr.ReadUInt16(),
-                };
-            }
-
-            NewObjs = new ObjectDef[rdr.ReadInt16()];
-            for (var i = 0; i < NewObjs.Length; i++)
-                NewObjs[i] = ObjectDef.Read(rdr);
-
-            Drops = new int[rdr.ReadInt16()];
-            for (var i = 0; i < Drops.Length; i++)
-                Drops[i] = rdr.ReadInt32();
-        }
-
         protected override void Write(NWriter wtr)
         {
             wtr.Write((short)Tiles.Length);

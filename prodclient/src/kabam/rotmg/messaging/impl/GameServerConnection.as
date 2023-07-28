@@ -135,7 +135,6 @@ package kabam.rotmg.messaging.impl
         public var mapJSON_:String;
         public var isFromArena_:Boolean = false;
         public var lastTickId_:int = -1;
-        public var lastServerRealTimeMS_:uint = 0;
         public var jitterWatcher_:JitterWatcher;
         public var serverConnection:SocketServer;
         public var outstandingBuy_:OutstandingBuy = null;

@@ -9,9 +9,9 @@ package kabam.rotmg.messaging.impl.outgoing
     public class Move extends OutgoingMessage 
     {
 
+        public var objectId_:int;
         public var tickId_:int;
         public var time_:int;
-        public var serverRealTimeMSofLastNewTick_:uint;
         public var newPosition_:WorldPosData = new WorldPosData();
         public var records_:Vector.<MoveRecord> = new Vector.<MoveRecord>();
 
@@ -22,9 +22,9 @@ package kabam.rotmg.messaging.impl.outgoing
 
         override public function writeToOutput(_arg_1:IDataOutput):void
         {
+            _arg_1.writeInt(this.objectId_);
             _arg_1.writeInt(this.tickId_);
             _arg_1.writeInt(this.time_);
-            _arg_1.writeUnsignedInt(this.serverRealTimeMSofLastNewTick_);
             this.newPosition_.writeToOutput(_arg_1);
             _arg_1.writeShort(this.records_.length);
             var _local_2:int;

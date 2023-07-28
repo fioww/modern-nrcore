@@ -15,7 +15,6 @@ package kabam.rotmg.messaging.impl.incoming
         public var keyTime_:int;
         public var key_:ByteArray = new ByteArray();
         public var isFromArena_:Boolean;
-        public var stats_:String;
 
         public function Reconnect(_arg_1:uint, _arg_2:Function)
         {
@@ -26,7 +25,6 @@ package kabam.rotmg.messaging.impl.incoming
         {
             this.name_ = _arg_1.readUTF();
             this.host_ = _arg_1.readUTF();
-            this.stats_ = _arg_1.readUTF();
             this.port_ = _arg_1.readInt();
             this.gameId_ = _arg_1.readInt();
             this.keyTime_ = _arg_1.readInt();

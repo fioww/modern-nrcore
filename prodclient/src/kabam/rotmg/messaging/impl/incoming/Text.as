@@ -14,7 +14,8 @@ package kabam.rotmg.messaging.impl.incoming
         public var recipient_:String;
         public var text_:String = new String();
         public var cleanText_:String = new String();
-        public var isSupporter:Boolean = false;
+        public var nameColor_:int;
+        public var textColor_:int;
         public var starBg:int;
 
         public function Text(_arg_1:uint, _arg_2:Function)
@@ -31,7 +32,8 @@ package kabam.rotmg.messaging.impl.incoming
             this.recipient_ = _arg_1.readUTF();
             this.text_ = _arg_1.readUTF();
             this.cleanText_ = _arg_1.readUTF();
-            this.isSupporter = _arg_1.readBoolean();
+            this.nameColor_ = _arg_1.readInt();
+            this.textColor_ = _arg_1.readInt();
             this.starBg = _arg_1.readInt();
         }
 

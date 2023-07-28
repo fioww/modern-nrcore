@@ -3,7 +3,6 @@
 package com.company.assembleegameclient.util
 {
     import com.company.assembleegameclient.parameters.Parameters;
-    import io.decagames.rotmg.supportCampaign.data.SupporterFeatures;
     import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
     import com.company.assembleegameclient.objects.Player;
 
@@ -17,9 +16,9 @@ package com.company.assembleegameclient.util
             {
                 return (Parameters.FELLOW_GUILD_COLOR);
             };
-            if (_arg_1.hasSupporterFeature(SupporterFeatures.SPECIAL_NAME_COLOR))
+            if (_arg_1.legendaryRank_ != 0)
             {
-                return (SupporterCampaignModel.SUPPORT_COLOR);
+                return (_arg_1.legendaryRank_);
             };
             if (_arg_1.nameChosen_)
             {

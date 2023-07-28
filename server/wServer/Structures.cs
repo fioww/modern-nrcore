@@ -242,14 +242,6 @@ namespace wServer
         public ushort ObjectType;
         public ObjectStats Stats;
 
-        public static ObjectDef Read(NReader rdr)
-        {
-            ObjectDef ret = new ObjectDef();
-            ret.ObjectType = rdr.ReadUInt16();
-            ret.Stats = ObjectStats.Read(rdr);
-            return ret;
-        }
-
         public void Write(NWriter wtr)
         {
             wtr.Write(ObjectType);
@@ -262,24 +254,6 @@ namespace wServer
         public int Id;
         public Position Position;
         public KeyValuePair<StatsType, object>[] Stats;
-
-        public static ObjectStats Read(NReader rdr)
-        {
-            ObjectStats ret = new ObjectStats();
-            ret.Id = rdr.ReadInt32();
-            ret.Position = Position.Read(rdr);
-            ret.Stats = new KeyValuePair<StatsType, object>[rdr.ReadInt16()];
-            for (var i = 0; i < ret.Stats.Length; i++)
-            {
-                StatsType type = (StatsType)rdr.ReadByte();
-                if (type == StatsType.Guild || type == StatsType.Name)
-                    ret.Stats[i] = new KeyValuePair<StatsType, object>(type, rdr.ReadUTF());
-                else
-                    ret.Stats[i] = new KeyValuePair<StatsType, object>(type, rdr.ReadInt32());
-            }
-
-            return ret;
-        }
 
         public void Write(NWriter wtr)
         {

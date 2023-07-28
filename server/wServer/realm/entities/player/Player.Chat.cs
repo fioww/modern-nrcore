@@ -249,7 +249,6 @@ namespace wServer.realm.entities
                 ObjectId = objId,
                 BubbleTime = 10,
                 NumStars = stars,
-                Admin = admin,
                 Name = from,
                 Recipient = to,
                 Txt = text
@@ -288,7 +287,6 @@ namespace wServer.realm.entities
                 ObjectId = objId,
                 BubbleTime = 10,
                 NumStars = stars,
-                Admin = admin,
                 Name = from,
                 Recipient = "*Guild*",
                 Txt = text

@@ -192,6 +192,20 @@ namespace wServer.realm.entities
             set { _tokens.SetValue(value); }
         }
 
+        private readonly SV<int> _spPoints; 
+        public int SupporterPoints
+        {
+            get => _spPoints.GetValue();
+            set => _spPoints.SetValue(value);
+        }
+
+        private readonly SV<int> _challengerStarBG; 
+        public int ChallengerStarBG
+        {
+            get => _challengerStarBG.GetValue();
+            set => _challengerStarBG.SetValue(value);
+        }
+
         public int XPBoostTime { get; set; }
         public int LDBoostTime { get; set; }
         public int LTBoostTime { get; set; }
@@ -210,72 +224,6 @@ namespace wServer.realm.entities
         public ItemStacker[] Stacks { get; private set; }
 
         public readonly StatsManager Stats;
-        
-        protected override void ImportStats(StatsType stats, object val)
-        {
-            var items = Manager.Resources.GameData.Items;
-            base.ImportStats(stats, val);
-            switch (stats)
-            {
-                case StatsType.AccountId: AccountId = ((string)val).ToInt32(); break;
-                case StatsType.Experience: Experience = (int)val; break;
-                case StatsType.ExperienceGoal: ExperienceGoal = (int)val; break;
-                case StatsType.Level: Level = (int)val; break;
-                case StatsType.Fame: Fame = (int)val; break;
-                case StatsType.CurrentFame: CurrentFame = (int)val; break;
-                case StatsType.FameGoal: FameGoal = (int)val; break;
-                case StatsType.Stars: Stars = (int)val; break;
-                case StatsType.Guild: Guild = (string)val; break;
-                case StatsType.GuildRank: GuildRank = (int)val; break;
-                case StatsType.Credits: Credits = (int)val; break;
-                case StatsType.NameChosen: NameChosen = (int)val != 0; break;
-                case StatsType.Texture1: Texture1 = (int)val; break;
-                case StatsType.Texture2: Texture2 = (int)val; break;
-                case StatsType.Skin: Skin = (int)val; break;
-                case StatsType.Glow: Glow = (int)val; break;
-                case StatsType.MP: MP = (int)val; break;
-                case StatsType.Inventory0: Inventory[0] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory1: Inventory[1] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory2: Inventory[2] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory3: Inventory[3] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory4: Inventory[4] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory5: Inventory[5] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory6: Inventory[6] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory7: Inventory[7] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory8: Inventory[8] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory9: Inventory[9] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory10: Inventory[10] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.Inventory11: Inventory[11] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack0: Inventory[12] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack1: Inventory[13] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack2: Inventory[14] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack3: Inventory[15] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack4: Inventory[16] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack5: Inventory[17] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack6: Inventory[18] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.BackPack7: Inventory[19] = (int)val == -1 ? null : items[(ushort)(int)val]; break;
-                case StatsType.MaximumHP: Stats.Base[0] = (int)val; break;
-                case StatsType.MaximumMP: Stats.Base[1] = (int)val; break;
-                case StatsType.Attack: Stats.Base[2] = (int)val; break;
-                case StatsType.Defense: Stats.Base[3] = (int)val; break;
-                case StatsType.Speed: Stats.Base[4] = (int)val; break;
-                case StatsType.Dexterity: Stats.Base[5] = (int)val; break;
-                case StatsType.Vitality: Stats.Base[6] = (int)val; break;
-                case StatsType.Wisdom: Stats.Base[7] = (int)val; break;
-                case StatsType.DamageMin: Stats.Base[8] = (int)val; break;
-                case StatsType.DamageMax: Stats.Base[9] = (int)val; break;
-                case StatsType.Luck: Stats.Base[10] = (int)val; break;
-                case StatsType.HealthStackCount: HealthPots.Count = (int)val; break;
-                case StatsType.MagicStackCount: MagicPots.Count = (int)val; break;
-                case StatsType.HasBackpack: HasBackpack = (int)val == 1; break;
-                case StatsType.XPBoostTime: XPBoostTime = (int)val * 1000; break;
-                case StatsType.LDBoostTime: LDBoostTime = (int)val * 1000; break;
-                case StatsType.LTBoostTime: LTBoostTime = (int)val * 1000; break;
-                case StatsType.Rank: Rank = (int)val; break;
-                case StatsType.Admin: Admin = (int)val; break;
-                case StatsType.Tokens: Tokens = (int)val; break;
-            }
-        }
 
         protected override void ExportStats(IDictionary<StatsType, object> stats)
         {
@@ -326,9 +274,6 @@ namespace wServer.realm.entities
             stats[StatsType.Dexterity] = Stats[5];
             stats[StatsType.Vitality] = Stats[6];
             stats[StatsType.Wisdom] = Stats[7];
-            stats[StatsType.DamageMin] = Stats[8];
-            stats[StatsType.DamageMax] = Stats[9];
-            stats[StatsType.Luck] = Stats[10];
             stats[StatsType.HPBoost] = Stats.Boost[0];
             stats[StatsType.MPBoost] = Stats.Boost[1];
             stats[StatsType.AttackBonus] = Stats.Boost[2];
@@ -337,9 +282,6 @@ namespace wServer.realm.entities
             stats[StatsType.DexterityBonus] = Stats.Boost[5];
             stats[StatsType.VitalityBonus] = Stats.Boost[6];
             stats[StatsType.WisdomBonus] = Stats.Boost[7];
-            stats[StatsType.DamageMinBonus] = Stats.Boost[8];
-            stats[StatsType.DamageMaxBonus] = Stats.Boost[9];
-            stats[StatsType.LuckBonus] = Stats.Boost[10];
             stats[StatsType.HealthStackCount] = HealthPots.Count;
             stats[StatsType.MagicStackCount] = MagicPots.Count;
             stats[StatsType.HasBackpack] = (HasBackpack) ? 1 : 0;
@@ -348,14 +290,13 @@ namespace wServer.realm.entities
             stats[StatsType.LDBoostTime] = LDBoostTime / 1000;
             stats[StatsType.LTBoostTime] = LTBoostTime / 1000;
             stats[StatsType.OxygenBar] = OxygenBar;
-            stats[StatsType.Rank] = Rank;
-            stats[StatsType.Admin] = Admin;
             stats[StatsType.Tokens] = Tokens;
         }
 
         public void SaveToCharacter()
         {
             var chr = _client.Character;
+            var acc = _client.Account;
             chr.Level = Level;
             chr.Experience = Experience;
             chr.Fame = Fame;
@@ -375,6 +316,8 @@ namespace wServer.realm.entities
             chr.LTBoostTime = LTBoostTime;
             chr.PetId = Pet?.PetId ?? 0;
             chr.Items = Inventory.GetItemTypes();
+            acc.SupporterPoints = SupporterPoints;
+            acc.ChallengerStarBg = ChallengerStarBG;
         }
 
         public Player(Client client, bool saveInventory = true)
@@ -409,9 +352,9 @@ namespace wServer.realm.entities
             _hasBackpack = new SV<bool>(this, StatsType.HasBackpack, client.Character.HasBackpack, true);
             _xpBoosted = new SV<bool>(this, StatsType.XPBoost, client.Character.XPBoostTime != 0, true);
             _oxygenBar = new SV<int>(this, StatsType.OxygenBar, -1, true);
-            _rank = new SV<int>(this, StatsType.Rank, client.Account.Rank);
-            _admin = new SV<int>(this, StatsType.Admin, client.Account.Admin ? 1 : 0);
             _tokens = new SV<int>(this, StatsType.Tokens, client.Account.Tokens, true);
+            _spPoints = new SV<int>(this, StatsType.SupporterPoints, client.Account.SupporterPoints, true);
+            _challengerStarBG = new SV<int>(this, StatsType.SupporterPoints, client.Account.ChallengerStarBg, true);
 
             Name = client.Account.Name;
             HP = client.Character.HP;

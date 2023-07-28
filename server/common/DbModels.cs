@@ -524,6 +524,18 @@ namespace common
             get { return DiscordRank > LegacyRank ? DiscordRank : LegacyRank; }
         }
 
+        public int SupporterPoints
+        {
+            get { return GetValue<int>("spPoints"); }
+            set { SetValue<int>("spPoints", value); }
+        }
+
+        public int ChallengerStarBg
+        {
+            get { return GetValue<int>("challengerStarBG"); }
+            set { SetValue<int>("challengerStarBG", value); }
+        }
+
         public PrivateMessages PrivateMessages
         {
             get

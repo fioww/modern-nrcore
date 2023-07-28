@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using common.resources;
-using wServer.logic;
+﻿using common.resources;
 
 namespace wServer.realm.entities
 {
@@ -14,7 +9,7 @@ namespace wServer.realm.entities
             int time, Position position, float angle)
         {
             projectileId = id;
-            var dmg = (int) Stats.GetAttackDamage(Stats[8], Stats[9]);
+            var dmg = (int) Stats.GetAttackDamage(desc.MinDamage, desc.MaxDamage);
             return CreateProjectile(desc, objType, dmg,
                 C2STime(time), position, angle);
         }

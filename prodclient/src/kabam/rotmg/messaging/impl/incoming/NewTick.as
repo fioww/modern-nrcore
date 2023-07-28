@@ -11,8 +11,6 @@ package kabam.rotmg.messaging.impl.incoming
 
         public var tickId_:int;
         public var tickTime_:int;
-        public var serverRealTimeMS_:uint;
-        public var serverLastRTTMS_:uint;
         public var statuses_:Vector.<ObjectStatusData> = new Vector.<ObjectStatusData>();
 
         public function NewTick(_arg_1:uint, _arg_2:Function)
@@ -25,8 +23,6 @@ package kabam.rotmg.messaging.impl.incoming
             var _local_3:int;
             this.tickId_ = _arg_1.readInt();
             this.tickTime_ = _arg_1.readInt();
-            this.serverRealTimeMS_ = _arg_1.readUnsignedInt();
-            this.serverLastRTTMS_ = _arg_1.readUnsignedShort();
             var _local_2:int = _arg_1.readShort();
             _local_3 = _local_2;
             while (_local_3 < this.statuses_.length)

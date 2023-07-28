@@ -201,7 +201,8 @@ package kabam.rotmg.chat.control
             _local_2.recipient = _arg_1.recipient_;
             _local_2.isWhisper = ((_arg_1.recipient_) && (!(this.isSpecialRecipientChat(_arg_1.recipient_))));
             _local_2.isToMe = (_arg_1.recipient_ == this.model.player.name_);
-            _local_2.isFromSupporter = _arg_1.isSupporter;
+            _local_2.nameColor_ = _arg_1.nameColor_ == 0x123456 ? -1 : _arg_1.nameColor_;
+            _local_2.textColor_ = _arg_1.textColor_ == 0x123456 ? -1 : _arg_1.textColor_;
             _local_2.starBg = _arg_1.starBg;
             this.addMessageText(_arg_1, _local_2);
             this.addTextLine.dispatch(_local_2);
