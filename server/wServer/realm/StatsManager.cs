@@ -88,13 +88,17 @@ namespace wServer.realm
                 def *= 2;
             if (host.HasConditionEffect(ConditionEffects.ArmorBroken))
                 def = 0;
+            if (host.HasConditionEffect(ConditionEffects.Exposed))
+                def -= 20;
 
-            float limit = dmg * 0.25f;//0.15f;
+            float limit = dmg * 0.15f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
             else ret = dmg - def;
 
+            if (host.HasConditionEffect(ConditionEffects.Exposed))
+                ret = (int)(ret * 0.9);
             if (host.HasConditionEffect(ConditionEffects.Curse))
                 ret = (int)(ret * 1.20);
 
@@ -111,6 +115,8 @@ namespace wServer.realm
                 def *= 2;
             if (Owner.HasConditionEffect(ConditionEffects.ArmorBroken) || noDef)
                 def = 0;
+            if (Owner.HasConditionEffect(ConditionEffects.Exposed))
+                def -= 20;
 
             float limit = dmg * 0.25f;//0.15f;
 
@@ -119,7 +125,7 @@ namespace wServer.realm
             else ret = dmg - def;
 
             if (Owner.HasConditionEffect(ConditionEffects.Petrify))
-                ret = (int)(ret * .9);
+                ret = (int)(ret * 0.9);
             if (Owner.HasConditionEffect(ConditionEffects.Curse))
                 ret = (int)(ret * 1.20);
             if (Owner.HasConditionEffect(ConditionEffects.Invulnerable) ||

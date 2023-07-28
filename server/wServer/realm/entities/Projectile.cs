@@ -24,10 +24,11 @@ namespace wServer.realm.entities
         public Position StartPos { get; set; }
         public float Angle { get; set; }
         public int Damage { get; set; }
+        public float LifetimeMult;
+        public float SpeedMult;
 
-        private readonly ConcurrentDictionary<Player, Tuple<int, int>> _startTime = 
-            new ConcurrentDictionary<Player, Tuple<int, int>>(); 
-        private readonly HashSet<Entity> _hit = new HashSet<Entity>(); 
+        private readonly ConcurrentDictionary<Player, Tuple<int, int>> _startTime = new(); 
+        private readonly HashSet<Entity> _hit = new(); 
 
         public Projectile(RealmManager manager, ProjectileDesc desc)
             : base(manager, manager.Resources.GameData.IdToObjectType[desc.ObjectId])
@@ -50,7 +51,7 @@ namespace wServer.realm.entities
         public override void Tick(RealmTime time)
         {
             var elapsed = time.TotalElapsedMs - CreationTime;
-            if (elapsed > ProjDesc.LifetimeMS)
+            if (elapsed > ProjDesc.LifetimeMS * LifetimeMult)
             {
                 Destroy();
                 return;
@@ -64,7 +65,7 @@ namespace wServer.realm.entities
             var x = (double)StartPos.X;
             var y = (double)StartPos.Y;
 
-            var dist = elapsedTicks * ProjDesc.Speed / 10000.0;
+            var dist = elapsedTicks * (ProjDesc.Speed * SpeedMult) / 10000.0;
             var period = ProjectileId % 2 == 0 ? 0 : Math.PI;
 
             if (ProjDesc.Wavy)
@@ -87,7 +88,7 @@ namespace wServer.realm.entities
             {
                 if (ProjDesc.Boomerang)
                 {
-                    var d = (ProjDesc.LifetimeMS * ProjDesc.Speed / 10000.0) / 2;
+                    var d = (ProjDesc.LifetimeMS * (ProjDesc.Speed * SpeedMult) / 10000.0) / 2;
                     if (dist > d)
                         dist = d - (dist - d);
                 }

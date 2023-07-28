@@ -206,6 +206,20 @@ namespace wServer.realm.entities
             set => _challengerStarBG.SetValue(value);
         }
 
+        private readonly SV<int> _projectileSpeedMult; 
+        public int ProjectileSpeedMult
+        {
+            get => _projectileSpeedMult.GetValue();
+            set => _projectileSpeedMult.SetValue(value);
+        }
+
+        private readonly SV<int> _projectileLifeMult; 
+        public int ProjectileLifeMult
+        {
+            get => _projectileLifeMult.GetValue();
+            set => _projectileLifeMult.SetValue(value);
+        }
+
         public int XPBoostTime { get; set; }
         public int LDBoostTime { get; set; }
         public int LTBoostTime { get; set; }
@@ -355,6 +369,8 @@ namespace wServer.realm.entities
             _tokens = new SV<int>(this, StatsType.Tokens, client.Account.Tokens, true);
             _spPoints = new SV<int>(this, StatsType.SupporterPoints, client.Account.SupporterPoints, true);
             _challengerStarBG = new SV<int>(this, StatsType.SupporterPoints, client.Account.ChallengerStarBg, true);
+            _projectileSpeedMult = new SV<int>(this, StatsType.ProjectileSpeedMult, 1000, true);
+            _projectileLifeMult = new SV<int>(this, StatsType.ProjectileLifeMult, 1000, true);
 
             Name = client.Account.Name;
             HP = client.Character.HP;
@@ -532,6 +548,7 @@ namespace wServer.realm.entities
 
             CheckTradeTimeout(time);
             HandleQuest(time);
+            TickExtraRange();
 
             if (!HasConditionEffect(ConditionEffects.Paused))
             {
@@ -558,6 +575,28 @@ namespace wServer.realm.entities
             }
         }
 
+        private bool _hasInspired;
+        private int _inspiredBoost;
+        void TickExtraRange()
+        {
+            var t = _hasInspired;
+            if (HasConditionEffect(ConditionEffects.Inspired) && !_hasInspired)
+            {
+                var old = ProjectileLifeMult;
+                ProjectileLifeMult = (int)(ProjectileLifeMult * 1.25);
+                _inspiredBoost = ProjectileLifeMult - old;
+                _hasInspired = true;
+            }
+            else if (!HasConditionEffect(ConditionEffects.Inspired) && _hasInspired)
+            {
+                ProjectileLifeMult -= _inspiredBoost;
+                _inspiredBoost = 0;
+                _hasInspired = false;
+            }
+            if (t != _hasInspired)
+                Console.WriteLine(ProjectileLifeMult);
+        }
+        
         void TickActivateEffects(RealmTime time)
         {
             var dt = time.ElaspedMsDelta;

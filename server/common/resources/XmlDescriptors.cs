@@ -45,7 +45,7 @@ namespace common.resources
         Paralyzed =         1 << 13,
         Speedy =            1 << 14,
         Bleeding =          1 << 15,
-        ArmorBreakImmune =  1 << 16,
+        ArmorBrokenImmune = 1 << 16,
         Healing =           1 << 17,
         Damaging =          1 << 18,
         Berserk =           1 << 19,
@@ -76,10 +76,20 @@ namespace common.resources
         DexBoost =          (ulong) 1 << 44,
         VitBoost =          (ulong) 1 << 45,
         WisBoost =          (ulong) 1 << 46,
-        Hidden =            (ulong) 1 << 47,
-        Muted =             (ulong) 1 << 48,
-        PartyVision =       (ulong) 1 << 49,
-        XMasVision =        (ulong) 1 << 50
+        Silenced =          (ulong) 1 << 47,
+        Exposed =           (ulong) 1 << 48,
+        Energized =         (ulong) 1 << 49,
+        HPDebuff =          (ulong) 1 << 50,
+        MPDebuff =          (ulong) 1 << 51,
+        AttDebuff =         (ulong) 1 << 52,
+        DefDebuff =         (ulong) 1 << 53,
+        SpdDebuff =         (ulong) 1 << 54,
+        DexDebuff =         (ulong) 1 << 55,
+        VitDebuff =         (ulong) 1 << 56,
+        WisDebuff =         (ulong) 1 << 57,
+        Inspired =          (ulong) 1 << 58,
+        Muted =             (ulong) 1 << 59,
+        Hidden =            (ulong) 1 << 60,
     }
 
     public enum ConditionEffectIndex
@@ -100,7 +110,7 @@ namespace common.resources
         Paralyzed = 13,
         Speedy = 14,
         Bleeding = 15,
-        ArmorBreakImmune = 16,
+        ArmorBrokenImmune = 16,
         Healing = 17,
         Damaging = 18,
         Berserk = 19,
@@ -128,13 +138,23 @@ namespace common.resources
         AttBoost = 41,
         DefBoost = 42,
         SpdBoost = 43,
-        DexBoost = 44,
-        VitBoost = 45,
-        WisBoost = 46,
-        Hidden = 47,
-        Muted = 48,
-        PartyVision = 49,
-        XMasVision = 50
+        VitBoost = 44,
+        WisBoost = 45,
+        DexBoost = 46,
+        Silenced = 47,
+        Exposed = 48,
+        Energized = 49,
+        HPDebuff = 50,
+        MPDebuff = 51,
+        AttDebuff = 52,
+        DefDebuff = 53,
+        SpdDebuff = 54,
+        VitDebuff = 55,
+        WisDebuff = 56,
+        DexDebuff = 57,
+        Inspired = 58,
+        Muted = 59,
+        Hidden = 60,
     }
 
     public class ConditionEffect
@@ -184,7 +204,7 @@ namespace common.resources
                 BulletType = Utils.FromString(elem.Attribute("id").Value);
             ObjectId = elem.Element("ObjectId").Value;
             LifetimeMS = Utils.FromString(elem.Element("LifetimeMS")?.Value ?? "0");
-            Speed = float.Parse(elem.Element("Speed").Value);
+            Speed = float.Parse(elem.Element("Speed")?.Value ?? "100");
             if ((n = elem.Element("Size")) != null)
                 Size = Utils.FromString(n.Value);
 
@@ -290,7 +310,20 @@ namespace common.resources
         HealingGrenade,
         PetSkin,
         Unlock,
-        MysteryDyes
+        MysteryDyes,
+        CreatePortal,
+        ChangeObject,
+        Exchange,
+        UnlockPetSkin,
+        KillRealmHeroes,
+        TeleportToObject,
+        ObjectToss,
+        BulletCreate,
+        BoostRange,
+        GroupTransform,
+        MarkAndTeleport,
+        SelfTransform,
+        LevelTwenty,
     }
 
     public class ActivateEffect
@@ -315,7 +348,7 @@ namespace common.resources
         public string Id { get; private set; }
         public string DungeonName { get; private set; }
         public string LockedName { get; private set; }
-        public uint Color { get; private set; }
+        public int Color { get; private set; }
         public ushort SkinType { get; private set; }
         public int Size { get; private set; }
         public bool NoStack { get; private set; }
@@ -323,6 +356,7 @@ namespace common.resources
         public string Target { get; private set; }
         public string Center { get; private set; }
         public int VisualEffect { get; private set; }
+        public string OnlyIn;
 
         public ActivateEffect(XElement elem)
         {
@@ -395,7 +429,7 @@ namespace common.resources
                 LockedName = elem.Attribute("lockedName").Value;
 
             if (elem.Attribute("color") != null)
-                Color = uint.Parse(elem.Attribute("color").Value.Substring(2), NumberStyles.AllowHexSpecifier);
+                Color = Utils.FromString(elem.Attribute("color").Value);
 
             if (elem.Attribute("skinType") != null)
                 SkinType = ushort.Parse(elem.Attribute("skinType").Value.Substring(2), NumberStyles.AllowHexSpecifier);
@@ -417,6 +451,8 @@ namespace common.resources
 
             if (elem.Attribute("visualEffect") != null)
                 VisualEffect = Utils.FromString(elem.Attribute("visualEffect").Value);
+
+            OnlyIn = elem.Attribute("onlyIn")?.Value;
         }
     }
     public class Setpiece
@@ -456,7 +492,7 @@ namespace common.resources
         public ushort ObjectType { get; private set; }
         public string ObjectId { get; private set; }
         public int SlotType { get; private set; }
-        public int Tier { get; private set; }
+        public int Tier { get; private set; } = -1;
         public string Description { get; private set; }
         public float RateOfFire { get; private set; }
         public bool Usable { get; private set; }
@@ -502,7 +538,7 @@ namespace common.resources
 
             ObjectId = elem.Attribute(XName.Get("id")).Value;
 
-            SlotType = Utils.FromString(elem.Element("SlotType").Value);
+            SlotType = Utils.FromString(elem.Element("SlotType")?.Value ?? "10");
 
             if ((n = elem.Element("Tier")) != null)
                 try
@@ -513,10 +549,8 @@ namespace common.resources
                 {
                     Tier = -1;
                 }
-            else
-                Tier = -1;
 
-            Description = elem.Element("Description").Value;
+            Description = elem.Element("Description")?.Value;
 
             if ((n = elem.Element("RateOfFire")) != null)
                 RateOfFire = float.Parse(n.Value);
@@ -892,11 +926,11 @@ namespace common.resources
         public bool God { get; private set; }
         public bool Quest { get; private set; }
         public int? Level { get; private set; }
-        public bool ArmorBreakImmune { get; private set; }
+        public bool ArmorBrokenImmune { get; private set; }
         public bool CurseImmune { get; private set; }
         public bool DazedImmune { get; private set; }
         public bool ParalyzeImmune { get; private set; }
-        public bool PetrifyImmune { get; private set; }
+        public bool PetrifiedImmune { get; private set; }
         public bool SlowedImmune { get; private set; }
         public bool StasisImmune { get; private set; }
         public bool StunImmune { get; private set; }
@@ -982,11 +1016,11 @@ namespace common.resources
                 foreach (XElement i in elem.Elements("Tag"))
                     Tags.Add(new Tag(i));
 
-            ArmorBreakImmune = elem.Element("ArmorBreakImmune") != null;
+            ArmorBrokenImmune = elem.Element("ArmorBrokenImmune") != null;
             CurseImmune = elem.Element("CurseImmune") != null;
             DazedImmune = elem.Element("DazedImmune") != null;
             ParalyzeImmune = elem.Element("ParalyzeImmune") != null;
-            PetrifyImmune = elem.Element("PetrifyImmune") != null;
+            PetrifiedImmune = elem.Element("PetrifiedImmune") != null;
             SlowedImmune = elem.Element("SlowedImmune") != null;
             StasisImmune = elem.Element("StasisImmune") != null;
             StunImmune = elem.Element("StunImmune") != null;

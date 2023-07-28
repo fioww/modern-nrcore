@@ -24,7 +24,6 @@ namespace common.resources
         public IDictionary<string, byte[]> WebFiles { get; private set; }
         public IDictionary<string, byte[]> Languages { get; private set; }
         public IDictionary<string, byte[]> Textures { get; private set; }
-        public byte[] ZippedTextures { get; private set; }
         public IList<string> MusicNames { get; private set; }
         public Ranks[] RoleRanks { get; private set; }
 
@@ -141,21 +140,6 @@ namespace common.resources
                     Log.WarnFormat("Getting remote texture for '{0}, {1}' failed! {2}",
                             tex[0], tex[1], e.Message);
                 }
-            }
-
-            // create zipped textures for app/getTextures post
-            using (var ms = new MemoryStream())
-            {
-                var wtr = new NWriter(ms);
-                wtr.Write(textures.Count);
-                foreach (var tex in textures)
-                {
-                    wtr.WriteUTF(tex.Key);
-                    wtr.Write(tex.Value.Length);
-                    wtr.Write(tex.Value);
-                }
-
-                ZippedTextures = Utils.Deflate(ms.ToArray());
             }
         }
 

@@ -47,15 +47,15 @@ namespace wServer.realm.entities
 
         private void SetConditions()
         {
-            if (ObjectDesc.ArmorBreakImmune)
-                ApplyConditionEffect(ConditionEffectIndex.ArmorBreakImmune);
+            if (ObjectDesc.ArmorBrokenImmune)
+                ApplyConditionEffect(ConditionEffectIndex.ArmorBrokenImmune);
             if (ObjectDesc.CurseImmune)
                 ApplyConditionEffect(ConditionEffectIndex.CurseImmune);
             if (ObjectDesc.DazedImmune)
                 ApplyConditionEffect(ConditionEffectIndex.DazedImmune);
             if (ObjectDesc.ParalyzeImmune)
                 ApplyConditionEffect(ConditionEffectIndex.ParalyzeImmune);
-            if (ObjectDesc.PetrifyImmune)
+            if (ObjectDesc.PetrifiedImmune)
                 ApplyConditionEffect(ConditionEffectIndex.PetrifyImmune);
             if (ObjectDesc.SlowedImmune)
                 ApplyConditionEffect(ConditionEffectIndex.SlowedImmune);

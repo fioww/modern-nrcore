@@ -6,6 +6,7 @@ namespace wServer.realm.entities
     partial class Player
     {
         float _healing;
+        float _mpHealing;
         float _bleeding;
 
         int _newbieTime;
@@ -31,6 +32,16 @@ namespace wServer.realm.entities
                     _healing -= (int)_healing;
                 }
                 _healing += 28 * (time.ElaspedMsDelta / 1000f);
+            }
+
+            if (HasConditionEffect(ConditionEffects.Energized) && !HasConditionEffect(ConditionEffects.Quiet))
+            {
+                if (_mpHealing > 1)
+                {
+                    MP = Math.Min(Stats[1], MP + (int)_mpHealing);
+                    _mpHealing -= (int)_mpHealing;
+                }
+                _mpHealing += 10 * (time.ElaspedMsDelta / 1000f);
             }
 
             if (HasConditionEffect(ConditionEffects.Quiet) && MP > 0)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using common;
 using common.resources;
 using StackExchange.Redis;
 using wServer.networking.packets;
@@ -103,12 +104,25 @@ namespace wServer.realm.entities
             {
                 Effect= ConditionEffectIndex.Curse,
                 DurationMS = 0
-            }
+            },
+            new ConditionEffect()
+            {
+                Effect= ConditionEffectIndex.Exposed,
+                DurationMS = 0
+            },
+            new ConditionEffect()
+            {
+                Effect= ConditionEffectIndex.Silenced,
+                DurationMS = 0
+            },
         };
 
         private readonly object _useLock = new object();
         public void UseItem(RealmTime time, int objId, int slot, Position pos)
         {
+            if (slot == 1 && HasConditionEffect(ConditionEffects.Silenced))
+                return;
+            
             using (TimedLock.Lock(_useLock))
             {
                 var entity = Owner.GetEntity(objId);
@@ -166,8 +180,7 @@ namespace wServer.realm.entities
                     Client.SendPacket(new InvResult() { Result = 1 });
                     return;
                 }
-                    
-
+                
                 // use item
                 var slotType = 10;
                 if (slot < cInv.Length)
@@ -182,8 +195,6 @@ namespace wServer.realm.entities
                         Item successor = null;
                         if (item.SuccessorId != null)
                             successor = gameData.Items[gameData.IdToObjectType[item.SuccessorId]];
-                        cInv[slot] = successor;
-
                         var trans = db.Conn.CreateTransaction();
                         if (container is GiftChest)
                             if (successor != null)
@@ -192,33 +203,36 @@ namespace wServer.realm.entities
                                 db.RemoveGift(Client.Account, item.ObjectType, trans);
                         var task = trans.ExecuteAsync();
                         task.ContinueWith(t =>
+                        {
+                            var success = !t.IsCanceled && t.Result;
+                            if (!success) // can result in the loss of an item if inv trans fails...
                             {
-                                var success = !t.IsCanceled && t.Result;
-                                if (!success || !Inventory.Execute(cInv)) // can result in the loss of an item if inv trans fails...
+                                entity.ForceUpdate(slot);
+                                return;
+                            }
+
+                            if (slotType > 0)
+                            {
+                                FameCounter.UseAbility();
+                            }
+                            else
+                            {
+                                if (item.ActivateEffects.Any(eff => eff.Effect == ActivateEffects.Heal ||
+                                                                    eff.Effect == ActivateEffects.HealNova ||
+                                                                    eff.Effect == ActivateEffects.Magic ||
+                                                                    eff.Effect == ActivateEffects.MagicNova))
                                 {
-                                    entity.ForceUpdate(slot);
-                                    return;
+                                    FameCounter.DrinkPot();
                                 }
+                            }
 
-                                if (slotType > 0)
-                                {
-                                    FameCounter.UseAbility();
-                                } else
-                                {
-                                    if (item.ActivateEffects.Any(eff => eff.Effect == ActivateEffects.Heal || 
-                                                                        eff.Effect == ActivateEffects.HealNova || 
-                                                                        eff.Effect == ActivateEffects.Magic || 
-                                                                        eff.Effect == ActivateEffects.MagicNova))
-                                    {
-                                        FameCounter.DrinkPot();
-                                    }
-                                }
-
-
-                                Activate(time, item, pos);
-                            });
+                            var temp = Activate(time, item, pos);
+                            cInv[slot] = temp ?? successor;
+                            if (!Inventory.Execute(cInv) || cInv[slot]?.ObjectType == item.ObjectType)
+                                entity.ForceUpdate(slot);
+                        });
                         task.ContinueWith(e =>
-                            Log.Error(e.Exception.InnerException.ToString()),
+                                Log.Error(e.Exception.InnerException.ToString()),
                             TaskContinuationOptions.OnlyOnFaulted);
                         return;
                     }
@@ -240,8 +254,9 @@ namespace wServer.realm.entities
             }
         }
 
-        private void Activate(RealmTime time, Item item, Position target)
+        private Item Activate(RealmTime time, Item item, Position target)
         {
+            Item ret = null;
             MP -= item.MpCost;
             foreach (var eff in item.ActivateEffects)
             {
@@ -316,8 +331,8 @@ namespace wServer.realm.entities
                     case ActivateEffects.IncrementStat:
                         AEIncrementStat(time, item, target, eff);
                         break;
-                    case ActivateEffects.Create:
-                        AECreate(time, item, target, eff);
+                    case ActivateEffects.CreatePortal:
+                        AECreatePortal(time, item, target, eff);
                         break;
                     case ActivateEffects.Dye:
                         AEDye(time, item, target, eff);
@@ -352,13 +367,70 @@ namespace wServer.realm.entities
                     case ActivateEffects.HealingGrenade:
                         AEHealingGrenade(time, item, target, eff);
                         break;
+                    case ActivateEffects.LevelTwenty:
+                        AELevelTwenty();
+                        break;
+                    case ActivateEffects.Create:
+                        ret = AECreate(item, eff);
+                        break;
+                    case ActivateEffects.Exchange:
+                        ret = AEExchange(item, eff);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
                 }
             }
+
+            return ret;
         }
 
+        private Item AEExchange(Item item, ActivateEffect eff)
+        {
+            var gameData = Manager.Resources.GameData;
+            if (!gameData.IdToObjectType.TryGetValue(eff.Id, out var objType) ||
+                !gameData.Items.TryGetValue(objType, out var ret))
+            {
+                SendError("AEExchange Item not found");
+                return item; // object not found, ignore
+            }
+            
+            return ret;
+        }
+        
+        private Item AECreate(Item item, ActivateEffect eff)
+        {
+            if (eff.OnlyIn != null && !eff.OnlyIn.EqualsIgnoreCase(Owner.Name))
+            {
+                SendError("Cannot use this item here.");
+                return item;
+            }
+
+            if (!Manager.Resources.GameData.IdToObjectType.TryGetValue(eff.Id, out var objType))
+            {
+                SendError("AECreate Item not found");
+                return item; // object not found, ignore
+            }
+
+            var entity = Resolve(Manager, objType);
+
+            entity.Move(X, Y);
+            Owner.EnterWorld(entity);
+            return null;
+        }
+
+        private void AELevelTwenty()
+        {
+            if (Level >= 20)
+            {
+                SendError("Can't level up any further.");
+                return;
+            }
+            
+            LevelUp(20 - Level, false);
+            SendInfo("Successfully leveled up to level 20!");
+        }
+        
         private void AEUnlockEmote(RealmTime time, Item item, ActivateEffect eff)
         {
             if (Client.Player.Owner == null || Client.Player.Owner is Test)
@@ -557,7 +629,7 @@ namespace wServer.realm.entities
                 Texture2 = item.Texture2;
         }
 
-        private void AECreate(RealmTime time, Item item, Position target, ActivateEffect eff)
+        private void AECreatePortal(RealmTime time, Item item, Position target, ActivateEffect eff)
         {
             var gameData = Manager.Resources.GameData;
             
@@ -1171,7 +1243,7 @@ namespace wServer.realm.entities
             {
                 EffectType = (EffectType)eff.VisualEffect,
                 TargetObjectId = Id,
-                Color = new ARGB(eff.Color),
+                Color = new ARGB((uint)eff.Color),
                 Pos1 = (centerPlayer) ? new Position() { X = range } : target,
                 Pos2 = new Position() { X = target.X - range, Y = target.Y }
             }, p => this.DistSqr(p) < RadiusSqr);

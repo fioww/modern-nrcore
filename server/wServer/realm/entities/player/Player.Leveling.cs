@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using common;
 using wServer.networking.packets.outgoing;
 
 namespace wServer.realm.entities
@@ -261,40 +262,48 @@ namespace wServer.realm.entities
         {
             if (Experience - GetLevelExp(Level) >= ExperienceGoal && Level < 20)
             {
+                LevelUp(1);
+                return true;
+            }
+            
+            CalculateFame();
+            return false;
+        }
+
+        private void LevelUp(int times, bool sendMessage = true)
+        {
+            var statInfo = Manager.Resources.GameData.Classes[ObjectType].Stats;
+            for (var j = 0; j < times; j++)
+            { 
                 Level++;
-                ExperienceGoal = GetExpGoal(Level);
-                var statInfo = Manager.Resources.GameData.Classes[ObjectType].Stats;
-                var rand = new Random();
                 for (var i = 0; i < statInfo.Length; i++)
                 {
                     var min = statInfo[i].MinIncrease;
                     var max = statInfo[i].MaxIncrease + 1;
-                    Stats.Base[i] += rand.Next(min, max);
+                    Stats.Base[i] += Utils.Random.Next(min, max);
                     if (Stats.Base[i] > statInfo[i].MaxValue)
                         Stats.Base[i] = statInfo[i].MaxValue;
                 }
-                HP = Stats[0];
-                MP = Stats[1];
-
-                if (Level == 20)
-                {
-                    foreach (var i in Owner.Players.Values)
-                    {
-                        i.SendInfo(Name + " achieved level 20");
-                    }
-                }
-                else
-                {
-                    // to get exp scaled to new exp goal
-                    InvokeStatChange(StatsType.Experience, Experience - GetLevelExp(Level), true);
-                }
-                      
-                questEntity = null;
-
-                return true;
             }
-            CalculateFame();
-            return false;
+
+            ExperienceGoal = GetExpGoal(Level);
+            HP = Stats[0];
+            MP = Stats[1];
+
+            if (Level == 20 && sendMessage)
+            {
+                foreach (var i in Owner.Players.Values)
+                {
+                    i.SendInfo(Name + " achieved level 20");
+                }
+            }
+            else
+            {
+                // to get exp scaled to new exp goal
+                InvokeStatChange(StatsType.Experience, Experience - GetLevelExp(Level), true);
+            }
+
+            questEntity = null;
         }
 
         public bool EnemyKilled(Enemy enemy, int exp, bool killer)

@@ -132,8 +132,6 @@
     <Compile Include="account\register.cs" />
     <Compile Include="account\verifyage.cs" />
     <Compile Include="app\getLanguageStrings.cs" />
-    <Compile Include="app\getServerXmls.cs" />
-    <Compile Include="app\getTextures.cs" />
     <Compile Include="app\globalNews.cs" />
     <Compile Include="app\init.cs" />
     <Compile Include="char\fame.cs" />

@@ -17,6 +17,8 @@ namespace common
 {
     public static class Utils
     {
+        public static Random Random = new();
+        
         public static byte[] ToUtf8Bytes(this string val)
         {
             return Encoding.UTF8.GetBytes(val);

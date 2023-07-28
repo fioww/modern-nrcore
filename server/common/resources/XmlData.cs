@@ -19,8 +19,6 @@ namespace common.resources
         private readonly List<string[]> _usedRemoteTextures;
         public IList<string[]> UsedRemoteTextures { get; private set; }
 
-        public byte[] ZippedXmls { get; private set; }
-
         Dictionary<ushort, XElement> type2elem_obj;
         Dictionary<ushort, string> type2id_obj;
         Dictionary<string, ushort> id2type_obj;
@@ -164,20 +162,9 @@ namespace common.resources
             addition = new XElement("ExtData");
 
             string basePath = Utils.GetBasePath(path);
-            
-            // load additional xmls into GameXmls string array
-            LoadXmls(basePath, "*.xml");
-
-            // compress GameXmls for getServerXmls query
-            // - only want to compress additional xml content
-            // no need to send xmls that are already in client
-            // - kind of a hack job since all additions have the
-            // .xml file type while embedded xmls have the .dat
-            // file type...
-            ZippedXmls = ZipGameXmls();
 
             // add embedded client xmls to GameXmls string array
-            LoadXmls(basePath, "*.dat");
+            LoadXmls(basePath, "*.xml");
 
             log.Info("Finish loading game data.");
             log.InfoFormat("{0} Items", items.Count);

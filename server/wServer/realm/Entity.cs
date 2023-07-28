@@ -13,7 +13,7 @@ namespace wServer.realm
 {
     public class Entity : IProjectileOwner, ICollidable<Entity>
     {
-        private const int EffectCount = 51;
+        private const int EffectCount = 61;
 
         protected static readonly ILog Log = LogManager.GetLogger(typeof(Entity));
         
@@ -629,6 +629,8 @@ namespace wServer.realm
                 ProjectileId = projectileId++,
                 Container = container,
                 Damage = dmg,
+                LifetimeMult = (this as Player)?.ProjectileLifeMult ?? 1,
+                SpeedMult = (this as Player)?.ProjectileSpeedMult ?? 1,
 
                 CreationTime = time,
                 StartPos = pos,
@@ -733,7 +735,7 @@ namespace wServer.realm
                 return false;
 
             if (effect == ConditionEffectIndex.ArmorBroken &&
-                HasConditionEffect(ConditionEffects.ArmorBreakImmune))
+                HasConditionEffect(ConditionEffects.ArmorBrokenImmune))
                 return false;
 
             if (effect == ConditionEffectIndex.Curse &&
