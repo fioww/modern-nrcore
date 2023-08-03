@@ -111,22 +111,38 @@ namespace wServer
 
     public enum EffectType
     {
-        Potion = 1,
-        Teleport = 2,
-        Stream = 3,
-        Throw = 4,
-        AreaBlast = 5,      //radius=pos1.x
-        Dead = 6,
-        Trail = 7,
-        Diffuse = 8,        //radius=dist(pos1,pos2)
+        Potion = 1,         // obj id, color
+        Teleport = 2,       // target = pos1
+        Stream = 3,         // origin = pos1, end = pos2, color
+        Throw = 4,          // origin = obj id, end = pos1, color, duration
+        Nova = 5,           // radius=pos1.x
+        Poison = 6,         // NOT USED
+        Line = 7,
+        Burst = 8,          // radius=dist(pos1,pos2)
         Flow = 9,
-        Trap = 10,          //radius=pos1.x
-        Lightning = 11,     //particleSize=pos2.x
-        Concentrate = 12,   //radius=dist(pos1,pos2)
-        BlastWave = 13,     //origin=pos1, radius = pos2.x
-        Earthquake = 14,
-        Flashing = 15,      //period=pos1.x, numCycles=pos1.y
-        BeachBall = 16
+        Trap = 10,          // radius=pos1.x
+        Lightning = 11,     // particleSize=pos2.x
+        Collapse = 12,      // radius=dist(pos1,pos2)
+        ConeBlast = 13,     // origin=pos1, radius = pos2.x
+        Jitter = 14,
+        Flash = 15,         // period=pos1.x, numCycles=pos1.y
+        ThrowProjectile = 16,
+        Shocker = 17,
+        Shockee = 18,
+        RisingFury = 19,
+        NovaNoAoe = 20,
+        Inspired = 21,
+        HolyBeam = 22, // unused
+        CircleTelegraph = 23, // unused
+        ChaosBeam = 24, // unused
+        TeleportMonster = 25, // unused
+        Meteor = 26, // unused
+        GildedBuff = 27,
+        JadeBuff = 28,
+        ChaosBuff = 29,
+        ThunderBuff = 30,
+        StatusFlash = 31,
+        FireOrbBuff = 32,
     }
 
     public struct ARGB
@@ -157,6 +173,11 @@ namespace wServer
             wtr.Write(R);
             wtr.Write(G);
             wtr.Write(B);
+        }
+
+        public bool IsDefault()
+        {
+            return A == 0 && R == 0 && G == 0 && B == 0;
         }
     }
 

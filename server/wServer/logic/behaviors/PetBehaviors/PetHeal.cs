@@ -29,7 +29,7 @@ namespace wServer.logic.behaviors.PetBehaviors
                     {
                         PlayerOwner.Owner.BroadcastPacket(new ShowEffect
                         {
-                            EffectType = EffectType.Trail,
+                            EffectType = EffectType.Line,
                             TargetObjectId = host.Id,
                             Pos1 = new Position { X = PlayerOwner.X, Y = PlayerOwner.Y },
                             Color = new ARGB(0xffffffff)
@@ -53,7 +53,7 @@ namespace wServer.logic.behaviors.PetBehaviors
                     }, null);
                     PlayerOwner.Owner.BroadcastPacket(new ShowEffect
                     {
-                        EffectType = EffectType.Trail,
+                        EffectType = EffectType.Line,
                         TargetObjectId = host.Id,
                         Pos1 = new Position { X = PlayerOwner.X, Y = PlayerOwner.Y },
                         Color = new ARGB(0xffffffff)

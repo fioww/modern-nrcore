@@ -548,7 +548,6 @@ namespace wServer.realm.entities
 
             CheckTradeTimeout(time);
             HandleQuest(time);
-            TickExtraRange();
 
             if (!HasConditionEffect(ConditionEffects.Paused))
             {
@@ -573,28 +572,6 @@ namespace wServer.realm.entities
                 Death("Unknown", rekt: true);
                 return;
             }
-        }
-
-        private bool _hasInspired;
-        private int _inspiredBoost;
-        void TickExtraRange()
-        {
-            var t = _hasInspired;
-            if (HasConditionEffect(ConditionEffects.Inspired) && !_hasInspired)
-            {
-                var old = ProjectileLifeMult;
-                ProjectileLifeMult = (int)(ProjectileLifeMult * 1.25);
-                _inspiredBoost = ProjectileLifeMult - old;
-                _hasInspired = true;
-            }
-            else if (!HasConditionEffect(ConditionEffects.Inspired) && _hasInspired)
-            {
-                ProjectileLifeMult -= _inspiredBoost;
-                _inspiredBoost = 0;
-                _hasInspired = false;
-            }
-            if (t != _hasInspired)
-                Console.WriteLine(ProjectileLifeMult);
         }
         
         void TickActivateEffects(RealmTime time)

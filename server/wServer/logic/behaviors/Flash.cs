@@ -28,7 +28,7 @@ namespace wServer.logic.behaviors
         {
             host.Owner.BroadcastPacketNearby(new ShowEffect()
             {
-                EffectType = EffectType.Flashing,
+                EffectType = EffectType.Flash,
                 Pos1 = new Position() { X = flashPeriod, Y = flashRepeats },
                 TargetObjectId = host.Id,
                 Color = new ARGB(color)

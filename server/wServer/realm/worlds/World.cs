@@ -578,7 +578,7 @@ namespace wServer.realm.worlds
 
             BroadcastPacket(new ShowEffect()
             {
-                EffectType = EffectType.Earthquake
+                EffectType = EffectType.Jitter
             }, null, PacketPriority.Low);
 
             Timers.Add(new WorldTimer(8000, (w, t) =>

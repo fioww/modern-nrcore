@@ -67,7 +67,7 @@ namespace wServer.realm.entities
                 exploded = true;
                 Owner.BroadcastPacketNearby(new ShowEffect()
                 {
-                    EffectType = EffectType.AreaBlast,
+                    EffectType = EffectType.Nova,
                     Color = new ARGB(0xffff0000),
                     TargetObjectId = Id,
                     Pos1 = new Position() { X = 1 }

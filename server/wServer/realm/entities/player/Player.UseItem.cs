@@ -376,6 +376,12 @@ namespace wServer.realm.entities
                     case ActivateEffects.Exchange:
                         ret = AEExchange(item, eff);
                         break;
+                    case ActivateEffects.BoostRange:
+                        AEBoostRange(eff, target);
+                        break;
+                    case ActivateEffects.BulletCreate:
+                        AEBulletCreate(item, time, eff, target);
+                        break;
                     default:
                         Log.WarnFormat("Activate effect {0} not implemented.", eff.Effect);
                         break;
@@ -383,6 +389,63 @@ namespace wServer.realm.entities
             }
 
             return ret;
+        }
+
+        // todo: min/max distance
+        private void AEBulletCreate(Item item, RealmTime time, ActivateEffect eff, Position target)
+        {
+            var shootAngle = Math.Atan2(target.Y - Y, target.X - X);
+            var angle = shootAngle + eff.OffsetAngle * (Math.PI / 180);
+            var prjDesc = item.Projectiles[0];
+            var midway = Projectile.GetPosition(prjDesc.LifetimeMS / 2, projectileId, prjDesc, (float)angle, 1);
+            var startingPos = new Position
+            {
+                X = target.X - midway.X,
+                Y = target.Y - midway.Y,
+            };
+            var batch = new Packet[eff.NumShots];
+            for (var i = 0; i < batch.Length; i++)
+            {
+                var fPos = startingPos;
+                fPos.X += eff.GapTiles * (float)Math.Sin(-eff.GapAngle * (Math.PI / 180)) * i;
+                fPos.Y += eff.GapTiles * (float)Math.Cos(-eff.GapAngle * (Math.PI / 180)) * i;
+                var proj = CreateProjectile(prjDesc, item.ObjectType,
+                    Utils.Random.Next(prjDesc.MinDamage, prjDesc.MaxDamage),
+                    time.TotalElapsedMs, fPos, (float)angle);
+                Owner.EnterWorld(proj);
+                FameCounter.Shoot(proj);
+                batch[i] = new ServerPlayerShoot()
+                {
+                    BulletId = proj.ProjectileId,
+                    OwnerId = Id,
+                    ContainerType = item.ObjectType,
+                    StartingPos = proj.StartPos,
+                    Angle = proj.Angle,
+                    Damage = (short)proj.Damage
+                };
+            }
+            
+            foreach (var plr in Owner.Players.Where(p => p.Value.DistSqr(this) < RadiusSqr))
+                plr.Value.Client.SendPackets(batch);
+        }
+
+        private void AEBoostRange(ActivateEffect eff, Position target)
+        {
+            Owner?.AOE(eff.Targeted ? target : new Position { X = X, Y = Y }, eff.Radius, true, entity =>
+            {
+                if (entity is not Player p) return;
+                p.ProjectileSpeedMult += 250;
+                ApplyConditionEffect(ConditionEffectIndex.Inspired, eff.DurationMS);
+                p.Owner?.Timers.Add(new WorldTimer(eff.DurationMS, (_, _) => p.ProjectileSpeedMult -= 250));
+            });
+            Client.SendPacket(new ShowEffect()
+            {
+                EffectType = EffectType.Inspired,
+                TargetObjectId = Id,
+                Color = new ARGB(0xffba00),
+                Pos1 = new Position() { X = eff.Radius },
+                Pos2 = new Position() { X = 0.5f, Y = 3 }
+            });
         }
 
         private Item AEExchange(Item item, ActivateEffect eff)
@@ -689,7 +752,7 @@ namespace wServer.realm.entities
             ApplyConditionEffect(NegativeEffs);
             BroadcastSync(new ShowEffect()
             {
-                EffectType = EffectType.AreaBlast,
+                EffectType = EffectType.Nova,
                 TargetObjectId = Id,
                 Color = new ARGB(0xffffffff),
                 Pos1 = new Position() { X = 1 }
@@ -701,7 +764,7 @@ namespace wServer.realm.entities
             this.AOE(eff.Range, true, player => player.ApplyConditionEffect(NegativeEffs));
             BroadcastSync(new ShowEffect()
             {
-                EffectType = EffectType.AreaBlast,
+                EffectType = EffectType.Nova,
                 TargetObjectId = Id,
                 Color = new ARGB(0xffffffff),
                 Pos1 = new Position() { X = eff.Range }
@@ -725,7 +788,7 @@ namespace wServer.realm.entities
             {
                 world.BroadcastPacketNearby(new ShowEffect()
                 {
-                    EffectType = EffectType.AreaBlast,
+                    EffectType = EffectType.Nova,
                     Color = new ARGB(0xffddff00),
                     TargetObjectId = x.Id,
                     Pos1 = new Position() { X = eff.Radius }
@@ -756,7 +819,7 @@ namespace wServer.realm.entities
                     var y = (int)(MaxAbilityDist * Math.Sin(angles[i])) + Y;
                     noTargets[i] = new ShowEffect()
                     {
-                        EffectType = EffectType.Trail,
+                        EffectType = EffectType.Line,
                         TargetObjectId = Id,
                         Color = new ARGB(0xffff0088),
                         Pos1 = new Position()
@@ -839,7 +902,7 @@ namespace wServer.realm.entities
             {
                 new ShowEffect()
                 {
-                    EffectType = EffectType.Concentrate,
+                    EffectType = EffectType.Collapse,
                     TargetObjectId = Id,
                     Pos1 = target,
                     Pos2 = new Position() {X = target.X + 3, Y = target.Y},
@@ -905,14 +968,14 @@ namespace wServer.realm.entities
             {
                 new ShowEffect()
                 {
-                    EffectType = EffectType.Trail,
+                    EffectType = EffectType.Line,
                     TargetObjectId = Id,
                     Pos1 = target,
                     Color = new ARGB(0xFFFF0000)
                 },
                 new ShowEffect
                 {
-                    EffectType = EffectType.Diffuse,
+                    EffectType = EffectType.Burst,
                     Color = new ARGB(0xFFFF0000),
                     TargetObjectId = Id,
                     Pos1 = target,
@@ -970,7 +1033,7 @@ namespace wServer.realm.entities
                 ActivateHealMp(player as Player, eff.Amount, pkts));
             pkts.Add(new ShowEffect()
             {
-                EffectType = EffectType.AreaBlast,
+                EffectType = EffectType.Nova,
                 TargetObjectId = Id,
                 Color = new ARGB(0xffffffff),
                 Pos1 = new Position() { X = eff.Range }
@@ -1003,7 +1066,7 @@ namespace wServer.realm.entities
                 });
             pkts.Add(new ShowEffect()
             {
-                EffectType = EffectType.AreaBlast,
+                EffectType = EffectType.Nova,
                 TargetObjectId = Id,
                 Color = new ARGB(0xffffffff),
                 Pos1 = new Position() { X = range }
@@ -1044,7 +1107,7 @@ namespace wServer.realm.entities
                 color = 0xffff0000;
             BroadcastSync(new ShowEffect()
             {
-                EffectType = EffectType.AreaBlast,
+                EffectType = EffectType.Nova,
                 TargetObjectId = Id,
                 Color = new ARGB(color),
                 Pos1 = new Position() { X = range }
@@ -1082,7 +1145,7 @@ namespace wServer.realm.entities
             });
             BroadcastSync(new ShowEffect()
             {
-                EffectType = EffectType.AreaBlast,
+                EffectType = EffectType.Nova,
                 TargetObjectId = Id,
                 Color = new ARGB(0xffffffff),
                 Pos1 = new Position() { X = 1 }
@@ -1125,7 +1188,7 @@ namespace wServer.realm.entities
             if (!eff.NoStack)
                 BroadcastSync(new ShowEffect()
                 {
-                    EffectType = EffectType.AreaBlast,
+                    EffectType = EffectType.Nova,
                     TargetObjectId = Id,
                     Color = new ARGB(0xffffffff),
                     Pos1 = new Position() { X = range }
@@ -1193,7 +1256,7 @@ namespace wServer.realm.entities
                     BulletId = proj.ProjectileId,
                     OwnerId = Id,
                     ContainerType = item.ObjectType,
-                    StartingPos = target,
+                    StartingPos = proj.StartPos,
                     Angle = proj.Angle,
                     Damage = (short)proj.Damage
                 };
@@ -1201,7 +1264,7 @@ namespace wServer.realm.entities
             }
             batch[20] = new ShowEffect()
             {
-                EffectType = EffectType.Trail,
+                EffectType = EffectType.Line,
                 Pos1 = target,
                 TargetObjectId = Id,
                 Color = new ARGB(0xFFFF00AA)
@@ -1266,7 +1329,7 @@ namespace wServer.realm.entities
             {
                 world.BroadcastPacketNearby(new ShowEffect()
                 {
-                    EffectType = EffectType.AreaBlast,
+                    EffectType = EffectType.Nova,
                     Color = new ARGB(0xffddff00),
                     TargetObjectId = x.Id,
                     Pos1 = new Position() { X = eff.Radius }

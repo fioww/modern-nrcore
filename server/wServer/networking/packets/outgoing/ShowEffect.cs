@@ -4,30 +4,53 @@ namespace wServer.networking.packets.outgoing
 {
     public class ShowEffect : OutgoingMessage
     {
-        public EffectType EffectType { get; set; }
-        public int TargetObjectId { get; set; }
-        public Position Pos1 { get; set; }
-        public Position Pos2 { get; set; }
-        public ARGB Color { get; set; }
+        public EffectType EffectType;
+        public int TargetObjectId;
+        public Position Pos1;
+        public Position Pos2;
+        public float Duration;
+        public ARGB Color;
 
         public override PacketId ID => PacketId.SHOWEFFECT;
         public override Packet CreateInstance() { return new ShowEffect(); }
-
-        protected override void Read(NReader rdr)
-        {
-            EffectType = (EffectType)rdr.ReadByte();
-            TargetObjectId = rdr.ReadInt32();
-            Pos1 = Position.Read(rdr);
-            Pos2 = Position.Read(rdr);
-            Color = ARGB.Read(rdr);
-        }
+        
+        // bruh lol
         protected override void Write(NWriter wtr)
         {
+            // setup flags
+            byte flags = 0;
+            if (!Color.IsDefault())
+                flags |= 1 << 0;
+            if (Pos1.X != default)
+                flags |= 1 << 1;
+            if (Pos1.Y != default)
+                flags |= 1 << 2;
+            if (Pos2.X != default)
+                flags |= 1 << 3;
+            if (Pos2.Y != default)
+                flags |= 1 << 4;
+            if (Duration != default)
+                flags |= 1 << 5;
+            if (TargetObjectId != default)
+                flags |= 1 << 6;
+            
+            // write
             wtr.Write((byte)EffectType);
-            wtr.Write(TargetObjectId);
-            Pos1.Write(wtr);
-            Pos2.Write(wtr);
-            Color.Write(wtr);
+            wtr.Write(flags);
+            if (TargetObjectId != default)
+                wtr.Write(TargetObjectId);
+            if (Pos1.X != default)
+                wtr.Write(Pos1.X);
+            if (Pos1.Y != default)
+                wtr.Write(Pos1.Y);
+            if (Pos2.X != default)
+                wtr.Write(Pos2.X);
+            if (Pos2.Y != default)
+                wtr.Write(Pos2.Y);
+            if (!Color.IsDefault())
+                Color.Write(wtr);
+            if (Duration != default)
+                wtr.Write(Duration);
         }
     }
 }

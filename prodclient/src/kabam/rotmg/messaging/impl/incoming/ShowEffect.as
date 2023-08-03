@@ -39,11 +39,11 @@ package kabam.rotmg.messaging.impl.incoming
         public static const RISING_FURY_EFFECT_TYPE:int = 19;
         public static const NOVA_NO_AOE_EFFECT_TYPE:int = 20;
         public static const INSPIRED_EFFECT_TYPE:int = 21;
-        public static const HOLY_BEAM_EFFECT_TYPE:int = 22;
-        public static const CIRCLE_TELEGRAPH_EFFECT_TYPE:int = 23;
-        public static const CHAOS_BEAM_EFFECT_TYPE:int = 24;
-        public static const TELEPORT_MONSTER_EFFECT_TYPE:int = 25;
-        public static const METEOR_EFFECT_TYPE:int = 26;
+        public static const HOLY_BEAM_EFFECT_TYPE:int = 22; // unused
+        public static const CIRCLE_TELEGRAPH_EFFECT_TYPE:int = 23; // unused
+        public static const CHAOS_BEAM_EFFECT_TYPE:int = 24; // unused
+        public static const TELEPORT_MONSTER_EFFECT_TYPE:int = 25; // unused
+        public static const METEOR_EFFECT_TYPE:int = 26; // unused
         public static const GILDED_BUFF_EFFECT_TYPE:int = 27;
         public static const JADE_BUFF_EFFECT_TYPE:int = 28;
         public static const CHAOS_BUFF_EFFECT_TYPE:int = 29;

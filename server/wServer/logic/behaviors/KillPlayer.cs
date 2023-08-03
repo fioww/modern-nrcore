@@ -77,7 +77,7 @@ namespace wServer.logic.behaviors
         {
             host.Owner.BroadcastPacketNearby(new ShowEffect()
             {
-                EffectType = EffectType.Trail,
+                EffectType = EffectType.Line,
                 TargetObjectId = host.Id,
                 Pos1 = new Position { X = player.X, Y = player.Y },
                 Color = new ARGB(0xffffffff)

@@ -65,19 +65,16 @@ package com.company.assembleegameclient.screens
                 _local_6 = _local_4.@id;
                 if (!_arg_1.isClassAvailability(_local_6, SavedCharactersList.UNAVAILABLE))
                 {
-                    if (_local_6 != "Bard")
-                    {
-                        _local_7 = _arg_1.isClassAvailability(_local_6, SavedCharactersList.UNRESTRICTED);
-                        _local_8 = new CharacterBox(_local_4, _arg_1.getCharStats()[_local_5], _arg_1, _local_7);
-                        _local_8.x = (((50 + (140 * int((_local_2 % 5)))) + 70) - (_local_8.width / 2));
-                        _local_8.y = (88 + (140 * int((_local_2 / 5))));
-                        this.boxes_[_local_5] = _local_8;
-                        _local_8.addEventListener(MouseEvent.ROLL_OVER, this.onCharBoxOver);
-                        _local_8.addEventListener(MouseEvent.ROLL_OUT, this.onCharBoxOut);
-                        _local_8.characterSelectClicked_.add(this.onCharBoxClick);
-                        addChild(_local_8);
-                    };
-                };
+                    _local_7 = _arg_1.isClassAvailability(_local_6, SavedCharactersList.UNRESTRICTED);
+                    _local_8 = new CharacterBox(_local_4, _arg_1.getCharStats()[_local_5], _arg_1, _local_7);
+                    _local_8.x = 18 + 110 * int(_local_2 % 7);
+                    _local_8.y = 75 + 110 * int(_local_2 / 7);
+                    this.boxes_[_local_5] = _local_8;
+                    _local_8.addEventListener(MouseEvent.ROLL_OVER, this.onCharBoxOver);
+                    _local_8.addEventListener(MouseEvent.ROLL_OUT, this.onCharBoxOut);
+                    _local_8.characterSelectClicked_.add(this.onCharBoxClick);
+                    addChild(_local_8);
+                }
                 _local_2++;
             };
             this.backButton_.x = ((stage.stageWidth / 2) - (this.backButton_.width / 2));

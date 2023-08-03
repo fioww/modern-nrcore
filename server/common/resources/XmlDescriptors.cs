@@ -334,16 +334,11 @@ namespace common.resources
         public float Range { get; private set; }
         public float DurationSec { get; private set; }
         public int DurationMS { get; private set; }
-        public int DurationMS2 { get; private set; }
         public ConditionEffectIndex? ConditionEffect { get; private set; }
         public ConditionEffectIndex? CheckExistingEffect { get; private set; }
         public float EffectDuration { get; private set; }
-        public int MaximumDistance { get; private set; }
         public float Radius { get; private set; }
         public int TotalDamage { get; private set; }
-        public string ObjectId { get; private set; }
-        public string ObjectId2 { get; private set; }
-        public int AngleOffset { get; private set; }
         public int MaxTargets { get; private set; }
         public string Id { get; private set; }
         public string DungeonName { get; private set; }
@@ -356,103 +351,110 @@ namespace common.resources
         public string Target { get; private set; }
         public string Center { get; private set; }
         public int VisualEffect { get; private set; }
-        public string OnlyIn;
+        public readonly string OnlyIn;
+        public readonly float SpeedBoost;
+        public readonly float LifeBoost;
+        public readonly bool Targeted;
+        public readonly int NumShots;
+        public readonly int GapAngle;
+        public readonly float GapTiles;
+        public readonly float OffsetAngle;
+        public readonly float MinDistance;
+        public readonly float MaxDistance;
 
-        public ActivateEffect(XElement elem)
+        public ActivateEffect(XElement e)
         {
-            Effect = (ActivateEffects)Enum.Parse(typeof(ActivateEffects), elem.Value);
-            if (elem.Attribute("stat") != null)
-                Stats = Utils.FromString(elem.Attribute("stat").Value);
+            Effect = (ActivateEffects)Enum.Parse(typeof(ActivateEffects), e.Value);
+            if (e.Attribute("stat") != null)
+                Stats = Utils.FromString(e.Attribute("stat").Value);
 
-            if (elem.Attribute("amount") != null)
-                Amount = Utils.FromString(elem.Attribute("amount").Value);
+            if (e.Attribute("amount") != null)
+                Amount = Utils.FromString(e.Attribute("amount").Value);
 
-            if (elem.Attribute("range") != null)
-                Range = float.Parse(elem.Attribute("range").Value);
-            if (elem.Attribute("duration") != null)
+            if (e.Attribute("range") != null)
+                Range = float.Parse(e.Attribute("range").Value);
+            if (e.Attribute("duration") != null)
             {
-                DurationSec = float.Parse(elem.Attribute("duration").Value);
+                DurationSec = float.Parse(e.Attribute("duration").Value);
                 DurationMS = (int) (DurationSec * 1000);
             }
-            if (elem.Attribute("duration2") != null)
-                DurationMS = (int)(float.Parse(elem.Attribute("duration2").Value) * 1000);
+            if (e.Attribute("duration2") != null)
+                DurationMS = (int)(float.Parse(e.Attribute("duration2").Value) * 1000);
 
-            if (elem.Attribute("effect") != null)
+            if (e.Attribute("effect") != null)
             {
                 ConditionEffectIndex condEff;
-                if (Enum.TryParse(elem.Attribute("effect").Value, true, out condEff))
+                if (Enum.TryParse(e.Attribute("effect").Value, true, out condEff))
                     ConditionEffect = condEff;
             }
-            if (elem.Attribute("checkExistingEffect") != null)
+            if (e.Attribute("checkExistingEffect") != null)
             {
                 ConditionEffectIndex condEff;
-                if (Enum.TryParse(elem.Attribute("checkExistingEffect").Value, true, out condEff))
+                if (Enum.TryParse(e.Attribute("checkExistingEffect").Value, true, out condEff))
                     CheckExistingEffect = condEff;
             }
-            if (elem.Attribute("condEffect") != null)
+            if (e.Attribute("condEffect") != null)
             {
                 ConditionEffectIndex condEff;
-                if (Enum.TryParse(elem.Attribute("condEffect").Value, true, out condEff))
+                if (Enum.TryParse(e.Attribute("condEffect").Value, true, out condEff))
                     ConditionEffect = condEff;
             }
 
-            if (elem.Attribute("condDuration") != null)
-                EffectDuration = float.Parse(elem.Attribute("condDuration").Value);
+            if (e.Attribute("condDuration") != null)
+                EffectDuration = float.Parse(e.Attribute("condDuration").Value);
 
-            if (elem.Attribute("maxDistance") != null)
-                MaximumDistance = Utils.FromString(elem.Attribute("maxDistance").Value);
+            if (e.Attribute("radius") != null)
+                Radius = float.Parse(e.Attribute("radius").Value);
 
-            if (elem.Attribute("radius") != null)
-                Radius = float.Parse(elem.Attribute("radius").Value);
+            if (e.Attribute("totalDamage") != null)
+                TotalDamage = Utils.FromString(e.Attribute("totalDamage").Value);
 
-            if (elem.Attribute("totalDamage") != null)
-                TotalDamage = Utils.FromString(elem.Attribute("totalDamage").Value);
+            if (e.Attribute("maxTargets") != null)
+                MaxTargets = Utils.FromString(e.Attribute("maxTargets").Value);
 
-            if (elem.Attribute("objectId") != null)
-                ObjectId = elem.Attribute("objectId").Value;
-            if (elem.Attribute("objectId2") != null)
-                ObjectId = elem.Attribute("objectId2").Value;
+            if (e.Attribute("id") != null)
+                Id = e.Attribute("id").Value;
 
-            if (elem.Attribute("angleOffset") != null)
-                AngleOffset = Utils.FromString(elem.Attribute("angleOffset").Value);
+            if (e.Attribute("dungeonName") != null)
+                DungeonName = e.Attribute("dungeonName").Value;
 
-            if (elem.Attribute("maxTargets") != null)
-                MaxTargets = Utils.FromString(elem.Attribute("maxTargets").Value);
+            if (e.Attribute("lockedName") != null)
+                LockedName = e.Attribute("lockedName").Value;
 
-            if (elem.Attribute("id") != null)
-                Id = elem.Attribute("id").Value;
+            if (e.Attribute("color") != null)
+                Color = Utils.FromString(e.Attribute("color").Value);
 
-            if (elem.Attribute("dungeonName") != null)
-                DungeonName = elem.Attribute("dungeonName").Value;
+            if (e.Attribute("skinType") != null)
+                SkinType = ushort.Parse(e.Attribute("skinType").Value.Substring(2), NumberStyles.AllowHexSpecifier);
 
-            if (elem.Attribute("lockedName") != null)
-                LockedName = elem.Attribute("lockedName").Value;
+            if (e.Attribute("size") != null)
+                Size = int.Parse(e.Attribute("size").Value);
 
-            if (elem.Attribute("color") != null)
-                Color = Utils.FromString(elem.Attribute("color").Value);
+            if (e.Attribute("noStack") != null)
+                NoStack = e.Attribute("noStack").Value.Equals("true");
 
-            if (elem.Attribute("skinType") != null)
-                SkinType = ushort.Parse(elem.Attribute("skinType").Value.Substring(2), NumberStyles.AllowHexSpecifier);
+            if (e.Attribute("useWisMod") != null)
+                UseWisMod = e.Attribute("useWisMod").Value.Equals("true");
 
-            if (elem.Attribute("size") != null)
-                Size = int.Parse(elem.Attribute("size").Value);
+            if (e.Attribute("target") != null)
+                Target = e.Attribute("target").Value;
 
-            if (elem.Attribute("noStack") != null)
-                NoStack = elem.Attribute("noStack").Value.Equals("true");
+            if (e.Attribute("center") != null)
+                Center = e.Attribute("center").Value;
 
-            if (elem.Attribute("useWisMod") != null)
-                UseWisMod = elem.Attribute("useWisMod").Value.Equals("true");
+            if (e.Attribute("visualEffect") != null)
+                VisualEffect = Utils.FromString(e.Attribute("visualEffect").Value);
 
-            if (elem.Attribute("target") != null)
-                Target = elem.Attribute("target").Value;
-
-            if (elem.Attribute("center") != null)
-                Center = elem.Attribute("center").Value;
-
-            if (elem.Attribute("visualEffect") != null)
-                VisualEffect = Utils.FromString(elem.Attribute("visualEffect").Value);
-
-            OnlyIn = elem.Attribute("onlyIn")?.Value;
+            OnlyIn = e.ParseString("@onlyIn");
+            SpeedBoost = e.ParseFloat("@speedBoost");
+            LifeBoost = e.ParseFloat("@lifeBoost");
+            Targeted = e.ParseBool("@targeted");
+            NumShots = e.ParseInt("@numShots", 3);
+            GapAngle = e.ParseInt("@gapAngle");
+            GapTiles = e.ParseFloat("@gapTiles");
+            OffsetAngle = e.ParseFloat("@offsetAngle", 90);
+            MinDistance = e.ParseFloat("@minDistance");
+            MaxDistance = e.ParseFloat("@maxDistance", 4.4f);
         }
     }
     public class Setpiece

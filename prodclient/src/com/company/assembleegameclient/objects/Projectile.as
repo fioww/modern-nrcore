@@ -170,62 +170,53 @@ package com.company.assembleegameclient.objects
             FreeList.deleteObject(this);
         }
 
-        private function positionAt(_arg_1:int, _arg_2:Point):void
+        private function positionAt(time:int, p:Point):void
         {
-            var _local_5:Number;
-            var _local_6:Number;
-            var _local_7:Number;
-            var _local_8:Number;
-            var _local_9:Number;
-            var _local_10:Number;
-            var _local_11:Number;
-            var _local_12:Number;
-            var _local_13:Number;
-            var _local_14:Number;
-            _arg_2.x = this.startX_;
-            _arg_2.y = this.startY_;
-            var _local_3:Number = ((_arg_1 * (this.projProps_.speed_ / 10000)) * this.speedMul_);
-            var _local_4:Number = (((this.bulletId_ % 2) == 0) ? 0 : Math.PI);
+            var theta:Number;
+            var a:Number;
+            var b:Number;
+            var c:Number;
+            var d:Number;
+            p.x = this.startX_;
+            p.y = this.startY_;
+            var dist:Number = time * this.projProps_.speed_ / 10000 * this.speedMul_;
+            var period:Number = this.bulletId_ % 2 == 0 ? 0 : Math.PI;
             if (this.projProps_.wavy_)
             {
-                _local_5 = (6 * Math.PI);
-                _local_6 = (Math.PI / 64);
-                _local_7 = (this.angle_ + (_local_6 * Math.sin((_local_4 + ((_local_5 * _arg_1) / 1000)))));
-                _arg_2.x = (_arg_2.x + (_local_3 * Math.cos(_local_7)));
-                _arg_2.y = (_arg_2.y + (_local_3 * Math.sin(_local_7)));
+                theta = angle_ + (Math.PI * 64) * Math.sin(period + 6 * Math.PI * (time / 1000.0));
+                p.x += dist * Math.cos(theta);
+                p.y += dist * Math.sin(theta);
             }
             else
             {
                 if (this.projProps_.parametric_)
                 {
-                    _local_8 = (((_arg_1 / this.lifetime_) * 2) * Math.PI);
-                    _local_9 = (Math.sin(_local_8) * ((this.bulletId_ % 2) ? 1 : -1));
-                    _local_10 = (Math.sin((2 * _local_8)) * (((this.bulletId_ % 4) < 2) ? 1 : -1));
-                    _local_11 = Math.sin(this.angle_);
-                    _local_12 = Math.cos(this.angle_);
-                    _arg_2.x = (_arg_2.x + (((_local_9 * _local_12) - (_local_10 * _local_11)) * this.projProps_.magnitude_));
-                    _arg_2.y = (_arg_2.y + (((_local_9 * _local_11) + (_local_10 * _local_12)) * this.projProps_.magnitude_));
+                    theta = time / this.lifetime_ * 2 * Math.PI;
+                    a = Math.sin(theta) * (this.bulletId_ % 2 != 0 ? 1 : -1);
+                    b = Math.sin(2 * theta) * (this.bulletId_ % 4 < 2 ? 1 : -1);
+                    c = Math.sin(this.angle_);
+                    d = Math.cos(this.angle_);
+                    p.x += (a * d - b * c) * this.projProps_.magnitude_;
+                    p.y += (a * c + b * d) * this.projProps_.magnitude_;
                 }
                 else
                 {
                     if (this.projProps_.boomerang_)
                     {
-                        _local_13 = ((this.lifetime_ * ((this.projProps_.speed_ * this.speedMul_) / 10000)) / 2);
-                        if (_local_3 > _local_13)
-                        {
-                            _local_3 = (_local_13 - (_local_3 - _local_13));
-                        };
-                    };
-                    _arg_2.x = (_arg_2.x + (_local_3 * Math.cos(this.angle_)));
-                    _arg_2.y = (_arg_2.y + (_local_3 * Math.sin(this.angle_)));
+                        d = this.lifetime_ * (this.projProps_.speed_ * this.speedMul_) / 10000 / 2;
+                        if (dist > d)
+                            dist = d - (dist - d);
+                    }
+                    p.x += dist * Math.cos(this.angle_);
+                    p.y += dist * Math.sin(this.angle_);
                     if (this.projProps_.amplitude_ != 0)
                     {
-                        _local_14 = (this.projProps_.amplitude_ * Math.sin((_local_4 + ((((_arg_1 / this.lifetime_) * this.projProps_.frequency_) * 2) * Math.PI))));
-                        _arg_2.x = (_arg_2.x + (_local_14 * Math.cos((this.angle_ + (Math.PI / 2)))));
-                        _arg_2.y = (_arg_2.y + (_local_14 * Math.sin((this.angle_ + (Math.PI / 2)))));
-                    };
-                };
-            };
+                        d = this.projProps_.amplitude_ * Math.sin(period + time / this.lifetime_ * this.projProps_.frequency_ * 2 * Math.PI);
+                        p.x += d * Math.cos(this.angle_ + Math.PI / 2);
+                        p.y += d * Math.sin(this.angle_ + Math.PI / 2);
+                    }
+                }
+            }
         }
 
         override public function update(_arg_1:int, _arg_2:int):Boolean

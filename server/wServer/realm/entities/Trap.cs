@@ -61,7 +61,7 @@ namespace wServer.realm.entities
         {
             Owner.BroadcastPacketNearby(new ShowEffect()
             {
-                EffectType = EffectType.AreaBlast,
+                EffectType = EffectType.Nova,
                 Color = new ARGB(0xff9000ff),
                 TargetObjectId = Id,
                 Pos1 = new Position() { X = radius }
