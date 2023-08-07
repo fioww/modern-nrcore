@@ -407,8 +407,8 @@ namespace wServer.realm.entities
             for (var i = 0; i < batch.Length; i++)
             {
                 var fPos = startingPos;
-                fPos.X += eff.GapTiles * (float)Math.Sin(-eff.GapAngle * (Math.PI / 180)) * i;
-                fPos.Y += eff.GapTiles * (float)Math.Cos(-eff.GapAngle * (Math.PI / 180)) * i;
+                fPos.X += eff.GapTiles * (float)Math.Sin(-eff.GapAngle * (Math.PI / 180) - shootAngle) * i;
+                fPos.Y += eff.GapTiles * (float)Math.Cos(-eff.GapAngle * (Math.PI / 180) - shootAngle) * i;
                 var proj = CreateProjectile(prjDesc, item.ObjectType,
                     Utils.Random.Next(prjDesc.MinDamage, prjDesc.MaxDamage),
                     time.TotalElapsedMs, fPos, (float)angle);
