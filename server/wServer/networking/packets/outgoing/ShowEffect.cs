@@ -37,19 +37,19 @@ namespace wServer.networking.packets.outgoing
             // write
             wtr.Write((byte)EffectType);
             wtr.Write(flags);
-            if (TargetObjectId != default)
+            if ((flags & 1 << 6) != 0)
                 wtr.Write(TargetObjectId);
-            if (Pos1.X != default)
+            if ((flags & 1 << 1) != 0)
                 wtr.Write(Pos1.X);
-            if (Pos1.Y != default)
+            if ((flags & 1 << 2) != 0)
                 wtr.Write(Pos1.Y);
-            if (Pos2.X != default)
+            if ((flags & 1 << 3) != 0)
                 wtr.Write(Pos2.X);
-            if (Pos2.Y != default)
+            if ((flags & 1 << 4) != 0)
                 wtr.Write(Pos2.Y);
-            if (!Color.IsDefault())
+            if ((flags & 1 << 0) != 0)
                 Color.Write(wtr);
-            if (Duration != default)
+            if ((flags & 1 << 5) != 0)
                 wtr.Write(Duration);
         }
     }

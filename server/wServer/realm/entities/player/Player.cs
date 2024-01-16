@@ -17,7 +17,7 @@ namespace wServer.realm.entities
 {
     interface IPlayer
     {
-        void Damage(int dmg, Entity src);
+        void Damage(int dmg, Entity src, bool armorPierce);
         bool IsVisibleToEnemy();
     }
 
@@ -777,12 +777,12 @@ namespace wServer.realm.entities
             return base.HitByProjectile(projectile, time);
         }
 
-        public void Damage(int dmg, Entity src)
+        public void Damage(int dmg, Entity src, bool armorPierce)
         {
             if (IsInvulnerable())
                 return;
 
-            dmg = (int)Stats.GetDefenseDamage(dmg, false);
+            dmg = (int)Stats.GetDefenseDamage(dmg, armorPierce);
             if (!HasConditionEffect(ConditionEffects.Invulnerable))
                 HP -= dmg;
             Owner.BroadcastPacketNearby(new Damage()
@@ -796,9 +796,7 @@ namespace wServer.realm.entities
             }, this, this, PacketPriority.Low);
 
             if (HP <= 0)
-                Death(src.ObjectDesc.DisplayId ?? 
-                      src.ObjectDesc.ObjectId,
-                      src);
+                Death(src.ObjectDesc.DisplayId ?? src.ObjectDesc.ObjectId, src);
         }
 
         void GenerateGravestone(bool phantomDeath = false)

@@ -7616,12 +7616,12 @@
       <Class>Character</Class>
       <Exp>100</Exp>
    </Object>
-   <Object type="0x654" id="Medusa">
+   <!--<Object type="0x654" id="Medusa">
       <Group>Gods</Group>
       <Enemy/>
       <Class>Character</Class>
       <Exp>100</Exp>
-   </Object>
+   </Object>-->
    <Object type="0x655" id="Ent God">
       <Enemy/>
       <Class>Character</Class>

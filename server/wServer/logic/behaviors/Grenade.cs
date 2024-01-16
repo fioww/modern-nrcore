@@ -20,10 +20,12 @@ namespace wServer.logic.behaviors
         Cooldown coolDown;
         ConditionEffectIndex effect;
         int effectDuration;
-        new uint color;
+        uint color;
+        bool armorPierce;
 
-        public Grenade(double radius, int damage, double range = 5,
-            double? fixedAngle = null, Cooldown coolDown = new Cooldown(), ConditionEffectIndex effect = 0, int effectDuration = 0, uint color = 0xffff0000)
+        public Grenade(double radius, int damage, double range = 5, double? fixedAngle = null,
+            Cooldown coolDown = new(), ConditionEffectIndex effect = 0, int effectDuration = 0,
+            uint color = 0xffff0000, bool armorPierce = false)
         {
             this.radius = (float)radius;
             this.damage = damage;
@@ -33,6 +35,7 @@ namespace wServer.logic.behaviors
             this.effect = effect;
             this.effectDuration = effectDuration;
             this.color = color;
+            this.armorPierce = armorPierce;
         }
 
         protected override void OnStateEntry(Entity host, RealmTime time, ref object state)
@@ -70,7 +73,8 @@ namespace wServer.logic.behaviors
                         EffectType = EffectType.Throw,
                         Color = new ARGB(color),
                         TargetObjectId = host.Id,
-                        Pos1 = target
+                        Pos1 = target,
+                        Duration = 1.5f
                     }, host, null, PacketPriority.Low);
                     host.Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
                     {
@@ -81,11 +85,13 @@ namespace wServer.logic.behaviors
                             Damage = (ushort)damage,
                             Duration = 0,
                             Effect = 0,
-                            OrigType = host.ObjectType
+                            OrigType = host.ObjectType,
+                            Color = color,
+                            ArmorPierce = armorPierce,
                         }, host, null, PacketPriority.Low);
                         world.AOE(target, radius, true, p =>
                         {
-                            (p as IPlayer).Damage(damage, host);
+                            (p as IPlayer).Damage(damage, host, armorPierce);
                             if (!p.HasConditionEffect(ConditionEffects.Invincible) && 
                                 !p.HasConditionEffect(ConditionEffects.Stasis))
                                 p.ApplyConditionEffect(effect, effectDuration);

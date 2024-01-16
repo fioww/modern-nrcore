@@ -778,13 +778,14 @@ namespace wServer.realm.entities
                 EffectType = EffectType.Throw,
                 Color = new ARGB(0xffddff00),
                 TargetObjectId = Id,
-                Pos1 = target
+                Pos1 = target,
+                Duration = eff.Duration,
             }, p => this.DistSqr(p) < RadiusSqr);
 
-            var x = new Placeholder(Manager, 1500);
+            var x = new Placeholder(Manager, eff.DurationMS);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
+            Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) =>
             {
                 world.BroadcastPacketNearby(new ShowEffect()
                 {
@@ -946,7 +947,8 @@ namespace wServer.realm.entities
                 EffectType = EffectType.Throw,
                 Color = new ARGB(0xff9000ff),
                 TargetObjectId = Id,
-                Pos1 = target
+                Pos1 = target,
+                Duration = 1.5f
             }, p => this.DistSqr(p) < RadiusSqr);
 
             Owner.Timers.Add(new WorldTimer(1500, (world, t) =>
@@ -1090,7 +1092,7 @@ namespace wServer.realm.entities
             var range = eff.Range;
             if (eff.UseWisMod)
             {
-                duration = (int)(UseWisMod(eff.DurationSec) * 1000);
+                duration = (int)(UseWisMod(eff.Duration) * 1000);
                 range = UseWisMod(eff.Range);
             }
 
@@ -1136,7 +1138,7 @@ namespace wServer.realm.entities
         {
             var duration = eff.DurationMS;
             if (eff.UseWisMod)
-                duration = (int)(UseWisMod(eff.DurationSec) * 1000);
+                duration = (int)(UseWisMod(eff.Duration) * 1000);
 
             ApplyConditionEffect(new ConditionEffect()
             {
@@ -1161,7 +1163,7 @@ namespace wServer.realm.entities
             if (eff.UseWisMod)
             {
                 amount = (int)UseWisMod(eff.Amount, 0);
-                duration = (int)(UseWisMod(eff.DurationSec) * 1000);
+                duration = (int)(UseWisMod(eff.Duration) * 1000);
                 range = UseWisMod(eff.Range);
             }
 
@@ -1282,7 +1284,7 @@ namespace wServer.realm.entities
             var targetPlayer = eff.Target.Equals("player");
             var centerPlayer = eff.Center.Equals("player");
             var duration = (eff.UseWisMod) ?
-                (int)(UseWisMod(eff.DurationSec) * 1000) :
+                (int)(UseWisMod(eff.Duration) * 1000) :
                 eff.DurationMS;
             var range = (eff.UseWisMod)
                 ? UseWisMod(eff.Range)

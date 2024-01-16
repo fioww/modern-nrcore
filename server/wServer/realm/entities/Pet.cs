@@ -80,7 +80,7 @@ namespace wServer.realm.entities
             stats[StatsType.PetAbilityType3] = (int)Ability[2].Type;
         }
 
-        public void Damage(int dmg, Entity src) { }
+        public void Damage(int dmg, Entity src, bool armorPierce) { }
 
         public bool IsVisibleToEnemy()
         {

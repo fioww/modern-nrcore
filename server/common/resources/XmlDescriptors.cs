@@ -332,7 +332,7 @@ namespace common.resources
         public int Stats { get; private set; }
         public int Amount { get; private set; }
         public float Range { get; private set; }
-        public float DurationSec { get; private set; }
+        public readonly float Duration;
         public int DurationMS { get; private set; }
         public ConditionEffectIndex? ConditionEffect { get; private set; }
         public ConditionEffectIndex? CheckExistingEffect { get; private set; }
@@ -373,11 +373,8 @@ namespace common.resources
 
             if (e.Attribute("range") != null)
                 Range = float.Parse(e.Attribute("range").Value);
-            if (e.Attribute("duration") != null)
-            {
-                DurationSec = float.Parse(e.Attribute("duration").Value);
-                DurationMS = (int) (DurationSec * 1000);
-            }
+            Duration = e.ParseFloat("@duration", 1);
+            DurationMS = (int) (Duration * 1000);
             if (e.Attribute("duration2") != null)
                 DurationMS = (int)(float.Parse(e.Attribute("duration2").Value) * 1000);
 

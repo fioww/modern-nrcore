@@ -76,7 +76,7 @@ namespace wServer.realm.entities
             base.Tick(time);
         }
 
-        public void Damage(int dmg, Entity src) { }
+        public void Damage(int dmg, Entity src, bool armorPierce) { }
 
         public bool IsVisibleToEnemy() { return true; }
     }

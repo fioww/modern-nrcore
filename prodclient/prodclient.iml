@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="prodclient">
     <configurations>
-      <configuration name="prodclient" target-platform="Desktop" pure-as="true" main-class="WebMain" output-file="Main.swf" output-folder="$MODULE_DIR$/bin-debug">
+      <configuration name="prodclient" target-platform="Desktop" pure-as="true" main-class="WebMain" output-file="prodclient.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies target-player="32.0">
           <entries>
             <entry library-name="libs" library-level="project">
@@ -11,12 +11,8 @@
           </entries>
           <sdk name="AIR SDK Windows" />
         </dependencies>
-        <compiler-options>
-          <map>
-            <entry key="compiler.debug.swf" value="true" />
-          </map>
-        </compiler-options>
-        <packaging-air-desktop package-file-name="Main" />
+        <compiler-options />
+        <packaging-air-desktop package-file-name="prodclient" />
         <packaging-android />
         <packaging-ios />
       </configuration>
@@ -27,7 +23,6 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/bin-debug" />
     </content>
     <orderEntry type="jdk" jdkName="AIR SDK Windows" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
