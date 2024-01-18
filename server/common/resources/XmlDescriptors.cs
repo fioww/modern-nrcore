@@ -361,6 +361,8 @@ namespace common.resources
         public readonly float OffsetAngle;
         public readonly float MinDistance;
         public readonly float MaxDistance;
+        public readonly float ThrowTime;
+        public readonly int ImpactDamage;
 
         public ActivateEffect(XElement e)
         {
@@ -452,6 +454,8 @@ namespace common.resources
             OffsetAngle = e.ParseFloat("@offsetAngle", 90);
             MinDistance = e.ParseFloat("@minDistance");
             MaxDistance = e.ParseFloat("@maxDistance", 4.4f);
+            ThrowTime = e.ParseFloat("@throwTime", 0.8f);
+            ImpactDamage = e.ParseInt("@impactDamage");
         }
     }
     public class Setpiece

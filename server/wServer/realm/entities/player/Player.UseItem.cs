@@ -779,13 +779,14 @@ namespace wServer.realm.entities
                 Color = new ARGB(0xffddff00),
                 TargetObjectId = Id,
                 Pos1 = target,
-                Duration = eff.Duration,
+                Duration = eff.ThrowTime,
             }, p => this.DistSqr(p) < RadiusSqr);
 
-            var x = new Placeholder(Manager, eff.DurationMS);
+            var throwTimeMS = (int)(eff.ThrowTime * 1000);
+            var x = new Placeholder(Manager, throwTimeMS);
             x.Move(target.X, target.Y);
             Owner.EnterWorld(x);
-            Owner.Timers.Add(new WorldTimer(eff.DurationMS, (world, t) =>
+            Owner.Timers.Add(new WorldTimer(throwTimeMS, (world, _) =>
             {
                 world.BroadcastPacketNearby(new ShowEffect()
                 {
@@ -795,8 +796,15 @@ namespace wServer.realm.entities
                     Pos1 = new Position() { X = eff.Radius }
                 }, x, null, PacketPriority.Low);
 
+                var l = new List<Enemy>();
                 world.AOE(target, eff.Radius, false,
-                    enemy => PoisonEnemy(world, enemy as Enemy, eff));
+                    enemy => l.Add(enemy as Enemy));
+                foreach (var en in l)
+                {
+                    if (eff.ImpactDamage > 0)
+                        en.Damage(this, time, eff.ImpactDamage, true);
+                    PoisonEnemy(world, en, eff);
+                }
             }));
         }
 
