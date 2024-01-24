@@ -28,53 +28,6 @@ namespace wServer.realm.worlds.logic
                 if (i.Id >= 0)
                     continue;
 
-                if (i is DeathArena)
-                {
-                    var portal = new Portal(Manager, 0x023D, null)
-                    {
-                        Name = "Oryx's Arena",
-                        WorldInstance = i
-                    };
-
-                    var pos = GetRegionPosition(TileRegion.Arena_Edge_Spawn);
-                    if (pos == null)
-                        continue;
-
-                    monitor.AddPortal(i.Id, portal, pos);
-                    continue;
-                }
-
-                if (i is Arena)
-                {
-                    var portal = new Portal(Manager, 0x7002, null)
-                    {
-                        Name = "Arena (0)",
-                        WorldInstance = i
-                    };
-
-                    var pos = GetRegionPosition(TileRegion.Arena_Central_Spawn);
-                    if (pos == null)
-                        continue;
-
-                    monitor.AddPortal(i.Id, portal, pos);
-                    continue;
-                }
-
-                if (i is ArenaSolo)
-                {
-                    var portal = new Portal(Manager, 0x144, null)
-                    {
-                        Name = "Solo Arena",
-                        WorldInstance = i
-                    };
-
-                    var pos = GetRegionPosition(TileRegion.Store_38);
-                    if (pos == null)
-                        continue;
-
-                    monitor.AddPortal(i.Id, portal, pos);
-                    continue;
-                }
 
                 if (i is PetYard)
                 {

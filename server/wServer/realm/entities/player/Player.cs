@@ -507,7 +507,7 @@ namespace wServer.realm.entities
             ExperienceGoal = GetExpGoal(_client.Character.Level);
             Stars = GetStars();
 
-            if (owner.Name.Equals("OceanTrench"))
+            if (owner.Name.Equals("OceanTrench") && (owner.Name.Equals("CnidarianReef")))
                 OxygenBar = 100;
 
             SetNewbiePeriod();
@@ -518,24 +518,6 @@ namespace wServer.realm.entities
                 {
                     Text = Client.Account.Gifts.Length > 0 ? "giftChestOccupied" : "giftChestEmpty"
                 });
-
-                if (DeathArena.Instance?.CurrentState != DeathArena.ArenaState.NotStarted && DeathArena.Instance?.CurrentState != DeathArena.ArenaState.Ended)
-                {
-                    Client.SendPacket(new GlobalNotification
-                    {
-                        Type = GlobalNotification.ADD_ARENA,
-                        Text = $"{{\"name\":\"Oryx Arena\",\"open\":{DeathArena.Instance?.CurrentState == DeathArena.ArenaState.CountDown}}}"
-                    });
-                }
-
-                if (worlds.logic.Arena.Instance?.CurrentState != worlds.logic.Arena.ArenaState.NotStarted)
-                {
-                    Client.SendPacket(new GlobalNotification
-                    {
-                        Type = GlobalNotification.ADD_ARENA,
-                        Text = $"{{\"name\":\"Public Arena\",\"open\":{worlds.logic.Arena.Instance?.CurrentState == worlds.logic.Arena.ArenaState.CountDown}}}"
-                    });
-                }
             }
 
             base.Init(owner);
@@ -830,8 +812,6 @@ namespace wServer.realm.entities
 
         private bool Arena(string killer)
         {
-            if (!(Owner is Arena) && !(Owner is ArenaSolo))
-                return false;
 
             foreach (var player in Owner.Players.Values)
                 player.SendInfo("{\"key\":\"{arena.death}\",\"tokens\":{\"player\":\"" + Name + "\",\"enemy\":\"" + killer + "\"}}");

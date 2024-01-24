@@ -85,7 +85,6 @@ namespace wServer.realm.commands
                     var desc = gameData.ObjectDescs[objType.Value];
 
                     if (player.Client.Account.Rank < 100 &&
-                        player.Owner is DeathArena &&
                         desc.ObjectId.Contains("Fountain"))
                     {
                         player.SendError("Insufficient rank.");
@@ -183,7 +182,6 @@ namespace wServer.realm.commands
 
             var id = player.Manager.Resources.GameData.ObjectTypeToId[objType.Value];
             if (player.Client.Account.Rank < 100 &&
-                player.Owner is DeathArena &&
                 id.Contains("Fountain"))
             {
                 player.SendError("Insufficient rank.");
@@ -1563,7 +1561,7 @@ namespace wServer.realm.commands
             }
 
             World world;
-            if (proto.persist || proto.id == World.Arena || proto.id == World.DeathArena)
+            if (proto.persist || proto.id == World.Arena)
                 world = player.Manager.Worlds[proto.id];
             else
             {

@@ -330,7 +330,6 @@
     <Compile Include="realm\setpieces\Bedlam.cs" />
     <Compile Include="realm\setpieces\Boshy.cs" />
     <Compile Include="realm\setpieces\Crystal.cs" />
-    <Compile Include="realm\setpieces\FanaticofChaos.cs" />
     <Compile Include="realm\setpieces\GhostShip.cs" />
     <Compile Include="realm\setpieces\Hermit.cs" />
     <Compile Include="realm\setpieces\KageKami.cs" />
@@ -339,16 +338,10 @@
     <Compile Include="realm\setpieces\LuckyEnt.cs" />
     <Compile Include="realm\BaseStatManager.cs" />
     <Compile Include="realm\setpieces\Avatar.cs" />
-    <Compile Include="realm\setpieces\Megaman.cs" />
     <Compile Include="realm\setpieces\RockDragon.cs" />
-    <Compile Include="realm\setpieces\Sanic.cs" />
-    <Compile Include="realm\setpieces\TheKid.cs" />
     <Compile Include="realm\setpieces\ZombieHorde.cs" />
     <Compile Include="realm\worlds\DynamicWorld.cs" />
-    <Compile Include="realm\worlds\logic\Arena.cs" />
     <Compile Include="realm\worlds\logic\Davy.cs" />
-    <Compile Include="realm\worlds\logic\DeathArena.cs" />
-    <Compile Include="realm\worlds\logic\ArenaSolo.cs" />
     <Compile Include="realm\worlds\logic\Candyland.cs" />
     <Compile Include="realm\worlds\logic\GuildHall.cs" />
     <Compile Include="realm\entities\GuildHallPortal.cs" />

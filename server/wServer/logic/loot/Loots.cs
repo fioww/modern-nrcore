@@ -80,7 +80,7 @@ namespace wServer.logic.loot
         public void Handle(Enemy enemy, RealmTime time)
         {
             // enemies that shouldn't drop loot
-            if (enemy.Spawned || enemy.Owner is Arena || enemy.Owner is ArenaSolo)
+            if (enemy.Spawned)
             {
                 return;
             }
@@ -259,7 +259,7 @@ namespace wServer.logic.loot
             container.Move(
                 enemy.X + (float)((Rand.NextDouble() * 2 - 1) * 0.5),
                 enemy.Y + (float)((Rand.NextDouble() * 2 - 1) * 0.5));
-            container.SetDefaultSize(bagType > 3 ? 120 : 80);
+            container.SetDefaultSize(80);
             enemy.Owner.EnterWorld(container);
         }
     }

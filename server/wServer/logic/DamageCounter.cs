@@ -67,7 +67,7 @@ namespace wServer.logic
             if (enemy.Owner is Realm)
                 (enemy.Owner as Realm).EnemyKilled(enemy, (Parent ?? this).LastHitter);
 
-            if (enemy.Spawned || enemy.Owner is Arena || enemy.Owner is ArenaSolo)
+            if (enemy.Spawned)
                 return;
 
             int lvlUps = 0;
@@ -89,7 +89,7 @@ namespace wServer.logic
                 else
                     playerXp = xp;
 
-                if (player.Owner is DeathArena || player.Owner.GetDisplayName().Contains("Theatre"))
+                if (player.Owner.GetDisplayName().Contains("Theatre"))
                     playerXp *= .33f;
 
                 if (player.XPBoostTime != 0 && player.Level < 20)

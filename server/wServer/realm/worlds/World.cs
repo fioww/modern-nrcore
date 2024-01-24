@@ -43,8 +43,6 @@ namespace wServer.realm.worlds
         public const int ClothBazaar = -10;
         public const int FreeItems = -11;
         public const int PetYard = -12;
-        public const int ArenaSolo = -13;
-        public const int DeathArena = -14;
         public const int MarketPlace = -15;
 
         private RealmManager _manager;
