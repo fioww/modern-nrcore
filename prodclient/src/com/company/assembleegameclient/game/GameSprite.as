@@ -5,7 +5,10 @@ package com.company.assembleegameclient.game
     import com.company.assembleegameclient.map.Map;
     import flash.filters.ColorMatrixFilter;
     import com.company.util.MoreColorUtil;
-    import org.osflash.signals.Signal;
+
+import kabam.rotmg.messaging.impl.GameServerConnection;
+
+import org.osflash.signals.Signal;
     import com.company.assembleegameclient.objects.Player;
     import kabam.rotmg.chat.view.Chat;
     import com.company.assembleegameclient.ui.RankText;
@@ -121,13 +124,15 @@ package com.company.assembleegameclient.game
         private var questModel:QuestModel;
         private var seasonalEventModel:SeasonalEventModel;
         private var mapName:String;
+        public var serverDisconnect:Boolean;
 
         public function GameSprite(_arg_1:Server, _arg_2:int, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:ByteArray, _arg_7:PlayerModel, _arg_8:String, _arg_9:Boolean)
         {
             this.model = _arg_7;
             map = new Map(this);
             addChild(map);
-            gsc_ = new GameServerConnectionConcrete(this, _arg_1, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6, _arg_8, _arg_9);
+            this.gsc_ = GameServerConnection.instance != null ? GameServerConnection.instance : new GameServerConnectionConcrete(_arg_1);
+            this.gsc_.update(this, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6, _arg_8, _arg_9);
             mui_ = new MapUserInput(this);
             this.chatBox_ = new Chat();
             this.chatBox_.list.addEventListener(MouseEvent.MOUSE_DOWN, this.onChatDown);
@@ -557,38 +562,40 @@ package com.company.assembleegameclient.game
             this.mapModel.currentInteractiveTarget = _local_3;
         }
 
-        public function connect():void
-        {
-            if (!this.isGameStarted)
-            {
-                this.isGameStarted = true;
-                Renderer.inGame = true;
-                gsc_.connect();
-                this.idleWatcher_.start(this);
-                lastUpdate_ = getTimer();
-                stage.addEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
-                stage.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
-                LoopedProcess.addProcess(new LoopedCallback(100, this.updateNearestInteractive));
-            };
+        public function connect():void {
+            if (this.isGameStarted) {
+                return;
+            }
+            this.serverDisconnect = false;
+            this.isGameStarted = true;
+            Renderer.inGame = true;
+            if (!this.gsc_.connected)
+                this.gsc_.connect();
+            else this.gsc_.sendHello();
+            this.idleWatcher_.start(this);
+            lastUpdate_ = getTimer();
+            stage.addEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
+            stage.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
+            LoopedProcess.addProcess(new LoopedCallback(100, this.updateNearestInteractive));
         }
 
-        public function disconnect():void
-        {
-            if (this.isGameStarted)
-            {
-                this.isGameStarted = false;
-                Renderer.inGame = false;
-                this.idleWatcher_.stop();
-                stage.removeEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
-                stage.removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
-                LoopedProcess.destroyAll();
-                ((contains(map)) && (removeChild(map)));
-                map.dispose();
-                CachingColorTransformer.clear();
-                TextureRedrawer.clearCache();
-                Projectile.dispose();
-                gsc_.disconnect();
-            };
+        public function disconnect():void {
+            if (!this.isGameStarted) {
+                return;
+            }
+            this.isGameStarted = false;
+            Renderer.inGame = false;
+            this.idleWatcher_.stop();
+            if (this.serverDisconnect)
+                this.gsc_.disconnect();
+            stage.removeEventListener(MoneyChangedEvent.MONEY_CHANGED, this.onMoneyChanged);
+            stage.removeEventListener(Event.ENTER_FRAME, this.onEnterFrame);
+            LoopedProcess.destroyAll();
+            ((contains(map)) && (removeChild(map)));
+            map.dispose();
+            CachingColorTransformer.clear();
+            TextureRedrawer.clearCache();
+            Projectile.dispose();
         }
 
         private function onMoneyChanged(_arg_1:Event):void

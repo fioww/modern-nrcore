@@ -87,7 +87,7 @@ package kabam.rotmg.game.commands
             };
             var _local_3:int = ((_local_1) ? Server.CHALLENGER_SERVER : Server.NORMAL_SERVER);
             this.serverModel.setAvailableServers(_local_3);
-            var _local_4:Server = ((this.data.server) || (this.serverModel.getServer()));
+            var _local_4:Server = this.serverModel.getServer();
             var _local_5:int = ((this.data.isNewGame) ? this.getInitialGameId() : this.data.gameId);
             var _local_6:Boolean = this.data.createCharacter;
             var _local_7:int = this.data.charId;

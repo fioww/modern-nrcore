@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using wServer.realm.entities;
 using wServer.networking.packets;
@@ -75,7 +76,7 @@ namespace wServer.networking.handlers
 
                 if (world is Realm && !player.Manager.Resources.GameData.ObjectTypeToId[portal.ObjectDesc.ObjectType].Contains("Cowardice"))
                 {
-                    
+                    Console.WriteLine($"COMPLETED DUNGEON!! {player.Owner.Name}");
                     player.FameCounter.CompleteDungeon(player.Owner.Name);
                 }
 

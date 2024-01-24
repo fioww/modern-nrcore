@@ -2,7 +2,9 @@
 
 package kabam.rotmg.messaging.impl
 {
-    import org.osflash.signals.Signal;
+import com.company.assembleegameclient.game.GameSprite;
+
+import org.osflash.signals.Signal;
     import com.company.assembleegameclient.game.AGameSprite;
     import kabam.rotmg.servers.api.Server;
     import flash.utils.ByteArray;
@@ -138,7 +140,13 @@ package kabam.rotmg.messaging.impl
         public var jitterWatcher_:JitterWatcher;
         public var serverConnection:SocketServer;
         public var outstandingBuy_:OutstandingBuy = null;
+        public var connected:Boolean;
 
+        public function update(gs:GameSprite, gameId:int, createCharacter:Boolean, charId:int, keyTime:int, key:ByteArray, mapJSON:String, isFromArena:Boolean):void{
+        }
+
+        public function sendHello():void{
+        }
 
         public function chooseName(_arg_1:String):void
         {

@@ -155,7 +155,7 @@ import robotlegs.bender.bundles.mvcs.Mediator;
             this.view.addDungeonLine(new StatsLine("Dungeons", "", "", StatsLine.TYPE_TITLE));
             _local_1.push(new DungeonLine("Pirate Cave", "Pirate Cave", (this.metrics.getCharacterStat(this.characterID, MetricsID.PIRATE_CAVES_COMPLETED) + "")));
             _local_1.push(new DungeonLine("Undead Lair", "Undead Lair", (this.metrics.getCharacterStat(this.characterID, MetricsID.UNDEAD_LAIRS_COMPLETED) + "")));
-            _local_1.push(new DungeonLine("Abyss of Demons", "Abyss of Demons", (this.metrics.getCharacterStat(this.characterID, MetricsID.ABYSS_OF_DEMONS_COMPLETED) + "")));
+            _local_1.push(new DungeonLine("Abyss of Demons", "Abyss of Demons", this.metrics.getCharacterStat(this.characterID, MetricsID.SHOTS).toString()));
             _local_1.push(new DungeonLine("Snake Pit", "Snake Pit", (this.metrics.getCharacterStat(this.characterID, MetricsID.SNAKE_PITS_COMPLETED) + "")));
             _local_1.push(new DungeonLine("Spider Den", "Spider Den", (this.metrics.getCharacterStat(this.characterID, MetricsID.SPIDER_DENS_COMPLETED) + "")));
             _local_1.push(new DungeonLine("Sprite World", "Sprite World", (this.metrics.getCharacterStat(this.characterID, MetricsID.SPRITE_WORLDS_COMPLETED) + "")));

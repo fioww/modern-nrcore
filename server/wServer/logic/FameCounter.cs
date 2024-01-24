@@ -44,7 +44,7 @@ namespace wServer.logic
                 case ("Undead Lair"):
                     Stats.UndeadLairsCompleted++;
                     break;
-                case ("Abyss"):
+                case ("Abyss of Demons"):
                     Stats.AbyssOfDemonsCompleted++;
                     break;
                 case ("Snake Pit"):

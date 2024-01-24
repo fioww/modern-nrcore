@@ -173,6 +173,9 @@ namespace wServer.realm
             if (client?.Account == null)
                 return false;
 
+            if (Clients.Keys.Contains(client))
+                Disconnect(client);
+
             client.Id = Interlocked.Increment(ref _nextClientId);
             var plrInfo = new PlayerInfo()
             {

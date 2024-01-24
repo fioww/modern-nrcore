@@ -2,7 +2,9 @@
 
 package kabam.rotmg.messaging.impl
 {
-    import kabam.lib.net.api.MessageProvider;
+import com.company.assembleegameclient.game.GameSprite;
+
+import kabam.lib.net.api.MessageProvider;
     import com.company.assembleegameclient.objects.Player;
     import com.company.util.Random;
     import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
@@ -303,8 +305,7 @@ import robotlegs.bender.framework.api.ILogger;
         private var serverModel:ServerModel;
         private var statsTracker:CharactersMetricsTracker;
 
-        public function GameServerConnectionConcrete(_arg_1:AGameSprite, _arg_2:Server, _arg_3:int, _arg_4:Boolean, _arg_5:int, _arg_6:int, _arg_7:ByteArray, _arg_8:String, _arg_9:Boolean)
-        {
+        public function GameServerConnectionConcrete(_arg_2:Server) {
             this.injector = StaticInjectorContext.getInjector();
             this.giftChestUpdateSignal = this.injector.getInstance(GiftStatusUpdateSignal);
             this.addTextLine = this.injector.getInstance(AddTextLineSignal);
@@ -343,19 +344,22 @@ import robotlegs.bender.framework.api.ILogger;
             this.hudModel = this.injector.getInstance(HUDModel);
             this.serverModel = this.injector.getInstance(ServerModel);
             this.currentArenaRun = this.injector.getInstance(CurrentArenaRunModel);
-            gs_ = _arg_1;
             server_ = _arg_2;
-            gameId_ = _arg_3;
-            createCharacter_ = _arg_4;
-            charId_ = _arg_5;
-            keyTime_ = _arg_6;
-            key_ = _arg_7;
-            mapJSON_ = _arg_8;
-            isFromArena_ = _arg_9;
-            this.socialModel.loadInvitations();
-            this.socialModel.setCurrentServer(server_);
-            this.getPetUpdater();
             instance = this;
+        }
+
+        override public function update(gs:GameSprite, gameId:int, createCharacter:Boolean, charId:int, keyTime:int, key:ByteArray, mapJSON:String, isFromArena:Boolean):void {
+            gs_ = gs;
+            gameId_ = gameId;
+            createCharacter_ = createCharacter;
+            charId_ = charId;
+            keyTime_ = keyTime;
+            key_ = key;
+            mapJSON_ = mapJSON;
+            isFromArena_ = isFromArena;
+            socialModel.loadInvitations();
+            socialModel.setCurrentServer(server_);
+            this.getPetUpdater();
         }
 
         private static function isStatPotion(_arg_1:int):Boolean
@@ -371,8 +375,19 @@ import robotlegs.bender.framework.api.ILogger;
             this.injector.unmap(AGameSprite);
         }
 
+        private function reset():void {
+            this.connected = false;
+            this.delayBeforeReconnect = 1;
+            this.player != null && this.player.dispose();
+            this.player = null;
+            this.playerId_ = -1;
+            this.lastTickId_ = -1;
+            this.jitterWatcher_ = null;
+        }
+
         override public function disconnect():void
         {
+            this.reset();
             this.removeServerConnectionListeners();
             this.unmapMessages();
             serverConnection.disconnect();
@@ -948,6 +963,8 @@ import robotlegs.bender.framework.api.ILogger;
 
         public function move(_arg_1:int, _arg_3:Player):void
         {
+            if (this.player.map_ == null)
+                return;
             var _local_8:int;
             var _local_9:int;
             var _local_4:Number = -1;
@@ -1171,9 +1188,15 @@ import robotlegs.bender.framework.api.ILogger;
         private function onConnected():void
         {
             this.isNexusing = false;
-            var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
+            this.connected = true;
             this.addTextLine.dispatch(ChatMessage.make(Parameters.CLIENT_CHAT_NAME, TextKey.CHAT_CONNECTED));
             this.encryptConnection();
+            this.sendHello();
+        }
+
+        override public function sendHello() : void
+        {
+            var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
             var _local_2:Hello = (this.messages.require(HELLO) as Hello);
             _local_2.buildVersion_ = Parameters.CLIENT_VERSION;
             _local_2.gameId_ = gameId_;
@@ -2192,7 +2215,6 @@ import robotlegs.bender.framework.api.ILogger;
 
         private function onReconnect(_arg_1:Reconnect):void
         {
-            var _local_2:Server = new Server().setName(_arg_1.name_).setAddress(((_arg_1.host_ != "") ? _arg_1.host_ : server_.address)).setPort(((_arg_1.host_ != "") ? _arg_1.port_ : server_.port));
             var _local_3:int = _arg_1.gameId_;
             var _local_4:Boolean = createCharacter_;
             var _local_5:int = charId_;
@@ -2200,7 +2222,7 @@ import robotlegs.bender.framework.api.ILogger;
             var _local_7:ByteArray = _arg_1.key_;
             isFromArena_ = _arg_1.isFromArena_;
             this.isNexusing = false;
-            var _local_8:ReconnectEvent = new ReconnectEvent(_local_2, _local_3, _local_4, _local_5, _local_6, _local_7, isFromArena_);
+            var _local_8:ReconnectEvent = new ReconnectEvent(_local_3, _local_4, _local_5, _local_6, _local_7, isFromArena_);
             gs_.dispatchEvent(_local_8);
         }
 
@@ -2566,8 +2588,7 @@ import robotlegs.bender.framework.api.ILogger;
             else
             {
                 this.isNexusing = false;
-                _local_3 = this.serverModel.getServer();
-                _local_4 = new ReconnectEvent(_local_3, Parameters.NEXUS_GAMEID, false, charId_, 1, new ByteArray(), isFromArena_);
+                _local_4 = new ReconnectEvent(Parameters.NEXUS_GAMEID, false, charId_, 1, new ByteArray(), isFromArena_);
                 gs_.dispatchEvent(_local_4);
             };
         }

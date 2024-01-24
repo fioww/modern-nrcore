@@ -16,7 +16,7 @@ namespace wServer.networking.handlers
 
         void Handle(Player player, RealmTime time, Move packet)
         {
-            if (player?.Owner == null)
+            if (player?.Client.State == ProtocolState.Reconnecting || player?.Owner == null)
                 return;
 
             player.MoveReceived(time, packet);

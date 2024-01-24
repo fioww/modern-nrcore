@@ -398,6 +398,7 @@ namespace server
         public bool Dead { get; private set; }
         public bool HasBackpack { get; private set; }
         public Pet Pet { get; private set; }
+        public string CreationDate;
 
         public static Character FromDb(DbChar character, bool dead)
         {
@@ -427,6 +428,7 @@ namespace server
                 MagicStackCount = character.MagicStackCount,
                 Dead = dead,
                 HasBackpack = character.HasBackpack,
+                CreationDate = character.CreateTime.ToString("MMMM dd, yyyy"),
                 Pet = Pet.FromDb(new DbPet(character.Account, character.PetId))
             };
         }
@@ -459,6 +461,7 @@ namespace server
                     new XElement("MagicStackCount", MagicStackCount),
                     new XElement("Dead", Dead),
                     new XElement("HasBackpack", (HasBackpack) ? "1" : "0"),
+                    new XElement("CreationDate", CreationDate),
                     Pet?.ToXml()
                 );
         }

@@ -213,6 +213,7 @@ package kabam.rotmg.game.view
 
         private function onClosed():void
         {
+            this.view.serverDisconnect = true;
             if (!this.view.isEditor)
             {
                 this.gameClosed.dispatch();
@@ -231,7 +232,6 @@ package kabam.rotmg.game.view
                 return;
             };
             var _local_2:GameInitData = new GameInitData();
-            _local_2.server = _arg_1.server_;
             _local_2.gameId = _arg_1.gameId_;
             _local_2.createCharacter = _arg_1.createCharacter_;
             _local_2.charId = _arg_1.charId_;

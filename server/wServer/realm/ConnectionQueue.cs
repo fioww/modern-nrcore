@@ -19,14 +19,14 @@ namespace wServer.realm
         public readonly long Time;
         
 
-        public ConInfo(Client client, Hello pkt)
+        public ConInfo(Client client, Hello pkt, bool reconnecting)
         {
             Client = client;
             Account = client.Account;
             GUID = pkt.GUID;
             GameId = pkt.GameId;
             Key = pkt.Key;
-            Reconnecting = !Key.SequenceEqual(Empty<byte>.Array);
+            Reconnecting = reconnecting;
             MapInfo = pkt.MapJSON;
             Time = DateTime.UtcNow.ToUnixTimestamp();
         }
