@@ -193,7 +193,7 @@ namespace wServer.realm
 
         public void SetItems(Item[] items)
         {
-            using (TimedLock.Lock(_invLock))
+            lock ((_invLock))
             {
                 var oItems = _items.GetItems();
                 _items.SetItems(items);
@@ -203,7 +203,7 @@ namespace wServer.realm
 
         public void SetItems(IEnumerable<ushort> items)
         {
-            using (TimedLock.Lock(_invLock))
+            lock ((_invLock))
             {
                 var oItems = _items.GetItems();
                 _items.SetItems(ConvertObjectType2ItemArray(items));
@@ -213,9 +213,9 @@ namespace wServer.realm
 
         public Item[] GetItems()
         {
-            using (TimedLock.Lock(TrySaveLock))
+            lock ((TrySaveLock))
             {
-                using (TimedLock.Lock(_invLock))
+                lock ((_invLock))
                 {
                     return _items.GetItems();
                 }
@@ -224,7 +224,7 @@ namespace wServer.realm
 
         public ushort[] GetItemTypes()
         {
-            using (TimedLock.Lock(_invLock))
+            lock ((_invLock))
             {
                 return _items.GetItems().Select(_ => _?.ObjectType ?? 0xffff).ToArray();
             }
@@ -234,14 +234,14 @@ namespace wServer.realm
         {
             get
             {
-                using (TimedLock.Lock(_invLock))
+                lock ((_invLock))
                 {
                     return _items[index];
                 }
             }
             set
             {
-                using (TimedLock.Lock(_invLock))
+                lock ((_invLock))
                 {
                     if (_items[index] != value)
                     {
@@ -261,7 +261,7 @@ namespace wServer.realm
         private static readonly object TrySaveLock = new object();
         public static bool Execute(params InventoryTransaction[] transactions)
         {
-            using (TimedLock.Lock(TrySaveLock))
+            lock ((TrySaveLock))
             {
                 if (transactions.Any(tranaction => !tranaction.Validate()))
                     return false;
@@ -275,7 +275,7 @@ namespace wServer.realm
 
         public static bool Revert(params InventoryTransaction[] transactions)
         {
-            using (TimedLock.Lock(TrySaveLock))
+            lock ((TrySaveLock))
             {
                 if (transactions.Any(tranaction => !tranaction.Validate(true)))
                     return false;
@@ -288,7 +288,7 @@ namespace wServer.realm
 
         public int GetAvailableInventorySlot(Item item)
         {
-            using (TimedLock.Lock(_invLock))
+            lock ((_invLock))
             {
                 var plr = _parent as Player;
                 if (plr != null)

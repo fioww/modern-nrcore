@@ -113,7 +113,7 @@ namespace wServer.networking
 
         public void SendPacket(Packet pkt, PacketPriority priority = PacketPriority.Normal)
         {
-            using (TimedLock.Lock(DcLock))
+            lock ((DcLock))
             {
                 if (State != ProtocolState.Disconnected)
                     _handler.SendPacket(pkt, priority);
@@ -122,7 +122,7 @@ namespace wServer.networking
 
         public void SendPackets(IEnumerable<Packet> pkts, PacketPriority priority = PacketPriority.Normal)
         {
-            using (TimedLock.Lock(DcLock))
+            lock ((DcLock))
             {
                 if (State != ProtocolState.Disconnected)
                     _handler.SendPackets(pkts, priority);
@@ -148,7 +148,7 @@ namespace wServer.networking
 
         internal void ProcessPacket(Packet pkt)
         {
-            using (TimedLock.Lock(DcLock))
+            lock ((DcLock))
             {
                 if (State == ProtocolState.Disconnected)
                     return;
@@ -226,7 +226,7 @@ namespace wServer.networking
 
         public void Disconnect(string reason = "")
         {
-            using (TimedLock.Lock(DcLock))
+            lock ((DcLock))
             {
                 if (State == ProtocolState.Disconnected)
                     return;

@@ -58,7 +58,7 @@ namespace wServer.realm
             if (_world == null)
                 return false;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (_portals.ContainsKey(worldId))
                     return false;
@@ -98,7 +98,7 @@ namespace wServer.realm
             if (_world == null)
                 return false;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (!_portals.ContainsKey(worldId))
                     return false;
@@ -118,7 +118,7 @@ namespace wServer.realm
             if (_world == null)
                 return false;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (!_portals.ContainsValue(portal))
                     return false;
@@ -137,7 +137,7 @@ namespace wServer.realm
             if (_world == null)
                 return false;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 var portal = _portals.FirstOrDefault(p => p.Value.WorldInstance == world);
                 if (portal.Value == null)
@@ -156,7 +156,7 @@ namespace wServer.realm
             if (_world == null)
                 return;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (!_portals.ContainsKey(worldId))
                     return;
@@ -172,7 +172,7 @@ namespace wServer.realm
             if (_world == null)
                 return;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (!_portals.ContainsKey(worldId))
                     return;
@@ -188,7 +188,7 @@ namespace wServer.realm
             if (_world == null)
                 return false;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (!_portals.ContainsKey(worldId))
                     return false;
@@ -202,7 +202,7 @@ namespace wServer.realm
             if (_world == null)
                 return;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (_portals.ContainsKey(worldId) && !_portals[worldId].Name.Equals(name))
                     _portals[worldId].Name = name;
@@ -214,7 +214,7 @@ namespace wServer.realm
             if (_world == null)
                 return;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 if (!_portals.ContainsKey(worldId))
                     return;
@@ -228,7 +228,7 @@ namespace wServer.realm
             if (_world == null)
                 return;
 
-            using (TimedLock.Lock(_worldLock))
+            lock ((_worldLock))
             {
                 foreach (var p in _portals.Values)
                 {

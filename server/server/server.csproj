@@ -120,14 +120,11 @@
     <Compile Include="account\purchaseMysteryBox.cs" />
     <Compile Include="account\purchasePackage.cs" />
     <Compile Include="account\purchaseSkin.cs" />
-    <Compile Include="account\rank.cs" />
-    <Compile Include="account\registerDiscord.cs" />
     <Compile Include="account\resetPassword.cs" />
     <Compile Include="account\setName.cs" />
     <Compile Include="account\purchaseCharSlot.cs" />
     <Compile Include="account\sendVerifyEmail.cs" />
     <Compile Include="account\forgotPassword.cs" />
-    <Compile Include="account\unregisterDiscord.cs" />
     <Compile Include="account\verify.cs" />
     <Compile Include="account\register.cs" />
     <Compile Include="account\verifyage.cs" />
@@ -153,9 +150,6 @@
     <Compile Include="LegendSweeper.cs" />
     <Compile Include="mysterybox\getBoxes.cs" />
     <Compile Include="package\getPackages.cs" />
-    <Compile Include="privateMessage\list.cs" />
-    <Compile Include="privateMessage\delete.cs" />
-    <Compile Include="privateMessage\send.cs" />
     <Compile Include="RequestHandler.cs" />
     <Compile Include="picture\get.cs" />
     <Compile Include="Program.cs">

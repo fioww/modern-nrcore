@@ -256,7 +256,7 @@ namespace wServer.realm.worlds
 
         public bool Delete()
         {
-            using (TimedLock.Lock(_deleteLock))
+            lock ((_deleteLock))
             {
                 if (Players.Count > 0)
                     return false;
@@ -691,7 +691,7 @@ namespace wServer.realm.worlds
 
         public void TickLogic(RealmTime time)
         {
-            using (TimedLock.Lock(_deleteLock))
+            lock ((_deleteLock))
             {
                 if (Deleted)
                     return;

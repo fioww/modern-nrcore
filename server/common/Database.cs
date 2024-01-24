@@ -147,13 +147,6 @@ namespace common
             tran.AddCondition(Condition.KeyNotExists(aKey));
             tran.StringSetAsync(aKey, lockToken, TimeSpan.FromSeconds(_lockTTL));
 
-            if (acc.DiscordId != null)
-            {
-                var dKey = $"dLock:{acc.DiscordId}";
-                tran.AddCondition(Condition.KeyNotExists(dKey));
-                tran.StringSetAsync(dKey, lockToken, TimeSpan.FromSeconds(_lockTTL));
-            }
-            
             var committed = tran.Execute();
 
             acc.LockToken = committed ? lockToken : null;
@@ -173,12 +166,6 @@ namespace common
             tran.AddCondition(Condition.StringEqual(aKey, acc.LockToken));
             tran.KeyExpireAsync(aKey, TimeSpan.FromSeconds(_lockTTL));
 
-            if (acc.DiscordId != null)
-            {
-                var dKey = $"dLock:{acc.DiscordId}";
-                tran.AddCondition(Condition.StringEqual(dKey, acc.LockToken));
-                tran.KeyExpireAsync(dKey, TimeSpan.FromSeconds(_lockTTL));
-            }
             return tran.Execute();
         }
 
@@ -189,13 +176,6 @@ namespace common
             string aKey = $"lock:{acc.AccountId}";
             tran.AddCondition(Condition.StringEqual(aKey, acc.LockToken));
             tran.KeyDeleteAsync(aKey);
-            
-            if (acc.DiscordId != null)
-            {
-                var dKey = $"dLock:{acc.DiscordId}";
-                tran.AddCondition(Condition.StringEqual(dKey, acc.LockToken));
-                tran.KeyDeleteAsync(dKey);
-            }
 
             tran.ExecuteAsync(CommandFlags.FireAndForget);
         }
@@ -510,7 +490,7 @@ namespace common
             if (acc.GuildId > 0)
                 return AddGuildMemberStatus.InAnotherGuild;
 
-            using (TimedLock.Lock(guild.MemberLock))
+            lock ((guild.MemberLock))
             {
                 int guildSize = 50;
                 switch(guild.Level)
@@ -555,7 +535,7 @@ namespace common
                 return false;
 
             List<int> members;
-            using (TimedLock.Lock(guild.MemberLock))
+            lock ((guild.MemberLock))
             {
                 members = guild.Members.ToList();
                 if (members.Contains(acc.AccountId))
@@ -1234,7 +1214,6 @@ namespace common
             _db.HashDeleteAsync(acc.Key, "petList", CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "banLiftTime", CommandFlags.FireAndForget);
             _db.HashDeleteAsync(acc.Key, "emotes", CommandFlags.FireAndForget);
-            _db.HashDeleteAsync(acc.Key, "privateMessages", CommandFlags.FireAndForget);
             
             _db.KeyDeleteAsync($"vault.{acc.AccountId}", CommandFlags.FireAndForget);
         }
@@ -1452,27 +1431,6 @@ namespace common
             });
             _db.KeyExpireAsync(key, TimeSpan.FromSeconds(45), CommandFlags.FireAndForget);
             return task;
-        }
-
-        public void RegisterDiscord(string discordId, int accId)
-        {
-            _db.HashSetAsync($"discordAccount.{discordId}", accId, 0, When.Always, CommandFlags.FireAndForget);
-            _db.HashSetAsync($"account.{accId}", "discordId", discordId, When.Always, CommandFlags.FireAndForget);
-        }
-
-        public bool UnregisterDiscord(string discordId, int accId)
-        {
-            if (!_db.HashExists($"discordAccount.{discordId}", accId))
-                return false;
-
-            _db.HashDeleteAsync($"discordAccount.{discordId}", accId, CommandFlags.FireAndForget);
-            _db.HashDeleteAsync($"account.{accId}", "discordId", CommandFlags.FireAndForget);
-            return true;
-        }
-
-        public void RankDiscord(string discordId, int rank)
-        {
-            _db.HashSetAsync("discordRank", discordId, rank, When.Always, CommandFlags.FireAndForget);
         }
     }
 }

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Linq;
-using log4net;
-using common;
-using wServer.networking.packets.outgoing;
-using wServer.realm.entities;
-using wServer.realm.worlds;
+﻿using common;
 
 namespace wServer.realm
 {
     public class DbServerManager
     {
-        public const string FORCE_PRIVATE_MESSAGE_REFRESH = "forcePrivateMessageRefresh";
 
         private struct Message
         {
@@ -32,16 +25,7 @@ namespace wServer.realm
         {
             switch (e.Content.Type)
             {
-                case FORCE_PRIVATE_MESSAGE_REFRESH:
-                    foreach (var i in manager.Clients.Keys
-                        .Where(x => (x.Player?.Owner?.IsNotCombatMapArea ?? false) && String.Equals(x.Account.Name, e.Content.TargetPlayer, StringComparison.InvariantCultureIgnoreCase)))
-                    {
-                        i.SendPacket(new GlobalNotification
-                        {
-                            Text = "forcePrivateMessageRefresh"
-                        });
-                    }
-                    break;
+                // nothing...
             }
         }
     }

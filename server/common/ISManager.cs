@@ -57,7 +57,7 @@ namespace common
 
         public void Tick(int elapsedMs)
         {
-            using (TimedLock.Lock(_dicLock))
+            lock ((_dicLock))
             {
                 // update running time
                 _lastPing += elapsedMs;
@@ -106,7 +106,7 @@ namespace common
 
         private void HandleNetwork(object sender, InterServerEventArgs<NetworkMsg> e)
         {
-            using (TimedLock.Lock(_dicLock))
+            lock ((_dicLock))
             {
                 switch (e.Content.Code)
                 {
@@ -172,7 +172,7 @@ namespace common
 
         public ServerInfo[] GetServerList()
         {
-            using (TimedLock.Lock(_dicLock))
+            lock ((_dicLock))
             {
                 return _servers.Values.ToArray();
             }
@@ -180,7 +180,7 @@ namespace common
 
         public string[] GetServerGuids()
         {
-            using (TimedLock.Lock(_dicLock))
+            lock ((_dicLock))
             {
                 return _servers.Keys.ToArray();
             }
@@ -188,7 +188,7 @@ namespace common
 
         public ServerInfo GetServerInfo(string instanceId)
         {
-            using (TimedLock.Lock(_dicLock))
+            lock ((_dicLock))
             {
                 return _servers.ContainsKey(instanceId)
                     ? _servers[instanceId]

@@ -19,7 +19,7 @@ namespace wServer.networking.server
 
         internal Client Pop()
         {
-            using (TimedLock.Lock(_pool))
+            lock ((_pool))
             {
                 return _pool.Dequeue();
             }
@@ -31,7 +31,7 @@ namespace wServer.networking.server
             {
                 throw new ArgumentNullException("Clients added to a ClientPool cannot be null");
             }
-            using (TimedLock.Lock(_pool))
+            lock ((_pool))
             {
                 if (!_pool.Contains(client))
                     _pool.Enqueue(client);

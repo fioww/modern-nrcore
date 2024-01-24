@@ -27,7 +27,7 @@ namespace wServer.networking.server
         // returns SocketAsyncEventArgs removed from the pool.
         internal SocketAsyncEventArgs Pop()
         {
-            using (TimedLock.Lock(pool))
+            lock ((pool))
             {
                 return this.pool.Pop();
             }
@@ -41,7 +41,7 @@ namespace wServer.networking.server
             { 
                 throw new ArgumentNullException("Items added to a SocketAsyncEventArgsPool cannot be null"); 
             }
-            using (TimedLock.Lock(pool))
+            lock ((pool))
             {
                 if (!pool.Contains(item))
                     pool.Push(item);

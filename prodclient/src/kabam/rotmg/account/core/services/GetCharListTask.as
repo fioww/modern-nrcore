@@ -242,7 +242,6 @@ package kabam.rotmg.account.core.services
             var _local_2:String = this.seasonalEventErrorPopUp.message;
             this.closePopupSignal.dispatch(this.seasonalEventErrorPopUp);
             this.seasonalEventModel.isChallenger = 0;
-            ObjectLibrary.usePatchedData = false;
             if (((_local_2 == "Account has fame lower than minimal for the season") || (_local_2 == "No more live left for the current season.")))
             {
                 this.setScreenWithValidData.dispatch(new CharacterSelectionAndNewsScreen());

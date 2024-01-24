@@ -33,7 +33,6 @@ namespace common
     public enum ControlType
     {
         Reboot,
-        PrivateMessageRefresh
     }
 
     public struct NetworkMsg

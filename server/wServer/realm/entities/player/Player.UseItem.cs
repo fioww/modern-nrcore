@@ -123,7 +123,7 @@ namespace wServer.realm.entities
             if (slot == 1 && HasConditionEffect(ConditionEffects.Silenced))
                 return;
             
-            using (TimedLock.Lock(_useLock))
+            lock ((_useLock))
             {
                 var entity = Owner.GetEntity(objId);
                 if (entity == null)

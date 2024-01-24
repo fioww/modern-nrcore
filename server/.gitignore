@@ -236,3 +236,5 @@ _Pvt_Extensions
 *.jtconfig
 
 *.lnk
+*.rdb
+redis*

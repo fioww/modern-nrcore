@@ -302,10 +302,6 @@ package com.company.assembleegameclient.util
             };
             ObjectLibrary.parseFromXML(XML(EmbeddedData.objectFiles[_local_1]));
             currentXmlIsTesting = false;
-            for each (_local_3 in EmbeddedData.objectPatchFiles)
-            {
-                ObjectLibrary.parsePatchXML(XML(_local_3));
-            };
         }
 
         private function parseRegionFiles():void

@@ -5,7 +5,6 @@ nextPetId (int)
 regLock (string) // used as a lock when registering new accounts
 nameLock (string) // used as a lock when renaming accounts
 lock:(accId) (string) // account lock
-dLock:(discordId) (string) // discordId lock
 
 logins
   uuid => (json object)
@@ -57,8 +56,6 @@ account.(accId)
   emotes (string)
   lastSeen (int)
   rankManager (int)
-  discordId (string)
-  privateMessages (string)
 
 classStats.(accId)
   objType => (json string)
@@ -168,8 +165,3 @@ package.(pkgId)
   (accId) => amount account purchased (int)
 
 mutes:(ip) => ""
-
-discordRank
-	discordId => rank
-discordAccount.(discordId)
-   (accId) => 0

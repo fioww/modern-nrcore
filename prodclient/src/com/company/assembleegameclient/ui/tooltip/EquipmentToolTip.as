@@ -51,7 +51,6 @@ package com.company.assembleegameclient.ui.tooltip
         private var descriptionOverride:String;
         private var curItemXML:XML = null;
         private var objectXML:XML = null;
-        private var objectPatchXML:XML = null;
         private var slotTypeToTextBuilder:SlotComparisonFactory;
         private var restrictions:Vector.<Restriction>;
         private var setInfo:Vector.<Effect>;
@@ -85,7 +84,6 @@ package com.company.assembleegameclient.ui.tooltip
             var _local_7:int = ((_arg_2) ? ObjectLibrary.getMatchingSlotIndex(this.objectType, _arg_2) : -1);
             this.slotTypeToTextBuilder = new SlotComparisonFactory();
             this.objectXML = ObjectLibrary.xmlLibrary_[this.objectType];
-            this.objectPatchXML = ObjectLibrary.xmlPatchLibrary_[this.objectType];
             this.isEquippable = (!(_local_7 == -1));
             this.setInfo = new Vector.<Effect>();
             this.effects = new Vector.<Effect>();
@@ -211,13 +209,6 @@ package com.company.assembleegameclient.ui.tooltip
             if (this.objectXML.hasOwnProperty("feedPower"))
             {
                 _local_1 = this.objectXML.feedPower;
-                if (((ObjectLibrary.usePatchedData) && (this.objectPatchXML)))
-                {
-                    if (this.objectPatchXML.hasOwnProperty("feedPower"))
-                    {
-                        _local_1 = this.objectPatchXML.feedPower;
-                    };
-                };
                 _local_2 = (((this.playerCanUse) || (this.player == null)) ? 0xFFFFFF : 16549442);
                 this.powerText = new TextFieldDisplayConcrete().setSize(12).setColor(_local_2).setBold(true).setTextWidth((((MAX_WIDTH - this.icon.width) - 4) - 30)).setWordWrap(true);
                 this.powerText.setStringBuilder(new StaticStringBuilder().setString(("Feed Power: " + _local_1)));
@@ -1367,14 +1358,7 @@ package com.company.assembleegameclient.ui.tooltip
             }
             else
             {
-                if ((((ObjectLibrary.usePatchedData) && (this.objectPatchXML)) && (this.objectPatchXML.hasOwnProperty("Description"))))
-                {
-                    this.descText.setStringBuilder(new LineBuilder().setParams(String(this.objectPatchXML.Description)));
-                }
-                else
-                {
-                    this.descText.setStringBuilder(new LineBuilder().setParams(String(this.objectXML.Description)));
-                };
+                this.descText.setStringBuilder(new LineBuilder().setParams(String(this.objectXML.Description)));
             };
             this.descText.filters = FilterUtil.getStandardDropShadowFilter();
             waiter.push(this.descText.textChanged);

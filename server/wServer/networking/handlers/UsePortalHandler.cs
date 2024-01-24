@@ -61,7 +61,7 @@ namespace wServer.networking.handlers
             if (portal == null || !portal.Usable)
                 return;
 
-            using (TimedLock.Lock(portal.CreateWorldLock))
+            lock ((portal.CreateWorldLock))
             {
                 var world = portal.WorldInstance;
 

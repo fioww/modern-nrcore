@@ -107,7 +107,6 @@ package com.company.assembleegameclient.screens
             if (_arg_1 == 0)
             {
                 this.seasonalEventModel.isChallenger = 0;
-                ObjectLibrary.usePatchedData = false;
                 this.runTasks();
             }
             else
@@ -117,7 +116,6 @@ package com.company.assembleegameclient.screens
                     if (this.isAccountCreationDateValid())
                     {
                         this.seasonalEventModel.isChallenger = 1;
-                        ObjectLibrary.usePatchedData = true;
                         this.runTasks();
                     }
                     else

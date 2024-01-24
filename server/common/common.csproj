@@ -76,7 +76,6 @@
     <Compile Include="resources\ChangePassword.cs" />
     <Compile Include="resources\MysteryBoxes.cs" />
     <Compile Include="resources\Packages.cs" />
-    <Compile Include="resources\PrivateMessages.cs" />
     <Compile Include="resources\Ranks.cs" />
     <Compile Include="resources\Tinker.cs" />
     <Compile Include="resources\WorldData.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="terrain\Json2Wmap.cs" />
     <Compile Include="terrain\TerrainTile.cs" />
     <Compile Include="terrain\WorldMapExporter.cs" />
-    <Compile Include="TimedLock.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WeakDictionary.cs" />
     <Compile Include="resources\Resources.cs" />

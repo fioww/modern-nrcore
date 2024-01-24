@@ -27,7 +27,6 @@ package com.company.assembleegameclient.objects
         public static var playerClassAbbr_:Dictionary = new Dictionary();
         public static const propsLibrary_:Dictionary = new Dictionary();
         public static const xmlLibrary_:Dictionary = new Dictionary();
-        public static const xmlPatchLibrary_:Dictionary = new Dictionary();
         public static const setLibrary_:Dictionary = new Dictionary();
         public static const idToType_:Dictionary = new Dictionary();
         public static const typeToDisplayId_:Dictionary = new Dictionary();
@@ -42,7 +41,6 @@ package com.company.assembleegameclient.objects
         public static const ENEMY_FILTER_LIST:Vector.<String> = new <String>["None", "Hp", "Defense"];
         public static const TILE_FILTER_LIST:Vector.<String> = new <String>["ALL", "Walkable", "Unwalkable", "Slow", "Speed=1"];
         public static const defaultProps_:ObjectProperties = new ObjectProperties(null);
-        public static var usePatchedData:Boolean = false;
         public static const TYPE_MAP:Object = {
             "ArenaGuard":ArenaGuard,
             "ArenaPortal":ArenaPortal,
@@ -114,30 +112,6 @@ package com.company.assembleegameclient.objects
             {
                 dungeonsXMLLibrary_[currentDungeon][_arg_1] = _arg_2;
                 propsLibrary_[_arg_1].belonedDungeon = currentDungeon;
-            };
-        }
-
-        public static function parsePatchXML(_arg_1:XML, _arg_2:Function=null):void
-        {
-            var _local_3:XML;
-            var _local_4:String;
-            var _local_5:String;
-            var _local_6:int;
-            var _local_7:ObjectProperties;
-            for each (_local_3 in _arg_1.Object)
-            {
-                _local_4 = String(_local_3.@id);
-                _local_5 = _local_4;
-                if (_local_3.hasOwnProperty("DisplayId"))
-                {
-                    _local_5 = _local_3.DisplayId;
-                };
-                _local_6 = int(_local_3.@type);
-                _local_7 = propsLibrary_[_local_6];
-                if (_local_7 != null)
-                {
-                    xmlPatchLibrary_[_local_6] = _local_3;
-                };
             };
         }
 

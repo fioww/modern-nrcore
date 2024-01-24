@@ -203,7 +203,7 @@ namespace wServer.realm
             {
                 // disconnect current connected client (if any)
                 var otherClients = client.Manager.Clients.Keys
-                    .Where(c => c == client || c.Account != null && (c.Account.AccountId == acc.AccountId || c.Account.DiscordId != null && c.Account.DiscordId == acc.DiscordId));
+                    .Where(c => c == client || c.Account != null && (c.Account.AccountId == acc.AccountId));
                 foreach (var otherClient in otherClients)
                     otherClient.Disconnect();
 

@@ -19,7 +19,7 @@ namespace wServer.realm.entities
 
         public new bool Add(Entity e)
         {
-            using (TimedLock.Lock(_changeLock))
+            lock ((_changeLock))
             {
                 var added = base.Add(e);
                 if (added)
@@ -31,7 +31,7 @@ namespace wServer.realm.entities
 
         public new bool Remove(Entity e)
         {
-            using (TimedLock.Lock(_changeLock))
+            lock ((_changeLock))
             {
                 e.StatChanged -= _player.HandleStatChanges;
                 return base.Remove(e);
@@ -40,7 +40,7 @@ namespace wServer.realm.entities
 
         public new void RemoveWhere(Predicate<Entity> match)
         {
-            using (TimedLock.Lock(_changeLock))
+            lock ((_changeLock))
             {
                 foreach (var e in this.Where(match.Invoke))
                     e.StatChanged -= _player.HandleStatChanges;
@@ -87,7 +87,7 @@ namespace wServer.realm.entities
             if (e == null || e != this && statChange.UpdateSelfOnly)
                 return;
 
-            using (TimedLock.Lock(_statUpdateLock))
+            lock ((_statUpdateLock))
             {
                 if (e == this && statChange.Stat == StatsType.None)
                     return;
@@ -104,7 +104,7 @@ namespace wServer.realm.entities
 
         private void SendNewTick(RealmTime time)
         {
-            using (TimedLock.Lock(_statUpdateLock))
+            lock ((_statUpdateLock))
             {
                 _updateStatuses = _statUpdates.Select(_ => new ObjectStats()
                 {

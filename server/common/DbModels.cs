@@ -256,9 +256,6 @@ namespace common
 
             if (field != null)
                 return;
-
-            if (DiscordId != null)
-                DiscordRank = (int) db.HashGet("discordRank", DiscordId);
             
             var time = Utils.FromUnixTimestamp(BanLiftTime);
             if (!Banned || (BanLiftTime <= -1 || time > DateTime.UtcNow)) return;
@@ -268,7 +265,6 @@ namespace common
         }
 
         public int AccountId { get; private set; }
-        public int DiscordRank { get; private set; }
 
         public int AccountIdOverride
         {
@@ -417,7 +413,7 @@ namespace common
             set { SetValue<int>("nextCharId", value); }
         }
 
-        public int LegacyRank
+        public int Rank
         {
             get { return GetValue<int>("rank"); }
             set { SetValue<int>("rank", value); }
@@ -512,18 +508,7 @@ namespace common
             get { return GetValue<bool>("rankManager"); }
             set { SetValue<bool>("rankManager", value); }
         }
-
-        public string DiscordId
-        {
-            get { return GetValue<string>("discordId"); }
-            set { SetValue<string>("discordId", value); }
-        }
-
-        public int Rank
-        {
-            get { return DiscordRank > LegacyRank ? DiscordRank : LegacyRank; }
-        }
-
+        
         public int SupporterPoints
         {
             get { return GetValue<int>("spPoints"); }
@@ -534,29 +519,6 @@ namespace common
         {
             get { return GetValue<int>("challengerStarBG"); }
             set { SetValue<int>("challengerStarBG", value); }
-        }
-
-        public PrivateMessages PrivateMessages
-        {
-            get
-            {
-                var pMessages = GetValue<string>("privateMessages");
-                return pMessages != null
-                    ? Utils.FromJson<PrivateMessages>(pMessages)
-                    : null;
-            }
-            set { SetValue<string>("privateMessages", value.ToJson()); }
-        }
-
-        public Task AddPrivateMessage(int senderId, string subject, string message)
-        {
-            var messages = PrivateMessages ?? new PrivateMessages(AccountId, new List<PrivateMessages.PrivateMessage>());
-            if (messages.NeedsFix())
-                messages.FixFromOldBuild(this);
-            var msg = new PrivateMessages.PrivateMessage(senderId, AccountId, subject, message, DateTime.UtcNow.ToUnixTimestamp());
-            messages.Messages.Add(msg);
-            PrivateMessages = messages;
-            return FlushAsync();
         }
 
         public void RefreshLastSeen()
@@ -1296,7 +1258,7 @@ namespace common
         private bool UpdateList(Tinker quest, Task<bool> task, bool add)
         {
             if (!(!task.IsCanceled && task.Result)) return false;
-            using (TimedLock.Lock(listLock))
+            lock ((listLock))
             {
                 if (add)
                     entries.Add(quest);
@@ -1308,7 +1270,7 @@ namespace common
 
         public Tinker GetQuestForAccount(int accountId)
         {
-            using (TimedLock.Lock(listLock))
+            lock ((listLock))
             {
                 return entries.FirstOrDefault(_ => _.OwnerId == accountId);
             }

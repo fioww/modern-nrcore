@@ -185,14 +185,6 @@ package io.decagames.rotmg.pets.windows.yard.feed
         {
             var _local_3:XML;
             var _local_2:XML = ObjectLibrary.xmlLibrary_[_arg_1];
-            if (ObjectLibrary.usePatchedData)
-            {
-                _local_3 = ObjectLibrary.xmlPatchLibrary_[_arg_1];
-                if (((_local_3) && (_local_3.hasOwnProperty("feedPower"))))
-                {
-                    return (true);
-                };
-            };
             return (_local_2.hasOwnProperty("feedPower"));
         }
 

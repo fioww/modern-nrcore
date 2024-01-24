@@ -44,14 +44,6 @@ package io.decagames.rotmg.pets.windows.yard.feed.items
             _local_1 = _local_1.clone();
             var _local_2:XML = ObjectLibrary.xmlLibrary_[this._item.getItemId()];
             this._feedPower = _local_2.feedPower;
-            if (ObjectLibrary.usePatchedData)
-            {
-                _local_4 = ObjectLibrary.xmlPatchLibrary_[this._item.getItemId()];
-                if (_local_4.hasOwnProperty("feedPower"))
-                {
-                    this._feedPower = _local_4.feedPower;
-                };
-            };
             var _local_3:BitmapTextFactory = StaticInjectorContext.getInjector().getInstance(BitmapTextFactory);
             if ((((_local_2) && (_local_2.hasOwnProperty("Quantity"))) && (_local_3)))
             {
