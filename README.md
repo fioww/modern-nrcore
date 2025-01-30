@@ -10,5 +10,7 @@ For any contributions, make a [PR](https://github.com/fioww/modern-nrcore/pulls)
 ---------------
 
 ### Credits
-- Nilly's Realm team
+- The Nilly's Realm team
 - Fiow
+- Tyfo
+- Zolmex
