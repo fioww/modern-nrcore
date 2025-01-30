@@ -896,13 +896,19 @@ namespace common
                 BitConverter.GetBytes(character.CharId));
         }
 
-        private ushort[] InitInventory(ushort[] givenItems)
+        private ushort[][] InitInventory(ushort[] givenItems)
         {
             var inv = Utils.ResizeArray(givenItems, _resources.Settings.InventorySize);
-            for (var i = givenItems.Length; i < inv.Length; i++)
+            var pots = new ushort[2];
+            for (var i = 0; i < inv.Length; i++)
+            {
+                if (i < givenItems.Length && (givenItems[i] == 0xa22 || givenItems[i] == 0xa23))
+                    pots[0xa22 - givenItems[i]]++;
+                else if (i < givenItems.Length) continue;
                 inv[i] = 0xffff;
+            }
 
-            return inv;
+            return new[] { inv, pots };
         }
 
         public CreateStatus CreateCharacter(
@@ -951,14 +957,15 @@ namespace common
             var newId = (int) _db.HashIncrement(acc.Key, "nextCharId");
 
             var newCharacters = _resources.Settings.Characters;
+            var invData = InitInventory(playerDesc.Equipment);
             character = new DbChar(acc, newId)
             {
                 ObjectType = type,
                 Level = newCharacters.Level,
                 Experience = 0,
                 Fame = 0,
-                Items = InitInventory(playerDesc.Equipment),
-                Stats = new int[]
+                Items = invData[0],
+                Stats = new []
                 {
                     playerDesc.Stats[0].StartingValue,
                     playerDesc.Stats[1].StartingValue,
@@ -977,7 +984,9 @@ namespace common
                 PetId = 0xffff,
                 FameStats = new byte[0],
                 CreateTime = DateTime.Now,
-                LastSeen = DateTime.Now
+                LastSeen = DateTime.Now,
+                HealthStackCount = invData[1][0],
+                MagicStackCount = invData[1][1],
             };
 
             if (newCharacters.Maxed)

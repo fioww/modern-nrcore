@@ -391,17 +391,20 @@ namespace wServer.realm.entities
             return ret;
         }
 
-        // todo: min/max distance
         private void AEBulletCreate(Item item, RealmTime time, ActivateEffect eff, Position target)
         {
             var shootAngle = Math.Atan2(target.Y - Y, target.X - X);
+            var dist = Math.Sqrt(Math.Pow(target.X - X, 2) + Math.Pow(target.Y - Y, 2));
+            var fixedDist = Math.Max(eff.MinDistance, Math.Min(dist, eff.MaxDistance));
+            var fixedX = X + fixedDist * Math.Cos(shootAngle);
+            var fixedY = Y + fixedDist * Math.Sin(shootAngle);
             var angle = shootAngle + eff.OffsetAngle * (Math.PI / 180);
             var prjDesc = item.Projectiles[0];
             var midway = Projectile.GetPosition(prjDesc.LifetimeMS / 2, projectileId, prjDesc, (float)angle, 1);
             var startingPos = new Position
             {
-                X = target.X - midway.X,
-                Y = target.Y - midway.Y,
+                X = (float)fixedX - midway.X,
+                Y = (float)fixedY - midway.Y,
             };
             var batch = new Packet[eff.NumShots];
             for (var i = 0; i < batch.Length; i++)

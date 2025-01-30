@@ -452,7 +452,7 @@ namespace common.resources
             GapAngle = e.ParseInt("@gapAngle");
             GapTiles = e.ParseFloat("@gapTiles");
             OffsetAngle = e.ParseFloat("@offsetAngle", 90);
-            MinDistance = e.ParseFloat("@minDistance");
+            MinDistance = e.ParseFloat("@minDistance", 1);
             MaxDistance = e.ParseFloat("@maxDistance", 4.4f);
             ThrowTime = e.ParseFloat("@throwTime", 0.8f);
             ImpactDamage = e.ParseInt("@impactDamage");
