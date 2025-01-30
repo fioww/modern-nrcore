@@ -155,6 +155,8 @@ package com.company.assembleegameclient.util
             AssetLibrary.addImageSet("archbishopObjects64x64", new EmbeddedAssets.archbishopObjects64x64Embed_().bitmapData, 64, 64);
             AssetLibrary.addImageSet("ancientRuinsObjects8x8", new EmbeddedAssets.ancientRuinsObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("ancientRuinsObjects16x16", new EmbeddedAssets.ancientRuinsObjects16x16Embed_().bitmapData, 16, 16);
+
+            AssetLibrary.addImageSet("editorTools", new EmbeddedAssets.editorTools().bitmapData, 16, 16);
         }
 
         private function addAnimatedCharacters():void

@@ -2,12 +2,14 @@
 
 package com.company.assembleegameclient.objects
 {
-    import flash.display.BitmapData;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import flash.utils.Dictionary;
-    import com.company.assembleegameclient.objects.particles.EffectProperties;
+import com.company.assembleegameclient.objects.particles.EffectProperties;
+import com.company.assembleegameclient.util.AnimatedChar;
 
-    public class TextureData 
+import flash.display.BitmapData;
+import flash.geom.Rectangle;
+import flash.utils.Dictionary;
+
+public class TextureData
     {
 
         public var texture_:BitmapData = null;
@@ -18,6 +20,12 @@ package com.company.assembleegameclient.objects
         public var remoteTextureDir_:int;
         public var effectProps_:EffectProperties = null;
 
+        // what a joke lol
+        public function getRegionTexture(objectXML:XML):BitmapData {
+            this.texture_ = new BitmapData(8, 8, true, 0);
+            this.texture_.fillRect(new Rectangle(0, 0, 8, 8), 1593835520 | int(objectXML.Color));
+            return this.texture_;
+        }
 
         public function getTexture(_arg_1:int=0):BitmapData
         {

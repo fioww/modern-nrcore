@@ -80,6 +80,17 @@ package com.company.assembleegameclient.objects
             "YardUpgrader":YardUpgrader,
             "WallOfFame":WallOfFame
         };
+
+        public static function search(text:String):Vector.<int> {
+            var ret:Vector.<int> = new Vector.<int>();
+            for (var item:String in idToType_) {
+                if (item.toLowerCase().indexOf(text.toLowerCase()) != -1) {
+                    ret.push(idToType_[item]);
+                }
+            }
+            return ret;
+        }
+
         private static var currentDungeon:String = "";
 
 

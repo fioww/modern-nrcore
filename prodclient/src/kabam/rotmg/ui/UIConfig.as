@@ -67,8 +67,6 @@ package kabam.rotmg.ui
     import kabam.rotmg.ui.view.TitleMediator;
     import com.company.assembleegameclient.screens.NewCharacterScreen;
     import kabam.rotmg.ui.view.NewCharacterMediator;
-    import com.company.assembleegameclient.mapeditor.MapEditor;
-    import kabam.rotmg.ui.view.MapEditorMediator;
     import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
     import kabam.rotmg.ui.view.CurrentCharacterRectMediator;
     import com.company.assembleegameclient.screens.charrects.CharacterRectList;
@@ -257,7 +255,6 @@ package kabam.rotmg.ui
             this.mediatorMap.map(AccountScreen).toMediator(AccountScreenMediator);
             this.mediatorMap.map(TitleView).toMediator(TitleMediator);
             this.mediatorMap.map(NewCharacterScreen).toMediator(NewCharacterMediator);
-            this.mediatorMap.map(MapEditor).toMediator(MapEditorMediator);
             this.mediatorMap.map(CurrentCharacterRect).toMediator(CurrentCharacterRectMediator);
             this.mediatorMap.map(CharacterRectList).toMediator(CharacterRectListMediator);
             this.mediatorMap.map(ErrorDialog).toMediator(ErrorDialogMediator);
@@ -341,7 +338,7 @@ package kabam.rotmg.ui
             else
             {
                 this.injector.map(NoServersDialogFactory).toSingleton(TestingNoServersDialogFactory);
-            };
+            }
         }
 
         private function setupCharacterWindow():void

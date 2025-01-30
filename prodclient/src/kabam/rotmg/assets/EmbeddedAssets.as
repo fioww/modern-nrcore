@@ -254,6 +254,10 @@ package kabam.rotmg.assets
         public static var ancientRuinsObjects16x16Embed_:Class = EmbeddedAssets_ancientRuinsObjects16x16Embed_;
         public static var ancientRuinsChars16x16Embed_:Class = EmbeddedAssets_ancientRuinsChars16x16Embed_;
         public static var ancientRuinsChars8x8Embed_:Class = EmbeddedAssets_ancientRuinsChars8x8Embed_;
+
+        [Embed(source="editor/Background.png")] public static var editorBg:Class;
+        [Embed(source="editor/Tools.png")] public static var editorTools:Class;
+
         public static var models_:Object = {
             "Monster Tank1":new monsterTank1Embed_(),
             "Monster Tank2":new monsterTank2Embed_(),

@@ -2,12 +2,15 @@
 
 package com.company.assembleegameclient.map
 {
-    import flash.utils.Dictionary;
+import com.company.assembleegameclient.objects.TextureData;
+
+import flash.utils.Dictionary;
 
     public class RegionLibrary 
     {
 
         public static const xmlLibrary_:Dictionary = new Dictionary();
+        public static var typeToTextureData_:Dictionary = new Dictionary();
         public static var idToType_:Dictionary = new Dictionary();
         public static const ENTRY_REGION_TYPE:uint = 1;
         public static const EXIT_REGION_TYPE:uint = 48;
@@ -22,6 +25,7 @@ package com.company.assembleegameclient.map
                 _local_3 = int(_local_2.@type);
                 xmlLibrary_[_local_3] = _local_2;
                 idToType_[String(_local_2.@id)] = _local_3;
+                typeToTextureData_[_local_3] = new TextureData().getRegionTexture(_arg_1);
             };
         }
 
@@ -45,6 +49,15 @@ package com.company.assembleegameclient.map
             return (uint(_local_2.Color));
         }
 
+        public static function search(text:String):Vector.<int> {
+            var ret:Vector.<int> = new Vector.<int>();
+            for (var item:String in idToType_) {
+                if (item.toLowerCase().indexOf(text.toLowerCase()) != -1) {
+                    ret.push(idToType_[item]);
+                }
+            }
+            return ret;
+        }
 
     }
 }//package com.company.assembleegameclient.map

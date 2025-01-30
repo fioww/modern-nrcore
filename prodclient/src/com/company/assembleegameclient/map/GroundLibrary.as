@@ -76,6 +76,15 @@ package com.company.assembleegameclient.map
             return (tileTypeColorDict_[_arg_1]);
         }
 
+        public static function search(text:String):Vector.<int> {
+            var ret:Vector.<int> = new Vector.<int>();
+            for (var item:String in idToType_) {
+                if (item.toLowerCase().indexOf(text.toLowerCase()) != -1) {
+                    ret.push(idToType_[item]);
+                }
+            }
+            return ret;
+        }
 
     }
 }//package com.company.assembleegameclient.map

@@ -27,10 +27,11 @@ package kabam.rotmg.ui.view
     import flash.external.ExternalInterface;
     import kabam.rotmg.ui.model.EnvironmentData;
     import kabam.rotmg.legends.view.LegendsView;
-    import com.company.assembleegameclient.mapeditor.MapEditor;
     import flash.events.Event;
 
-    public class TitleMediator extends Mediator 
+import shared.realmeditor.EditorLoader;
+
+public class TitleMediator extends Mediator
     {
 
         private static var supportCalledBefore:Boolean = false;
@@ -201,7 +202,7 @@ package kabam.rotmg.ui.view
 
         private function showMapEditor():void
         {
-            this.setScreen.dispatch(new MapEditor());
+            this.setScreen.dispatch(EditorLoader.load(this.view));
         }
 
         private function attemptToCloseClient():void
