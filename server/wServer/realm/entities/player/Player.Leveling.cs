@@ -262,7 +262,7 @@ namespace wServer.realm.entities
         {
             if (Experience - GetLevelExp(Level) >= ExperienceGoal && Level < 20)
             {
-                LevelUp(1);
+                LevelUp();
                 return true;
             }
             
@@ -270,10 +270,11 @@ namespace wServer.realm.entities
             return false;
         }
 
-        private void LevelUp(int times, bool sendMessage = true)
+        private void LevelUp(int times = 1, bool sendMessage = true)
         {
             var statInfo = Manager.Resources.GameData.Classes[ObjectType].Stats;
-            for (var j = 0; j < times; j++)
+            var lt = Math.Min(20 - Level, times);
+            for (var j = 0; j < lt; j++)
             { 
                 Level++;
                 for (var i = 0; i < statInfo.Length; i++)

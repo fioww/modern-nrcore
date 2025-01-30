@@ -25,18 +25,12 @@ namespace wServer.realm.entities
         public int LastClientTime = -1;
         public long LastServerTime = -1;
 
-        private readonly ConcurrentQueue<long> _shootAckTimeout = 
-            new ConcurrentQueue<long>();
-        private readonly ConcurrentQueue<long> _updateAckTimeout =
-            new ConcurrentQueue<long>(); 
-        private readonly ConcurrentQueue<long> _gotoAckTimeout =
-            new ConcurrentQueue<long>();
-        private readonly ConcurrentQueue<int> _move =
-            new ConcurrentQueue<int>();
-        private readonly ConcurrentQueue<int> _clientTimeLog =
-            new ConcurrentQueue<int>();
-        private readonly ConcurrentQueue<int> _serverTimeLog =
-            new ConcurrentQueue<int>();
+        private ConcurrentQueue<long> _shootAckTimeout = new();
+        private ConcurrentQueue<long> _updateAckTimeout = new(); 
+        private ConcurrentQueue<long> _gotoAckTimeout = new();
+        private ConcurrentQueue<int> _move = new();
+        private ConcurrentQueue<int> _clientTimeLog = new();
+        private ConcurrentQueue<int> _serverTimeLog = new();
         
         bool KeepAlive(RealmTime time)
         {

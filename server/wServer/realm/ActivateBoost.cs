@@ -59,5 +59,13 @@ namespace wServer.realm
         {
             _offset += amount;
         }
+        
+        public void PopAll()
+        {
+            for (int i = 0; i < _stack.Count; i++)
+                _stack[i] = 0;
+            for (int i = 0; i < _base.Count; i++)
+                _base[i] = 0;
+        }
     }
 }

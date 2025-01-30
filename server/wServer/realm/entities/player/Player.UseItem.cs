@@ -493,7 +493,7 @@ namespace wServer.realm.entities
                 return;
             }
             
-            LevelUp(20 - Level, false);
+            LevelUp(20, false);
             SendInfo("Successfully leveled up to level 20!");
         }
         

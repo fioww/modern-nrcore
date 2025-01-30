@@ -448,6 +448,27 @@ namespace wServer.realm.entities
                         : client.Account.GlowColor;
                 });
         }
+        
+        public void Reload()
+        {
+            // collision
+            CollisionNode = null;
+            Parent = null;
+        
+            // effects
+            Stats.ResetBoosts();
+            InitPlayer();
+            ConditionEffects = 0;
+        
+            // Player.KeepAlive & Player.Update statics
+            _shootAckTimeout = new();
+            _updateAckTimeout = new();
+            _gotoAckTimeout = new();
+            _move = new();
+            _clientTimeLog = new();
+            _serverTimeLog = new();
+            _clientStatic.Clear();
+        }
 
         byte[,] tiles;
         public FameCounter FameCounter { get; private set; }

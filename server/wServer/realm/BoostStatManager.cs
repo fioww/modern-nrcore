@@ -165,5 +165,11 @@ namespace wServer.realm
             var i = StatsManager.GetStatIndex(stat);
             _boost[i] = value - _parent.Base[i];
         }
+        
+        public void PopAll()
+        {
+            for (int i = 0; i < _activateBoost?.Length; i++)
+                _activateBoost[i].PopAll();
+        }
     }
 }

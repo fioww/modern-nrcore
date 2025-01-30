@@ -29,9 +29,9 @@ namespace wServer.realm
         public CollisionMap<Entity> Parent { get; set; }
         public event EventHandler<StatChangedEventArgs> StatChanged;
 
-        private readonly Position[] _posHistory;
+        private Position[] _posHistory;
         private byte _posIdx;
-        private readonly int[] _effects;
+        private int[] _effects;
         private bool _tickingEffects;
 
         private readonly ObjectDesc _desc;
@@ -98,7 +98,7 @@ namespace wServer.realm
         }
         
         Entity IProjectileOwner.Self => this;
-        private readonly Projectile[] _projectiles;
+        private Projectile[] _projectiles;
         Projectile[] IProjectileOwner.Projectiles => _projectiles;
         protected byte projectileId;
         
@@ -136,9 +136,7 @@ namespace wServer.realm
 
             if (_desc.Player)
             {
-                _posHistory = new Position[256];
-                _projectiles = new Projectile[256];
-                _effects = new int[EffectCount];
+                InitPlayer();
                 return;
             }
 
@@ -154,6 +152,13 @@ namespace wServer.realm
                 _effects = new int[EffectCount];
                 return;
             }
+        }
+
+        protected void InitPlayer()
+        {
+            _posHistory = new Position[256];
+            _projectiles = new Projectile[256];
+            _effects = new int[EffectCount];
         }
 
         protected virtual void ExportStats(IDictionary<StatsType, object> stats)

@@ -59,9 +59,9 @@ package com.company.assembleegameclient.util
         public static const ATT_BOOST:uint = 42;
         public static const DEF_BOOST:uint = 43;
         public static const SPD_BOOST:uint = 44;
-        public static const VIT_BOOST:uint = 45;
-        public static const WIS_BOOST:uint = 46;
-        public static const DEX_BOOST:uint = 47;
+        public static const DEX_BOOST:uint = 45;
+        public static const VIT_BOOST:uint = 46;
+        public static const WIS_BOOST:uint = 47;
         public static const SILENCED:uint = 48;
         public static const EXPOSED:uint = 49;
         public static const ENERGIZED:uint = 50;
@@ -70,9 +70,9 @@ package com.company.assembleegameclient.util
         public static const ATT_DEBUFF:uint = 53;
         public static const DEF_DEBUFF:uint = 54;
         public static const SPD_DEBUFF:uint = 55;
-        public static const VIT_DEBUFF:uint = 56;
-        public static const WIS_DEBUFF:uint = 57;
-        public static const DEX_DEBUFF:uint = 58;
+        public static const DEX_DEBUFF:uint = 56;
+        public static const VIT_DEBUFF:uint = 57;
+        public static const WIS_DEBUFF:uint = 58;
         public static const INSPIRED:uint = 59;
         public static const MUTED:uint = 60;
         public static const HIDDEN:uint = 61;

@@ -10,7 +10,7 @@ namespace wServer.realm.entities
     public class UpdatedSet : HashSet<Entity>
     {
         private readonly Player _player;
-        private readonly object _changeLock = new object();
+        private readonly object _changeLock = new();
 
         public UpdatedSet(Player player)
         {
@@ -59,23 +59,22 @@ namespace wServer.realm.entities
     {
         public HashSet<Entity> clientEntities => _clientEntities;
 
-        public readonly ConcurrentQueue<Entity> ClientKilledEntity = new ConcurrentQueue<Entity>();
+        public readonly ConcurrentQueue<Entity> ClientKilledEntity = new();
 
         public const int Radius = 20;
         public const int RadiusSqr = Radius * Radius;
         private const int StaticBoundingBox = Radius * 2;
         private const int AppoxAreaOfSight = (int)(Math.PI * Radius * Radius + 1);
 
-        private readonly HashSet<IntPoint> _clientStatic = new HashSet<IntPoint>();
+        private readonly HashSet<IntPoint> _clientStatic = new();
         private readonly UpdatedSet _clientEntities;
         private ObjectStats[] _updateStatuses;
         private Update.TileData[] _tiles;
         private ObjectDef[] _newObjects;
         private int[] _removedObjects;
 
-        private readonly object _statUpdateLock = new object();
-        private readonly Dictionary<Entity, Dictionary<StatsType, object>> _statUpdates = 
-            new Dictionary<Entity, Dictionary<StatsType, object>>(); 
+        private readonly object _statUpdateLock = new();
+        private readonly Dictionary<Entity, Dictionary<StatsType, object>> _statUpdates = new(); 
 
         public Sight Sight { get; private set; }
 
@@ -270,7 +269,7 @@ namespace wServer.realm.entities
             }
         }
 
-        private readonly List<ObjectDef> _newStatics = new List<ObjectDef>(AppoxAreaOfSight);
+        private readonly List<ObjectDef> _newStatics = new(AppoxAreaOfSight);
         private IEnumerable<ObjectDef> GetNewStatics(HashSet<IntPoint> visibleTiles)
         {
             _newStatics.Clear();

@@ -286,5 +286,10 @@ namespace wServer.realm
                     return StatsType.None;
             }
         }
+        public void ResetBoosts()
+        {
+            Boost.PopAll();
+            Boost.ReCalculateValues();
+        }
     }
 }
