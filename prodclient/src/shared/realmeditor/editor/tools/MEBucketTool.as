@@ -2,36 +2,13 @@ package shared.realmeditor.editor.tools {
 import shared.realmeditor.editor.MEBrush;
 import shared.realmeditor.editor.MEDrawType;
 import shared.realmeditor.editor.MapData;
-import shared.realmeditor.editor.MapTileData;
-import shared.realmeditor.editor.MapTileData;
-import shared.realmeditor.editor.actions.MapAction;
-import shared.realmeditor.editor.actions.MapActionSet;
-import shared.realmeditor.editor.actions.MapReplaceTileAction;
-import shared.realmeditor.editor.actions.data.MapSelectData;
-import shared.realmeditor.editor.ui.MainView;
-import shared.realmeditor.editor.MapHistory;
-import shared.realmeditor.editor.ui.MapView;
-import shared.realmeditor.editor.ui.TileMapView;
-
-import flash.display.Shape;
-
-import shared.realmeditor.editor.MEBrush;
-import shared.realmeditor.editor.MEDrawType;
-
-import shared.realmeditor.editor.MapData;
-
 import shared.realmeditor.editor.MapHistory;
 import shared.realmeditor.editor.MapTileData;
 import shared.realmeditor.editor.actions.MapActionSet;
 import shared.realmeditor.editor.actions.MapReplaceTileAction;
-
 import shared.realmeditor.editor.ui.MainView;
 import shared.realmeditor.editor.ui.TileMapView;
-import shared.realmeditor.util.IntPoint;
-
-import shared.realmeditor.util.IntPoint;
-
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
 public class MEBucketTool extends METool {
 

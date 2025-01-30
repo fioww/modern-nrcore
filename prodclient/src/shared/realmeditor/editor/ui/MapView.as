@@ -28,7 +28,7 @@ import shared.realmeditor.editor.actions.MapReplaceTileAction;
 import shared.realmeditor.editor.actions.MapSelectAction;
 import shared.realmeditor.editor.actions.data.MapSelectData;
 
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
 public class MapView extends Sprite {
 

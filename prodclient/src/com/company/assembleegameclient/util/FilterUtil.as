@@ -20,6 +20,8 @@ package com.company.assembleegameclient.util
         private static const GREY_COLOR_FILTER:Array = [new ColorMatrixFilter(MoreColorUtil.singleColorFilterMatrix(0x363636))];
         private static const DARK_GREY_COLOR_FILTER:Array = [new ColorMatrixFilter(MoreColorUtil.singleColorFilterMatrix(0x1C1C1C))];
         private static var _CHALLENGER_LEADER_BOARD_DROP_SHADOW:Array = [new DropShadowFilter(0, 0, 0, 1, 8, 8)];
+        public static const GREY_COLOR_FILTER_1:Array = [new ColorMatrixFilter(MoreColorUtil.singleColorFilterMatrix(0x666666))];
+        public static const GREY_COLOR_FILTER_2:Array = [new ColorMatrixFilter(MoreColorUtil.singleColorFilterMatrix(0x444444))];
 
 
         public static function getUILabelDropShadowFilter01():Array

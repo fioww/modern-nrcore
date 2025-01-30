@@ -17,9 +17,9 @@ import shared.realmeditor.editor.MEEvent;
 
 import shared.realmeditor.editor.ui.Constants;
 
-import shared.realmeditor.util.FilterUtil;
+import com.company.assembleegameclient.util.FilterUtil;
 
-import shared.realmeditor.util.FilterUtil;
+import com.company.assembleegameclient.util.FilterUtil;
 
 public class MultiOptionalSwitch extends Sprite {
 

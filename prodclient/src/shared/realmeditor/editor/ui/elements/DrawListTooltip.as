@@ -11,7 +11,7 @@ import flash.text.TextFormatAlign;
 import shared.realmeditor.editor.MEDrawType;
 import shared.realmeditor.editor.ui.Constants;
 
-import shared.realmeditor.util.TextureRedrawer;
+import com.company.assembleegameclient.util.TextureRedrawer;
 
 public class DrawListTooltip extends Tooltip {
 

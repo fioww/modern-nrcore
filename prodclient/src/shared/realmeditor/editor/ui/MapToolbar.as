@@ -8,7 +8,7 @@ import flash.events.MouseEvent;
 
 import shared.realmeditor.editor.tools.METool;
 
-import shared.realmeditor.util.FilterUtil;
+import com.company.assembleegameclient.util.FilterUtil;
 
 public class MapToolbar extends Sprite {
 

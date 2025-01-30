@@ -8,9 +8,9 @@ import shared.realmeditor.editor.ui.MapView;
 import shared.realmeditor.editor.MapHistory;
 
 import shared.realmeditor.editor.ui.MainView;
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
 public class MELineTool extends METool {
 

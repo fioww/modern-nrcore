@@ -168,7 +168,7 @@ import shared.realmeditor.editor.ui.MapSelectorView;
 import shared.realmeditor.editor.ui.MapView;
 import shared.realmeditor.editor.ui.elements.TextTooltip;
 
-import shared.realmeditor.util.MoreColorUtil;
+import com.company.util.MoreColorUtil;
 
 class MapSelectorSlot extends Sprite {
 

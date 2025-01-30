@@ -15,7 +15,7 @@ import shared.realmeditor.editor.MapTileData;
 import shared.realmeditor.editor.actions.data.MapSelectData;
 import shared.realmeditor.editor.ui.MainView;
 
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
 public class MapDragAction extends MapAction {
 

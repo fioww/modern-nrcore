@@ -32,9 +32,9 @@ import shared.realmeditor.editor.actions.MapSelectAction;
 import shared.realmeditor.editor.actions.data.MapSelectData;
 
 import shared.realmeditor.editor.ui.MainView;
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
 public class MESelectTool extends METool {
 

@@ -34,7 +34,7 @@ import shared.realmeditor.editor.ui.elements.MultiOptionalSwitch;
 import shared.realmeditor.editor.ui.elements.SimpleCheckBox;
 import shared.realmeditor.editor.ui.elements.SimpleTextButton;
 import shared.realmeditor.editor.ui.elements.SimpleTextInput;
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 import shared.realmeditor.util.TimedAction;
 
 public class MainView extends Sprite {

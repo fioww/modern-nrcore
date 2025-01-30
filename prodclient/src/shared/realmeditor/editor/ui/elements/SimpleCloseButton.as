@@ -10,7 +10,7 @@ import flash.events.MouseEvent;
 import shared.realmeditor.editor.ui.Constants;
 
 
-import shared.realmeditor.util.MoreColorUtil;
+import com.company.util.MoreColorUtil;
 
 public class SimpleCloseButton extends Sprite {
 

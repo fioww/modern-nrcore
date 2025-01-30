@@ -19,9 +19,9 @@ import shared.realmeditor.editor.actions.MapReplaceTileAction;
 
 import shared.realmeditor.editor.ui.MainView;
 import shared.realmeditor.editor.ui.TileMapView;
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
 public class MEEraserTool extends METool {
 

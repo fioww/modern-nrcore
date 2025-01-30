@@ -12,7 +12,7 @@ import flash.events.MouseEvent;
 import shared.realmeditor.editor.ui.Constants;
 
 
-import shared.realmeditor.util.FilterUtil;
+import com.company.assembleegameclient.util.FilterUtil;
 
 public class SimpleTextButton extends Sprite {
 

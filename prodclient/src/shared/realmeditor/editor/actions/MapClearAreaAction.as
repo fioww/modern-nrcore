@@ -12,7 +12,7 @@ import shared.realmeditor.editor.MapTileData;
 import shared.realmeditor.editor.ui.MainView;
 import shared.realmeditor.editor.ui.TileMapView;
 
-import shared.realmeditor.util.IntPoint;
+import com.company.util.IntPoint;
 
 public class MapClearAreaAction extends MapAction {
 
