@@ -20,13 +20,6 @@ public class TextureData
         public var remoteTextureDir_:int;
         public var effectProps_:EffectProperties = null;
 
-        // what a joke lol
-        public function getRegionTexture(objectXML:XML):BitmapData {
-            this.texture_ = new BitmapData(8, 8, true, 0);
-            this.texture_.fillRect(new Rectangle(0, 0, 8, 8), 1593835520 | int(objectXML.Color));
-            return this.texture_;
-        }
-
         public function getTexture(_arg_1:int=0):BitmapData
         {
             return (null);

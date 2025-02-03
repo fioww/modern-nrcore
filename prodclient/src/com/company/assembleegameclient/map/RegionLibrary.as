@@ -2,7 +2,7 @@
 
 package com.company.assembleegameclient.map
 {
-import com.company.assembleegameclient.objects.TextureData;
+import com.company.assembleegameclient.objects.TextureDataConcrete;
 
 import flash.utils.Dictionary;
 
@@ -25,8 +25,8 @@ import flash.utils.Dictionary;
                 _local_3 = int(_local_2.@type);
                 xmlLibrary_[_local_3] = _local_2;
                 idToType_[String(_local_2.@id)] = _local_3;
-                typeToTextureData_[_local_3] = new TextureData().getRegionTexture(_arg_1);
-            };
+                typeToTextureData_[_local_3] = new TextureDataConcrete(_local_2, true);
+            }
         }
 
         public static function getIdFromType(_arg_1:int):String

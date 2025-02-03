@@ -2,71 +2,79 @@
 
 package com.company.assembleegameclient.objects
 {
-    import flash.display.BitmapData;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.application.api.ApplicationSetup;
-    import com.company.assembleegameclient.util.MaskedImage;
-    import com.company.assembleegameclient.appengine.RemoteTexture;
-    import com.company.util.AssetLibrary;
-    import com.company.assembleegameclient.objects.particles.EffectProperties;
-    import com.company.assembleegameclient.util.AnimatedChars;
-    import com.company.assembleegameclient.util.AnimatedChar;
-    import com.company.assembleegameclient.util.AssetLoader;
-    import flash.utils.Dictionary;
-    import com.company.assembleegameclient.appengine.*;
+import com.company.assembleegameclient.appengine.RemoteTexture;
+import com.company.assembleegameclient.objects.particles.EffectProperties;
+import com.company.assembleegameclient.util.AnimatedChar;
+import com.company.assembleegameclient.util.AnimatedChars;
+import com.company.assembleegameclient.util.AssetLoader;
+import com.company.assembleegameclient.util.MaskedImage;
+import com.company.util.AssetLibrary;
 
-    public class TextureDataConcrete extends TextureData 
+import flash.display.BitmapData;
+import flash.geom.Rectangle;
+import flash.utils.Dictionary;
+
+import kabam.rotmg.application.api.ApplicationSetup;
+import kabam.rotmg.core.StaticInjectorContext;
+
+public class TextureDataConcrete extends TextureData
     {
 
         public static var remoteTexturesUsed:Boolean = false;
 
         private var isUsingLocalTextures:Boolean;
 
-        public function TextureDataConcrete(_arg_1:XML)
+        public function TextureDataConcrete(xml:XML, region:Boolean = false)
         {
             var _local_2:XML;
             super();
+            if (region){
+                this.texture_ = new BitmapData(8, 8, true, 0);
+                this.texture_.fillRect(new Rectangle(0, 0, 8, 8), 1593835520 | int(xml.Color));
+                return;
+            }
+
             this.isUsingLocalTextures = this.getWhetherToUseLocalTextures();
-            if (_arg_1.hasOwnProperty("Texture"))
+            if (xml.hasOwnProperty("Texture"))
             {
-                this.parse(XML(_arg_1.Texture), String(_arg_1.@id));
+                this.parse(XML(xml.Texture), String(xml.@id));
             }
             else
             {
-                if (_arg_1.hasOwnProperty("AnimatedTexture"))
+                if (xml.hasOwnProperty("AnimatedTexture"))
                 {
-                    this.parse(XML(_arg_1.AnimatedTexture), String(_arg_1.@id));
+                    this.parse(XML(xml.AnimatedTexture), String(xml.@id));
                 }
                 else
                 {
-                    if (_arg_1.hasOwnProperty("RemoteTexture"))
+                    if (xml.hasOwnProperty("RemoteTexture"))
                     {
-                        this.parse(XML(_arg_1.RemoteTexture));
+                        this.parse(XML(xml.RemoteTexture));
                     }
                     else
                     {
-                        if (_arg_1.hasOwnProperty("RandomTexture"))
+                        if (xml.hasOwnProperty("RandomTexture"))
                         {
-                            this.parse(XML(_arg_1.RandomTexture), String(_arg_1.@id));
+                            this.parse(XML(xml.RandomTexture), String(xml.@id));
                         }
                         else
                         {
-                            this.parse(_arg_1);
+                            this.parse(xml);
                         };
                     };
                 };
             };
-            for each (_local_2 in _arg_1.AltTexture)
+            for each (_local_2 in xml.AltTexture)
             {
                 this.parse(_local_2);
             };
-            if (_arg_1.hasOwnProperty("Mask"))
+            if (xml.hasOwnProperty("Mask"))
             {
-                this.parse(XML(_arg_1.Mask));
+                this.parse(XML(xml.Mask));
             };
-            if (_arg_1.hasOwnProperty("Effect"))
+            if (xml.hasOwnProperty("Effect"))
             {
-                this.parse(XML(_arg_1.Effect));
+                this.parse(XML(xml.Effect));
             };
         }
 
