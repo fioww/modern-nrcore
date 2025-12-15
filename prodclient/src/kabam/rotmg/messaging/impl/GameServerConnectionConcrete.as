@@ -377,7 +377,7 @@ import robotlegs.bender.framework.api.ILogger;
 
         private function reset():void {
             this.connected = false;
-            this.delayBeforeReconnect = 1;
+            //this.delayBeforeReconnect = 1;
             this.player != null && this.player.dispose();
             this.player = null;
             this.playerId_ = -1;
@@ -2218,7 +2218,6 @@ import robotlegs.bender.framework.api.ILogger;
 
         private function onReconnect(pkt:Reconnect):void
         {
-            this.disconnect();
             var gameId:int = pkt.gameId_;
             var createChar:Boolean = createCharacter_;
             var charId:int = charId_;

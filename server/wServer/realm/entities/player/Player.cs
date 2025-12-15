@@ -459,6 +459,8 @@ namespace wServer.realm.entities
             Stats.ResetBoosts();
             InitPlayer();
             ConditionEffects = 0;
+
+            _dead = false;
         
             // Player.KeepAlive & Player.Update statics
             _shootAckTimeout = new();
@@ -760,7 +762,7 @@ namespace wServer.realm.entities
 
             var dmg = (int)Stats.GetDefenseDamage(projectile.Damage, projectile.ProjDesc.ArmorPiercing);
             if (!HasConditionEffect(ConditionEffects.Invulnerable))
-                HP -= dmg;
+                HP = Math.Max(0, HP - dmg);
             ApplyConditionEffect(projectile.ProjDesc.Effects);
             Owner.BroadcastPacketNearby(new Damage()
             {
@@ -789,7 +791,7 @@ namespace wServer.realm.entities
 
             dmg = (int)Stats.GetDefenseDamage(dmg, armorPierce);
             if (!HasConditionEffect(ConditionEffects.Invulnerable))
-                HP -= dmg;
+                HP = Math.Max(0, HP - dmg);
             Owner.BroadcastPacketNearby(new Damage()
             {
                 TargetId = Id,
@@ -905,7 +907,7 @@ namespace wServer.realm.entities
         private void ReconnectToNexus()
         {
             HP = 1;
-            _client.Reconnect(new Reconnect()
+            Client.Reconnect(new Reconnect()
             {
                 Host = "",
                 Port = 2050,

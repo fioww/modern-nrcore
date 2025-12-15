@@ -22,7 +22,7 @@ namespace wServer.realm.entities
                 if (!(Owner?.StaticObjects.Where(i => i.Value.ObjectType == 0x0731).Count(i => (X - i.Value.X) * (X - i.Value.X) + (Y - i.Value.Y) * (Y - i.Value.Y) < 1) > 0))
                 {
                     if (OxygenBar == 0)
-                        HP -= 10;
+                        HP = Math.Max(0, HP - 10);
                     else
                         OxygenBar -= 2;
 
@@ -60,7 +60,7 @@ namespace wServer.realm.entities
                 {
                     int dmg = (int)Client.Random.NextIntRange((uint)tileDesc.MinDamage, (uint)tileDesc.MaxDamage);
 
-                    HP -= dmg;
+                    HP = Math.Max(0, HP - dmg);
 
                     Owner.BroadcastPacketNearby(new Damage()
                     {
@@ -94,7 +94,7 @@ namespace wServer.realm.entities
             {
                 int dmg = (int)Client.Random.NextIntRange((uint)tileDesc.MinDamage, (uint)tileDesc.MaxDamage);
 
-                HP -= dmg;
+                HP = Math.Max(0, HP - dmg);
 
                 Owner.BroadcastPacketNearby(new Damage()
                 {
