@@ -351,7 +351,7 @@ package com.company.assembleegameclient.map
 
         public function getSquare(_arg_1:Number, _arg_2:Number):Square
         {
-            if (((((_arg_1 < 0) || (_arg_1 >= width_)) || (_arg_2 < 0)) || (_arg_2 >= height_)))
+            if (squares_ == null || ((((_arg_1 < 0) || (_arg_1 >= width_)) || (_arg_2 < 0)) || (_arg_2 >= height_)))
             {
                 return (null);
             };

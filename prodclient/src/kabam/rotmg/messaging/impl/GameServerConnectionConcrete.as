@@ -1341,6 +1341,7 @@ import robotlegs.bender.framework.api.ILogger;
         {
             var _local_4:Projectile;
             var _local_5:Number;
+            if (this.gs_.map == null || this.gs_.map.goDict_ == null) return;
             var _local_2:GameObject = gs_.map.goDict_[_arg_1.ownerId_];
             if (((_local_2 == null) || (_local_2.dead_)))
             {
@@ -1589,6 +1590,7 @@ import robotlegs.bender.framework.api.ILogger;
                 return;
             };
             var _local_2:AbstractMap = gs_.map;
+            if (_local_2.goDict_ == null) return;
             switch (_arg_1.effectType_)
             {
                 case ShowEffect.HEAL_EFFECT_TYPE:
@@ -2101,6 +2103,7 @@ import robotlegs.bender.framework.api.ILogger;
             var _local_18:ProjectileProperties;
             var _local_19:Array;
             var _local_4:AbstractMap = gs_.map;
+            if (_local_4.goDict_ == null) return;
             var _local_5:GameObject = _local_4.goDict_[_arg_1.objectId_];
             if (_local_5 == null)
             {
@@ -2213,16 +2216,17 @@ import robotlegs.bender.framework.api.ILogger;
             gs_.hudView.interactPanel.redraw();
         }
 
-        private function onReconnect(_arg_1:Reconnect):void
+        private function onReconnect(pkt:Reconnect):void
         {
-            var _local_3:int = _arg_1.gameId_;
-            var _local_4:Boolean = createCharacter_;
-            var _local_5:int = charId_;
-            var _local_6:int = _arg_1.keyTime_;
-            var _local_7:ByteArray = _arg_1.key_;
-            isFromArena_ = _arg_1.isFromArena_;
+            this.disconnect();
+            var gameId:int = pkt.gameId_;
+            var createChar:Boolean = createCharacter_;
+            var charId:int = charId_;
+            var keyTime:int = pkt.keyTime_;
+            var key:ByteArray = pkt.key_;
+            isFromArena_ = pkt.isFromArena_;
             this.isNexusing = false;
-            var _local_8:ReconnectEvent = new ReconnectEvent(_local_3, _local_4, _local_5, _local_6, _local_7, isFromArena_);
+            var _local_8:ReconnectEvent = new ReconnectEvent(gameId, createChar, charId, keyTime, key, isFromArena_);
             gs_.dispatchEvent(_local_8);
         }
 
@@ -2274,6 +2278,9 @@ import robotlegs.bender.framework.api.ILogger;
 
         private function onDeath(_arg_1:Death):void
         {
+            // death issue shenanigans
+            this.disconnect();
+
             this.death = _arg_1;
             var _local_2:BitmapData = new BitmapDataSpy(gs_.stage.stageWidth, gs_.stage.stageHeight);
             _local_2.draw(gs_);

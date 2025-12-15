@@ -21,17 +21,6 @@ namespace wServer.networking.packets.outgoing
             Key = Guid.NewGuid().ToByteArray();
         }
 
-        protected override void Read(NReader rdr)
-        {
-            Name = rdr.ReadUTF();
-            Host = rdr.ReadUTF();
-            Port = rdr.ReadInt32();
-            GameId = rdr.ReadInt32();
-            KeyTime = rdr.ReadInt32();
-            IsFromArena = rdr.ReadBoolean();
-            Key = rdr.ReadBytes(rdr.ReadInt16());
-        }
-
         protected override void Write(NWriter wtr)
         {
             wtr.WriteUTF(Name);

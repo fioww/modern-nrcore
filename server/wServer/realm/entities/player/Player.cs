@@ -773,9 +773,11 @@ namespace wServer.realm.entities
             }, this, this, PacketPriority.Low);
 
             if (HP <= 0)
+            {
                 Death(projectile.ProjectileOwner.Self.ObjectDesc.DisplayId ??
                       projectile.ProjectileOwner.Self.ObjectDesc.ObjectId,
-                      projectile.ProjectileOwner.Self);
+                    projectile.ProjectileOwner.Self);
+            }
 
             return base.HitByProjectile(projectile, time);
         }
@@ -833,7 +835,8 @@ namespace wServer.realm.entities
 
         private bool Arena(string killer)
         {
-
+            if (Owner?.Name != "Arena") return false;
+            
             foreach (var player in Owner.Players.Values)
                 player.SendInfo("{\"key\":\"{arena.death}\",\"tokens\":{\"player\":\"" + Name + "\",\"enemy\":\"" + killer + "\"}}");
             
